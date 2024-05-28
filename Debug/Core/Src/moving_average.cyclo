@@ -1,0 +1,3 @@
+../Core/Src/moving_average.c:26:6:moving_average_init	1
+../Core/Src/moving_average.c:32:6:moving_average_create	1
+../Core/Src/moving_average.c:42:6:moving_average_filter	4

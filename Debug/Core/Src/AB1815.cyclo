@@ -1,0 +1,7 @@
+../Core/Src/AB1815.c:26:6:detectChip	10
+../Core/Src/AB1815.c:70:6:readRegister	1
+../Core/Src/AB1815.c:75:6:readRegisters	7
+../Core/Src/AB1815.c:113:9:readRegister_value	1
+../Core/Src/AB1815.c:122:6:writeRegister	1
+../Core/Src/AB1815.c:127:6:writeRegisters	7
+../Core/Src/AB1815.c:178:6:maskRegister	5

@@ -1,0 +1,7 @@
+../Core/Src/AB1815.c:26:6:detectChip	32	static
+../Core/Src/AB1815.c:70:6:readRegister	24	static
+../Core/Src/AB1815.c:75:6:readRegisters	40	static
+../Core/Src/AB1815.c:113:9:readRegister_value	32	static
+../Core/Src/AB1815.c:122:6:writeRegister	24	static
+../Core/Src/AB1815.c:127:6:writeRegisters	48	static
+../Core/Src/AB1815.c:178:6:maskRegister	40	static
