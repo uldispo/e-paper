@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -18,15 +18,22 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              		.file 1 "Core/Src/AB1815.c"
-  18              		.section	.text.readRegisters,"ax",%progbits
-  19              		.align	1
-  20              		.global	readRegisters
-  21              		.syntax unified
-  22              		.code	16
-  23              		.thumb_func
-  25              	readRegisters:
-  26              	.LVL0:
-  27              	.LFB428:
+  18              		.section	.rodata.readRegisters.str1.4,"aMS",%progbits,1
+  19              		.align	2
+  20              	.LC0:
+  21 0000 48656C6C 		.ascii	"Hello world!\000"
+  21      6F20776F 
+  21      726C6421 
+  21      00
+  22              		.section	.text.readRegisters,"ax",%progbits
+  23              		.align	1
+  24              		.global	readRegisters
+  25              		.syntax unified
+  26              		.code	16
+  27              		.thumb_func
+  29              	readRegisters:
+  30              	.LVL0:
+  31              	.LFB428:
    1:Core/Src/AB1815.c **** /* USER CODE BEGIN Header */
    2:Core/Src/AB1815.c **** /**
    3:Core/Src/AB1815.c ****  ******************************************************************************
@@ -51,6 +58,9 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 1
   22:Core/Src/AB1815.c **** static inline uint32_t utils_enter_critical_section(void);
   23:Core/Src/AB1815.c **** static inline void utils_exit_critical_section(uint32_t primask_bit);
   24:Core/Src/AB1815.c **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 2
+
+
   25:Core/Src/AB1815.c **** bool detectChip()
   26:Core/Src/AB1815.c **** {
   27:Core/Src/AB1815.c ****     bool bResult, finalResult = false;
@@ -58,9 +68,6 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 1
   29:Core/Src/AB1815.c **** 
   30:Core/Src/AB1815.c ****     // FOUT/nIRQ  will go HIGH when the chip is ready to respond
   31:Core/Src/AB1815.c ****     if (foutPin != PIN_INVALID)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 2
-
-
   32:Core/Src/AB1815.c ****     {
   33:Core/Src/AB1815.c ****         unsigned long start = HAL_GetTick();
   34:Core/Src/AB1815.c ****         bool ready = false;
@@ -99,882 +106,910 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 1
   67:Core/Src/AB1815.c **** 
   68:Core/Src/AB1815.c **** bool readRegister(uint8_t regAddr, uint8_t value, bool lock)
   69:Core/Src/AB1815.c **** {
-  70:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
-  71:Core/Src/AB1815.c **** }
-  72:Core/Src/AB1815.c **** 
-  73:Core/Src/AB1815.c **** bool readRegisters(uint8_t regAddr, uint8_t *array, uint8_t num, bool lock)
-  74:Core/Src/AB1815.c **** {
-  28              		.loc 1 74 1 view -0
-  29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 8
-  31              		@ frame_needed = 0, uses_anonymous_args = 0
-  32              		.loc 1 74 1 is_stmt 0 view .LVU1
-  33 0000 70B5     		push	{r4, r5, r6, lr}
-  34              	.LCFI0:
-  35              		.cfi_def_cfa_offset 16
-  36              		.cfi_offset 4, -16
-  37              		.cfi_offset 5, -12
-  38              		.cfi_offset 6, -8
-  39              		.cfi_offset 14, -4
-  40 0002 84B0     		sub	sp, sp, #16
-  41              	.LCFI1:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 3
+  70:Core/Src/AB1815.c ****     UTILS_ENTER_CRITICAL_SECTION();
+  71:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
+  72:Core/Src/AB1815.c ****     UTILS_EXIT_CRITICAL_SECTION();
+  73:Core/Src/AB1815.c **** }
+  74:Core/Src/AB1815.c **** 
+  75:Core/Src/AB1815.c **** bool readRegisters(uint8_t regAddr, uint8_t *array, uint8_t num, bool lock)
+  76:Core/Src/AB1815.c **** {
+  32              		.loc 1 76 1 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 8
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		.loc 1 76 1 is_stmt 0 view .LVU1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 3
 
 
-  42              		.cfi_def_cfa_offset 32
-  43 0004 0C00     		movs	r4, r1
-  44 0006 1500     		movs	r5, r2
-  45 0008 1E00     		movs	r6, r3
-  46 000a 0F23     		movs	r3, #15
-  47              	.LVL1:
-  48              		.loc 1 74 1 view .LVU2
-  49 000c 6B44     		add	r3, r3, sp
-  50 000e 1870     		strb	r0, [r3]
-  75:Core/Src/AB1815.c ****     bool bResult = false;
-  51              		.loc 1 75 5 is_stmt 1 view .LVU3
-  52              	.LVL2:
-  76:Core/Src/AB1815.c ****     uint32_t primask_bit;
-  53              		.loc 1 76 5 view .LVU4
-  77:Core/Src/AB1815.c ****     // if (lock)
-  78:Core/Src/AB1815.c ****     // {
+  37 0000 70B5     		push	{r4, r5, r6, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 4, -16
+  41              		.cfi_offset 5, -12
+  42              		.cfi_offset 6, -8
+  43              		.cfi_offset 14, -4
+  44 0002 84B0     		sub	sp, sp, #16
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_offset 32
+  47 0004 0C00     		movs	r4, r1
+  48 0006 1500     		movs	r5, r2
+  49 0008 1E00     		movs	r6, r3
+  50 000a 0F23     		movs	r3, #15
+  51              	.LVL1:
+  52              		.loc 1 76 1 view .LVU2
+  53 000c 6B44     		add	r3, r3, sp
+  54 000e 1870     		strb	r0, [r3]
+  77:Core/Src/AB1815.c ****     bool bResult = false;
+  55              		.loc 1 77 5 is_stmt 1 view .LVU3
+  56              	.LVL2:
+  78:Core/Src/AB1815.c ****     uint32_t primask_bit;
+  57              		.loc 1 78 5 view .LVU4
   79:Core/Src/AB1815.c ****     UTILS_ENTER_CRITICAL_SECTION();
-  54              		.loc 1 79 5 view .LVU5
-  55 0010 FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
-  56              	.LVL3:
-  80:Core/Src/AB1815.c ****     // }
-  81:Core/Src/AB1815.c **** 
-  82:Core/Src/AB1815.c ****     // write(regAddr);
-  83:Core/Src/AB1815.c ****     // HAL_I2C_Master_Transmit(&hi2c1, (uint16_t)I2C_ADDRESS, (uint8_t *)aTxBuffer, TXBUFFERSIZE, 1
-  84:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, &regAddr, 1, 3000) != HAL_OK)
-  57              		.loc 1 84 5 view .LVU6
-  58              	.L3:
-  59              		.loc 1 84 72 view .LVU7
-  60              		.loc 1 84 12 is_stmt 0 view .LVU8
-  61 0014 174B     		ldr	r3, .L11
-  62 0016 1978     		ldrb	r1, [r3]
-  63 0018 1748     		ldr	r0, .L11+4
-  64 001a 184B     		ldr	r3, .L11+8
-  65 001c 0093     		str	r3, [sp]
-  66 001e 0123     		movs	r3, #1
-  67 0020 0F22     		movs	r2, #15
-  68 0022 6A44     		add	r2, r2, sp
-  69 0024 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
-  70              	.LVL4:
-  71              		.loc 1 84 72 view .LVU9
-  72 0028 0028     		cmp	r0, #0
-  73 002a 07D0     		beq	.L6
-  85:Core/Src/AB1815.c ****     {
-  86:Core/Src/AB1815.c ****         /* Error_Handler() function is called when Timeout error occurs.
-  87:Core/Src/AB1815.c ****         When Acknowledge failure occurs (Slave don't acknowledge its address)
-  88:Core/Src/AB1815.c ****         Master restarts communication */
-  89:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
-  74              		.loc 1 89 9 is_stmt 1 view .LVU10
-  75              		.loc 1 89 13 is_stmt 0 view .LVU11
-  76 002c 1248     		ldr	r0, .L11+4
-  77 002e FFF7FEFF 		bl	HAL_I2C_GetError
-  78              	.LVL5:
-  79              		.loc 1 89 12 view .LVU12
-  80 0032 0028     		cmp	r0, #0
-  81 0034 EED0     		beq	.L3
-  90:Core/Src/AB1815.c ****         {
-  91:Core/Src/AB1815.c ****             Error_Handler();
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 4
+  58              		.loc 1 79 5 view .LVU5
+  59 0010 FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
+  60              	.LVL3:
+  80:Core/Src/AB1815.c ****     printf("Hello world!\n");
+  61              		.loc 1 80 5 view .LVU6
+  62 0014 1C48     		ldr	r0, .L13
+  63 0016 FFF7FEFF 		bl	puts
+  64              	.LVL4:
+  81:Core/Src/AB1815.c ****     UTILS_EXIT_CRITICAL_SECTION();
+  65              		.loc 1 81 5 view .LVU7
+  66 001a FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
+  67              	.LVL5:
+  82:Core/Src/AB1815.c **** 
+  83:Core/Src/AB1815.c ****     if (lock)
+  68              		.loc 1 83 5 view .LVU8
+  69              		.loc 1 83 8 is_stmt 0 view .LVU9
+  70 001e 002E     		cmp	r6, #0
+  71 0020 13D1     		bne	.L10
+  72              	.L4:
+  84:Core/Src/AB1815.c ****     {
+  85:Core/Src/AB1815.c ****         UTILS_ENTER_CRITICAL_SECTION();
+  86:Core/Src/AB1815.c ****     }
+  87:Core/Src/AB1815.c **** 
+  88:Core/Src/AB1815.c ****     // write(regAddr);
+  89:Core/Src/AB1815.c ****     // HAL_I2C_Master_Transmit(&hi2c1, (uint16_t)I2C_ADDRESS, (uint8_t *)aTxBuffer, TXBUFFERSIZE, 1
+  90:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, &regAddr, 1, 3000) != HAL_OK)
+  73              		.loc 1 90 72 is_stmt 1 view .LVU10
+  74              		.loc 1 90 12 is_stmt 0 view .LVU11
+  75 0022 1A4B     		ldr	r3, .L13+4
+  76 0024 1978     		ldrb	r1, [r3]
+  77 0026 1A48     		ldr	r0, .L13+8
+  78 0028 1A4B     		ldr	r3, .L13+12
+  79 002a 0093     		str	r3, [sp]
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 4
 
 
-  82              		.loc 1 91 13 is_stmt 1 view .LVU13
-  83 0036 FFF7FEFF 		bl	Error_Handler
+  80 002c 0123     		movs	r3, #1
+  81 002e 0F22     		movs	r2, #15
+  82 0030 6A44     		add	r2, r2, sp
+  83 0032 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
   84              	.LVL6:
-  85 003a EBE7     		b	.L3
-  86              	.L6:
-  92:Core/Src/AB1815.c ****         }
-  93:Core/Src/AB1815.c ****     }
-  94:Core/Src/AB1815.c **** 
-  95:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Receive(&hi2c1, i2cAddr, array, num, 3000) != HAL_OK)
-  87              		.loc 1 95 70 view .LVU14
-  88              		.loc 1 95 12 is_stmt 0 view .LVU15
-  89 003c 0D4B     		ldr	r3, .L11
-  90 003e 1978     		ldrb	r1, [r3]
-  91 0040 0D48     		ldr	r0, .L11+4
-  92 0042 0E4B     		ldr	r3, .L11+8
-  93 0044 0093     		str	r3, [sp]
-  94 0046 2B00     		movs	r3, r5
-  95 0048 2200     		movs	r2, r4
-  96 004a FFF7FEFF 		bl	HAL_I2C_Master_Receive
-  97              	.LVL7:
-  98              		.loc 1 95 70 view .LVU16
-  99 004e 0028     		cmp	r0, #0
- 100 0050 07D0     		beq	.L9
-  96:Core/Src/AB1815.c ****     {
-  97:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // ??? HAL_I2C_ERROR_NONE
- 101              		.loc 1 97 9 is_stmt 1 view .LVU17
- 102              		.loc 1 97 13 is_stmt 0 view .LVU18
- 103 0052 0948     		ldr	r0, .L11+4
- 104 0054 FFF7FEFF 		bl	HAL_I2C_GetError
- 105              	.LVL8:
- 106              		.loc 1 97 12 view .LVU19
- 107 0058 0028     		cmp	r0, #0
- 108 005a EFD0     		beq	.L6
-  98:Core/Src/AB1815.c ****         {
-  99:Core/Src/AB1815.c ****             Error_Handler();
- 109              		.loc 1 99 13 is_stmt 1 view .LVU20
- 110 005c FFF7FEFF 		bl	Error_Handler
- 111              	.LVL9:
- 112 0060 ECE7     		b	.L6
- 113              	.L9:
- 100:Core/Src/AB1815.c ****         }
- 101:Core/Src/AB1815.c ****     }
- 102:Core/Src/AB1815.c ****     bResult = true;
- 114              		.loc 1 102 5 view .LVU21
- 115              	.LVL10:
- 103:Core/Src/AB1815.c **** 
- 104:Core/Src/AB1815.c ****     if (lock)
- 116              		.loc 1 104 5 view .LVU22
- 117              		.loc 1 104 8 is_stmt 0 view .LVU23
- 118 0062 002E     		cmp	r6, #0
- 119 0064 02D1     		bne	.L10
- 120              	.L8:
- 105:Core/Src/AB1815.c ****     {
- 106:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
+  85              		.loc 1 90 72 view .LVU12
+  86 0036 0028     		cmp	r0, #0
+  87 0038 0AD0     		beq	.L7
+  91:Core/Src/AB1815.c ****     {
+  92:Core/Src/AB1815.c ****         /* Error_Handler() function is called when Timeout error occurs.
+  93:Core/Src/AB1815.c ****         When Acknowledge failure occurs (Slave don't acknowledge its address)
+  94:Core/Src/AB1815.c ****         Master restarts communication */
+  95:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
+  88              		.loc 1 95 9 is_stmt 1 view .LVU13
+  89              		.loc 1 95 13 is_stmt 0 view .LVU14
+  90 003a 1548     		ldr	r0, .L13+8
+  91 003c FFF7FEFF 		bl	HAL_I2C_GetError
+  92              	.LVL7:
+  93              		.loc 1 95 12 view .LVU15
+  94 0040 0028     		cmp	r0, #0
+  95 0042 EED0     		beq	.L4
+  96:Core/Src/AB1815.c ****         {
+  97:Core/Src/AB1815.c ****             Error_Handler();
+  96              		.loc 1 97 13 is_stmt 1 view .LVU16
+  97 0044 FFF7FEFF 		bl	Error_Handler
+  98              	.LVL8:
+  99 0048 EBE7     		b	.L4
+ 100              	.L10:
+  85:Core/Src/AB1815.c ****     }
+ 101              		.loc 1 85 9 view .LVU17
+ 102 004a FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
+ 103              	.LVL9:
+ 104 004e E8E7     		b	.L4
+ 105              	.L7:
+  98:Core/Src/AB1815.c ****         }
+  99:Core/Src/AB1815.c ****     }
+ 100:Core/Src/AB1815.c **** 
+ 101:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Receive(&hi2c1, i2cAddr, array, num, 3000) != HAL_OK)
+ 106              		.loc 1 101 70 view .LVU18
+ 107              		.loc 1 101 12 is_stmt 0 view .LVU19
+ 108 0050 0E4B     		ldr	r3, .L13+4
+ 109 0052 1978     		ldrb	r1, [r3]
+ 110 0054 0E48     		ldr	r0, .L13+8
+ 111 0056 0F4B     		ldr	r3, .L13+12
+ 112 0058 0093     		str	r3, [sp]
+ 113 005a 2B00     		movs	r3, r5
+ 114 005c 2200     		movs	r2, r4
+ 115 005e FFF7FEFF 		bl	HAL_I2C_Master_Receive
+ 116              	.LVL10:
+ 117              		.loc 1 101 70 view .LVU20
+ 118 0062 0028     		cmp	r0, #0
+ 119 0064 07D0     		beq	.L11
+ 102:Core/Src/AB1815.c ****     {
+ 103:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // ??? HAL_I2C_ERROR_NONE
+ 120              		.loc 1 103 9 is_stmt 1 view .LVU21
+ 121              		.loc 1 103 13 is_stmt 0 view .LVU22
+ 122 0066 0A48     		ldr	r0, .L13+8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 5
+
+
+ 123 0068 FFF7FEFF 		bl	HAL_I2C_GetError
+ 124              	.LVL11:
+ 125              		.loc 1 103 12 view .LVU23
+ 126 006c 0028     		cmp	r0, #0
+ 127 006e EFD0     		beq	.L7
+ 104:Core/Src/AB1815.c ****         {
+ 105:Core/Src/AB1815.c ****             Error_Handler();
+ 128              		.loc 1 105 13 is_stmt 1 view .LVU24
+ 129 0070 FFF7FEFF 		bl	Error_Handler
+ 130              	.LVL12:
+ 131 0074 ECE7     		b	.L7
+ 132              	.L11:
+ 106:Core/Src/AB1815.c ****         }
  107:Core/Src/AB1815.c ****     }
- 108:Core/Src/AB1815.c ****     return bResult;
- 121              		.loc 1 108 5 is_stmt 1 view .LVU24
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 5
-
-
- 109:Core/Src/AB1815.c **** }
- 122              		.loc 1 109 1 is_stmt 0 view .LVU25
- 123 0066 0120     		movs	r0, #1
- 124 0068 04B0     		add	sp, sp, #16
- 125              		@ sp needed
- 126              	.LVL11:
- 127              		.loc 1 109 1 view .LVU26
- 128 006a 70BD     		pop	{r4, r5, r6, pc}
- 129              	.LVL12:
- 130              	.L10:
- 131              	.LBB2:
- 106:Core/Src/AB1815.c ****     }
- 132              		.loc 1 106 9 is_stmt 1 view .LVU27
- 133 006c FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
+ 108:Core/Src/AB1815.c ****     bResult = true;
+ 133              		.loc 1 108 5 view .LVU25
  134              	.LVL13:
- 135 0070 F9E7     		b	.L8
- 136              	.L12:
- 137 0072 C046     		.align	2
- 138              	.L11:
- 139 0074 00000000 		.word	i2cAddr
- 140 0078 00000000 		.word	hi2c1
- 141 007c B80B0000 		.word	3000
- 142              	.LBE2:
- 143              		.cfi_endproc
- 144              	.LFE428:
- 146              		.section	.text.readRegister,"ax",%progbits
- 147              		.align	1
- 148              		.global	readRegister
- 149              		.syntax unified
- 150              		.code	16
- 151              		.thumb_func
- 153              	readRegister:
- 154              	.LVL14:
- 155              	.LFB427:
-  69:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
- 156              		.loc 1 69 1 view -0
- 157              		.cfi_startproc
- 158              		@ args = 0, pretend = 0, frame = 8
- 159              		@ frame_needed = 0, uses_anonymous_args = 0
-  69:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
- 160              		.loc 1 69 1 is_stmt 0 view .LVU29
- 161 0000 10B5     		push	{r4, lr}
- 162              	.LCFI2:
- 163              		.cfi_def_cfa_offset 8
- 164              		.cfi_offset 4, -8
- 165              		.cfi_offset 14, -4
- 166 0002 82B0     		sub	sp, sp, #8
- 167              	.LCFI3:
- 168              		.cfi_def_cfa_offset 16
- 169 0004 0C00     		movs	r4, r1
- 170 0006 1300     		movs	r3, r2
- 171 0008 6A46     		mov	r2, sp
- 172              	.LVL15:
-  69:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
- 173              		.loc 1 69 1 view .LVU30
- 174 000a D11D     		adds	r1, r2, #7
- 175              	.LVL16:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 6
+ 109:Core/Src/AB1815.c **** 
+ 110:Core/Src/AB1815.c ****     if (lock)
+ 135              		.loc 1 110 5 view .LVU26
+ 136              		.loc 1 110 8 is_stmt 0 view .LVU27
+ 137 0076 002E     		cmp	r6, #0
+ 138 0078 02D1     		bne	.L12
+ 139              	.L9:
+ 111:Core/Src/AB1815.c ****     {
+ 112:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
+ 113:Core/Src/AB1815.c ****     }
+ 114:Core/Src/AB1815.c ****     return bResult;
+ 140              		.loc 1 114 5 is_stmt 1 view .LVU28
+ 115:Core/Src/AB1815.c **** }
+ 141              		.loc 1 115 1 is_stmt 0 view .LVU29
+ 142 007a 0120     		movs	r0, #1
+ 143 007c 04B0     		add	sp, sp, #16
+ 144              		@ sp needed
+ 145              	.LVL14:
+ 146              		.loc 1 115 1 view .LVU30
+ 147 007e 70BD     		pop	{r4, r5, r6, pc}
+ 148              	.LVL15:
+ 149              	.L12:
+ 112:Core/Src/AB1815.c ****     }
+ 150              		.loc 1 112 9 is_stmt 1 view .LVU31
+ 151 0080 FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
+ 152              	.LVL16:
+ 153 0084 F9E7     		b	.L9
+ 154              	.L14:
+ 155 0086 C046     		.align	2
+ 156              	.L13:
+ 157 0088 00000000 		.word	.LC0
+ 158 008c 00000000 		.word	i2cAddr
+ 159 0090 00000000 		.word	hi2c1
+ 160 0094 B80B0000 		.word	3000
+ 161              		.cfi_endproc
+ 162              	.LFE428:
+ 164              		.section	.text.readRegister,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	readRegister
+ 167              		.syntax unified
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 6
 
 
-  69:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
- 176              		.loc 1 69 1 view .LVU31
- 177 000c 0C70     		strb	r4, [r1]
-  70:Core/Src/AB1815.c **** }
- 178              		.loc 1 70 5 is_stmt 1 view .LVU32
-  70:Core/Src/AB1815.c **** }
- 179              		.loc 1 70 12 is_stmt 0 view .LVU33
- 180 000e 0122     		movs	r2, #1
- 181 0010 FFF7FEFF 		bl	readRegisters
- 182              	.LVL17:
-  71:Core/Src/AB1815.c **** 
- 183              		.loc 1 71 1 view .LVU34
- 184 0014 02B0     		add	sp, sp, #8
- 185              		@ sp needed
- 186 0016 10BD     		pop	{r4, pc}
- 187              		.cfi_endproc
- 188              	.LFE427:
- 190              		.section	.rodata.detectChip.str1.4,"aMS",%progbits,1
- 191              		.align	2
- 192              	.LC3:
- 193 0000 464F5554 		.ascii	"FOUT did not go HIGH\000"
- 193      20646964 
- 193      206E6F74 
- 193      20676F20 
- 193      48494748 
- 194 0015 000000   		.align	2
- 195              	.LC5:
- 196 0018 6E6F7420 		.ascii	"not detected\000"
- 196      64657465 
- 196      63746564 
- 196      00
- 197              		.section	.text.detectChip,"ax",%progbits
- 198              		.align	1
- 199              		.global	detectChip
- 200              		.syntax unified
- 201              		.code	16
- 202              		.thumb_func
- 204              	detectChip:
- 205              	.LFB426:
+ 168              		.code	16
+ 169              		.thumb_func
+ 171              	readRegister:
+ 172              	.LVL17:
+ 173              	.LFB427:
+  69:Core/Src/AB1815.c ****     UTILS_ENTER_CRITICAL_SECTION();
+ 174              		.loc 1 69 1 view -0
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 8
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+  69:Core/Src/AB1815.c ****     UTILS_ENTER_CRITICAL_SECTION();
+ 178              		.loc 1 69 1 is_stmt 0 view .LVU33
+ 179 0000 70B5     		push	{r4, r5, r6, lr}
+ 180              	.LCFI2:
+ 181              		.cfi_def_cfa_offset 16
+ 182              		.cfi_offset 4, -16
+ 183              		.cfi_offset 5, -12
+ 184              		.cfi_offset 6, -8
+ 185              		.cfi_offset 14, -4
+ 186 0002 82B0     		sub	sp, sp, #8
+ 187              	.LCFI3:
+ 188              		.cfi_def_cfa_offset 24
+ 189 0004 0400     		movs	r4, r0
+ 190 0006 1500     		movs	r5, r2
+ 191 0008 6B46     		mov	r3, sp
+ 192 000a DE1D     		adds	r6, r3, #7
+ 193 000c D971     		strb	r1, [r3, #7]
+  70:Core/Src/AB1815.c ****     return readRegisters(regAddr, &value, 1, lock);
+ 194              		.loc 1 70 5 is_stmt 1 view .LVU34
+ 195 000e FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
+ 196              	.LVL18:
+  71:Core/Src/AB1815.c ****     UTILS_EXIT_CRITICAL_SECTION();
+ 197              		.loc 1 71 5 view .LVU35
+  71:Core/Src/AB1815.c ****     UTILS_EXIT_CRITICAL_SECTION();
+ 198              		.loc 1 71 12 is_stmt 0 view .LVU36
+ 199 0012 2B00     		movs	r3, r5
+ 200 0014 0122     		movs	r2, #1
+ 201 0016 3100     		movs	r1, r6
+ 202 0018 2000     		movs	r0, r4
+ 203 001a FFF7FEFF 		bl	readRegisters
+ 204              	.LVL19:
+  73:Core/Src/AB1815.c **** 
+ 205              		.loc 1 73 1 view .LVU37
+ 206 001e 02B0     		add	sp, sp, #8
+ 207              		@ sp needed
+ 208 0020 70BD     		pop	{r4, r5, r6, pc}
+ 209              		.cfi_endproc
+ 210              	.LFE427:
+ 212              		.section	.rodata.detectChip.str1.4,"aMS",%progbits,1
+ 213              		.align	2
+ 214              	.LC5:
+ 215 0000 464F5554 		.ascii	"FOUT did not go HIGH\000"
+ 215      20646964 
+ 215      206E6F74 
+ 215      20676F20 
+ 215      48494748 
+ 216 0015 000000   		.align	2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 7
+
+
+ 217              	.LC7:
+ 218 0018 6E6F7420 		.ascii	"not detected\000"
+ 218      64657465 
+ 218      63746564 
+ 218      00
+ 219              		.section	.text.detectChip,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	detectChip
+ 222              		.syntax unified
+ 223              		.code	16
+ 224              		.thumb_func
+ 226              	detectChip:
+ 227              	.LFB426:
   26:Core/Src/AB1815.c ****     bool bResult, finalResult = false;
- 206              		.loc 1 26 1 is_stmt 1 view -0
- 207              		.cfi_startproc
- 208              		@ args = 0, pretend = 0, frame = 0
- 209              		@ frame_needed = 0, uses_anonymous_args = 0
- 210 0000 10B5     		push	{r4, lr}
- 211              	.LCFI4:
- 212              		.cfi_def_cfa_offset 8
- 213              		.cfi_offset 4, -8
- 214              		.cfi_offset 14, -4
+ 228              		.loc 1 26 1 is_stmt 1 view -0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232 0000 10B5     		push	{r4, lr}
+ 233              	.LCFI4:
+ 234              		.cfi_def_cfa_offset 8
+ 235              		.cfi_offset 4, -8
+ 236              		.cfi_offset 14, -4
   27:Core/Src/AB1815.c ****     uint8_t value = 0;
- 215              		.loc 1 27 5 view .LVU36
- 216              	.LVL18:
-  28:Core/Src/AB1815.c **** 
- 217              		.loc 1 28 5 view .LVU37
-  31:Core/Src/AB1815.c ****     {
- 218              		.loc 1 31 5 view .LVU38
-  31:Core/Src/AB1815.c ****     {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 7
-
-
- 219              		.loc 1 31 17 is_stmt 0 view .LVU39
- 220 0002 114B     		ldr	r3, .L19
- 221 0004 1B88     		ldrh	r3, [r3]
-  31:Core/Src/AB1815.c ****     {
- 222              		.loc 1 31 8 view .LVU40
- 223 0006 002B     		cmp	r3, #0
- 224 0008 09D1     		bne	.L18
- 225              	.L15:
-  51:Core/Src/AB1815.c ****     if (bResult && value == REG_ID0_AB18XX)
- 226              		.loc 1 51 5 is_stmt 1 view .LVU41
-  51:Core/Src/AB1815.c ****     if (bResult && value == REG_ID0_AB18XX)
- 227              		.loc 1 51 15 is_stmt 0 view .LVU42
- 228 000a 0122     		movs	r2, #1
- 229 000c 0021     		movs	r1, #0
- 230 000e 2820     		movs	r0, #40
- 231 0010 FFF7FEFF 		bl	readRegister
- 232              	.LVL19:
-  52:Core/Src/AB1815.c ****     {
- 233              		.loc 1 52 5 is_stmt 1 view .LVU43
-  60:Core/Src/AB1815.c ****     {
- 234              		.loc 1 60 5 view .LVU44
-  62:Core/Src/AB1815.c ****     }
- 235              		.loc 1 62 9 view .LVU45
- 236 0014 0D48     		ldr	r0, .L19+4
- 237 0016 FFF7FEFF 		bl	puts
+ 237              		.loc 1 27 5 view .LVU39
  238              	.LVL20:
+  28:Core/Src/AB1815.c **** 
+ 239              		.loc 1 28 5 view .LVU40
+  31:Core/Src/AB1815.c ****     {
+ 240              		.loc 1 31 5 view .LVU41
+  31:Core/Src/AB1815.c ****     {
+ 241              		.loc 1 31 17 is_stmt 0 view .LVU42
+ 242 0002 114B     		ldr	r3, .L21
+ 243 0004 1B88     		ldrh	r3, [r3]
+  31:Core/Src/AB1815.c ****     {
+ 244              		.loc 1 31 8 view .LVU43
+ 245 0006 002B     		cmp	r3, #0
+ 246 0008 09D1     		bne	.L20
+ 247              	.L17:
+  51:Core/Src/AB1815.c ****     if (bResult && value == REG_ID0_AB18XX)
+ 248              		.loc 1 51 5 is_stmt 1 view .LVU44
+  51:Core/Src/AB1815.c ****     if (bResult && value == REG_ID0_AB18XX)
+ 249              		.loc 1 51 15 is_stmt 0 view .LVU45
+ 250 000a 0122     		movs	r2, #1
+ 251 000c 0021     		movs	r1, #0
+ 252 000e 2820     		movs	r0, #40
+ 253 0010 FFF7FEFF 		bl	readRegister
+ 254              	.LVL21:
+  52:Core/Src/AB1815.c ****     {
+ 255              		.loc 1 52 5 is_stmt 1 view .LVU46
+  60:Core/Src/AB1815.c ****     {
+ 256              		.loc 1 60 5 view .LVU47
+  62:Core/Src/AB1815.c ****     }
+ 257              		.loc 1 62 9 view .LVU48
+ 258 0014 0D48     		ldr	r0, .L21+4
+ 259 0016 FFF7FEFF 		bl	puts
+ 260              	.LVL22:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 8
+
+
   65:Core/Src/AB1815.c **** }
- 239              		.loc 1 65 5 view .LVU46
+ 261              		.loc 1 65 5 view .LVU49
   66:Core/Src/AB1815.c **** 
- 240              		.loc 1 66 1 is_stmt 0 view .LVU47
- 241 001a 0020     		movs	r0, #0
- 242              		@ sp needed
- 243 001c 10BD     		pop	{r4, pc}
- 244              	.L18:
- 245              	.LBB3:
+ 262              		.loc 1 66 1 is_stmt 0 view .LVU50
+ 263 001a 0020     		movs	r0, #0
+ 264              		@ sp needed
+ 265 001c 10BD     		pop	{r4, pc}
+ 266              	.L20:
+ 267              	.LBB2:
   33:Core/Src/AB1815.c ****         bool ready = false;
- 246              		.loc 1 33 9 is_stmt 1 view .LVU48
+ 268              		.loc 1 33 9 is_stmt 1 view .LVU51
   33:Core/Src/AB1815.c ****         bool ready = false;
- 247              		.loc 1 33 31 is_stmt 0 view .LVU49
- 248 001e FFF7FEFF 		bl	HAL_GetTick
- 249              	.LVL21:
- 250 0022 0400     		movs	r4, r0
- 251              	.LVL22:
+ 269              		.loc 1 33 31 is_stmt 0 view .LVU52
+ 270 001e FFF7FEFF 		bl	HAL_GetTick
+ 271              	.LVL23:
+ 272 0022 0400     		movs	r4, r0
+ 273              	.LVL24:
   34:Core/Src/AB1815.c ****         while (HAL_GetTick() - start < 1000)
- 252              		.loc 1 34 9 is_stmt 1 view .LVU50
+ 274              		.loc 1 34 9 is_stmt 1 view .LVU53
   35:Core/Src/AB1815.c ****         {
- 253              		.loc 1 35 9 view .LVU51
- 254              	.L16:
+ 275              		.loc 1 35 9 view .LVU54
+ 276              	.L18:
   35:Core/Src/AB1815.c ****         {
- 255              		.loc 1 35 38 view .LVU52
+ 277              		.loc 1 35 38 view .LVU55
   35:Core/Src/AB1815.c ****         {
- 256              		.loc 1 35 16 is_stmt 0 view .LVU53
- 257 0024 FFF7FEFF 		bl	HAL_GetTick
- 258              	.LVL23:
-  35:Core/Src/AB1815.c ****         {
- 259              		.loc 1 35 30 view .LVU54
- 260 0028 001B     		subs	r0, r0, r4
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 8
-
-
-  35:Core/Src/AB1815.c ****         {
- 261              		.loc 1 35 38 view .LVU55
- 262 002a FA23     		movs	r3, #250
- 263 002c 9B00     		lsls	r3, r3, #2
- 264 002e 9842     		cmp	r0, r3
- 265 0030 EBD2     		bcs	.L15
-  37:Core/Src/AB1815.c ****             {
- 266              		.loc 1 37 13 is_stmt 1 view .LVU56
-  37:Core/Src/AB1815.c ****             {
- 267              		.loc 1 37 17 is_stmt 0 view .LVU57
- 268 0032 8021     		movs	r1, #128
- 269 0034 4901     		lsls	r1, r1, #5
- 270 0036 0648     		ldr	r0, .L19+8
- 271 0038 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 272              	.LVL24:
-  37:Core/Src/AB1815.c ****             {
- 273              		.loc 1 37 16 view .LVU58
- 274 003c 0128     		cmp	r0, #1
- 275 003e E4D0     		beq	.L15
-  42:Core/Src/AB1815.c ****             {
- 276              		.loc 1 42 13 is_stmt 1 view .LVU59
-  44:Core/Src/AB1815.c **** 
- 277              		.loc 1 44 17 view .LVU60
- 278 0040 0448     		ldr	r0, .L19+12
- 279 0042 FFF7FEFF 		bl	puts
+ 278              		.loc 1 35 16 is_stmt 0 view .LVU56
+ 279 0024 FFF7FEFF 		bl	HAL_GetTick
  280              	.LVL25:
- 281 0046 EDE7     		b	.L16
- 282              	.L20:
- 283              		.align	2
- 284              	.L19:
- 285 0048 00000000 		.word	foutPin
- 286 004c 18000000 		.word	.LC5
- 287 0050 00040050 		.word	1342178304
- 288 0054 00000000 		.word	.LC3
- 289              	.LBE3:
- 290              		.cfi_endproc
- 291              	.LFE426:
- 293              		.section	.text.readRegister_value,"ax",%progbits
- 294              		.align	1
- 295              		.global	readRegister_value
- 296              		.syntax unified
- 297              		.code	16
- 298              		.thumb_func
- 300              	readRegister_value:
- 301              	.LVL26:
- 302              	.LFB429:
- 110:Core/Src/AB1815.c **** 
- 111:Core/Src/AB1815.c **** uint8_t readRegister_value(uint8_t regAddr, bool lock)
- 112:Core/Src/AB1815.c **** {
- 303              		.loc 1 112 1 view -0
- 304              		.cfi_startproc
- 305              		@ args = 0, pretend = 0, frame = 0
- 306              		@ frame_needed = 0, uses_anonymous_args = 0
- 307              		.loc 1 112 1 is_stmt 0 view .LVU62
- 308 0000 10B5     		push	{r4, lr}
- 309              	.LCFI5:
- 310              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 9
+  35:Core/Src/AB1815.c ****         {
+ 281              		.loc 1 35 30 view .LVU57
+ 282 0028 001B     		subs	r0, r0, r4
+  35:Core/Src/AB1815.c ****         {
+ 283              		.loc 1 35 38 view .LVU58
+ 284 002a FA23     		movs	r3, #250
+ 285 002c 9B00     		lsls	r3, r3, #2
+ 286 002e 9842     		cmp	r0, r3
+ 287 0030 EBD2     		bcs	.L17
+  37:Core/Src/AB1815.c ****             {
+ 288              		.loc 1 37 13 is_stmt 1 view .LVU59
+  37:Core/Src/AB1815.c ****             {
+ 289              		.loc 1 37 17 is_stmt 0 view .LVU60
+ 290 0032 8021     		movs	r1, #128
+ 291 0034 4901     		lsls	r1, r1, #5
+ 292 0036 0648     		ldr	r0, .L21+8
+ 293 0038 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 294              	.LVL26:
+  37:Core/Src/AB1815.c ****             {
+ 295              		.loc 1 37 16 view .LVU61
+ 296 003c 0128     		cmp	r0, #1
+ 297 003e E4D0     		beq	.L17
+  42:Core/Src/AB1815.c ****             {
+ 298              		.loc 1 42 13 is_stmt 1 view .LVU62
+  44:Core/Src/AB1815.c **** 
+ 299              		.loc 1 44 17 view .LVU63
+ 300 0040 0448     		ldr	r0, .L21+12
+ 301 0042 FFF7FEFF 		bl	puts
+ 302              	.LVL27:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 9
 
 
- 311              		.cfi_offset 4, -8
- 312              		.cfi_offset 14, -4
- 313 0002 0A00     		movs	r2, r1
- 113:Core/Src/AB1815.c ****     uint8_t value = 0;
- 314              		.loc 1 113 5 is_stmt 1 view .LVU63
- 315              	.LVL27:
- 114:Core/Src/AB1815.c **** 
- 115:Core/Src/AB1815.c ****     (void)readRegister(regAddr, value, lock);
- 316              		.loc 1 115 5 view .LVU64
- 317              		.loc 1 115 11 is_stmt 0 view .LVU65
- 318 0004 0021     		movs	r1, #0
- 319              	.LVL28:
- 320              		.loc 1 115 11 view .LVU66
- 321 0006 FFF7FEFF 		bl	readRegister
- 322              	.LVL29:
+ 303 0046 EDE7     		b	.L18
+ 304              	.L22:
+ 305              		.align	2
+ 306              	.L21:
+ 307 0048 00000000 		.word	foutPin
+ 308 004c 18000000 		.word	.LC7
+ 309 0050 00040050 		.word	1342178304
+ 310 0054 00000000 		.word	.LC5
+ 311              	.LBE2:
+ 312              		.cfi_endproc
+ 313              	.LFE426:
+ 315              		.section	.text.readRegister_value,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	readRegister_value
+ 318              		.syntax unified
+ 319              		.code	16
+ 320              		.thumb_func
+ 322              	readRegister_value:
+ 323              	.LVL28:
+ 324              	.LFB429:
  116:Core/Src/AB1815.c **** 
- 117:Core/Src/AB1815.c ****     return value;
- 323              		.loc 1 117 5 is_stmt 1 view .LVU67
- 118:Core/Src/AB1815.c **** }
- 324              		.loc 1 118 1 is_stmt 0 view .LVU68
- 325 000a 0020     		movs	r0, #0
- 326              		@ sp needed
- 327 000c 10BD     		pop	{r4, pc}
- 328              		.cfi_endproc
- 329              	.LFE429:
- 331              		.section	.text.writeRegisters,"ax",%progbits
- 332              		.align	1
- 333              		.global	writeRegisters
- 334              		.syntax unified
- 335              		.code	16
- 336              		.thumb_func
- 338              	writeRegisters:
- 339              	.LVL30:
- 340              	.LFB431:
- 119:Core/Src/AB1815.c **** 
- 120:Core/Src/AB1815.c **** bool writeRegister(uint8_t regAddr, uint8_t value, bool lock)
- 121:Core/Src/AB1815.c **** {
- 122:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
- 123:Core/Src/AB1815.c **** }
- 124:Core/Src/AB1815.c **** 
- 125:Core/Src/AB1815.c **** bool writeRegisters(uint8_t regAddr, uint8_t *array, size_t num, bool lock)
- 126:Core/Src/AB1815.c **** {
- 341              		.loc 1 126 1 is_stmt 1 view -0
- 342              		.cfi_startproc
- 343              		@ args = 0, pretend = 0, frame = 8
- 344              		@ frame_needed = 0, uses_anonymous_args = 0
- 345              		.loc 1 126 1 is_stmt 0 view .LVU70
- 346 0000 70B5     		push	{r4, r5, r6, lr}
- 347              	.LCFI6:
- 348              		.cfi_def_cfa_offset 16
- 349              		.cfi_offset 4, -16
- 350              		.cfi_offset 5, -12
- 351              		.cfi_offset 6, -8
- 352              		.cfi_offset 14, -4
- 353 0002 84B0     		sub	sp, sp, #16
- 354              	.LCFI7:
- 355              		.cfi_def_cfa_offset 32
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 10
+ 117:Core/Src/AB1815.c **** uint8_t readRegister_value(uint8_t regAddr, bool lock)
+ 118:Core/Src/AB1815.c **** {
+ 325              		.loc 1 118 1 view -0
+ 326              		.cfi_startproc
+ 327              		@ args = 0, pretend = 0, frame = 0
+ 328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 329              		.loc 1 118 1 is_stmt 0 view .LVU65
+ 330 0000 10B5     		push	{r4, lr}
+ 331              	.LCFI5:
+ 332              		.cfi_def_cfa_offset 8
+ 333              		.cfi_offset 4, -8
+ 334              		.cfi_offset 14, -4
+ 335 0002 0A00     		movs	r2, r1
+ 119:Core/Src/AB1815.c ****     uint8_t value = 0;
+ 336              		.loc 1 119 5 is_stmt 1 view .LVU66
+ 337              	.LVL29:
+ 120:Core/Src/AB1815.c **** 
+ 121:Core/Src/AB1815.c ****     (void)readRegister(regAddr, value, lock);
+ 338              		.loc 1 121 5 view .LVU67
+ 339              		.loc 1 121 11 is_stmt 0 view .LVU68
+ 340 0004 0021     		movs	r1, #0
+ 341              	.LVL30:
+ 342              		.loc 1 121 11 view .LVU69
+ 343 0006 FFF7FEFF 		bl	readRegister
+ 344              	.LVL31:
+ 122:Core/Src/AB1815.c **** 
+ 123:Core/Src/AB1815.c ****     return value;
+ 345              		.loc 1 123 5 is_stmt 1 view .LVU70
+ 124:Core/Src/AB1815.c **** }
+ 346              		.loc 1 124 1 is_stmt 0 view .LVU71
+ 347 000a 0020     		movs	r0, #0
+ 348              		@ sp needed
+ 349 000c 10BD     		pop	{r4, pc}
+ 350              		.cfi_endproc
+ 351              	.LFE429:
+ 353              		.section	.text.writeRegisters,"ax",%progbits
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 10
 
 
- 356 0004 0D00     		movs	r5, r1
- 357 0006 1400     		movs	r4, r2
- 358 0008 1E00     		movs	r6, r3
- 359 000a 0F23     		movs	r3, #15
- 360              	.LVL31:
- 361              		.loc 1 126 1 view .LVU71
- 362 000c 6B44     		add	r3, r3, sp
- 363 000e 1870     		strb	r0, [r3]
- 127:Core/Src/AB1815.c ****     bool bResult = false;
- 364              		.loc 1 127 5 is_stmt 1 view .LVU72
- 365              	.LVL32:
- 128:Core/Src/AB1815.c ****     uint32_t primask_bit;
- 366              		.loc 1 128 5 view .LVU73
- 129:Core/Src/AB1815.c ****     if (lock)
- 367              		.loc 1 129 5 view .LVU74
- 368              		.loc 1 129 8 is_stmt 0 view .LVU75
- 369 0010 002E     		cmp	r6, #0
- 370 0012 13D1     		bne	.L31
- 371              	.LVL33:
- 372              	.L25:
- 130:Core/Src/AB1815.c ****     {
- 131:Core/Src/AB1815.c ****         UTILS_ENTER_CRITICAL_SECTION();
- 132:Core/Src/AB1815.c ****     }
- 133:Core/Src/AB1815.c **** 
- 134:Core/Src/AB1815.c ****     // wire.beginTransmission(i2cAddr);
- 135:Core/Src/AB1815.c ****     // wire.write(regAddr);
- 136:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, &regAddr, 1, 3000) != HAL_OK)
- 373              		.loc 1 136 72 is_stmt 1 view .LVU76
- 374              		.loc 1 136 12 is_stmt 0 view .LVU77
- 375 0014 184B     		ldr	r3, .L34
- 376 0016 1978     		ldrb	r1, [r3]
- 377 0018 1848     		ldr	r0, .L34+4
- 378 001a 194B     		ldr	r3, .L34+8
- 379 001c 0093     		str	r3, [sp]
- 380 001e 0123     		movs	r3, #1
- 381 0020 0F22     		movs	r2, #15
- 382 0022 6A44     		add	r2, r2, sp
- 383 0024 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
- 384              	.LVL34:
- 385              		.loc 1 136 72 view .LVU78
- 386 0028 0028     		cmp	r0, #0
- 387 002a 0AD0     		beq	.L28
- 137:Core/Src/AB1815.c ****     {
- 138:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
- 388              		.loc 1 138 9 is_stmt 1 view .LVU79
- 389              		.loc 1 138 13 is_stmt 0 view .LVU80
- 390 002c 1348     		ldr	r0, .L34+4
- 391 002e FFF7FEFF 		bl	HAL_I2C_GetError
- 392              	.LVL35:
- 393              		.loc 1 138 12 view .LVU81
- 394 0032 0028     		cmp	r0, #0
- 395 0034 EED0     		beq	.L25
- 139:Core/Src/AB1815.c ****         {
- 140:Core/Src/AB1815.c ****             Error_Handler();
- 396              		.loc 1 140 13 is_stmt 1 view .LVU82
- 397 0036 FFF7FEFF 		bl	Error_Handler
- 398              	.LVL36:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 11
+ 354              		.align	1
+ 355              		.global	writeRegisters
+ 356              		.syntax unified
+ 357              		.code	16
+ 358              		.thumb_func
+ 360              	writeRegisters:
+ 361              	.LVL32:
+ 362              	.LFB431:
+ 125:Core/Src/AB1815.c **** 
+ 126:Core/Src/AB1815.c **** bool writeRegister(uint8_t regAddr, uint8_t value, bool lock)
+ 127:Core/Src/AB1815.c **** {
+ 128:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
+ 129:Core/Src/AB1815.c **** }
+ 130:Core/Src/AB1815.c **** 
+ 131:Core/Src/AB1815.c **** bool writeRegisters(uint8_t regAddr, uint8_t *array, size_t num, bool lock)
+ 132:Core/Src/AB1815.c **** {
+ 363              		.loc 1 132 1 is_stmt 1 view -0
+ 364              		.cfi_startproc
+ 365              		@ args = 0, pretend = 0, frame = 8
+ 366              		@ frame_needed = 0, uses_anonymous_args = 0
+ 367              		.loc 1 132 1 is_stmt 0 view .LVU73
+ 368 0000 70B5     		push	{r4, r5, r6, lr}
+ 369              	.LCFI6:
+ 370              		.cfi_def_cfa_offset 16
+ 371              		.cfi_offset 4, -16
+ 372              		.cfi_offset 5, -12
+ 373              		.cfi_offset 6, -8
+ 374              		.cfi_offset 14, -4
+ 375 0002 84B0     		sub	sp, sp, #16
+ 376              	.LCFI7:
+ 377              		.cfi_def_cfa_offset 32
+ 378 0004 0D00     		movs	r5, r1
+ 379 0006 1400     		movs	r4, r2
+ 380 0008 1E00     		movs	r6, r3
+ 381 000a 0F23     		movs	r3, #15
+ 382              	.LVL33:
+ 383              		.loc 1 132 1 view .LVU74
+ 384 000c 6B44     		add	r3, r3, sp
+ 385 000e 1870     		strb	r0, [r3]
+ 133:Core/Src/AB1815.c ****     bool bResult = false;
+ 386              		.loc 1 133 5 is_stmt 1 view .LVU75
+ 387              	.LVL34:
+ 134:Core/Src/AB1815.c ****     uint32_t primask_bit;
+ 388              		.loc 1 134 5 view .LVU76
+ 135:Core/Src/AB1815.c ****     if (lock)
+ 389              		.loc 1 135 5 view .LVU77
+ 390              		.loc 1 135 8 is_stmt 0 view .LVU78
+ 391 0010 002E     		cmp	r6, #0
+ 392 0012 13D1     		bne	.L33
+ 393              	.LVL35:
+ 394              	.L27:
+ 136:Core/Src/AB1815.c ****     {
+ 137:Core/Src/AB1815.c ****         UTILS_ENTER_CRITICAL_SECTION();
+ 138:Core/Src/AB1815.c ****     }
+ 139:Core/Src/AB1815.c **** 
+ 140:Core/Src/AB1815.c ****     // wire.beginTransmission(i2cAddr);
+ 141:Core/Src/AB1815.c ****     // wire.write(regAddr);
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 11
 
 
- 399 003a EBE7     		b	.L25
- 400              	.LVL37:
- 401              	.L31:
- 402              	.LBB4:
- 131:Core/Src/AB1815.c ****     }
- 403              		.loc 1 131 9 view .LVU83
- 404 003c FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
- 405              	.LVL38:
- 131:Core/Src/AB1815.c ****     }
- 406              		.loc 1 131 9 is_stmt 0 view .LVU84
- 407 0040 E8E7     		b	.L25
- 408              	.L28:
- 409              	.LBE4:
- 141:Core/Src/AB1815.c ****         }
- 142:Core/Src/AB1815.c ****     }
- 143:Core/Src/AB1815.c **** 
- 144:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, array, num, 3000) != HAL_OK)
- 410              		.loc 1 144 71 is_stmt 1 view .LVU85
- 411              		.loc 1 144 12 is_stmt 0 view .LVU86
- 412 0042 A3B2     		uxth	r3, r4
- 413 0044 0C4A     		ldr	r2, .L34
- 414 0046 1178     		ldrb	r1, [r2]
- 415 0048 0C48     		ldr	r0, .L34+4
- 416 004a 0D4A     		ldr	r2, .L34+8
- 417 004c 0092     		str	r2, [sp]
- 418 004e 2A00     		movs	r2, r5
- 419 0050 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
- 420              	.LVL39:
- 421              		.loc 1 144 71 view .LVU87
- 422 0054 0028     		cmp	r0, #0
- 423 0056 07D0     		beq	.L32
- 145:Core/Src/AB1815.c ****     {
- 146:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
- 424              		.loc 1 146 9 is_stmt 1 view .LVU88
- 425              		.loc 1 146 13 is_stmt 0 view .LVU89
- 426 0058 0848     		ldr	r0, .L34+4
- 427 005a FFF7FEFF 		bl	HAL_I2C_GetError
- 428              	.LVL40:
- 429              		.loc 1 146 12 view .LVU90
- 430 005e 0028     		cmp	r0, #0
- 431 0060 EFD0     		beq	.L28
- 147:Core/Src/AB1815.c ****         {
- 148:Core/Src/AB1815.c ****             Error_Handler();
- 432              		.loc 1 148 13 is_stmt 1 view .LVU91
- 433 0062 FFF7FEFF 		bl	Error_Handler
- 434              	.LVL41:
- 435 0066 ECE7     		b	.L28
- 436              	.L32:
- 149:Core/Src/AB1815.c ****         }
- 150:Core/Src/AB1815.c ****     }
- 151:Core/Src/AB1815.c **** 
- 152:Core/Src/AB1815.c ****     // for (size_t ii = 0; ii < num; ii++)
- 153:Core/Src/AB1815.c ****     // {
- 154:Core/Src/AB1815.c ****     //     wire.write(array[ii]);
- 155:Core/Src/AB1815.c ****     // }
- 156:Core/Src/AB1815.c ****     // int stat = wire.endTransmission(true);
- 157:Core/Src/AB1815.c ****     // if (stat == 0)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 12
+ 142:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, &regAddr, 1, 3000) != HAL_OK)
+ 395              		.loc 1 142 72 is_stmt 1 view .LVU79
+ 396              		.loc 1 142 12 is_stmt 0 view .LVU80
+ 397 0014 184B     		ldr	r3, .L36
+ 398 0016 1978     		ldrb	r1, [r3]
+ 399 0018 1848     		ldr	r0, .L36+4
+ 400 001a 194B     		ldr	r3, .L36+8
+ 401 001c 0093     		str	r3, [sp]
+ 402 001e 0123     		movs	r3, #1
+ 403 0020 0F22     		movs	r2, #15
+ 404 0022 6A44     		add	r2, r2, sp
+ 405 0024 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+ 406              	.LVL36:
+ 407              		.loc 1 142 72 view .LVU81
+ 408 0028 0028     		cmp	r0, #0
+ 409 002a 0AD0     		beq	.L30
+ 143:Core/Src/AB1815.c ****     {
+ 144:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
+ 410              		.loc 1 144 9 is_stmt 1 view .LVU82
+ 411              		.loc 1 144 13 is_stmt 0 view .LVU83
+ 412 002c 1348     		ldr	r0, .L36+4
+ 413 002e FFF7FEFF 		bl	HAL_I2C_GetError
+ 414              	.LVL37:
+ 415              		.loc 1 144 12 view .LVU84
+ 416 0032 0028     		cmp	r0, #0
+ 417 0034 EED0     		beq	.L27
+ 145:Core/Src/AB1815.c ****         {
+ 146:Core/Src/AB1815.c ****             Error_Handler();
+ 418              		.loc 1 146 13 is_stmt 1 view .LVU85
+ 419 0036 FFF7FEFF 		bl	Error_Handler
+ 420              	.LVL38:
+ 421 003a EBE7     		b	.L27
+ 422              	.LVL39:
+ 423              	.L33:
+ 424              	.LBB3:
+ 137:Core/Src/AB1815.c ****     }
+ 425              		.loc 1 137 9 view .LVU86
+ 426 003c FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
+ 427              	.LVL40:
+ 137:Core/Src/AB1815.c ****     }
+ 428              		.loc 1 137 9 is_stmt 0 view .LVU87
+ 429 0040 E8E7     		b	.L27
+ 430              	.L30:
+ 431              	.LBE3:
+ 147:Core/Src/AB1815.c ****         }
+ 148:Core/Src/AB1815.c ****     }
+ 149:Core/Src/AB1815.c **** 
+ 150:Core/Src/AB1815.c ****     while (HAL_I2C_Master_Transmit(&hi2c1, i2cAddr, array, num, 3000) != HAL_OK)
+ 432              		.loc 1 150 71 is_stmt 1 view .LVU88
+ 433              		.loc 1 150 12 is_stmt 0 view .LVU89
+ 434 0042 A3B2     		uxth	r3, r4
+ 435 0044 0C4A     		ldr	r2, .L36
+ 436 0046 1178     		ldrb	r1, [r2]
+ 437 0048 0C48     		ldr	r0, .L36+4
+ 438 004a 0D4A     		ldr	r2, .L36+8
+ 439 004c 0092     		str	r2, [sp]
+ 440 004e 2A00     		movs	r2, r5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 12
 
 
- 158:Core/Src/AB1815.c ****     // {
- 159:Core/Src/AB1815.c ****     //     // _log.trace("writeRegisters regAddr=%02x num=%u", regAddr, num);
- 160:Core/Src/AB1815.c ****     //     // _log.dump(array, num);
- 161:Core/Src/AB1815.c ****     //     // _log.print("\n");
- 162:Core/Src/AB1815.c ****     //     bResult = true;
- 163:Core/Src/AB1815.c ****     // }
- 164:Core/Src/AB1815.c ****     // else
- 165:Core/Src/AB1815.c ****     // {
- 166:Core/Src/AB1815.c ****     //     _log.error("failed to write regAddr=%02x stat=%d", regAddr, stat);
- 167:Core/Src/AB1815.c ****     // }
- 168:Core/Src/AB1815.c **** 
- 169:Core/Src/AB1815.c ****     if (lock)
- 437              		.loc 1 169 5 view .LVU92
- 438              		.loc 1 169 8 is_stmt 0 view .LVU93
- 439 0068 002E     		cmp	r6, #0
- 440 006a 02D1     		bne	.L33
- 441              	.L30:
- 170:Core/Src/AB1815.c ****     {
- 171:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
- 172:Core/Src/AB1815.c ****     }
- 173:Core/Src/AB1815.c ****     return bResult;
- 442              		.loc 1 173 5 is_stmt 1 view .LVU94
- 174:Core/Src/AB1815.c **** }
- 443              		.loc 1 174 1 is_stmt 0 view .LVU95
- 444 006c 0020     		movs	r0, #0
- 445 006e 04B0     		add	sp, sp, #16
- 446              		@ sp needed
- 447              	.LVL42:
- 448              	.LVL43:
- 449              		.loc 1 174 1 view .LVU96
- 450 0070 70BD     		pop	{r4, r5, r6, pc}
- 451              	.LVL44:
- 452              	.L33:
- 453              	.LBB5:
- 171:Core/Src/AB1815.c ****     }
- 454              		.loc 1 171 9 is_stmt 1 view .LVU97
- 455 0072 FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
- 456              	.LVL45:
- 457 0076 F9E7     		b	.L30
- 458              	.L35:
- 459              		.align	2
- 460              	.L34:
- 461 0078 00000000 		.word	i2cAddr
- 462 007c 00000000 		.word	hi2c1
- 463 0080 B80B0000 		.word	3000
- 464              	.LBE5:
- 465              		.cfi_endproc
- 466              	.LFE431:
- 468              		.section	.text.writeRegister,"ax",%progbits
- 469              		.align	1
- 470              		.global	writeRegister
- 471              		.syntax unified
- 472              		.code	16
- 473              		.thumb_func
- 475              	writeRegister:
- 476              	.LVL46:
- 477              	.LFB430:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 13
+ 441 0050 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+ 442              	.LVL41:
+ 443              		.loc 1 150 71 view .LVU90
+ 444 0054 0028     		cmp	r0, #0
+ 445 0056 07D0     		beq	.L34
+ 151:Core/Src/AB1815.c ****     {
+ 152:Core/Src/AB1815.c ****         if (HAL_I2C_GetError(&hi2c1) != HAL_I2C_ERROR_NONE) // HAL_I2C_ERROR_NONE
+ 446              		.loc 1 152 9 is_stmt 1 view .LVU91
+ 447              		.loc 1 152 13 is_stmt 0 view .LVU92
+ 448 0058 0848     		ldr	r0, .L36+4
+ 449 005a FFF7FEFF 		bl	HAL_I2C_GetError
+ 450              	.LVL42:
+ 451              		.loc 1 152 12 view .LVU93
+ 452 005e 0028     		cmp	r0, #0
+ 453 0060 EFD0     		beq	.L30
+ 153:Core/Src/AB1815.c ****         {
+ 154:Core/Src/AB1815.c ****             Error_Handler();
+ 454              		.loc 1 154 13 is_stmt 1 view .LVU94
+ 455 0062 FFF7FEFF 		bl	Error_Handler
+ 456              	.LVL43:
+ 457 0066 ECE7     		b	.L30
+ 458              	.L34:
+ 155:Core/Src/AB1815.c ****         }
+ 156:Core/Src/AB1815.c ****     }
+ 157:Core/Src/AB1815.c **** 
+ 158:Core/Src/AB1815.c ****     // for (size_t ii = 0; ii < num; ii++)
+ 159:Core/Src/AB1815.c ****     // {
+ 160:Core/Src/AB1815.c ****     //     wire.write(array[ii]);
+ 161:Core/Src/AB1815.c ****     // }
+ 162:Core/Src/AB1815.c ****     // int stat = wire.endTransmission(true);
+ 163:Core/Src/AB1815.c ****     // if (stat == 0)
+ 164:Core/Src/AB1815.c ****     // {
+ 165:Core/Src/AB1815.c ****     //     // _log.trace("writeRegisters regAddr=%02x num=%u", regAddr, num);
+ 166:Core/Src/AB1815.c ****     //     // _log.dump(array, num);
+ 167:Core/Src/AB1815.c ****     //     // _log.print("\n");
+ 168:Core/Src/AB1815.c ****     //     bResult = true;
+ 169:Core/Src/AB1815.c ****     // }
+ 170:Core/Src/AB1815.c ****     // else
+ 171:Core/Src/AB1815.c ****     // {
+ 172:Core/Src/AB1815.c ****     //     _log.error("failed to write regAddr=%02x stat=%d", regAddr, stat);
+ 173:Core/Src/AB1815.c ****     // }
+ 174:Core/Src/AB1815.c **** 
+ 175:Core/Src/AB1815.c ****     if (lock)
+ 459              		.loc 1 175 5 view .LVU95
+ 460              		.loc 1 175 8 is_stmt 0 view .LVU96
+ 461 0068 002E     		cmp	r6, #0
+ 462 006a 02D1     		bne	.L35
+ 463              	.L32:
+ 176:Core/Src/AB1815.c ****     {
+ 177:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
+ 178:Core/Src/AB1815.c ****     }
+ 179:Core/Src/AB1815.c ****     return bResult;
+ 464              		.loc 1 179 5 is_stmt 1 view .LVU97
+ 180:Core/Src/AB1815.c **** }
+ 465              		.loc 1 180 1 is_stmt 0 view .LVU98
+ 466 006c 0020     		movs	r0, #0
+ 467 006e 04B0     		add	sp, sp, #16
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 13
 
 
- 121:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
- 478              		.loc 1 121 1 view -0
- 479              		.cfi_startproc
- 480              		@ args = 0, pretend = 0, frame = 8
- 481              		@ frame_needed = 0, uses_anonymous_args = 0
- 121:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
- 482              		.loc 1 121 1 is_stmt 0 view .LVU99
- 483 0000 10B5     		push	{r4, lr}
- 484              	.LCFI8:
- 485              		.cfi_def_cfa_offset 8
- 486              		.cfi_offset 4, -8
- 487              		.cfi_offset 14, -4
- 488 0002 82B0     		sub	sp, sp, #8
- 489              	.LCFI9:
- 490              		.cfi_def_cfa_offset 16
- 491 0004 0C00     		movs	r4, r1
- 492 0006 1300     		movs	r3, r2
- 493 0008 6A46     		mov	r2, sp
- 494              	.LVL47:
- 121:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
- 495              		.loc 1 121 1 view .LVU100
- 496 000a D11D     		adds	r1, r2, #7
- 497              	.LVL48:
- 121:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
- 498              		.loc 1 121 1 view .LVU101
- 499 000c 0C70     		strb	r4, [r1]
- 122:Core/Src/AB1815.c **** }
- 500              		.loc 1 122 5 is_stmt 1 view .LVU102
- 122:Core/Src/AB1815.c **** }
- 501              		.loc 1 122 12 is_stmt 0 view .LVU103
- 502 000e 0122     		movs	r2, #1
- 503 0010 FFF7FEFF 		bl	writeRegisters
- 504              	.LVL49:
- 123:Core/Src/AB1815.c **** 
- 505              		.loc 1 123 1 view .LVU104
- 506 0014 02B0     		add	sp, sp, #8
- 507              		@ sp needed
- 508 0016 10BD     		pop	{r4, pc}
- 509              		.cfi_endproc
- 510              	.LFE430:
- 512              		.section	.text.maskRegister,"ax",%progbits
- 513              		.align	1
- 514              		.global	maskRegister
- 515              		.syntax unified
- 516              		.code	16
- 517              		.thumb_func
- 519              	maskRegister:
- 520              	.LVL50:
- 521              	.LFB432:
- 175:Core/Src/AB1815.c **** 
- 176:Core/Src/AB1815.c **** bool maskRegister(uint8_t regAddr, uint8_t andValue, uint8_t orValue, bool lock)
- 177:Core/Src/AB1815.c **** {
- 522              		.loc 1 177 1 is_stmt 1 view -0
- 523              		.cfi_startproc
- 524              		@ args = 0, pretend = 0, frame = 0
- 525              		@ frame_needed = 0, uses_anonymous_args = 0
- 526              		.loc 1 177 1 is_stmt 0 view .LVU106
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 14
+ 468              		@ sp needed
+ 469              	.LVL44:
+ 470              	.LVL45:
+ 471              		.loc 1 180 1 view .LVU99
+ 472 0070 70BD     		pop	{r4, r5, r6, pc}
+ 473              	.LVL46:
+ 474              	.L35:
+ 475              	.LBB4:
+ 177:Core/Src/AB1815.c ****     }
+ 476              		.loc 1 177 9 is_stmt 1 view .LVU100
+ 477 0072 FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
+ 478              	.LVL47:
+ 479 0076 F9E7     		b	.L32
+ 480              	.L37:
+ 481              		.align	2
+ 482              	.L36:
+ 483 0078 00000000 		.word	i2cAddr
+ 484 007c 00000000 		.word	hi2c1
+ 485 0080 B80B0000 		.word	3000
+ 486              	.LBE4:
+ 487              		.cfi_endproc
+ 488              	.LFE431:
+ 490              		.section	.text.writeRegister,"ax",%progbits
+ 491              		.align	1
+ 492              		.global	writeRegister
+ 493              		.syntax unified
+ 494              		.code	16
+ 495              		.thumb_func
+ 497              	writeRegister:
+ 498              	.LVL48:
+ 499              	.LFB430:
+ 127:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
+ 500              		.loc 1 127 1 view -0
+ 501              		.cfi_startproc
+ 502              		@ args = 0, pretend = 0, frame = 8
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
+ 504              		.loc 1 127 1 is_stmt 0 view .LVU102
+ 505 0000 10B5     		push	{r4, lr}
+ 506              	.LCFI8:
+ 507              		.cfi_def_cfa_offset 8
+ 508              		.cfi_offset 4, -8
+ 509              		.cfi_offset 14, -4
+ 510 0002 82B0     		sub	sp, sp, #8
+ 511              	.LCFI9:
+ 512              		.cfi_def_cfa_offset 16
+ 513 0004 0C00     		movs	r4, r1
+ 514 0006 1300     		movs	r3, r2
+ 515 0008 6A46     		mov	r2, sp
+ 516              	.LVL49:
+ 127:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
+ 517              		.loc 1 127 1 view .LVU103
+ 518 000a D11D     		adds	r1, r2, #7
+ 519              	.LVL50:
+ 127:Core/Src/AB1815.c ****     return writeRegisters(regAddr, &value, 1, lock);
+ 520              		.loc 1 127 1 view .LVU104
+ 521 000c 0C70     		strb	r4, [r1]
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 14
 
 
- 527 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 528              	.LCFI10:
- 529              		.cfi_def_cfa_offset 24
- 530              		.cfi_offset 3, -24
- 531              		.cfi_offset 4, -20
- 532              		.cfi_offset 5, -16
- 533              		.cfi_offset 6, -12
- 534              		.cfi_offset 7, -8
- 535              		.cfi_offset 14, -4
- 536 0002 0700     		movs	r7, r0
- 537 0004 1600     		movs	r6, r2
- 538 0006 1D1E     		subs	r5, r3, #0
- 178:Core/Src/AB1815.c ****     bool bResult = false;
- 539              		.loc 1 178 5 is_stmt 1 view .LVU107
- 540              	.LVL51:
- 179:Core/Src/AB1815.c ****     uint32_t primask_bit;
- 541              		.loc 1 179 5 view .LVU108
- 180:Core/Src/AB1815.c ****     if (lock)
- 542              		.loc 1 180 5 view .LVU109
- 543              		.loc 1 180 8 is_stmt 0 view .LVU110
- 544 0008 0CD1     		bne	.L41
- 545              	.LVL52:
- 546              	.L38:
- 181:Core/Src/AB1815.c ****     {
- 182:Core/Src/AB1815.c ****         UTILS_ENTER_CRITICAL_SECTION();
- 183:Core/Src/AB1815.c ****     }
- 184:Core/Src/AB1815.c **** 
- 185:Core/Src/AB1815.c ****     uint8_t value = 0;
- 547              		.loc 1 185 5 is_stmt 1 view .LVU111
- 186:Core/Src/AB1815.c **** 
- 187:Core/Src/AB1815.c ****     bResult = readRegister(regAddr, value, 1);
- 548              		.loc 1 187 5 view .LVU112
- 549              		.loc 1 187 15 is_stmt 0 view .LVU113
- 550 000a 0122     		movs	r2, #1
- 551 000c 0021     		movs	r1, #0
- 552 000e 3800     		movs	r0, r7
- 553 0010 FFF7FEFF 		bl	readRegister
- 554              	.LVL53:
- 555 0014 041E     		subs	r4, r0, #0
- 556              	.LVL54:
- 188:Core/Src/AB1815.c ****     if (bResult)
- 557              		.loc 1 188 5 is_stmt 1 view .LVU114
- 558              		.loc 1 188 8 is_stmt 0 view .LVU115
- 559 0016 01D0     		beq	.L39
- 560              	.LBB6:
- 189:Core/Src/AB1815.c ****     {
- 190:Core/Src/AB1815.c ****         uint8_t newValue = (value & andValue) | orValue;
- 561              		.loc 1 190 9 is_stmt 1 view .LVU116
- 562              	.LVL55:
- 191:Core/Src/AB1815.c **** 
- 192:Core/Src/AB1815.c ****         if (newValue != value)
- 563              		.loc 1 192 9 view .LVU117
- 564              		.loc 1 192 12 is_stmt 0 view .LVU118
- 565 0018 002E     		cmp	r6, #0
- 566 001a 06D1     		bne	.L42
- 567              	.LVL56:
- 568              	.L39:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 15
+ 128:Core/Src/AB1815.c **** }
+ 522              		.loc 1 128 5 is_stmt 1 view .LVU105
+ 128:Core/Src/AB1815.c **** }
+ 523              		.loc 1 128 12 is_stmt 0 view .LVU106
+ 524 000e 0122     		movs	r2, #1
+ 525 0010 FFF7FEFF 		bl	writeRegisters
+ 526              	.LVL51:
+ 129:Core/Src/AB1815.c **** 
+ 527              		.loc 1 129 1 view .LVU107
+ 528 0014 02B0     		add	sp, sp, #8
+ 529              		@ sp needed
+ 530 0016 10BD     		pop	{r4, pc}
+ 531              		.cfi_endproc
+ 532              	.LFE430:
+ 534              		.section	.text.maskRegister,"ax",%progbits
+ 535              		.align	1
+ 536              		.global	maskRegister
+ 537              		.syntax unified
+ 538              		.code	16
+ 539              		.thumb_func
+ 541              	maskRegister:
+ 542              	.LVL52:
+ 543              	.LFB432:
+ 181:Core/Src/AB1815.c **** 
+ 182:Core/Src/AB1815.c **** bool maskRegister(uint8_t regAddr, uint8_t andValue, uint8_t orValue, bool lock)
+ 183:Core/Src/AB1815.c **** {
+ 544              		.loc 1 183 1 is_stmt 1 view -0
+ 545              		.cfi_startproc
+ 546              		@ args = 0, pretend = 0, frame = 0
+ 547              		@ frame_needed = 0, uses_anonymous_args = 0
+ 548              		.loc 1 183 1 is_stmt 0 view .LVU109
+ 549 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 550              	.LCFI10:
+ 551              		.cfi_def_cfa_offset 24
+ 552              		.cfi_offset 3, -24
+ 553              		.cfi_offset 4, -20
+ 554              		.cfi_offset 5, -16
+ 555              		.cfi_offset 6, -12
+ 556              		.cfi_offset 7, -8
+ 557              		.cfi_offset 14, -4
+ 558 0002 0700     		movs	r7, r0
+ 559 0004 1600     		movs	r6, r2
+ 560 0006 1D1E     		subs	r5, r3, #0
+ 184:Core/Src/AB1815.c ****     bool bResult = false;
+ 561              		.loc 1 184 5 is_stmt 1 view .LVU110
+ 562              	.LVL53:
+ 185:Core/Src/AB1815.c ****     uint32_t primask_bit;
+ 563              		.loc 1 185 5 view .LVU111
+ 186:Core/Src/AB1815.c ****     if (lock)
+ 564              		.loc 1 186 5 view .LVU112
+ 565              		.loc 1 186 8 is_stmt 0 view .LVU113
+ 566 0008 0CD1     		bne	.L43
+ 567              	.LVL54:
+ 568              	.L40:
+ 187:Core/Src/AB1815.c ****     {
+ 188:Core/Src/AB1815.c ****         UTILS_ENTER_CRITICAL_SECTION();
+ 189:Core/Src/AB1815.c ****     }
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 15
 
 
- 569              		.loc 1 192 12 view .LVU119
- 570              	.LBE6:
- 193:Core/Src/AB1815.c ****         {
- 194:Core/Src/AB1815.c ****             bResult = writeRegister(regAddr, newValue, 1);
- 195:Core/Src/AB1815.c ****         }
- 196:Core/Src/AB1815.c ****     }
+ 190:Core/Src/AB1815.c **** 
+ 191:Core/Src/AB1815.c ****     uint8_t value = 0;
+ 569              		.loc 1 191 5 is_stmt 1 view .LVU114
+ 192:Core/Src/AB1815.c **** 
+ 193:Core/Src/AB1815.c ****     bResult = readRegister(regAddr, value, 1);
+ 570              		.loc 1 193 5 view .LVU115
+ 571              		.loc 1 193 15 is_stmt 0 view .LVU116
+ 572 000a 0122     		movs	r2, #1
+ 573 000c 0021     		movs	r1, #0
+ 574 000e 3800     		movs	r0, r7
+ 575 0010 FFF7FEFF 		bl	readRegister
+ 576              	.LVL55:
+ 577 0014 041E     		subs	r4, r0, #0
+ 578              	.LVL56:
+ 194:Core/Src/AB1815.c ****     if (bResult)
+ 579              		.loc 1 194 5 is_stmt 1 view .LVU117
+ 580              		.loc 1 194 8 is_stmt 0 view .LVU118
+ 581 0016 01D0     		beq	.L41
+ 582              	.LBB5:
+ 195:Core/Src/AB1815.c ****     {
+ 196:Core/Src/AB1815.c ****         uint8_t newValue = (value & andValue) | orValue;
+ 583              		.loc 1 196 9 is_stmt 1 view .LVU119
+ 584              	.LVL57:
  197:Core/Src/AB1815.c **** 
- 198:Core/Src/AB1815.c ****     if (lock)
- 571              		.loc 1 198 5 is_stmt 1 view .LVU120
- 572              		.loc 1 198 8 is_stmt 0 view .LVU121
- 573 001c 002D     		cmp	r5, #0
- 574 001e 0BD1     		bne	.L43
- 575              	.L40:
- 199:Core/Src/AB1815.c ****     {
- 200:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
- 201:Core/Src/AB1815.c ****     }
- 202:Core/Src/AB1815.c ****     return bResult;
- 576              		.loc 1 202 5 is_stmt 1 view .LVU122
- 203:Core/Src/AB1815.c **** }
- 577              		.loc 1 203 1 is_stmt 0 view .LVU123
- 578 0020 2000     		movs	r0, r4
- 579              		@ sp needed
- 580              	.LVL57:
- 581              		.loc 1 203 1 view .LVU124
- 582 0022 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 583              	.LVL58:
- 584              	.L41:
- 585              	.LBB7:
- 182:Core/Src/AB1815.c ****     }
- 586              		.loc 1 182 9 is_stmt 1 view .LVU125
- 587 0024 FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
- 588              	.LVL59:
- 182:Core/Src/AB1815.c ****     }
- 589              		.loc 1 182 9 is_stmt 0 view .LVU126
- 590 0028 EFE7     		b	.L38
- 591              	.LVL60:
- 592              	.L42:
- 182:Core/Src/AB1815.c ****     }
- 593              		.loc 1 182 9 view .LVU127
- 594              	.LBE7:
- 595              	.LBB8:
- 194:Core/Src/AB1815.c ****         }
- 596              		.loc 1 194 13 is_stmt 1 view .LVU128
- 194:Core/Src/AB1815.c ****         }
- 597              		.loc 1 194 23 is_stmt 0 view .LVU129
- 598 002a 0122     		movs	r2, #1
- 599 002c 3100     		movs	r1, r6
- 600 002e 3800     		movs	r0, r7
- 601              	.LVL61:
- 194:Core/Src/AB1815.c ****         }
- 602              		.loc 1 194 23 view .LVU130
- 603 0030 FFF7FEFF 		bl	writeRegister
- 604              	.LVL62:
- 605 0034 0400     		movs	r4, r0
- 606              	.LVL63:
- 194:Core/Src/AB1815.c ****         }
- 607              		.loc 1 194 23 view .LVU131
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 16
+ 198:Core/Src/AB1815.c ****         if (newValue != value)
+ 585              		.loc 1 198 9 view .LVU120
+ 586              		.loc 1 198 12 is_stmt 0 view .LVU121
+ 587 0018 002E     		cmp	r6, #0
+ 588 001a 06D1     		bne	.L44
+ 589              	.LVL58:
+ 590              	.L41:
+ 591              		.loc 1 198 12 view .LVU122
+ 592              	.LBE5:
+ 199:Core/Src/AB1815.c ****         {
+ 200:Core/Src/AB1815.c ****             bResult = writeRegister(regAddr, newValue, 1);
+ 201:Core/Src/AB1815.c ****         }
+ 202:Core/Src/AB1815.c ****     }
+ 203:Core/Src/AB1815.c **** 
+ 204:Core/Src/AB1815.c ****     if (lock)
+ 593              		.loc 1 204 5 is_stmt 1 view .LVU123
+ 594              		.loc 1 204 8 is_stmt 0 view .LVU124
+ 595 001c 002D     		cmp	r5, #0
+ 596 001e 0BD1     		bne	.L45
+ 597              	.L42:
+ 205:Core/Src/AB1815.c ****     {
+ 206:Core/Src/AB1815.c ****         UTILS_EXIT_CRITICAL_SECTION();
+ 207:Core/Src/AB1815.c ****     }
+ 208:Core/Src/AB1815.c ****     return bResult;
+ 598              		.loc 1 208 5 is_stmt 1 view .LVU125
+ 209:Core/Src/AB1815.c **** }
+ 599              		.loc 1 209 1 is_stmt 0 view .LVU126
+ 600 0020 2000     		movs	r0, r4
+ 601              		@ sp needed
+ 602              	.LVL59:
+ 603              		.loc 1 209 1 view .LVU127
+ 604 0022 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 605              	.LVL60:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 16
 
 
- 608 0036 F1E7     		b	.L39
- 609              	.LVL64:
- 610              	.L43:
- 194:Core/Src/AB1815.c ****         }
- 611              		.loc 1 194 23 view .LVU132
- 612              	.LBE8:
- 613              	.LBB9:
- 200:Core/Src/AB1815.c ****     }
- 614              		.loc 1 200 9 is_stmt 1 view .LVU133
- 615 0038 FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
- 616              	.LVL65:
- 617 003c F0E7     		b	.L40
- 618              	.LBE9:
- 619              		.cfi_endproc
- 620              	.LFE432:
- 622              		.global	i2cAddr
- 623              		.section	.data.i2cAddr,"aw"
- 626              	i2cAddr:
- 627 0000 D2       		.byte	-46
- 628              		.global	foutPin
- 629              		.section	.bss.foutPin,"aw",%nobits
- 630              		.align	1
- 633              	foutPin:
- 634 0000 0000     		.space	2
- 635              		.text
- 636              	.Letext0:
- 637              		.file 2 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 638              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 639              		.file 4 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
- 640              		.file 5 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/inc
- 641              		.file 6 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
- 642              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_gpio.h"
- 643              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_dma.h"
- 644              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_i2c.h"
- 645              		.file 10 "Core\\Inc/AB1815.h"
- 646              		.file 11 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
- 647              		.file 12 "Core\\Inc/main.h"
- 648              		.file 13 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
- 649              		.file 14 "<built-in>"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwqNW84.s 			page 17
+ 606              	.L43:
+ 607              	.LBB6:
+ 188:Core/Src/AB1815.c ****     }
+ 608              		.loc 1 188 9 is_stmt 1 view .LVU128
+ 609 0024 FFF7FEFF 		bl	UTILS_ENTER_CRITICAL_SECTION
+ 610              	.LVL61:
+ 188:Core/Src/AB1815.c ****     }
+ 611              		.loc 1 188 9 is_stmt 0 view .LVU129
+ 612 0028 EFE7     		b	.L40
+ 613              	.LVL62:
+ 614              	.L44:
+ 188:Core/Src/AB1815.c ****     }
+ 615              		.loc 1 188 9 view .LVU130
+ 616              	.LBE6:
+ 617              	.LBB7:
+ 200:Core/Src/AB1815.c ****         }
+ 618              		.loc 1 200 13 is_stmt 1 view .LVU131
+ 200:Core/Src/AB1815.c ****         }
+ 619              		.loc 1 200 23 is_stmt 0 view .LVU132
+ 620 002a 0122     		movs	r2, #1
+ 621 002c 3100     		movs	r1, r6
+ 622 002e 3800     		movs	r0, r7
+ 623              	.LVL63:
+ 200:Core/Src/AB1815.c ****         }
+ 624              		.loc 1 200 23 view .LVU133
+ 625 0030 FFF7FEFF 		bl	writeRegister
+ 626              	.LVL64:
+ 627 0034 0400     		movs	r4, r0
+ 628              	.LVL65:
+ 200:Core/Src/AB1815.c ****         }
+ 629              		.loc 1 200 23 view .LVU134
+ 630 0036 F1E7     		b	.L41
+ 631              	.LVL66:
+ 632              	.L45:
+ 200:Core/Src/AB1815.c ****         }
+ 633              		.loc 1 200 23 view .LVU135
+ 634              	.LBE7:
+ 635              	.LBB8:
+ 206:Core/Src/AB1815.c ****     }
+ 636              		.loc 1 206 9 is_stmt 1 view .LVU136
+ 637 0038 FFF7FEFF 		bl	UTILS_EXIT_CRITICAL_SECTION
+ 638              	.LVL67:
+ 639 003c F0E7     		b	.L42
+ 640              	.LBE8:
+ 641              		.cfi_endproc
+ 642              	.LFE432:
+ 644              		.global	i2cAddr
+ 645              		.section	.data.i2cAddr,"aw"
+ 648              	i2cAddr:
+ 649 0000 D2       		.byte	-46
+ 650              		.global	foutPin
+ 651              		.section	.bss.foutPin,"aw",%nobits
+ 652              		.align	1
+ 655              	foutPin:
+ 656 0000 0000     		.space	2
+ 657              		.text
+ 658              	.Letext0:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 17
+
+
+ 659              		.file 2 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 660              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 661              		.file 4 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
+ 662              		.file 5 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/inc
+ 663              		.file 6 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
+ 664              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_gpio.h"
+ 665              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_dma.h"
+ 666              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_i2c.h"
+ 667              		.file 10 "Core\\Inc/AB1815.h"
+ 668              		.file 11 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
+ 669              		.file 12 "Core\\Inc/main.h"
+ 670              		.file 13 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
+ 671              		.file 14 "<built-in>"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 AB1815.c
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:19     .text.readRegisters:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:25     .text.readRegisters:00000000 readRegisters
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:139    .text.readRegisters:00000074 $d
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:626    .data.i2cAddr:00000000 i2cAddr
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:147    .text.readRegister:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:153    .text.readRegister:00000000 readRegister
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:191    .rodata.detectChip.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:198    .text.detectChip:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:204    .text.detectChip:00000000 detectChip
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:285    .text.detectChip:00000048 $d
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:633    .bss.foutPin:00000000 foutPin
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:294    .text.readRegister_value:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:300    .text.readRegister_value:00000000 readRegister_value
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:332    .text.writeRegisters:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:338    .text.writeRegisters:00000000 writeRegisters
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:461    .text.writeRegisters:00000078 $d
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:469    .text.writeRegister:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:475    .text.writeRegister:00000000 writeRegister
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:513    .text.maskRegister:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:519    .text.maskRegister:00000000 maskRegister
-C:\Users\upo\AppData\Local\Temp\ccwqNW84.s:630    .bss.foutPin:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:19     .rodata.readRegisters.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:23     .text.readRegisters:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:29     .text.readRegisters:00000000 readRegisters
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:157    .text.readRegisters:00000088 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:648    .data.i2cAddr:00000000 i2cAddr
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:165    .text.readRegister:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:171    .text.readRegister:00000000 readRegister
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:213    .rodata.detectChip.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:220    .text.detectChip:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:226    .text.detectChip:00000000 detectChip
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:307    .text.detectChip:00000048 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:655    .bss.foutPin:00000000 foutPin
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:316    .text.readRegister_value:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:322    .text.readRegister_value:00000000 readRegister_value
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:354    .text.writeRegisters:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:360    .text.writeRegisters:00000000 writeRegisters
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:483    .text.writeRegisters:00000078 $d
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:491    .text.writeRegister:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:497    .text.writeRegister:00000000 writeRegister
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:535    .text.maskRegister:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:541    .text.maskRegister:00000000 maskRegister
+C:\Users\upo\AppData\Local\Temp\ccwm5nnV.s:652    .bss.foutPin:00000000 $d
 
 UNDEFINED SYMBOLS
 UTILS_ENTER_CRITICAL_SECTION
+puts
+UTILS_EXIT_CRITICAL_SECTION
 HAL_I2C_Master_Transmit
 HAL_I2C_GetError
 Error_Handler
 HAL_I2C_Master_Receive
-UTILS_EXIT_CRITICAL_SECTION
 hi2c1
-puts
 HAL_GetTick
 HAL_GPIO_ReadPin

@@ -29,6 +29,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "printf.h"
+#include "AB1815.h"
 
 /* USER CODE END Includes */
 
@@ -100,7 +101,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  printf("Main\n");
+  printf("Main  %d\n", detectChip());
 
   /* USER CODE END 2 */
 

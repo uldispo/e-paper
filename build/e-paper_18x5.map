@@ -1549,10 +1549,12 @@ Discarded input sections
  .text          0x00000000        0x0 build/AB1815.o
  .data          0x00000000        0x0 build/AB1815.o
  .bss           0x00000000        0x0 build/AB1815.o
+ .rodata.readRegisters.str1.4
+                0x00000000        0xd build/AB1815.o
  .text.readRegisters
-                0x00000000       0x80 build/AB1815.o
+                0x00000000       0x98 build/AB1815.o
  .text.readRegister
-                0x00000000       0x18 build/AB1815.o
+                0x00000000       0x22 build/AB1815.o
  .rodata.detectChip.str1.4
                 0x00000000       0x25 build/AB1815.o
  .text.detectChip
@@ -1567,16 +1569,16 @@ Discarded input sections
                 0x00000000       0x3e build/AB1815.o
  .data.i2cAddr  0x00000000        0x1 build/AB1815.o
  .bss.foutPin   0x00000000        0x2 build/AB1815.o
- .debug_info    0x00000000     0x19ea build/AB1815.o
+ .debug_info    0x00000000     0x1a42 build/AB1815.o
  .debug_abbrev  0x00000000      0x2b0 build/AB1815.o
- .debug_loc     0x00000000      0x5d5 build/AB1815.o
+ .debug_loc     0x00000000      0x5c5 build/AB1815.o
  .debug_aranges
                 0x00000000       0x50 build/AB1815.o
  .debug_ranges  0x00000000       0x58 build/AB1815.o
- .debug_line    0x00000000      0x4c1 build/AB1815.o
+ .debug_line    0x00000000      0x4ce build/AB1815.o
  .debug_str     0x00000000     0x159c build/AB1815.o
  .comment       0x00000000       0x44 build/AB1815.o
- .debug_frame   0x00000000       0xd8 build/AB1815.o
+ .debug_frame   0x00000000       0xdc build/AB1815.o
  .ARM.attributes
                 0x00000000       0x2c build/AB1815.o
  .text          0x00000000       0x14 build/startup_stm32u073xx.o

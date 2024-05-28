@@ -21,6 +21,9 @@ extern I2C_HandleTypeDef hi2c1;
 // uint32_t primask_bit;
 static inline uint32_t utils_enter_critical_section(void);
 static inline void utils_exit_critical_section(uint32_t primask_bit);
+uint16_t foutPin = 0;
+uint8_t i2cAddr = 0xD2;
+
 
 bool detectChip()
 {
@@ -28,7 +31,7 @@ bool detectChip()
     uint8_t value = 0;
 
     // FOUT/nIRQ  will go HIGH when the chip is ready to respond
-    if (foutPin != PIN_INVALID)
+    if (foutPin != 0)
     {
         unsigned long start = HAL_GetTick();
         bool ready = false;
@@ -74,10 +77,11 @@ bool readRegisters(uint8_t regAddr, uint8_t *array, uint8_t num, bool lock)
 {
     bool bResult = false;
     uint32_t primask_bit;
-    // if (lock)
-    // {
-    UTILS_ENTER_CRITICAL_SECTION();
-    // }
+
+    if (lock)
+    {
+    	 primask_bit = utils_enter_critical_section();
+    }
 
     // write(regAddr);
     // HAL_I2C_Master_Transmit(&hi2c1, (uint16_t)I2C_ADDRESS, (uint8_t *)aTxBuffer, TXBUFFERSIZE, 10000)
@@ -103,7 +107,7 @@ bool readRegisters(uint8_t regAddr, uint8_t *array, uint8_t num, bool lock)
 
     if (lock)
     {
-        UTILS_EXIT_CRITICAL_SECTION();
+    	utils_exit_critical_section(primask_bit);
     }
     return bResult;
 }
@@ -126,9 +130,10 @@ bool writeRegisters(uint8_t regAddr, uint8_t *array, size_t num, bool lock)
 {
     bool bResult = false;
     uint32_t primask_bit;
+
     if (lock)
     {
-        UTILS_ENTER_CRITICAL_SECTION();
+    	primask_bit = utils_enter_critical_section();
     }
 
     // wire.beginTransmission(i2cAddr);
@@ -149,26 +154,9 @@ bool writeRegisters(uint8_t regAddr, uint8_t *array, size_t num, bool lock)
         }
     }
 
-    // for (size_t ii = 0; ii < num; ii++)
-    // {
-    //     wire.write(array[ii]);
-    // }
-    // int stat = wire.endTransmission(true);
-    // if (stat == 0)
-    // {
-    //     // _log.trace("writeRegisters regAddr=%02x num=%u", regAddr, num);
-    //     // _log.dump(array, num);
-    //     // _log.print("\n");
-    //     bResult = true;
-    // }
-    // else
-    // {
-    //     _log.error("failed to write regAddr=%02x stat=%d", regAddr, stat);
-    // }
-
     if (lock)
     {
-        UTILS_EXIT_CRITICAL_SECTION();
+    	utils_exit_critical_section(primask_bit);
     }
     return bResult;
 }
@@ -179,7 +167,7 @@ bool maskRegister(uint8_t regAddr, uint8_t andValue, uint8_t orValue, bool lock)
     uint32_t primask_bit;
     if (lock)
     {
-        UTILS_ENTER_CRITICAL_SECTION();
+    	primask_bit = utils_enter_critical_section();
     }
 
     uint8_t value = 0;
@@ -197,12 +185,12 @@ bool maskRegister(uint8_t regAddr, uint8_t andValue, uint8_t orValue, bool lock)
 
     if (lock)
     {
-        UTILS_EXIT_CRITICAL_SECTION();
+    	utils_exit_critical_section(primask_bit);
     }
     return bResult;
 }
 
-// ******************************************************************************
+// ************************ critical *****************************************
 
 static inline uint32_t utils_enter_critical_section(void)
 {
@@ -215,3 +203,6 @@ static inline void utils_exit_critical_section(uint32_t primask_bit)
 {
     __set_PRIMASK(primask_bit);
 }
+
+
+

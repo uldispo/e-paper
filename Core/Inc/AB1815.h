@@ -21,7 +21,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#define PIN_INVALID 0
+//#define PIN_INVALID 0
 
 // static inline uint32_t utils_enter_critical_section(void)
 // {
@@ -47,13 +47,13 @@
     remap.reset_pin = PIN_INVALID; // default
     remap.int_pin = PIN_INVALID; // default
  */
-uint16_t foutPin = PIN_INVALID;
+//uint16_t foutPin = 0;
 
 /**
  * @brief The AB18X5 includes a standard I2C interface. The device is accessed at addresses 0xD2/D3, and
 supports Fast Mode (up to 400 kHz).
  */
-uint8_t i2cAddr = 0xD2;
+//uint8_t i2cAddr = 0xD2;
 
 /**
  * @brief Checks the I2C bus to make sure there is an AB1815 present

@@ -1,7 +1,9 @@
-../Core/Src/AB1815.c:26:6:detectChip	32	static
-../Core/Src/AB1815.c:70:6:readRegister	24	static
-../Core/Src/AB1815.c:75:6:readRegisters	40	static
-../Core/Src/AB1815.c:113:9:readRegister_value	32	static
-../Core/Src/AB1815.c:122:6:writeRegister	24	static
-../Core/Src/AB1815.c:127:6:writeRegisters	48	static
-../Core/Src/AB1815.c:178:6:maskRegister	40	static
+../Core/Src/AB1815.c:28:6:detectChip	32	static
+../Core/Src/AB1815.c:71:6:readRegister	24	static
+../Core/Src/AB1815.c:76:6:readRegisters	40	static
+../Core/Src/AB1815.c:115:9:readRegister_value	32	static
+../Core/Src/AB1815.c:124:6:writeRegister	24	static
+../Core/Src/AB1815.c:129:6:writeRegisters	48	static
+../Core/Src/AB1815.c:164:6:maskRegister	48	static
+../Core/Src/AB1815.c:195:24:utils_enter_critical_section	16	static,ignoring_inline_asm
+../Core/Src/AB1815.c:202:20:utils_exit_critical_section	24	static,ignoring_inline_asm
