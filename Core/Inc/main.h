@@ -23,15 +23,14 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32u0xx_hal.h"
 
-  /* Private includes ----------------------------------------------------------*/
-  /* USER CODE BEGIN Includes */
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 #include <stm32u073xx.h>
 #include "stm32u0xx_ll_pwr.h"
 #include <stdio.h>
@@ -40,25 +39,25 @@ extern "C"
 #include <stdbool.h>
 #include <stdint.h>
 
-  /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-  /* Exported types ------------------------------------------------------------*/
-  /* USER CODE BEGIN ET */
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
 
-  /* USER CODE END ET */
+/* USER CODE END ET */
 
-  /* Exported constants --------------------------------------------------------*/
-  /* USER CODE BEGIN EC */
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
 
-  /* USER CODE END EC */
+/* USER CODE END EC */
 
-  /* Exported macro ------------------------------------------------------------*/
-  /* USER CODE BEGIN EM */
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
 
-  /* USER CODE END EM */
+/* USER CODE END EM */
 
-  /* Exported functions prototypes ---------------------------------------------*/
-  void Error_Handler(void);
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -86,36 +85,28 @@ extern "C"
 #define CS_Pin GPIO_PIN_12
 #define CS_GPIO_Port GPIOA
 
-  /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
 
-#define CS_H() GPIOA->BSRR = GPIO_BSRR_BS12 // display
+#define CS_H() GPIOA->BSRR = GPIO_BSRR_BS12 // CS display
 #define CS_L() GPIOA->BSRR = GPIO_BSRR_BR12
 
-#define CSB_H() GPIOA->BSRR = GPIO_BSRR_BS10 // BME280
+#define CSB_H() GPIOA->BSRR = GPIO_BSRR_BS10 // CS BME280
 #define CSB_L() GPIOA->BSRR = GPIO_BSRR_BR10
 
-#define RST_H() GPIOA->BSRR = GPIO_BSRR_BS11 // Display
+#define RST_H() GPIOA->BSRR = GPIO_BSRR_BS11 // Reset Display
 #define RST_L() GPIOA->BSRR = GPIO_BSRR_BR11
 
 #define LED1_ON() GPIOB->BSRR = GPIO_BSRR_BS1
 #define LED1_OFF() GPIOB->BSRR = GPIO_BSRR_BR1
 
-#define DC_H() GPIOA->BSRR = GPIO_BSRR_BS8
+#define DC_H() GPIOA->BSRR = GPIO_BSRR_BS8		// Data/command display
 #define DC_L() GPIOA->BSRR = GPIO_BSRR_BR8
 
-//  static inline uint32_t utils_enter_critical_section(void)
-//  {
-//    uint32_t primask_bit = __get_PRIMASK();
-//    __disable_irq();
-//    return primask_bit;
-//  }
-//
-//  static inline void utils_exit_critical_section(uint32_t primask_bit)
-//  {
-//    __set_PRIMASK(primask_bit);
-//  }
+#define RTC_H() GPIOB->BSRR = GPIO_BSRR_BS14		// CS RTC
+#define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
-  /* USER CODE END Private defines */
+
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }

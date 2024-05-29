@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   30:Drivers/CMSIS/Include/core_cm0plus.h **** 
   31:Drivers/CMSIS/Include/core_cm0plus.h **** #ifndef __CORE_CM0PLUS_H_GENERIC
   32:Drivers/CMSIS/Include/core_cm0plus.h **** #define __CORE_CM0PLUS_H_GENERIC
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 2
 
 
   33:Drivers/CMSIS/Include/core_cm0plus.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   87:Drivers/CMSIS/Include/core_cm0plus.h **** 
   88:Drivers/CMSIS/Include/core_cm0plus.h **** #elif defined ( __GNUC__ )
   89:Drivers/CMSIS/Include/core_cm0plus.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 3
 
 
   90:Drivers/CMSIS/Include/core_cm0plus.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  144:Drivers/CMSIS/Include/core_cm0plus.h **** 
  145:Drivers/CMSIS/Include/core_cm0plus.h ****   #ifndef __VTOR_PRESENT
  146:Drivers/CMSIS/Include/core_cm0plus.h ****     #define __VTOR_PRESENT            0U
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 4
 
 
  147:Drivers/CMSIS/Include/core_cm0plus.h ****     #warning "__VTOR_PRESENT not defined in device header file; using default!"
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  201:Drivers/CMSIS/Include/core_cm0plus.h ****   \ingroup    CMSIS_core_register
  202:Drivers/CMSIS/Include/core_cm0plus.h ****   \defgroup   CMSIS_CORE  Status and Control Registers
  203:Drivers/CMSIS/Include/core_cm0plus.h ****   \brief      Core Register type definitions.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 5
 
 
  204:Drivers/CMSIS/Include/core_cm0plus.h ****   @{
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  258:Drivers/CMSIS/Include/core_cm0plus.h **** typedef union
  259:Drivers/CMSIS/Include/core_cm0plus.h **** {
  260:Drivers/CMSIS/Include/core_cm0plus.h ****   struct
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 6
 
 
  261:Drivers/CMSIS/Include/core_cm0plus.h ****   {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  315:Drivers/CMSIS/Include/core_cm0plus.h **** /*@} end of group CMSIS_CORE */
  316:Drivers/CMSIS/Include/core_cm0plus.h **** 
  317:Drivers/CMSIS/Include/core_cm0plus.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 7
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 7
 
 
  318:Drivers/CMSIS/Include/core_cm0plus.h **** /**
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  372:Drivers/CMSIS/Include/core_cm0plus.h **** /* SCB CPUID Register Definitions */
  373:Drivers/CMSIS/Include/core_cm0plus.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24U                                            /*!< SCB 
  374:Drivers/CMSIS/Include/core_cm0plus.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 8
 
 
  375:Drivers/CMSIS/Include/core_cm0plus.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  429:Drivers/CMSIS/Include/core_cm0plus.h **** #define SCB_AIRCR_ENDIANESS_Pos            15U                                            /*!< SCB 
  430:Drivers/CMSIS/Include/core_cm0plus.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
  431:Drivers/CMSIS/Include/core_cm0plus.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 9
 
 
  432:Drivers/CMSIS/Include/core_cm0plus.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2U                                            /*!< SCB 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  486:Drivers/CMSIS/Include/core_cm0plus.h **** 
  487:Drivers/CMSIS/Include/core_cm0plus.h **** #define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysT
  488:Drivers/CMSIS/Include/core_cm0plus.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 10
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 10
 
 
  489:Drivers/CMSIS/Include/core_cm0plus.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  543:Drivers/CMSIS/Include/core_cm0plus.h **** #define MPU_TYPE_SEPARATE_Msk              (1UL /*<< MPU_TYPE_SEPARATE_Pos*/)             /*!< MPU 
  544:Drivers/CMSIS/Include/core_cm0plus.h **** 
  545:Drivers/CMSIS/Include/core_cm0plus.h **** /* MPU Control Register Definitions */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 11
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 11
 
 
  546:Drivers/CMSIS/Include/core_cm0plus.h **** #define MPU_CTRL_PRIVDEFENA_Pos             2U                                            /*!< MPU 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  600:Drivers/CMSIS/Include/core_cm0plus.h **** /*@} end of group CMSIS_MPU */
  601:Drivers/CMSIS/Include/core_cm0plus.h **** #endif
  602:Drivers/CMSIS/Include/core_cm0plus.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 12
 
 
  603:Drivers/CMSIS/Include/core_cm0plus.h **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  657:Drivers/CMSIS/Include/core_cm0plus.h **** #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
  658:Drivers/CMSIS/Include/core_cm0plus.h ****   #define MPU_BASE          (SCS_BASE +  0x0D90UL)                    /*!< Memory Protection Unit *
  659:Drivers/CMSIS/Include/core_cm0plus.h ****   #define MPU               ((MPU_Type       *)     MPU_BASE      )   /*!< Memory Protection Unit *
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 13
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 13
 
 
  660:Drivers/CMSIS/Include/core_cm0plus.h **** #endif
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  714:Drivers/CMSIS/Include/core_cm0plus.h ****   #define NVIC_GetVector              __NVIC_GetVector
  715:Drivers/CMSIS/Include/core_cm0plus.h **** #endif  /* (CMSIS_VECTAB_VIRTUAL) */
  716:Drivers/CMSIS/Include/core_cm0plus.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 14
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 14
 
 
  717:Drivers/CMSIS/Include/core_cm0plus.h **** #define NVIC_USER_IRQ_OFFSET          16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  771:Drivers/CMSIS/Include/core_cm0plus.h **** 
  772:Drivers/CMSIS/Include/core_cm0plus.h **** 
  773:Drivers/CMSIS/Include/core_cm0plus.h **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 15
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 15
 
 
  774:Drivers/CMSIS/Include/core_cm0plus.h ****   \brief   Disable Interrupt
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  828:Drivers/CMSIS/Include/core_cm0plus.h ****   \details Clears the pending bit of a device specific interrupt in the NVIC pending register.
  829:Drivers/CMSIS/Include/core_cm0plus.h ****   \param [in]      IRQn  Device specific interrupt number.
  830:Drivers/CMSIS/Include/core_cm0plus.h ****   \note    IRQn must not be negative.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 16
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 16
 
 
  831:Drivers/CMSIS/Include/core_cm0plus.h ****  */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  885:Drivers/CMSIS/Include/core_cm0plus.h **** }
  886:Drivers/CMSIS/Include/core_cm0plus.h **** 
  887:Drivers/CMSIS/Include/core_cm0plus.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 17
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 17
 
 
  888:Drivers/CMSIS/Include/core_cm0plus.h **** /**
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  942:Drivers/CMSIS/Include/core_cm0plus.h ****   \details Sets an interrupt vector in SRAM based interrupt vector table.
  943:Drivers/CMSIS/Include/core_cm0plus.h ****            The interrupt number can be positive to specify a device specific interrupt,
  944:Drivers/CMSIS/Include/core_cm0plus.h ****            or negative to specify a processor exception.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 18
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 18
 
 
  945:Drivers/CMSIS/Include/core_cm0plus.h ****            VTOR must been relocated to SRAM before.
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   36              		.file 3 "Drivers/CMSIS/Include/cmsis_gcc.h"
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 19
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 19
 
 
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
   59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 20
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 20
 
 
   60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 21
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 21
 
 
  117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 22
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 22
 
 
  174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  228:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __NOP()                             __ASM volatile ("nop")
  229:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  230:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 23
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 23
 
 
  231:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   48              		.loc 2 991 3 view .LVU4
   49              		.loc 2 991 15 is_stmt 0 view .LVU5
   50 0004 034B     		ldr	r3, .L3
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 24
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 24
 
 
   51 0006 044A     		ldr	r2, .L3+4
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   94              		.code	16
   95              		.thumb_func
   97              	timeout_reset:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 25
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 25
 
 
   98              	.LVL0:
@@ -1474,166 +1474,169 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   29:Core/Src/main.c **** /* USER CODE BEGIN Includes */
   30:Core/Src/main.c **** 
   31:Core/Src/main.c **** #include "printf.h"
-  32:Core/Src/main.c **** 
-  33:Core/Src/main.c **** /* USER CODE END Includes */
-  34:Core/Src/main.c **** 
-  35:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
-  36:Core/Src/main.c **** /* USER CODE BEGIN PTD */
-  37:Core/Src/main.c **** 
-  38:Core/Src/main.c **** /* USER CODE END PTD */
-  39:Core/Src/main.c **** 
-  40:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-  41:Core/Src/main.c **** /* USER CODE BEGIN PD */
-  42:Core/Src/main.c **** 
-  43:Core/Src/main.c **** /* USER CODE END PD */
-  44:Core/Src/main.c **** 
-  45:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
-  46:Core/Src/main.c **** /* USER CODE BEGIN PM */
-  47:Core/Src/main.c **** 
-  48:Core/Src/main.c **** /* USER CODE END PM */
-  49:Core/Src/main.c **** 
-  50:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
-  51:Core/Src/main.c **** 
-  52:Core/Src/main.c **** /* USER CODE BEGIN PV */
-  53:Core/Src/main.c **** 
-  54:Core/Src/main.c **** /* USER CODE END PV */
-  55:Core/Src/main.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 26
+  32:Core/Src/main.c **** #include "AB1815.h"
+  33:Core/Src/main.c **** 
+  34:Core/Src/main.c **** /* USER CODE END Includes */
+  35:Core/Src/main.c **** 
+  36:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  37:Core/Src/main.c **** /* USER CODE BEGIN PTD */
+  38:Core/Src/main.c **** 
+  39:Core/Src/main.c **** /* USER CODE END PTD */
+  40:Core/Src/main.c **** 
+  41:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  42:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  43:Core/Src/main.c **** 
+  44:Core/Src/main.c **** /* USER CODE END PD */
+  45:Core/Src/main.c **** 
+  46:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  47:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  48:Core/Src/main.c **** 
+  49:Core/Src/main.c **** /* USER CODE END PM */
+  50:Core/Src/main.c **** 
+  51:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  52:Core/Src/main.c **** 
+  53:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  54:Core/Src/main.c **** 
+  55:Core/Src/main.c **** /* USER CODE END PV */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 26
 
 
-  56:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
-  57:Core/Src/main.c **** void SystemClock_Config(void);
-  58:Core/Src/main.c **** /* USER CODE BEGIN PFP */
-  59:Core/Src/main.c **** 
-  60:Core/Src/main.c **** /* USER CODE END PFP */
-  61:Core/Src/main.c **** 
-  62:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
-  63:Core/Src/main.c **** /* USER CODE BEGIN 0 */
-  64:Core/Src/main.c **** 
-  65:Core/Src/main.c **** /* USER CODE END 0 */
-  66:Core/Src/main.c **** 
-  67:Core/Src/main.c **** /**
-  68:Core/Src/main.c ****  * @brief  The application entry point.
-  69:Core/Src/main.c ****  * @retval int
-  70:Core/Src/main.c ****  */
-  71:Core/Src/main.c **** int main(void)
-  72:Core/Src/main.c **** {
-  73:Core/Src/main.c **** 
-  74:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
-  75:Core/Src/main.c **** 
-  76:Core/Src/main.c ****   /* USER CODE END 1 */
-  77:Core/Src/main.c **** 
-  78:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
-  79:Core/Src/main.c **** 
-  80:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  81:Core/Src/main.c ****   HAL_Init();
-  82:Core/Src/main.c **** 
-  83:Core/Src/main.c ****   /* USER CODE BEGIN Init */
-  84:Core/Src/main.c **** 
-  85:Core/Src/main.c ****   /* USER CODE END Init */
-  86:Core/Src/main.c **** 
-  87:Core/Src/main.c ****   /* Configure the system clock */
-  88:Core/Src/main.c ****   SystemClock_Config();
-  89:Core/Src/main.c **** 
-  90:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-  91:Core/Src/main.c **** 
-  92:Core/Src/main.c ****   /* USER CODE END SysInit */
-  93:Core/Src/main.c **** 
-  94:Core/Src/main.c ****   /* Initialize all configured peripherals */
-  95:Core/Src/main.c ****   MX_GPIO_Init();
-  96:Core/Src/main.c ****   MX_ADC1_Init();
-  97:Core/Src/main.c ****   MX_I2C1_Init();
-  98:Core/Src/main.c ****   MX_RTC_Init();
-  99:Core/Src/main.c ****   MX_SPI1_Init();
- 100:Core/Src/main.c ****   MX_USART2_UART_Init();
- 101:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 102:Core/Src/main.c **** 
- 103:Core/Src/main.c ****   printf("Main\n");
- 104:Core/Src/main.c **** 
- 105:Core/Src/main.c ****   /* USER CODE END 2 */
+  56:Core/Src/main.c **** 
+  57:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  58:Core/Src/main.c **** void SystemClock_Config(void);
+  59:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  60:Core/Src/main.c **** 
+  61:Core/Src/main.c **** /* USER CODE END PFP */
+  62:Core/Src/main.c **** 
+  63:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  64:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  65:Core/Src/main.c **** 
+  66:Core/Src/main.c **** /* USER CODE END 0 */
+  67:Core/Src/main.c **** 
+  68:Core/Src/main.c **** /**
+  69:Core/Src/main.c ****   * @brief  The application entry point.
+  70:Core/Src/main.c ****   * @retval int
+  71:Core/Src/main.c ****   */
+  72:Core/Src/main.c **** int main(void)
+  73:Core/Src/main.c **** {
+  74:Core/Src/main.c **** 
+  75:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  76:Core/Src/main.c **** 
+  77:Core/Src/main.c ****   /* USER CODE END 1 */
+  78:Core/Src/main.c **** 
+  79:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
+  80:Core/Src/main.c **** 
+  81:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  82:Core/Src/main.c ****   HAL_Init();
+  83:Core/Src/main.c **** 
+  84:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  85:Core/Src/main.c **** 
+  86:Core/Src/main.c ****   /* USER CODE END Init */
+  87:Core/Src/main.c **** 
+  88:Core/Src/main.c ****   /* Configure the system clock */
+  89:Core/Src/main.c ****   SystemClock_Config();
+  90:Core/Src/main.c **** 
+  91:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  92:Core/Src/main.c **** 
+  93:Core/Src/main.c ****   /* USER CODE END SysInit */
+  94:Core/Src/main.c **** 
+  95:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  96:Core/Src/main.c ****   MX_GPIO_Init();
+  97:Core/Src/main.c ****   MX_ADC1_Init();
+  98:Core/Src/main.c ****   MX_I2C1_Init();
+  99:Core/Src/main.c ****   MX_RTC_Init();
+ 100:Core/Src/main.c ****   MX_SPI1_Init();
+ 101:Core/Src/main.c ****   MX_USART2_UART_Init();
+ 102:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 103:Core/Src/main.c **** 
+ 104:Core/Src/main.c ****   uint8_t chip = detectChip();
+ 105:Core/Src/main.c ****   printf("Main  %d\n", chip);
  106:Core/Src/main.c **** 
- 107:Core/Src/main.c ****   /* Infinite loop */
- 108:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
- 109:Core/Src/main.c ****   uint32_t ii = 0;
- 110:Core/Src/main.c ****   while (1)
- 111:Core/Src/main.c ****   {
- 112:Core/Src/main.c ****     /* USER CODE END WHILE */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 27
+ 107:Core/Src/main.c ****   /* USER CODE END 2 */
+ 108:Core/Src/main.c **** 
+ 109:Core/Src/main.c ****   /* Infinite loop */
+ 110:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+ 111:Core/Src/main.c ****   uint32_t ii = 0;
+ 112:Core/Src/main.c ****   while (1)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 27
 
 
- 113:Core/Src/main.c **** 
- 114:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 115:Core/Src/main.c ****     printf("%d\n", ii);
- 116:Core/Src/main.c ****     LED1_ON();
- 117:Core/Src/main.c ****     HAL_Delay(500);
- 118:Core/Src/main.c ****     LED1_OFF();
- 119:Core/Src/main.c ****     printf("%d\n", ii++);
- 120:Core/Src/main.c ****     HAL_Delay(500);
- 121:Core/Src/main.c ****   }
- 122:Core/Src/main.c ****   /* USER CODE END 3 */
- 123:Core/Src/main.c **** }
- 124:Core/Src/main.c **** 
- 125:Core/Src/main.c **** /**
- 126:Core/Src/main.c ****  * @brief System Clock Configuration
- 127:Core/Src/main.c ****  * @retval None
- 128:Core/Src/main.c ****  */
- 129:Core/Src/main.c **** void SystemClock_Config(void)
- 130:Core/Src/main.c **** {
- 131:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 132:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 133:Core/Src/main.c **** 
- 134:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
- 135:Core/Src/main.c ****    */
- 136:Core/Src/main.c ****   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
- 137:Core/Src/main.c **** 
- 138:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
- 139:Core/Src/main.c ****    * in the RCC_OscInitTypeDef structure.
- 140:Core/Src/main.c ****    */
- 141:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_LSI;
- 142:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 143:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 144:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 145:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 146:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 147:Core/Src/main.c ****   {
- 148:Core/Src/main.c ****     Error_Handler();
- 149:Core/Src/main.c ****   }
- 150:Core/Src/main.c **** 
- 151:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
- 152:Core/Src/main.c ****    */
- 153:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1;
- 154:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 155:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 156:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 157:Core/Src/main.c **** 
- 158:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
- 159:Core/Src/main.c ****   {
- 160:Core/Src/main.c ****     Error_Handler();
- 161:Core/Src/main.c ****   }
- 162:Core/Src/main.c **** }
- 163:Core/Src/main.c **** 
- 164:Core/Src/main.c **** /* USER CODE BEGIN 4 */
- 165:Core/Src/main.c **** 
- 166:Core/Src/main.c **** __attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line)
- 167:Core/Src/main.c **** {
- 100              		.loc 1 167 1 view -0
+ 113:Core/Src/main.c ****   {
+ 114:Core/Src/main.c ****     /* USER CODE END WHILE */
+ 115:Core/Src/main.c **** 
+ 116:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 117:Core/Src/main.c ****     printf("%d\n", ii);
+ 118:Core/Src/main.c ****     LED1_ON();
+ 119:Core/Src/main.c ****     HAL_Delay(500);
+ 120:Core/Src/main.c ****     LED1_OFF();
+ 121:Core/Src/main.c ****     printf("%d\n", ii++);
+ 122:Core/Src/main.c ****     HAL_Delay(500);
+ 123:Core/Src/main.c ****   }
+ 124:Core/Src/main.c ****   /* USER CODE END 3 */
+ 125:Core/Src/main.c **** }
+ 126:Core/Src/main.c **** 
+ 127:Core/Src/main.c **** /**
+ 128:Core/Src/main.c ****   * @brief System Clock Configuration
+ 129:Core/Src/main.c ****   * @retval None
+ 130:Core/Src/main.c ****   */
+ 131:Core/Src/main.c **** void SystemClock_Config(void)
+ 132:Core/Src/main.c **** {
+ 133:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 134:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 135:Core/Src/main.c **** 
+ 136:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
+ 137:Core/Src/main.c ****   */
+ 138:Core/Src/main.c ****   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 139:Core/Src/main.c **** 
+ 140:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 141:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 142:Core/Src/main.c ****   */
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 146:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 147:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 148:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 149:Core/Src/main.c ****   {
+ 150:Core/Src/main.c ****     Error_Handler();
+ 151:Core/Src/main.c ****   }
+ 152:Core/Src/main.c **** 
+ 153:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 154:Core/Src/main.c ****   */
+ 155:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 156:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1;
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 159:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 160:Core/Src/main.c **** 
+ 161:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+ 162:Core/Src/main.c ****   {
+ 163:Core/Src/main.c ****     Error_Handler();
+ 164:Core/Src/main.c ****   }
+ 165:Core/Src/main.c **** }
+ 166:Core/Src/main.c **** 
+ 167:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 168:Core/Src/main.c **** 
+ 169:Core/Src/main.c **** __attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 28
+
+
+ 170:Core/Src/main.c **** {
+ 100              		.loc 1 170 1 view -0
  101              		.cfi_startproc
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 28
-
-
  102              		@ Volatile: function does not return.
  103              		@ args = 0, pretend = 0, frame = 0
  104              		@ frame_needed = 0, uses_anonymous_args = 0
- 105              		.loc 1 167 1 is_stmt 0 view .LVU13
+ 105              		.loc 1 170 1 is_stmt 0 view .LVU13
  106 0000 10B5     		push	{r4, lr}
  107              	.LCFI0:
  108              		.cfi_def_cfa_offset 8
  109              		.cfi_offset 4, -8
  110              		.cfi_offset 14, -4
  111 0002 0A00     		movs	r2, r1
- 168:Core/Src/main.c **** 
- 169:Core/Src/main.c **** 	LL_PWR_ClearFlag_CSB(); // Clear standby flag
- 112              		.loc 1 169 2 is_stmt 1 view .LVU14
+ 171:Core/Src/main.c **** 
+ 172:Core/Src/main.c **** 	LL_PWR_ClearFlag_CSB(); // Clear standby flag
+ 112              		.loc 1 172 2 is_stmt 1 view .LVU14
  113              	.LBB14:
  114              	.LBI14:
  115              		.file 4 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h"
@@ -1675,12 +1678,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   36:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /** @defgroup PWR_LL PWR
   37:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @{
   38:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 29
+
+
   39:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
   40:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /* Private types -------------------------------------------------------------*/
   41:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /* Private variables ---------------------------------------------------------*/
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 29
-
-
   42:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /* Private constants ---------------------------------------------------------*/
   43:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /* Private macros ------------------------------------------------------------*/
   44:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /* Exported types ------------------------------------------------------------*/
@@ -1735,12 +1738,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
   93:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /** @defgroup PWR_LL_EC_REGU_VOLTAGE REGU VOLTAGE
   94:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @{
   95:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 30
+
+
   96:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_CR1_LPR                     PWR_CR1_LPR
   97:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
   98:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @}
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 30
-
-
   99:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  100:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  101:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /** @defgroup PWR_LL_EC_REGU_VOLTAGE REGU VOLTAGE
@@ -1795,12 +1798,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  150:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****                                                                                      (Compare inter
  151:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  152:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @}
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 31
+
+
  153:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  154:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  155:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /** @defgroup PWR_LL_EC_WAKEUP WAKEUP
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 31
-
-
  156:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @{
  157:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  158:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_WAKEUP_PIN1                 PWR_CR3_EWUP1
@@ -1855,12 +1858,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  207:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_3                  0x00000008U
  208:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_4                  0x00000010U
  209:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_5                  0x00000020U
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 32
+
+
  210:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_6                  0x00000040U
  211:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_7                  0x00000080U
  212:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_8                  0x00000100U
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 32
-
-
  213:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_9                  0x00000200U
  214:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_10                 0x00000400U
  215:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_11                 0x00000800U
@@ -1915,12 +1918,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  264:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /** @defgroup PWR_LL_EF_Configuration Configuration
  265:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @{
  266:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 33
+
+
  267:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  268:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  269:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Set Low-Power mode
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 33
-
-
  270:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR1          LPMS          LL_PWR_SetPowerMode
  271:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @param  LowPowerMode This parameter can be one of the following values:
  272:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_MODE_STOP0
@@ -1975,12 +1978,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  321:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR1          FPD_STOP           LL_PWR_IsEnabledFlashPWRDownModeDuringSTOP
  322:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
  323:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 34
+
+
  324:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsEnabledFlashPWRDownModeDuringSTOP(void)
  325:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  326:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->CR1, PWR_CR1_FPD_STOP) == (PWR_CR1_FPD_STOP)) ? 1UL : 0UL);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 34
-
-
  327:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
  328:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  329:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
@@ -2035,12 +2038,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  378:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  379:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  380:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Check if Flash Pwr Down Mode is enabled during Sleep
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 35
+
+
  381:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR1          FPD_LPSLP           LL_PWR_IsEnabledFlashPWRDownModeDuringSleeep
  382:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
  383:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 35
-
-
  384:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsEnabledFlashPWRDownModeDuringSleeep(void)
  385:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  386:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->CR1, PWR_CR1_FPD_LPSLP) == (PWR_CR1_FPD_LPSLP)) ? 1UL : 0UL);
@@ -2095,12 +2098,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  435:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval Returned value can be one of the following values:
  436:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_REGU_VOLTAGE_SCALE1
  437:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_REGU_VOLTAGE_SCALE2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 36
+
+
  438:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  439:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_GetRegulVoltageScaling(void)
  440:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 36
-
-
  441:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return (uint32_t)(READ_BIT(PWR->CR1, PWR_CR1_VOS));
  442:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
  443:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
@@ -2155,12 +2158,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  492:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  493:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Enable Power Voltage Detector
  494:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR2          PVDE          LL_PWR_EnablePVD
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 37
+
+
  495:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
  496:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  497:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_EnablePVD(void)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 37
-
-
  498:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  499:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   SET_BIT(PWR->CR2, PWR_CR2_PVDE);
  500:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
@@ -2215,12 +2218,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  549:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_PVDLEVEL_4
  550:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_PVDLEVEL_5
  551:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_PVDLEVEL_6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 38
+
+
  552:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_PVDLEVEL_7
  553:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  554:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_GetPVDLevel(void)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 38
-
-
  555:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  556:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return (uint32_t)(READ_BIT(PWR->CR2, PWR_CR2_PLS));
  557:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
@@ -2275,12 +2278,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  606:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
  607:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  608:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsEnabledPVM(uint32_t PeriphVoltage)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 39
+
+
  609:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  610:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->CR2, PeriphVoltage) == (PeriphVoltage)) ? 1UL : 0UL);
  611:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 39
-
-
  612:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  613:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** #if defined(USB_DRD_FS)
  614:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
@@ -2335,12 +2338,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  663:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  664:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   SET_BIT(PWR->CR3, WakeUpPin);
  665:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 40
+
+
  666:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  667:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  668:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Disable the WakeUp PINx functionality
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 40
-
-
  669:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR3          EWUP1         LL_PWR_DisableWakeUpPin\n
  670:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         CR3          EWUP2         LL_PWR_DisableWakeUpPin\n
  671:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         CR3          EWUP3         LL_PWR_DisableWakeUpPin\n
@@ -2395,12 +2398,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  720:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  721:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  722:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Disable SRAM content retention in Standby mode
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 41
+
+
  723:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR3          RRS           LL_PWR_DisableSRAMRetention
  724:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
  725:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 41
-
-
  726:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_DisableSRAMRetention(void)
  727:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  728:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   CLEAR_BIT(PWR->CR3, PWR_CR3_RRS);
@@ -2455,12 +2458,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  777:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  778:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  779:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Disable Ultra Low Power BORL, BORH and PVD for STOP2 and Standby modes
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 42
+
+
  780:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR3          ENULP        LL_PWR_DisableBORPVD_ULP
  781:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
  782:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 42
-
-
  783:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_DisableBORPVD_ULP(void)
  784:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  785:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   CLEAR_BIT(PWR->CR3, PWR_CR3_ENULP);
@@ -2515,12 +2518,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  834:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  835:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   SET_BIT(PWR->CR3, PWR_CR3_EIWUL);
  836:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 43
+
+
  837:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
  838:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  839:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Disable Internal Wake-up line
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 43
-
-
  840:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR3          EIWUL          LL_PWR_DisableInternWU
  841:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
  842:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
@@ -2575,12 +2578,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  891:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN3
  892:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN4
  893:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 44
+
+
  894:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN7
  895:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
  896:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 44
-
-
  897:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_SetWakeUpPinPolarityHigh(uint32_t WakeUpPin)
  898:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
  899:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   CLEAR_BIT(PWR->CR4, WakeUpPin);
@@ -2635,12 +2638,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  948:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
  949:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsEnabledBatteryCharging(void)
  950:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 45
+
+
  951:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->CR4, PWR_CR4_VBE) == (PWR_CR4_VBE)) ? 1UL : 0UL);
  952:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
  953:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 45
-
-
  954:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
  955:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Set the resistor impedance
  956:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll CR4          VBRS          LL_PWR_SetBattChargResistor
@@ -2695,12 +2698,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1005:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_10
 1006:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_11
 1007:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 46
+
+
 1008:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_13
 1009:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_14
 1010:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_15
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 46
-
-
 1011:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
 1012:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
 1013:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_EnableGPIOPullUp(uint32_t GPIO, uint32_t GPIONumber)
@@ -2755,12 +2758,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1062:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRD        PU0-13        LL_PWR_EnableGPIOPullUp\n
 1063:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRE        PU3,PU7-9     LL_PWR_EnableGPIOPullUp\n
 1064:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRF        PU0-3         LL_PWR_EnableGPIOPullUp\n
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 47
+
+
 1065:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @param  GPIO This parameter can be one of the following values:
 1066:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_A
 1067:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_B
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 47
-
-
 1068:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_C
 1069:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_D
 1070:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_E
@@ -2815,12 +2818,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1119:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_7
 1120:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_8
 1121:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 48
+
+
 1122:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_10
 1123:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_11
 1124:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_12
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 48
-
-
 1125:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_13
 1126:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_14
 1127:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_15
@@ -2875,12 +2878,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1176:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll PDCRA        PD0-15        LL_PWR_IsEnabledGPIOPullDown\n
 1177:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRB        PU0-15        LL_PWR_EnableGPIOPullUp\n
 1178:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRC        PU0-15        LL_PWR_EnableGPIOPullUp\n
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 49
+
+
 1179:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRD        PU0-13        LL_PWR_EnableGPIOPullUp\n
 1180:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRE        PU3,PU7-9     LL_PWR_EnableGPIOPullUp\n
 1181:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         PUCRF        PU0-3         LL_PWR_EnableGPIOPullUp\n
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 49
-
-
 1182:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @param  GPIO This parameter can be one of the following values:
 1183:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_A
 1184:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_B
@@ -2935,12 +2938,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1233:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
 1234:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
 1235:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_WU2(void)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 50
+
+
 1236:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
 1237:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->SR1, PWR_SR1_WUF2) == (PWR_SR1_WUF2)) ? 1UL : 0UL);
 1238:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 50
-
-
 1239:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
 1240:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
 1241:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Get Wake-up Flag 3
@@ -2995,12 +2998,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1290:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
 1291:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Get Stop Flag
 1292:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll SR1          STOPF 0          LL_PWR_IsActiveFlag_Stop
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 51
+
+
 1293:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
 1294:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
 1295:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_Stop0(void)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 51
-
-
 1296:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
 1297:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->SR1, LL_PWR_SR1_STOP0) == (LL_PWR_SR1_STOP0)) ? 1UL : 0UL);
 1298:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
@@ -3055,12 +3058,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1347:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
 1348:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
 1349:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 52
+
+
 1350:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Indicate whether the regulator is ready in main mode or is in low-power mode
 1351:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @note   Take care, return value "0" means the regulator is ready. Return value "1" means the ou
 1352:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   *         is still changing.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 52
-
-
 1353:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll SR2          REGLPF        LL_PWR_IsActiveFlag_REGLPF
 1354:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
 1355:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
@@ -3115,12 +3118,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1404:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
 1405:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Indicate whether VDDA voltage is below or above PVMO4 threshold
 1406:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll SR2          PVMO4         LL_PWR_IsActiveFlag_PVMO_4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 53
+
+
 1407:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval State of bit (1 or 0).
 1408:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
 1409:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_PVMO_4(void)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 53
-
-
 1410:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** {
 1411:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   return ((READ_BIT(PWR->SR2, PWR_SR2_PVMO4) == (PWR_SR2_PVMO4)) ? 1UL : 0UL);
 1412:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
@@ -3175,12 +3178,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
 1461:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   WRITE_REG(PWR->SCR, PWR_SCR_CWUF5);
 1462:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** }
 1463:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 54
+
+
 1464:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** /**
 1465:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @brief  Clear Wake-up Flag 7
 1466:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @rmtoll SCR          CWUF7         LL_PWR_ClearFlag_WU7
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 54
-
-
 1467:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   * @retval None
 1468:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ****   */
 1469:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_ClearFlag_WU7(void)
@@ -3207,23 +3210,23 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  124 000a 9961     		str	r1, [r3, #24]
  125              	.LBE15:
  126              	.LBE14:
- 170:Core/Src/main.c **** 	printf(" *** timeout_reset:  %s    %d\n", func, line);
- 127              		.loc 1 170 2 is_stmt 1 view .LVU18
+ 173:Core/Src/main.c **** 	printf(" *** timeout_reset:  %s    %d\n", func, line);
+ 127              		.loc 1 173 2 is_stmt 1 view .LVU18
  128 000c 0B4B     		ldr	r3, .L6+4
  129 000e 0100     		movs	r1, r0
  130 0010 1800     		movs	r0, r3
  131              	.LVL2:
- 132              		.loc 1 170 2 is_stmt 0 view .LVU19
+ 132              		.loc 1 173 2 is_stmt 0 view .LVU19
  133 0012 FFF7FEFF 		bl	printf_
  134              	.LVL3:
- 171:Core/Src/main.c **** 	HAL_Delay(2000);
- 135              		.loc 1 171 2 is_stmt 1 view .LVU20
+ 174:Core/Src/main.c **** 	HAL_Delay(2000);
+ 135              		.loc 1 174 2 is_stmt 1 view .LVU20
  136 0016 FA20     		movs	r0, #250
  137 0018 C000     		lsls	r0, r0, #3
  138 001a FFF7FEFF 		bl	HAL_Delay
  139              	.LVL4:
- 172:Core/Src/main.c **** 	__HAL_RCC_BACKUPRESET_FORCE();
- 140              		.loc 1 172 2 view .LVU21
+ 175:Core/Src/main.c **** 	__HAL_RCC_BACKUPRESET_FORCE();
+ 140              		.loc 1 175 2 view .LVU21
  141 001e 084A     		ldr	r2, .L6+8
  142 0020 9023     		movs	r3, #144
  143 0022 D058     		ldr	r0, [r2, r3]
@@ -3231,17 +3234,17 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  145 0026 4902     		lsls	r1, r1, #9
  146 0028 0143     		orrs	r1, r0
  147 002a D150     		str	r1, [r2, r3]
- 173:Core/Src/main.c **** 	__HAL_RCC_BACKUPRESET_RELEASE();
- 148              		.loc 1 173 2 view .LVU22
+ 176:Core/Src/main.c **** 	__HAL_RCC_BACKUPRESET_RELEASE();
+ 148              		.loc 1 176 2 view .LVU22
  149 002c D158     		ldr	r1, [r2, r3]
  150 002e 0548     		ldr	r0, .L6+12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 55
+
+
  151 0030 0140     		ands	r1, r0
  152 0032 D150     		str	r1, [r2, r3]
- 174:Core/Src/main.c **** 	NVIC_SystemReset();
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 55
-
-
- 153              		.loc 1 174 2 view .LVU23
+ 177:Core/Src/main.c **** 	NVIC_SystemReset();
+ 153              		.loc 1 177 2 view .LVU23
  154 0034 FFF7FEFF 		bl	__NVIC_SystemReset
  155              	.LVL5:
  156              	.L7:
@@ -3261,28 +3264,28 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  171              		.thumb_func
  173              	Error_Handler:
  174              	.LFB429:
- 175:Core/Src/main.c **** }
- 176:Core/Src/main.c **** 
- 177:Core/Src/main.c **** 
- 178:Core/Src/main.c **** 
- 179:Core/Src/main.c **** /* USER CODE END 4 */
+ 178:Core/Src/main.c **** }
+ 179:Core/Src/main.c **** 
  180:Core/Src/main.c **** 
- 181:Core/Src/main.c **** /**
- 182:Core/Src/main.c ****  * @brief  This function is executed in case of error occurrence.
- 183:Core/Src/main.c ****  * @retval None
- 184:Core/Src/main.c ****  */
- 185:Core/Src/main.c **** void Error_Handler(void)
- 186:Core/Src/main.c **** {
- 175              		.loc 1 186 1 view -0
+ 181:Core/Src/main.c **** 
+ 182:Core/Src/main.c **** /* USER CODE END 4 */
+ 183:Core/Src/main.c **** 
+ 184:Core/Src/main.c **** /**
+ 185:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 186:Core/Src/main.c ****   * @retval None
+ 187:Core/Src/main.c ****   */
+ 188:Core/Src/main.c **** void Error_Handler(void)
+ 189:Core/Src/main.c **** {
+ 175              		.loc 1 189 1 view -0
  176              		.cfi_startproc
  177              		@ Volatile: function does not return.
  178              		@ args = 0, pretend = 0, frame = 0
  179              		@ frame_needed = 0, uses_anonymous_args = 0
  180              		@ link register save eliminated.
- 187:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
- 188:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 189:Core/Src/main.c ****   __disable_irq();
- 181              		.loc 1 189 3 view .LVU25
+ 190:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 191:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 192:Core/Src/main.c ****   __disable_irq();
+ 181              		.loc 1 192 3 view .LVU25
  182              	.LBB16:
  183              	.LBI16:
  272:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -3295,12 +3298,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  279:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  280:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DMB(void)
  281:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 56
+
+
  282:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("dmb 0xF":::"memory");
  283:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  284:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 56
-
-
  285:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  286:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  287:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse byte order (32 bit)
@@ -3355,12 +3358,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  336:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  337:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  338:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 57
+
+
  339:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  340:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Rotate Right in unsigned value (32 bit)
  341:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Rotate Right (immediate) provides the value of the contents of a register rotated by a v
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 57
-
-
  342:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op1  Value to rotate
  343:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op2  Number of Bits to rotate
  344:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Rotated value
@@ -3415,12 +3418,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  393:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  394:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  395:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 58
+
+
  396:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  397:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  398:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Count leading zeros
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 58
-
-
  399:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Counts the number of leading zeros of a data value.
  400:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to count the leading zeros
  401:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return             number of leading zeros in value
@@ -3475,12 +3478,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  450:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
  451:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
  452:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 59
+
+
  453:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
  455:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 59
-
-
  456:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
  457:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  458:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
@@ -3535,12 +3538,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  507:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
  508:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  509:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 60
+
+
  510:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
  511:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  512:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 60
-
-
  513:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  514:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
  515:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
@@ -3595,12 +3598,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  564:Drivers/CMSIS/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
  565:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
  566:Drivers/CMSIS/Include/cmsis_gcc.h ****   __RES; \
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 61
+
+
  567:Drivers/CMSIS/Include/cmsis_gcc.h ****  })
  568:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  569:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 61
-
-
  570:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  571:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Unsigned Saturate
  572:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Saturates an unsigned value.
@@ -3655,12 +3658,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  621:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  622:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  623:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 62
+
+
  624:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  625:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (16 bit)
  626:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 16 bit values.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 62
-
-
  627:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
  628:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
  629:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -3715,12 +3718,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  678:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  679:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
  680:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 63
+
+
  681:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
  682:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  683:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 63
-
-
  684:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  685:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  686:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   STRT Unprivileged (32 bit)
@@ -3775,12 +3778,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  735:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
  736:Drivers/CMSIS/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
  737:Drivers/CMSIS/Include/cmsis_gcc.h ****     if (val > (int32_t)max)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 64
+
+
  738:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
  739:Drivers/CMSIS/Include/cmsis_gcc.h ****       return max;
  740:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 64
-
-
  741:Drivers/CMSIS/Include/cmsis_gcc.h ****     else if (val < 0)
  742:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
  743:Drivers/CMSIS/Include/cmsis_gcc.h ****       return 0U;
@@ -3835,12 +3838,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  792:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
  793:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  794:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 65
+
+
  795:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  796:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("lda %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  797:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 65
-
-
  798:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  799:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  800:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -3895,12 +3898,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  849:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  850:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  851:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 66
+
+
  852:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  853:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (16 bit)
  854:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a LDAH exclusive instruction for 16 bit values.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 66
-
-
  855:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
  856:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
  857:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -3955,12 +3958,12 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  906:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  907:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
  908:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 67
+
+
  909:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
  910:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  911:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("stlexh %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "mem
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 67
-
-
  912:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  913:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  914:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -4015,25 +4018,25 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  961:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  962:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
  186              		.loc 3 962 3 view .LVU27
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 68
+
+
  187              		.syntax divided
  188              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  189 0000 72B6     		cpsid i
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 68
-
-
  190              	@ 0 "" 2
  191              		.thumb
  192              		.syntax unified
  193              	.L9:
  194              	.LBE17:
  195              	.LBE16:
- 190:Core/Src/main.c ****   while (1)
- 196              		.loc 1 190 3 discriminator 1 view .LVU28
- 191:Core/Src/main.c ****   {
- 192:Core/Src/main.c ****   }
- 197              		.loc 1 192 3 discriminator 1 view .LVU29
- 190:Core/Src/main.c ****   while (1)
- 198              		.loc 1 190 9 discriminator 1 view .LVU30
+ 193:Core/Src/main.c ****   while (1)
+ 196              		.loc 1 193 3 discriminator 1 view .LVU28
+ 194:Core/Src/main.c ****   {
+ 195:Core/Src/main.c ****   }
+ 197              		.loc 1 195 3 discriminator 1 view .LVU29
+ 193:Core/Src/main.c ****   while (1)
+ 198              		.loc 1 193 9 discriminator 1 view .LVU30
  199 0002 FEE7     		b	.L9
  200              		.cfi_endproc
  201              	.LFE429:
@@ -4045,8 +4048,8 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  208              		.thumb_func
  210              	SystemClock_Config:
  211              	.LFB427:
- 130:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 212              		.loc 1 130 1 view -0
+ 132:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 212              		.loc 1 132 1 view -0
  213              		.cfi_startproc
  214              		@ args = 0, pretend = 0, frame = 96
  215              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4057,125 +4060,125 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  220 0002 99B0     		sub	sp, sp, #100
  221              	.LCFI2:
  222              		.cfi_def_cfa_offset 104
- 131:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 223              		.loc 1 131 3 view .LVU32
- 131:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 224              		.loc 1 131 22 is_stmt 0 view .LVU33
+ 133:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 223              		.loc 1 133 3 view .LVU32
+ 133:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 224              		.loc 1 133 22 is_stmt 0 view .LVU33
  225 0004 4C22     		movs	r2, #76
  226 0006 0021     		movs	r1, #0
  227 0008 05A8     		add	r0, sp, #20
  228 000a FFF7FEFF 		bl	memset
  229              	.LVL6:
- 132:Core/Src/main.c **** 
- 230              		.loc 1 132 3 is_stmt 1 view .LVU34
- 132:Core/Src/main.c **** 
- 231              		.loc 1 132 22 is_stmt 0 view .LVU35
+ 134:Core/Src/main.c **** 
+ 230              		.loc 1 134 3 is_stmt 1 view .LVU34
+ 134:Core/Src/main.c **** 
+ 231              		.loc 1 134 22 is_stmt 0 view .LVU35
  232 000e 1022     		movs	r2, #16
  233 0010 0021     		movs	r1, #0
  234 0012 01A8     		add	r0, sp, #4
  235 0014 FFF7FEFF 		bl	memset
  236              	.LVL7:
- 136:Core/Src/main.c **** 
- 237              		.loc 1 136 3 is_stmt 1 view .LVU36
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 69
+
+
+ 138:Core/Src/main.c **** 
+ 237              		.loc 1 138 3 is_stmt 1 view .LVU36
  238 0018 8020     		movs	r0, #128
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 69
-
-
  239 001a C000     		lsls	r0, r0, #3
  240 001c FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
  241              	.LVL8:
- 141:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 242              		.loc 1 141 3 view .LVU37
- 141:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 243              		.loc 1 141 36 is_stmt 0 view .LVU38
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 242              		.loc 1 143 3 view .LVU37
+ 143:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 243              		.loc 1 143 36 is_stmt 0 view .LVU38
  244 0020 0A23     		movs	r3, #10
  245 0022 0593     		str	r3, [sp, #20]
- 142:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 246              		.loc 1 142 3 is_stmt 1 view .LVU39
- 142:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 247              		.loc 1 142 30 is_stmt 0 view .LVU40
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 246              		.loc 1 144 3 is_stmt 1 view .LVU39
+ 144:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 247              		.loc 1 144 30 is_stmt 0 view .LVU40
  248 0024 F633     		adds	r3, r3, #246
  249 0026 0893     		str	r3, [sp, #32]
- 143:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 250              		.loc 1 143 3 is_stmt 1 view .LVU41
- 143:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 251              		.loc 1 143 41 is_stmt 0 view .LVU42
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 250              		.loc 1 145 3 is_stmt 1 view .LVU41
+ 145:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 251              		.loc 1 145 41 is_stmt 0 view .LVU42
  252 0028 C03B     		subs	r3, r3, #192
  253 002a 0993     		str	r3, [sp, #36]
- 144:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 254              		.loc 1 144 3 is_stmt 1 view .LVU43
- 144:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 255              		.loc 1 144 30 is_stmt 0 view .LVU44
+ 146:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 254              		.loc 1 146 3 is_stmt 1 view .LVU43
+ 146:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 255              		.loc 1 146 30 is_stmt 0 view .LVU44
  256 002c 3F3B     		subs	r3, r3, #63
  257 002e 0A93     		str	r3, [sp, #40]
- 145:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 258              		.loc 1 145 3 is_stmt 1 view .LVU45
- 145:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 259              		.loc 1 145 34 is_stmt 0 view .LVU46
+ 147:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 258              		.loc 1 147 3 is_stmt 1 view .LVU45
+ 147:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 259              		.loc 1 147 34 is_stmt 0 view .LVU46
  260 0030 0023     		movs	r3, #0
  261 0032 1093     		str	r3, [sp, #64]
- 146:Core/Src/main.c ****   {
- 262              		.loc 1 146 3 is_stmt 1 view .LVU47
- 146:Core/Src/main.c ****   {
- 263              		.loc 1 146 7 is_stmt 0 view .LVU48
+ 148:Core/Src/main.c ****   {
+ 262              		.loc 1 148 3 is_stmt 1 view .LVU47
+ 148:Core/Src/main.c ****   {
+ 263              		.loc 1 148 7 is_stmt 0 view .LVU48
  264 0034 05A8     		add	r0, sp, #20
  265 0036 FFF7FEFF 		bl	HAL_RCC_OscConfig
  266              	.LVL9:
- 146:Core/Src/main.c ****   {
- 267              		.loc 1 146 6 view .LVU49
+ 148:Core/Src/main.c ****   {
+ 267              		.loc 1 148 6 view .LVU49
  268 003a 0028     		cmp	r0, #0
  269 003c 0ED1     		bne	.L13
- 153:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 270              		.loc 1 153 3 is_stmt 1 view .LVU50
- 153:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 271              		.loc 1 153 31 is_stmt 0 view .LVU51
+ 155:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1;
+ 270              		.loc 1 155 3 is_stmt 1 view .LVU50
+ 155:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1;
+ 271              		.loc 1 155 31 is_stmt 0 view .LVU51
  272 003e 0723     		movs	r3, #7
  273 0040 0193     		str	r3, [sp, #4]
- 154:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 274              		.loc 1 154 3 is_stmt 1 view .LVU52
- 154:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 275              		.loc 1 154 34 is_stmt 0 view .LVU53
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 274              		.loc 1 157 3 is_stmt 1 view .LVU52
+ 157:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 275              		.loc 1 157 34 is_stmt 0 view .LVU53
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 70
+
+
  276 0042 063B     		subs	r3, r3, #6
  277 0044 0293     		str	r3, [sp, #8]
- 155:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 70
-
-
- 278              		.loc 1 155 3 is_stmt 1 view .LVU54
- 155:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 279              		.loc 1 155 35 is_stmt 0 view .LVU55
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 278              		.loc 1 158 3 is_stmt 1 view .LVU54
+ 158:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 279              		.loc 1 158 35 is_stmt 0 view .LVU55
  280 0046 0023     		movs	r3, #0
  281 0048 0393     		str	r3, [sp, #12]
- 156:Core/Src/main.c **** 
- 282              		.loc 1 156 3 is_stmt 1 view .LVU56
- 156:Core/Src/main.c **** 
- 283              		.loc 1 156 36 is_stmt 0 view .LVU57
+ 159:Core/Src/main.c **** 
+ 282              		.loc 1 159 3 is_stmt 1 view .LVU56
+ 159:Core/Src/main.c **** 
+ 283              		.loc 1 159 36 is_stmt 0 view .LVU57
  284 004a 0493     		str	r3, [sp, #16]
- 158:Core/Src/main.c ****   {
- 285              		.loc 1 158 3 is_stmt 1 view .LVU58
- 158:Core/Src/main.c ****   {
- 286              		.loc 1 158 7 is_stmt 0 view .LVU59
+ 161:Core/Src/main.c ****   {
+ 285              		.loc 1 161 3 is_stmt 1 view .LVU58
+ 161:Core/Src/main.c ****   {
+ 286              		.loc 1 161 7 is_stmt 0 view .LVU59
  287 004c 0121     		movs	r1, #1
  288 004e 01A8     		add	r0, sp, #4
  289 0050 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  290              	.LVL10:
- 158:Core/Src/main.c ****   {
- 291              		.loc 1 158 6 view .LVU60
+ 161:Core/Src/main.c ****   {
+ 291              		.loc 1 161 6 view .LVU60
  292 0054 0028     		cmp	r0, #0
  293 0056 03D1     		bne	.L14
- 162:Core/Src/main.c **** 
- 294              		.loc 1 162 1 view .LVU61
+ 165:Core/Src/main.c **** 
+ 294              		.loc 1 165 1 view .LVU61
  295 0058 19B0     		add	sp, sp, #100
  296              		@ sp needed
  297 005a 00BD     		pop	{pc}
  298              	.L13:
- 148:Core/Src/main.c ****   }
- 299              		.loc 1 148 5 is_stmt 1 view .LVU62
+ 150:Core/Src/main.c ****   }
+ 299              		.loc 1 150 5 is_stmt 1 view .LVU62
  300 005c FFF7FEFF 		bl	Error_Handler
  301              	.LVL11:
  302              	.L14:
- 160:Core/Src/main.c ****   }
- 303              		.loc 1 160 5 view .LVU63
+ 163:Core/Src/main.c ****   }
+ 303              		.loc 1 163 5 view .LVU63
  304 0060 FFF7FEFF 		bl	Error_Handler
  305              	.LVL12:
  306              		.cfi_endproc
@@ -4183,24 +4186,25 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  309              		.section	.rodata.main.str1.4,"aMS",%progbits,1
  310              		.align	2
  311              	.LC2:
- 312 0000 4D61696E 		.ascii	"Main\012\000"
+ 312 0000 4D61696E 		.ascii	"Main  %d\012\000"
+ 312      20202564 
  312      0A00
- 313 0006 0000     		.align	2
+ 313 000a 0000     		.align	2
  314              	.LC4:
- 315 0008 25640A00 		.ascii	"%d\012\000"
+ 315 000c 25640A00 		.ascii	"%d\012\000"
  316              		.section	.text.main,"ax",%progbits
  317              		.align	1
  318              		.global	main
  319              		.syntax unified
  320              		.code	16
  321              		.thumb_func
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 71
+
+
  323              	main:
  324              	.LFB426:
-  72:Core/Src/main.c **** 
- 325              		.loc 1 72 1 view -0
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 71
-
-
+  73:Core/Src/main.c **** 
+ 325              		.loc 1 73 1 view -0
  326              		.cfi_startproc
  327              		@ args = 0, pretend = 0, frame = 0
  328              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4213,149 +4217,166 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 1
  335              		.cfi_offset 6, -12
  336              		.cfi_offset 7, -8
  337              		.cfi_offset 14, -4
-  81:Core/Src/main.c **** 
- 338              		.loc 1 81 3 view .LVU65
+  82:Core/Src/main.c **** 
+ 338              		.loc 1 82 3 view .LVU65
  339 0002 FFF7FEFF 		bl	HAL_Init
  340              	.LVL13:
-  88:Core/Src/main.c **** 
- 341              		.loc 1 88 3 view .LVU66
+  89:Core/Src/main.c **** 
+ 341              		.loc 1 89 3 view .LVU66
  342 0006 FFF7FEFF 		bl	SystemClock_Config
  343              	.LVL14:
-  95:Core/Src/main.c ****   MX_ADC1_Init();
- 344              		.loc 1 95 3 view .LVU67
+  96:Core/Src/main.c ****   MX_ADC1_Init();
+ 344              		.loc 1 96 3 view .LVU67
  345 000a FFF7FEFF 		bl	MX_GPIO_Init
  346              	.LVL15:
-  96:Core/Src/main.c ****   MX_I2C1_Init();
- 347              		.loc 1 96 3 view .LVU68
+  97:Core/Src/main.c ****   MX_I2C1_Init();
+ 347              		.loc 1 97 3 view .LVU68
  348 000e FFF7FEFF 		bl	MX_ADC1_Init
  349              	.LVL16:
-  97:Core/Src/main.c ****   MX_RTC_Init();
- 350              		.loc 1 97 3 view .LVU69
+  98:Core/Src/main.c ****   MX_RTC_Init();
+ 350              		.loc 1 98 3 view .LVU69
  351 0012 FFF7FEFF 		bl	MX_I2C1_Init
  352              	.LVL17:
-  98:Core/Src/main.c ****   MX_SPI1_Init();
- 353              		.loc 1 98 3 view .LVU70
+  99:Core/Src/main.c ****   MX_SPI1_Init();
+ 353              		.loc 1 99 3 view .LVU70
  354 0016 FFF7FEFF 		bl	MX_RTC_Init
  355              	.LVL18:
-  99:Core/Src/main.c ****   MX_USART2_UART_Init();
- 356              		.loc 1 99 3 view .LVU71
+ 100:Core/Src/main.c ****   MX_USART2_UART_Init();
+ 356              		.loc 1 100 3 view .LVU71
  357 001a FFF7FEFF 		bl	MX_SPI1_Init
  358              	.LVL19:
- 100:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 359              		.loc 1 100 3 view .LVU72
+ 101:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 359              		.loc 1 101 3 view .LVU72
  360 001e FFF7FEFF 		bl	MX_USART2_UART_Init
  361              	.LVL20:
- 103:Core/Src/main.c **** 
- 362              		.loc 1 103 3 view .LVU73
- 363 0022 0F48     		ldr	r0, .L17
- 364 0024 FFF7FEFF 		bl	printf_
+ 104:Core/Src/main.c ****   printf("Main  %d\n", chip);
+ 362              		.loc 1 104 3 view .LVU73
+ 104:Core/Src/main.c ****   printf("Main  %d\n", chip);
+ 363              		.loc 1 104 18 is_stmt 0 view .LVU74
+ 364 0022 FFF7FEFF 		bl	detectChip
  365              	.LVL21:
- 109:Core/Src/main.c ****   while (1)
- 366              		.loc 1 109 3 view .LVU74
- 109:Core/Src/main.c ****   while (1)
- 367              		.loc 1 109 12 is_stmt 0 view .LVU75
- 368 0028 0025     		movs	r5, #0
- 369              	.LVL22:
- 370              	.L16:
- 110:Core/Src/main.c ****   {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 72
+ 366 0026 0100     		movs	r1, r0
+ 367              	.LVL22:
+ 105:Core/Src/main.c **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 72
 
 
- 371              		.loc 1 110 3 is_stmt 1 discriminator 1 view .LVU76
- 115:Core/Src/main.c ****     LED1_ON();
- 372              		.loc 1 115 5 discriminator 1 view .LVU77
- 373 002a 0E4C     		ldr	r4, .L17+4
- 374 002c 2900     		movs	r1, r5
- 375 002e 2000     		movs	r0, r4
- 376 0030 FFF7FEFF 		bl	printf_
- 377              	.LVL23:
- 116:Core/Src/main.c ****     HAL_Delay(500);
- 378              		.loc 1 116 5 discriminator 1 view .LVU78
- 379 0034 0C4F     		ldr	r7, .L17+8
- 380 0036 0223     		movs	r3, #2
- 381 0038 BB61     		str	r3, [r7, #24]
- 117:Core/Src/main.c ****     LED1_OFF();
- 382              		.loc 1 117 5 discriminator 1 view .LVU79
- 383 003a FA26     		movs	r6, #250
- 384 003c 7600     		lsls	r6, r6, #1
- 385 003e 3000     		movs	r0, r6
- 386 0040 FFF7FEFF 		bl	HAL_Delay
- 387              	.LVL24:
- 118:Core/Src/main.c ****     printf("%d\n", ii++);
- 388              		.loc 1 118 5 discriminator 1 view .LVU80
- 389 0044 8023     		movs	r3, #128
- 390 0046 9B02     		lsls	r3, r3, #10
- 391 0048 BB61     		str	r3, [r7, #24]
- 119:Core/Src/main.c ****     HAL_Delay(500);
- 392              		.loc 1 119 5 discriminator 1 view .LVU81
- 393 004a 6F1C     		adds	r7, r5, #1
- 394              	.LVL25:
- 119:Core/Src/main.c ****     HAL_Delay(500);
- 395              		.loc 1 119 5 is_stmt 0 discriminator 1 view .LVU82
- 396 004c 2900     		movs	r1, r5
- 397 004e 2000     		movs	r0, r4
- 398 0050 FFF7FEFF 		bl	printf_
- 399              	.LVL26:
- 120:Core/Src/main.c ****   }
- 400              		.loc 1 120 5 is_stmt 1 discriminator 1 view .LVU83
- 401 0054 3000     		movs	r0, r6
- 402 0056 FFF7FEFF 		bl	HAL_Delay
- 403              	.LVL27:
- 110:Core/Src/main.c ****   {
- 404              		.loc 1 110 9 discriminator 1 view .LVU84
- 119:Core/Src/main.c ****     HAL_Delay(500);
- 405              		.loc 1 119 5 is_stmt 0 discriminator 1 view .LVU85
- 406 005a 3D00     		movs	r5, r7
- 407 005c E5E7     		b	.L16
- 408              	.L18:
- 409 005e C046     		.align	2
- 410              	.L17:
- 411 0060 00000000 		.word	.LC2
- 412 0064 08000000 		.word	.LC4
- 413 0068 00040050 		.word	1342178304
- 414              		.cfi_endproc
- 415              	.LFE426:
- 417              		.text
- 418              	.Letext0:
- 419              		.file 5 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 73
+ 368              		.loc 1 105 3 is_stmt 1 view .LVU75
+ 369 0028 0F4B     		ldr	r3, .L17
+ 370 002a 1800     		movs	r0, r3
+ 371 002c FFF7FEFF 		bl	printf_
+ 372              	.LVL23:
+ 111:Core/Src/main.c ****   while (1)
+ 373              		.loc 1 111 3 view .LVU76
+ 111:Core/Src/main.c ****   while (1)
+ 374              		.loc 1 111 12 is_stmt 0 view .LVU77
+ 375 0030 0025     		movs	r5, #0
+ 376              	.LVL24:
+ 377              	.L16:
+ 112:Core/Src/main.c ****   {
+ 378              		.loc 1 112 3 is_stmt 1 discriminator 1 view .LVU78
+ 117:Core/Src/main.c ****     LED1_ON();
+ 379              		.loc 1 117 5 discriminator 1 view .LVU79
+ 380 0032 0E4C     		ldr	r4, .L17+4
+ 381 0034 2900     		movs	r1, r5
+ 382 0036 2000     		movs	r0, r4
+ 383 0038 FFF7FEFF 		bl	printf_
+ 384              	.LVL25:
+ 118:Core/Src/main.c ****     HAL_Delay(500);
+ 385              		.loc 1 118 5 discriminator 1 view .LVU80
+ 386 003c 0C4F     		ldr	r7, .L17+8
+ 387 003e 0223     		movs	r3, #2
+ 388 0040 BB61     		str	r3, [r7, #24]
+ 119:Core/Src/main.c ****     LED1_OFF();
+ 389              		.loc 1 119 5 discriminator 1 view .LVU81
+ 390 0042 FA26     		movs	r6, #250
+ 391 0044 7600     		lsls	r6, r6, #1
+ 392 0046 3000     		movs	r0, r6
+ 393 0048 FFF7FEFF 		bl	HAL_Delay
+ 394              	.LVL26:
+ 120:Core/Src/main.c ****     printf("%d\n", ii++);
+ 395              		.loc 1 120 5 discriminator 1 view .LVU82
+ 396 004c 8023     		movs	r3, #128
+ 397 004e 9B02     		lsls	r3, r3, #10
+ 398 0050 BB61     		str	r3, [r7, #24]
+ 121:Core/Src/main.c ****     HAL_Delay(500);
+ 399              		.loc 1 121 5 discriminator 1 view .LVU83
+ 400 0052 6F1C     		adds	r7, r5, #1
+ 401              	.LVL27:
+ 121:Core/Src/main.c ****     HAL_Delay(500);
+ 402              		.loc 1 121 5 is_stmt 0 discriminator 1 view .LVU84
+ 403 0054 2900     		movs	r1, r5
+ 404 0056 2000     		movs	r0, r4
+ 405 0058 FFF7FEFF 		bl	printf_
+ 406              	.LVL28:
+ 122:Core/Src/main.c ****   }
+ 407              		.loc 1 122 5 is_stmt 1 discriminator 1 view .LVU85
+ 408 005c 3000     		movs	r0, r6
+ 409 005e FFF7FEFF 		bl	HAL_Delay
+ 410              	.LVL29:
+ 112:Core/Src/main.c ****   {
+ 411              		.loc 1 112 9 discriminator 1 view .LVU86
+ 121:Core/Src/main.c ****     HAL_Delay(500);
+ 412              		.loc 1 121 5 is_stmt 0 discriminator 1 view .LVU87
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 73
 
 
- 420              		.file 6 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 421              		.file 7 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
- 422              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
- 423              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
- 424              		.file 10 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
- 425              		.file 11 "Core\\Inc/printf.h"
- 426              		.file 12 "Core\\Inc/usart.h"
- 427              		.file 13 "Core\\Inc/spi.h"
- 428              		.file 14 "Core\\Inc/rtc.h"
- 429              		.file 15 "Core\\Inc/i2c.h"
- 430              		.file 16 "Core\\Inc/adc.h"
- 431              		.file 17 "Core\\Inc/gpio.h"
- 432              		.file 18 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
- 433              		.file 19 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
- 434              		.file 20 "<built-in>"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cc08yDPB.s 			page 74
+ 413 0062 3D00     		movs	r5, r7
+ 414 0064 E5E7     		b	.L16
+ 415              	.L18:
+ 416 0066 C046     		.align	2
+ 417              	.L17:
+ 418 0068 00000000 		.word	.LC2
+ 419 006c 0C000000 		.word	.LC4
+ 420 0070 00040050 		.word	1342178304
+ 421              		.cfi_endproc
+ 422              	.LFE426:
+ 424              		.global	foutPin
+ 425              		.section	.bss.foutPin,"aw",%nobits
+ 426              		.align	1
+ 429              	foutPin:
+ 430 0000 0000     		.space	2
+ 431              		.text
+ 432              	.Letext0:
+ 433              		.file 5 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 434              		.file 6 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 435              		.file 7 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
+ 436              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
+ 437              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
+ 438              		.file 10 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
+ 439              		.file 11 "Core\\Inc/AB1815.h"
+ 440              		.file 12 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
+ 441              		.file 13 "Core\\Inc/printf.h"
+ 442              		.file 14 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
+ 443              		.file 15 "Core\\Inc/usart.h"
+ 444              		.file 16 "Core\\Inc/spi.h"
+ 445              		.file 17 "Core\\Inc/rtc.h"
+ 446              		.file 18 "Core\\Inc/i2c.h"
+ 447              		.file 19 "Core\\Inc/adc.h"
+ 448              		.file 20 "Core\\Inc/gpio.h"
+ 449              		.file 21 "<built-in>"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccHY02tb.s 			page 74
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:19     .text.__NVIC_SystemReset:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:24     .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:81     .text.__NVIC_SystemReset:00000014 $d
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:87     .rodata.timeout_reset.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:91     .text.timeout_reset:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:97     .text.timeout_reset:00000000 timeout_reset
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:159    .text.timeout_reset:00000038 $d
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:167    .text.Error_Handler:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:173    .text.Error_Handler:00000000 Error_Handler
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:204    .text.SystemClock_Config:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:210    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:310    .rodata.main.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:317    .text.main:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:323    .text.main:00000000 main
-C:\Users\upo\AppData\Local\Temp\cc08yDPB.s:411    .text.main:00000060 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:19     .text.__NVIC_SystemReset:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:24     .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:81     .text.__NVIC_SystemReset:00000014 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:87     .rodata.timeout_reset.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:91     .text.timeout_reset:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:97     .text.timeout_reset:00000000 timeout_reset
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:159    .text.timeout_reset:00000038 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:167    .text.Error_Handler:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:173    .text.Error_Handler:00000000 Error_Handler
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:204    .text.SystemClock_Config:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:210    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:310    .rodata.main.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:317    .text.main:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:323    .text.main:00000000 main
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:418    .text.main:00000068 $d
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:429    .bss.foutPin:00000000 foutPin
+C:\Users\upo\AppData\Local\Temp\ccHY02tb.s:426    .bss.foutPin:00000000 $d
 
 UNDEFINED SYMBOLS
 printf_
@@ -4371,3 +4392,4 @@ MX_I2C1_Init
 MX_RTC_Init
 MX_SPI1_Init
 MX_USART2_UART_Init
+detectChip

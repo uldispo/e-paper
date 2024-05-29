@@ -2,7 +2,7 @@
 /**
  ******************************************************************************
  * @file    AB1815.h
- * @brief   Drivers for AB1815
+ * @brief   Drivers for AB1815, myfile
  ******************************************************************************
  * @attention
  * This software is licensed under terms that can be found in the LICENSE file
@@ -20,20 +20,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include "AB1815_registers.h"
+#include "Time.h"
 
-//#define PIN_INVALID 0
-
-// static inline uint32_t utils_enter_critical_section(void)
-// {
-//   uint32_t primask_bit = __get_PRIMASK();
-//   __disable_irq();
-//   return primask_bit;
-// }
-
-// static inline void utils_exit_critical_section(uint32_t primask_bit)
-// {
-//   __set_PRIMASK(primask_bit);
-// }
+#define PIN_INVALID 0
 
 /**
  * @brief Which GPIO is connected to FOUT/nIRQ
@@ -47,13 +37,7 @@
     remap.reset_pin = PIN_INVALID; // default
     remap.int_pin = PIN_INVALID; // default
  */
-//uint16_t foutPin = 0;
-
-/**
- * @brief The AB18X5 includes a standard I2C interface. The device is accessed at addresses 0xD2/D3, and
-supports Fast Mode (up to 400 kHz).
- */
-//uint8_t i2cAddr = 0xD2;
+uint16_t foutPin = PIN_INVALID;
 
 /**
  * @brief Checks the I2C bus to make sure there is an AB1815 present
