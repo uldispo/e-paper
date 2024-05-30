@@ -394,14 +394,14 @@ typedef enum
 	ab1815_reg_control = 0x9D,
 } configuration_key_e;
 
-enum
+typedef enum
 {
 	ab1815_clk_format_unset = 0,
 	ab1815_clk_format_12_hour = 1,
 	ab1815_clk_format_25_hour = 2
 } ab1815_clk_format_e;
 
-enum
+typedef enum
 {
 	ab1815_interrupt_im_level = 0,
 	ab1815_interrupt_im_1_8192 = 1,
@@ -409,7 +409,7 @@ enum
 	ab1815_interrupt_im_1_4 = 3
 } ab1815_interrupt_im_e;
 
-enum
+typedef enum
 {
 	ab1815_psw_nIRQ_or_OUTB = 0, // If at least one interrupt is enabled
 	ab1815_psw_SQW_or_OUTB = 1,	 // If SQWE == 1
@@ -421,7 +421,7 @@ enum
 	ab1815_psw_OUTB = 7
 } ab1815_psw_nirq2_pin_control_e;
 
-enum
+typedef enum
 {
 	ab1815_fout_nIRQ_or_OUT = 0,		// If at least one interrupt is enabled
 	ab1815_fout_SQW_or_OUT = 1,			// If SQWE == 1
@@ -429,7 +429,7 @@ enum
 	ab1815_fout_nAIRQ_or_OUT = 3		// If AIE == 1
 } ab1815_fout_nirq_pin_control_e;
 
-enum
+typedef enum
 {
 	Sunday = 1,
 	Monday = 2,
@@ -445,8 +445,8 @@ enum
 // 	ab1815_status_e_OK,
 // 	ab1815_status_e_ERROR
 // } ab1815_status_e;
-bool ab1815_status_e_OK = 0;
-bool ab1815_status_e_ERROR = 1;
+// bool ab1815_status_e_OK = 0;
+// bool ab1815_status_e_ERROR = 1;
 
 typedef enum
 {
@@ -514,21 +514,21 @@ typedef enum
 	ab1815_battery_reference_1v4_1v6 = 0b1111, // Also reset value?
 } battery_voltage_reference_select_e;
 
-uint64_t error_code;
-
-uint16_t cs_pin;
-struct
-{
-	uint8_t _12_24 : 2;
-	uint8_t clk_source : 2;
-} fields;
+// uint64_t error_code;
+//
+// uint16_t cs_pin;
+// struct
+//{
+//	uint8_t _12_24 : 2;
+//	uint8_t clk_source : 2;
+// } fields;
 
 // bool init();
 bool read(uint8_t offset, uint8_t *buf, uint8_t length);
 bool write(uint8_t offset, uint8_t *buf, uint8_t length);
 void spi_select_slave(bool select);
 
-ab1815_id_t id;
+// ab1815_id_t id;
 
 // AB1815(uint16_t cs_pin); // ?
 

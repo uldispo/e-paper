@@ -57,6 +57,12 @@
 #define AB1815_REG_ID5 0x2D //!< Manufacturing unique ID lower (read-only)
 #define AB1815_REG_ID6 0x2E //!< Lot and wafer information (read-only)
 
+#define REG_ID0_AB08XX 0x18 //!< Part number, upper, AB08xx
+#define REG_ID0_AB18XX 0x18 //!< Part number, upper, AB18xx
+
+#define REG_ID1_ABXX05 0x05 //!< Part number, lower, AB1805 or AB0805 (I2C)
+#define REG_ID1_ABXX15 0x05
+
 #define AB1815_EXTENTION_RAM 0x3F
 
 #endif /* AB1815_REGISTERS_H_ */

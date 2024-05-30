@@ -21,8 +21,11 @@
 #include "SPI.h"
 #include "stdarg.h"
 #include "AB1815_A.h"
-#include "AB1815.h"
+// #include "AB1815.h"
 #include "TimeLib.h"
+
+bool ab1815_status_e_OK = 1;
+bool ab1815_status_e_ERROR = 0;
 
 void spi_select_slave(bool select) // 1 = high, 0 = low
 {
