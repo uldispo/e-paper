@@ -75,7 +75,8 @@ Core/Src/system_stm32u0xx.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Core/Src/printf.c \
-Core/Src/AB1815.c
+Core/Src/AB1815.c 
+
 
 # ASM sources
 ASM_SOURCES =  \

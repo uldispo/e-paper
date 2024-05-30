@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
   30:Core/Src/system_stm32u0xx.c ****   *                                 during program execution.
   31:Core/Src/system_stm32u0xx.c ****   *
   32:Core/Src/system_stm32u0xx.c ****   *   After each device reset the MSI (4 MHz) is used as system clock source.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 2
 
 
   33:Core/Src/system_stm32u0xx.c ****   *   Then SystemInit() function is called, in "startup_stm32u0xx.s" file, to
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
   87:Core/Src/system_stm32u0xx.c **** 
   88:Core/Src/system_stm32u0xx.c **** #if !defined  (MSI_VALUE)
   89:Core/Src/system_stm32u0xx.c **** #define MSI_VALUE    (4000000UL)     /*!< Value of the Internal oscillator in Hz*/
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 3
 
 
   90:Core/Src/system_stm32u0xx.c **** #endif /* MSI_VALUE */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  144:Core/Src/system_stm32u0xx.c ****     2) by calling HAL API function HAL_RCC_GetHCLKFreq()
  145:Core/Src/system_stm32u0xx.c ****     3) each time HAL_RCC_ClockConfig() is called to configure the system clock frequency
  146:Core/Src/system_stm32u0xx.c ****        Note: If you use this function to configure the system clock; then there
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 4
 
 
  147:Core/Src/system_stm32u0xx.c ****              is no need to call the 2 first functions listed above, since SystemCoreClock
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  190:Core/Src/system_stm32u0xx.c **** /* Software workaround added to keep Debug enabled after Boot_Lock activation and RDP=1  */
  191:Core/Src/system_stm32u0xx.c **** #ifdef ENABLE_DBG_SWEN
  192:Core/Src/system_stm32u0xx.c ****   if (((FLASH->SECR & FLASH_SECR_BOOT_LOCK) == FLASH_SECR_BOOT_LOCK)           \
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 5
 
 
   38              		.loc 1 192 3 is_stmt 1 view .LVU3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
   85              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
   86              		.align	1
   87              		.global	SystemCoreClockUpdate
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 6
 
 
   88              		.syntax unified
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
   98 0000 10B5     		push	{r4, lr}
   99              	.LCFI0:
  100              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 7
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 7
 
 
  101              		.cfi_offset 4, -8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  137 0022 1340     		ands	r3, r2
  138              		.loc 1 263 3 view .LVU31
  139 0024 282B     		cmp	r3, #40
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 8
 
 
  140 0026 49D8     		bhi	.L9
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  257:Core/Src/system_stm32u0xx.c ****   }
  193              		.loc 1 257 20 is_stmt 0 view .LVU33
  194 0030 244B     		ldr	r3, .L23
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 9
 
 
  195 0032 1A68     		ldr	r2, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  297:Core/Src/system_stm32u0xx.c **** 
  298:Core/Src/system_stm32u0xx.c ****         case RCC_PLLCFGR_PLLSRC_1:  /* HSI used as PLL clock source */
  299:Core/Src/system_stm32u0xx.c ****           pllvco = (HSI_VALUE / pllm);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 10
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 10
 
 
  300:Core/Src/system_stm32u0xx.c ****           break;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  275:Core/Src/system_stm32u0xx.c **** 
  237              		.loc 1 275 7 is_stmt 1 view .LVU49
  238 0054 F4E7     		b	.L17
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 11
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 11
 
 
  239              	.L12:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  279 0080 032B     		cmp	r3, #3
  280 0082 17D0     		beq	.L19
  281 0084 012B     		cmp	r3, #1
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 12
 
 
  282 0086 0ED0     		beq	.L22
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  321 00aa EEE7     		b	.L20
  322              	.LVL17:
  323              	.L18:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 13
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 13
 
 
  299:Core/Src/system_stm32u0xx.c ****           break;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  370 0000 A0860100 		.word	100000
  371 0004 400D0300 		.word	200000
  372 0008 801A0600 		.word	400000
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 14
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 14
 
 
  373 000c 00350C00 		.word	800000
@@ -818,26 +818,26 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 1
  409              		.file 5 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/system_stm32u0xx.h"
  410              		.file 6 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
  411              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s 			page 15
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32u0xx.c
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:19     .text.SystemInit:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:25     .text.SystemInit:00000000 SystemInit
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:79     .text.SystemInit:00000038 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:86     .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:92     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:146    .rodata.SystemCoreClockUpdate:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:355    .text.SystemCoreClockUpdate:000000c4 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:369    .rodata.MSIRangeTable:00000000 MSIRangeTable
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:402    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:366    .rodata.MSIRangeTable:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:387    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:384    .rodata.APBPrescTable:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:394    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:391    .rodata.AHBPrescTable:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccSTH8ca.s:399    .data.SystemCoreClock:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:19     .text.SystemInit:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:25     .text.SystemInit:00000000 SystemInit
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:79     .text.SystemInit:00000038 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:86     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:92     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:146    .rodata.SystemCoreClockUpdate:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:355    .text.SystemCoreClockUpdate:000000c4 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:369    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:402    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:366    .rodata.MSIRangeTable:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:387    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:384    .rodata.APBPrescTable:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:394    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:391    .rodata.AHBPrescTable:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccJ7G3GD.s:399    .data.SystemCoreClock:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

@@ -2,5 +2,5 @@
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h:1479:22:LL_PWR_ClearFlag_CSB	1
 ../Core/Src/main.c:72:5:main	1
 ../Core/Src/main.c:131:6:SystemClock_Config	3
-../Core/Src/main.c:169:32:timeout_reset	0
-../Core/Src/main.c:188:6:Error_Handler	1
+../Core/Src/main.c:168:32:timeout_reset	0
+../Core/Src/main.c:185:6:Error_Handler	1

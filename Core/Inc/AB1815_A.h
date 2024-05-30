@@ -21,14 +21,33 @@
 #define AB1815_H_
 
 #include "AB1815_registers.h"
-// #include "Arduino.h"
-#include "Time.h"
+#include <stdbool.h>
+#include <Time.h>
 
+// Base structure representing time elements
 typedef struct
 {
-	uint8_t Hundredth;
-
+	uint8_t Second;
+	uint8_t Minute;
+	uint8_t Hour;
+	uint8_t Wday; // day of week, sunday is day 1
+	uint8_t Day;
+	uint8_t Month;
+	uint8_t Year; // offset from 1970;
 } tmElements_t;
+
+// Extended structure that includes base structure and adds a new member
+typedef struct
+{
+	uint8_t Second;
+	uint8_t Minute;
+	uint8_t Hour;
+	uint8_t Wday; // day of week, sunday is day 1
+	uint8_t Day;
+	uint8_t Month;
+	uint8_t Year; // offset from 1970;
+	uint8_t Hundredth;
+} ab1815_tmElements_t;
 
 // 0x0F
 typedef struct
@@ -323,7 +342,7 @@ typedef struct
 		{
 			bool RESERVED : 1;
 			bool VINT : 1;
-			bool RESERVED_2 : 2;
+			bool RESERVED_2 : 1;
 			bool BMIN : 1;
 			bool BMOD : 1;
 		} fields;
@@ -336,14 +355,14 @@ typedef struct
 	uint8_t value;
 	struct
 	{
-		bool O1EN : 1;
-		bool O3EN : 1;
-		bool O4EN : 1;
-		bool RSEN : 1;
-		bool EXDS : 1;
-		bool WDDS : 1;
-		bool EXBM : 1;
-		bool WDBM : 1;
+		uint8_t O1EN : 1;
+		uint8_t O3EN : 1;
+		uint8_t O4EN : 1;
+		uint8_t RSEN : 1;
+		uint8_t EXDS : 1;
+		uint8_t WDDS : 1;
+		uint8_t EXBM : 1;
+		uint8_t WDBM : 1;
 	} fields;
 } ab1815_output_control_t;
 
@@ -356,19 +375,19 @@ typedef struct
 		struct
 		{
 			uint8_t XADS : 2;
-			bool XADA : 1;
-			bool RSVD : 1;
-			bool EXIN : 1;
-			bool WDIN : 1;
-			bool BPOL : 1;
-			bool O4BM : 1;
+			uint8_t XADA : 1;
+			uint8_t RSVD : 1;
+			uint8_t EXIN : 1;
+			uint8_t WDIN : 1;
+			uint8_t BPOL : 1;
+			uint8_t O4BM : 1;
 		} fields;
 	};
 } extension_ram_t;
 
 // 0x1F
 
-enum
+typedef enum
 {
 	ab1815_oscillator_control = 0xA1,
 	ab1815_software_reset = 0x3c,
@@ -511,118 +530,120 @@ void spi_select_slave(bool select);
 
 ab1815_id_t id;
 
-AB1815(uint16_t cs_pin); // ?
+// AB1815(uint16_t cs_pin); // ?
 
 // 0x00
 time_t get();
 void set(time_t time);
-enum ab1815_status_e get_time(tmElements_t *time);
-enum ab1815_status_e set_time(tmElements_t *time);
-enum ab1815_status_e hundrdeds();
-enum ab1815_status_e clear_hundrdeds();
+bool get_time(ab1815_tmElements_t *time);
+bool set_time(ab1815_tmElements_t *time);
+// bool hundrdeds();
+bool clear_hundrdeds();
 
 // 0x08
-enum ab1815_status_e get_alarm(tmElements_t *time, enum ab1815_alarm_repeat_mode *alarm_mode);
-enum ab1815_status_e set_alarm(tmElements_t *time, enum ab1815_alarm_repeat_mode alarm_mode);
+bool get_alarm(ab1815_tmElements_t *time, ab1815_alarm_repeat_mode *alarm_mode);
+bool set_alarm(ab1815_tmElements_t *time, ab1815_alarm_repeat_mode alarm_mode);
 
 // 0x0F - See also: ARST in Control1.
 //	If ARST is a 1, a read of the Status register will produce the current state of all
 //	the interrupt flags and then clear them
-enum ab1815_status_e set_status(status_t *status);
-enum ab1815_status_e get_status(status_t *status);
+bool set_status(status_t *status);
+bool get_status(status_t *status);
 
 // 0x10
-enum ab1815_status_e set_control1(control1_t *control1);
-enum ab1815_status_e get_control1(control1_t *control1);
+bool set_control1(control1_t *control1);
+bool get_control1(control1_t *control1);
 
 // 0x11
-enum ab1815_status_e set_control2(control2_t *control2);
-enum ab1815_status_e get_control2(control2_t *control2);
+bool set_control2(control2_t *control2);
+bool get_control2(control2_t *control2);
 
 // 0x12
-enum ab1815_status_e set_interrupt_mask(inturrupt_mask_t *inturrupt_mask);
-enum ab1815_status_e get_interrupt_mask(inturrupt_mask_t *inturrupt_mask);
+bool set_interrupt_mask(inturrupt_mask_t *inturrupt_mask);
+bool get_interrupt_mask(inturrupt_mask_t *inturrupt_mask);
 
 // 0x13
-enum ab1815_status_e set_square_wave(square_wave_t *square_wave);
-enum ab1815_status_e get_square_wave(square_wave_t *square_wave);
+bool set_square_wave(square_wave_t *square_wave);
+bool get_square_wave(square_wave_t *square_wave);
 
 // 0x14
-enum ab1815_status_e set_cal_xt(cal_xt_t *cal_xt);
-enum ab1815_status_e get_cal_xt(cal_xt_t *cal_xt);
+bool set_cal_xt(cal_xt_t *cal_xt);
+bool get_cal_xt(cal_xt_t *cal_xt);
 
 // 0x15
-enum ab1815_status_e set_cal_rc_hi(cal_rc_hi_t *cal_rc_hi);
-enum ab1815_status_e get_cal_rc_hi(cal_rc_hi_t *cal_rc_hi);
+bool set_cal_rc_hi(cal_rc_hi_t *cal_rc_hi);
+bool get_cal_rc_hi(cal_rc_hi_t *cal_rc_hi);
 
 // 0x16
-enum ab1815_status_e set_cal_rc_low(cal_rc_low_t *cal_rc_low);
-enum ab1815_status_e get_cal_rc_low(cal_rc_low_t *cal_rc_low);
+bool set_cal_rc_low(cal_rc_low_t *cal_rc_low);
+bool get_cal_rc_low(cal_rc_low_t *cal_rc_low);
 
 // 0x17 sleep_control_t
-enum ab1815_status_e set_sleep_control(sleep_control_t *sleep_control);
-enum ab1815_status_e get_sleep_control(sleep_control_t *sleep_control);
+bool set_sleep_control(sleep_control_t *sleep_control);
+bool get_sleep_control(sleep_control_t *sleep_control);
 
 // 0x18 Set the countdown control register
-enum ab1815_status_e set_countdown_control(countdown_control_t *countdown_control);
-enum ab1815_status_e get_countdown_control(countdown_control_t *countdown_control);
+bool set_countdown_control(countdown_control_t *countdown_control);
+bool get_countdown_control(countdown_control_t *countdown_control);
 
 // 0x19
-enum ab1815_status_e set_countdown_timer(uint8_t timer_value);
-enum ab1815_status_e get_countdown_timer(uint8_t *timer_value);
+bool set_countdown_timer(uint8_t timer_value);
+bool get_countdown_timer(uint8_t *timer_value);
 
 // 0x1A
-enum ab1815_status_e set_countdown_timer_initial_value(uint8_t timer_value);
-enum ab1815_status_e get_countdown_timer_initial_value(uint8_t *timer_value);
+bool set_countdown_timer_initial_value(uint8_t timer_value);
+bool get_countdown_timer_initial_value(uint8_t *timer_value);
 
 // 0x1B
-enum ab1815_status_e set_watchdog_timer(watchdog_timer_t *watchdog_timer);
-enum ab1815_status_e get_watchdog_timer(watchdog_timer_t *watchdog_timer);
+bool set_watchdog_timer(watchdog_timer_t *watchdog_timer);
+bool get_watchdog_timer(watchdog_timer_t *watchdog_timer);
 
 // 0x1C Get the oscillator control register
-enum ab1815_status_e get_oscillator_control(oscillator_control_t *oscillator_control);
-enum ab1815_status_e set_oscillator_control(oscillator_control_t *oscillator_control);
+bool get_oscillator_control(oscillator_control_t *oscillator_control);
+bool set_oscillator_control(oscillator_control_t *oscillator_control);
 
 // 0x1D
-enum ab1815_status_e set_oscillator_status(oscillator_status_t *oscillator_status);
-enum ab1815_status_e get_oscillator_status(oscillator_status_t *oscillator_status);
+bool set_oscillator_status(oscillator_status_t *oscillator_status);
+bool get_oscillator_status(oscillator_status_t *oscillator_status);
 
 // 0x1E - Nothing on the AB1815
 // 0x1F
-enum ab1815_status_e set_configuration_key(enum configuration_key_e configuration_key);
+bool set_configuration_key(configuration_key_e configuration_key);
 
 // 0x20
-enum ab1815_status_e set_trickle(trickle_t *trickle);
-enum ab1815_status_e get_trickle(trickle_t *trickle);
+bool set_trickle(trickle_t *trickle);
+bool get_trickle(trickle_t *trickle);
 
 // 0x21
-enum ab1815_status_e set_bref_control(bref_control_t *bref_control);
-enum ab1815_status_e get_bref_control(bref_control_t *bref_control);
+bool set_bref_control(bref_control_t *bref_control);
+bool get_bref_control(bref_control_t *bref_control);
 
 // 0x26
-enum ab1815_status_e set_afctrl(afctrl_e afctrl);
-enum ab1815_status_e get_(afctrl_e *afctrl);
+bool set_afctrl(afctrl_e afctrl);
+bool get_(afctrl_e *afctrl);
 
 // 0x27
-enum ab1815_status_e set_batmodeio(ab1815_batmodeio_e mode);
-enum ab1815_status_e get_batmodeio(ab1815_batmodeio_e *mode);
+bool set_batmodeio(ab1815_batmodeio_e mode);
+bool get_batmodeio(ab1815_batmodeio_e *mode);
 
 // 0x28
-enum ab1815_status_e get_id(ab1815_id_t *id);
+bool get_id(ab1815_id_t *id);
 
 // 0x2F
-enum ab1815_status_e set_analog_status_register(ab1815_analog_status_t *analog_status);
-enum ab1815_status_e get_analog_status_register(ab1815_analog_status_t *analog_status);
+bool set_analog_status_register(ab1815_analog_status_t *analog_status);
+bool get_analog_status_register(ab1815_analog_status_t *analog_status);
 
 // 0x30
-enum ab1815_status_e set_output_control(ab1815_output_control_t *output_control);
-enum ab1815_status_e get_output_control(ab1815_output_control_t *output_control);
+bool set_output_control(ab1815_output_control_t *output_control);
+bool get_output_control(ab1815_output_control_t *output_control);
 
 // 0x3F
-enum ab1815_status_e set_extension_ram(extension_ram_t *extension_ram);
-enum ab1815_status_e get_extension_ram(extension_ram_t *extension_ram);
+bool set_extension_ram(extension_ram_t *extension_ram);
+bool get_extension_ram(extension_ram_t *extension_ram);
 
 void hex_dump(FILE *dump_to);
+
+bool detectChip(void);
 
 inline uint8_t bcd2bin(uint8_t value)
 {
