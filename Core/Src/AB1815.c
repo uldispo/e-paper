@@ -50,11 +50,13 @@ bool read(uint8_t offset, uint8_t *buf, uint8_t length)
 	if (HAL_SPI_Transmit(&hspi1, &address, 1, 3000) != HAL_OK)
 	{
 		print_error(__func__, __LINE__);
+		return ab1815_status_e_ERROR;
 	}
 
 	if (HAL_SPI_Receive(&hspi1, buf, length, 3000) != HAL_OK)
 	{
 		print_error(__func__, __LINE__);
+		return ab1815_status_e_ERROR;
 	}
 
 	spi_select_slave(1);
@@ -536,12 +538,11 @@ bool detectChip()
 	// FOUT/nIRQ  will go HIGH when the chip is ready to respond
 
 	uint32_t start = HAL_GetTick();
-	bool ready = false;
+
 	while (HAL_GetTick() - start < 2000)
 	{
 		if (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) == GPIO_PIN_SET) // B12
 		{
-			ready = true;
 			break;
 		}
 		else

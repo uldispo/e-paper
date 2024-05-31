@@ -103,7 +103,10 @@ int main(void)
 
   // Detect power om mode. First time or after sleep!!
 
-  detectChip();
+  if(!detectChip())
+  {
+	  print_error(__func__, __LINE__);
+  }
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
   initialize_clock();
@@ -126,7 +129,7 @@ int main(void)
     HAL_Delay(3000);
     LED1_OFF();
     printf("%d\n", ii++);
-    HAL_Delay(1000);
+    HAL_Delay(3000);
   }
   /* USER CODE END 3 */
 }
