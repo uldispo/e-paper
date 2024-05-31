@@ -40,7 +40,8 @@ Core/Src/AB1815.o: ../Core/Src/AB1815.c ../Core/Inc/SPI.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h \
  ../Core/Inc/AB1815_A.h ../Core/Inc/AB1815_registers.h \
- ../Core/Inc/TimeLib.h ../Core/Inc/printf.h
+ ../Core/Inc/TimeLib.h ../Core/Inc/printf.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h
 ../Core/Inc/SPI.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
@@ -87,3 +88,4 @@ Core/Src/AB1815.o: ../Core/Src/AB1815.c ../Core/Inc/SPI.h \
 ../Core/Inc/AB1815_registers.h:
 ../Core/Inc/TimeLib.h:
 ../Core/Inc/printf.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h:

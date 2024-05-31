@@ -111,9 +111,14 @@ int main(void)
   printf("\nMAIN. Power ON.   %d\n", clk);
   initialize_clock();
   set_timer();
-  // hex_dump();
-
+  //hex_dump();
+  status_t stat;
+  get_status( &stat);
+  printf("Status1 = %X\n", stat);
   enable_countdown();
+  get_status(&stat);
+  printf("Status2 = %X\n", stat);
+  hex_dump();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -126,9 +131,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
     printf("%d\n", ii);
     LED1_ON();
-    HAL_Delay(3000);
+    HAL_Delay(62000);
     LED1_OFF();
-    printf("%d\n", ii++);
+    hex_dump();
     HAL_Delay(3000);
   }
   /* USER CODE END 3 */

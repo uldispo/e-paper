@@ -24,9 +24,11 @@
 // #include "AB1815.h"
 #include "TimeLib.h"
 #include "printf.h"
+#include "stm32u0xx_ll_spi.h"
 
 bool ab1815_status_e_OK = 1;
 bool ab1815_status_e_ERROR = 0;
+inline static uint8_t SPI1_SendByte(uint8_t data);
 
 void spi_select_slave(bool select) // 1 = high, 0 = low
 {
@@ -45,18 +47,14 @@ bool read(uint8_t offset, uint8_t *buf, uint8_t length)
 	uint8_t address = AB1815_SPI_READ(offset);
 
 	spi_select_slave(0);
-	// SPI.transfer(address);
-	// HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout)
-	if (HAL_SPI_Transmit(&hspi1, &address, 1, 3000) != HAL_OK)
-	{
-		print_error(__func__, __LINE__);
-		return ab1815_status_e_ERROR;
-	}
 
-	if (HAL_SPI_Receive(&hspi1, buf, length, 3000) != HAL_OK)
+	unsigned int i = 0;
+	if (!((SPI1)->CR1 & SPI_CR1_SPE)) {SPI1->CR1 |= SPI_CR1_SPE;}
+
+	SPI1_SendByte(address);
+	while(i < length)
 	{
-		print_error(__func__, __LINE__);
-		return ab1815_status_e_ERROR;
+		buf[i++] = SPI1_SendByte(0x00); 	//Send DUMMY to read data
 	}
 
 	spi_select_slave(1);
@@ -68,82 +66,20 @@ bool write(uint8_t offset, uint8_t *buf, uint8_t length)
 	uint8_t address = AB1815_SPI_WRITE(offset);
 	spi_select_slave(0);
 
-	if (HAL_SPI_Transmit(&hspi1, &address, 1, 3000) != HAL_OK)
+	uint8_t i = 0;
+	if (!((SPI1)->CR1 & SPI_CR1_SPE)) {SPI1->CR1 |= SPI_CR1_SPE;}
+	CSB_L();
+	SPI1_SendByte(address);
+	while(i < length)
 	{
-		print_error(__func__, __LINE__);
-	}
-
-	if (HAL_SPI_Transmit(&hspi1, buf, length, 3000) != HAL_OK)
-	{
-		print_error(__func__, __LINE__);
+		SPI1_SendByte(buf[i++]); 	//Send Data to write
 	}
 
 	spi_select_slave(1); // set 1
 	return ab1815_status_e_OK;
 };
 
-// // 0x00
-// time_t get()
-// {
-// 	tmElements_t tm;
-// 	get_time(&tm);
-// 	return makeTime(tm); // ???
-// }
 
-// // 0x00
-// void set(time_t time)
-// {
-// 	ab1815_tmElements_t tm;
-// 	breakTime(time, tm); // void breakTime(time_t timeInput, ab1815_tmElements_t tm)
-// 	set_time(&tm);		 // bool set_time(ab1815_tmElements_t *time)
-// }
-
-// // 0x00
-// bool get_time(ab1815_tmElements_t *time)
-// {
-// 	bool to_ret = ab1815_status_e_ERROR;
-// 	size_t length = (AB1815_REG_ALARM_HUNDREDTHS - AB1815_REG_TIME_HUNDREDTHS);
-// 	uint8_t buffer[length];
-// 	memset(buffer, 0, length);
-// 	if (read(AB1815_REG_TIME_HUNDREDTHS, buffer, length) == ab1815_status_e_OK)
-// 	{
-// 		to_ret = ab1815_status_e_OK;
-// 		time->Hundredth = bcd2bin(buffer[0]);
-// 		time->Second = bcd2bin(0x7F & buffer[1]);
-// 		time->Minute = bcd2bin(0x7F & buffer[2]);
-// 		time->Hour = bcd2bin(0x3F & buffer[3]);
-// 		time->Day = bcd2bin(0x3F & buffer[4]);
-// 		time->Month = bcd2bin(0x1F & buffer[5]);
-// 		time->Year = y2kYearToTm(bcd2bin(buffer[6]));
-// 		time->Wday = bcd2bin(0x07 & buffer[7]);
-// 	}
-// 	return to_ret;
-// }
-
-// // 0x00
-// bool set_time(ab1815_tmElements_t *time)
-// {
-// 	size_t length = (AB1815_REG_ALARM_HUNDREDTHS - AB1815_REG_TIME_HUNDREDTHS);
-// 	uint8_t buffer[length];
-// 	bool result = ab1815_status_e_ERROR;
-
-// 	memset(buffer, 0, length);
-// 	buffer[0] = bin2bcd(time->Hundredth);
-// 	buffer[1] = bin2bcd(0x7F & time->Second);
-// 	buffer[2] = bin2bcd(0x7F & time->Minute);
-// 	buffer[3] = bin2bcd(0x3F & time->Hour);
-// 	buffer[4] = bin2bcd(0x3F & time->Day);
-// 	buffer[5] = bin2bcd(0x1F & time->Month);
-// 	buffer[6] = bin2bcd(tmYearToY2k(time->Year));
-// 	buffer[7] = bin2bcd(0x07 & time->Wday);
-
-// 	if (write(AB1815_REG_TIME_HUNDREDTHS, buffer, length) == ab1815_status_e_OK)
-// 	{
-// 		result = ab1815_status_e_OK;
-// 	}
-
-// 	return result;
-// };
 
 bool clear_hundrdeds()
 {
@@ -152,89 +88,7 @@ bool clear_hundrdeds()
 	return write(AB1815_REG_TIME_HUNDREDTHS, buf, 1);
 };
 
-// 0x08
-// bool get_alarm(ab1815_tmElements_t *time, ab1815_alarm_repeat_mode *alarm_mode)
-// {
-// 	bool to_ret = ab1815_status_e_ERROR;
-// 	size_t length = AB1815_REG_STATUS - AB1815_REG_ALARM_HUNDREDTHS;
-// 	uint8_t buffer[length];
-// 	memset(buffer, 0, length);
-// 	countdown_control_t cd_reg;
-// 	uint32_t *val = (uint32_t *)alarm_mode;
 
-// 	if (get_countdown_control(&cd_reg) == ab1815_status_e_OK)
-// 	{
-// 		if (read(AB1815_REG_ALARM_HUNDREDTHS, buffer, length) == ab1815_status_e_OK)
-// 		{
-// 			to_ret = ab1815_status_e_OK;
-// 			time->Hundredth = bcd2bin(buffer[0]);
-// 			time->Second = bcd2bin(0x7F & buffer[1]);
-// 			time->Minute = bcd2bin(0x7F & buffer[2]);
-// 			time->Hour = bcd2bin(0x3F & buffer[3]);
-// 			time->Day = bcd2bin(0x3F & buffer[4]);
-// 			time->Month = bcd2bin(0x1F & buffer[5]);
-// 			time->Wday = bcd2bin(0x07 & buffer[6]);
-// 		}
-// 		*alarm_mode = (ab1815_alarm_repeat_mode)cd_reg.fields.RPT;
-// 		if (cd_reg.fields.RPT == 7)
-// 		{
-// 			if ((time->Hundredth & 0xF0) == 0xF0)
-// 			{
-
-// 				(*val)++;
-// 				if ((time->Hundredth & 0xFF) == 0xFF)
-// 				{
-// 					(*val)++;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return to_ret;
-// };
-
-// // 0x08
-// bool set_alarm(ab1815_tmElements_t *time, ab1815_alarm_repeat_mode alarm_mode)
-// {
-// 	size_t length = AB1815_REG_STATUS - AB1815_REG_ALARM_HUNDREDTHS;
-// 	uint8_t buffer[length];
-// 	bool result = ab1815_status_e_ERROR;
-// 	uint8_t repeat = alarm_mode;
-
-// 	memset(buffer, 0, length);
-// 	buffer[0] = bin2bcd(time->Hundredth);
-// 	buffer[1] = bin2bcd(0x7F & time->Second);
-// 	buffer[2] = bin2bcd(0x7F & time->Minute);
-// 	buffer[3] = bin2bcd(0x3F & time->Hour);
-// 	buffer[4] = bin2bcd(0x3F & time->Day);
-// 	buffer[5] = bin2bcd(0x1F & time->Month);
-// 	buffer[6] = bin2bcd(0x07 & time->Wday);
-
-// 	switch (alarm_mode)
-// 	{
-// 	case ab1815_alarm_repeat_once_per_tenth:
-// 		repeat = 7;
-// 		buffer[0] |= 0xF0;
-// 		break;
-// 	case ab1815_alarm_repeat_once_per_hundredth:
-// 		repeat = 7;
-// 		buffer[0] = 0xFF;
-// 		break;
-// 	default:
-// 		repeat = alarm_mode;
-// 	}
-
-// 	if (write(AB1815_REG_ALARM_HUNDREDTHS, buffer, length) == ab1815_status_e_OK)
-// 	{
-// 		countdown_control_t cd_reg;
-
-// 		if (get_countdown_control(&cd_reg) == ab1815_status_e_OK)
-// 		{
-// 			cd_reg.fields.RPT = repeat;
-// 			return set_countdown_control(&cd_reg);
-// 		}
-// 	}
-// 	return result;
-// };
 
 // 0x0F - See also: ARST in Control1.
 //	If ARST is a 1, a read of the Status register will produce the current state of all
@@ -552,7 +406,7 @@ bool detectChip()
 	bResult = read(AB1815_REG_ID0, &value, 1); // REG_ID0 = 0x28, the upper RW bit indicating read (if 0) or write (if 1).
 	if (bResult && value == REG_ID0_AB18XX)
 	{
-		printf("REG_ID0 = %X", value);
+		printf("\nREG_ID0 = %X", value);
 		bResult = read(AB1815_REG_ID1, &value, 1);
 		if (bResult && value == REG_ID1_ABXX15)
 		{
@@ -643,3 +497,28 @@ void enable_countdown(void)
 	control.fields.TE = 1;
 	set_countdown_control(&control);
 }
+
+
+inline static uint8_t SPI1_SendByte(uint8_t data)
+{
+	while(LL_SPI_IsActiveFlag_TXE(SPI1)==RESET);
+	LL_SPI_TransmitData8(SPI1, data);
+
+	while(LL_SPI_IsActiveFlag_RXNE(SPI1)==RESET);
+	return LL_SPI_ReceiveData8(SPI1);
+}
+
+
+inline static uint8_t SPI1_Readbyte(uint8_t reg_addr)
+{
+	uint8_t val;
+
+	CSB_L();
+	SPI1_SendByte(reg_addr);
+	val = SPI1_SendByte(0x00); 	//Send DUMMY to read data
+	CSB_H();
+
+	return val;
+}
+
+
