@@ -641,7 +641,7 @@ bool get_output_control(ab1815_output_control_t *output_control);
 bool set_extension_ram(extension_ram_t *extension_ram);
 bool get_extension_ram(extension_ram_t *extension_ram);
 
-void hex_dump(FILE *dump_to);
+void hex_dump(void);
 
 bool detectChip(void);
 
@@ -654,5 +654,9 @@ inline uint8_t bin2bcd(uint8_t value)
 {
 	return ((value / 10) << 4) + value % 10;
 }
+
+void initialize_clock(void);
+void set_timer(void);
+void enable_countdown(void);
 
 #endif /* AB1815_H_ */

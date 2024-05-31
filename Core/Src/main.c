@@ -101,9 +101,16 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  uint8_t chip = detectChip();
-  printf("Main  %d\n", chip);
+  // Detect power om mode. First time or after sleep!!
 
+  detectChip();
+  uint32_t clk = HAL_RCC_GetSysClockFreq();
+  printf("\nMAIN. Power ON.   %d\n", clk);
+  initialize_clock();
+  set_timer();
+  // hex_dump();
+
+  enable_countdown();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -116,10 +123,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
     printf("%d\n", ii);
     LED1_ON();
-    HAL_Delay(500);
+    HAL_Delay(3000);
     LED1_OFF();
     printf("%d\n", ii++);
-    HAL_Delay(500);
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -165,15 +172,10 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-__attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line)
+void print_error(const char *func, uint32_t line)
 {
-
-  LL_PWR_ClearFlag_CSB(); // Clear standby flag
-  printf(" *** timeout_reset:  %s    %d\n", func, line);
-  HAL_Delay(2000);
-  __HAL_RCC_BACKUPRESET_FORCE();
-  __HAL_RCC_BACKUPRESET_RELEASE();
-  NVIC_SystemReset();
+  printf(" *** Error:  %s ,   %d\n", func, line);
+  HAL_Delay(1000);
 }
 
 /* USER CODE END 4 */

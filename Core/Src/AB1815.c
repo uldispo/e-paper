@@ -23,6 +23,7 @@
 #include "AB1815_A.h"
 // #include "AB1815.h"
 #include "TimeLib.h"
+#include "printf.h"
 
 bool ab1815_status_e_OK = 1;
 bool ab1815_status_e_ERROR = 0;
@@ -48,12 +49,12 @@ bool read(uint8_t offset, uint8_t *buf, uint8_t length)
 	// HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout)
 	if (HAL_SPI_Transmit(&hspi1, &address, 1, 3000) != HAL_OK)
 	{
-		Error_Handler();
+		print_error(__func__, __LINE__);
 	}
 
 	if (HAL_SPI_Receive(&hspi1, buf, length, 3000) != HAL_OK)
 	{
-		Error_Handler();
+		print_error(__func__, __LINE__);
 	}
 
 	spi_select_slave(1);
@@ -67,12 +68,12 @@ bool write(uint8_t offset, uint8_t *buf, uint8_t length)
 
 	if (HAL_SPI_Transmit(&hspi1, &address, 1, 3000) != HAL_OK)
 	{
-		Error_Handler();
+		print_error(__func__, __LINE__);
 	}
 
 	if (HAL_SPI_Transmit(&hspi1, buf, length, 3000) != HAL_OK)
 	{
-		Error_Handler();
+		print_error(__func__, __LINE__);
 	}
 
 	spi_select_slave(1); // set 1
@@ -517,14 +518,13 @@ bool get_extension_ram(extension_ram_t *extension_ram)
 	return read(AB1815_EXTENTION_RAM, &extension_ram->value, 1);
 }
 
-void hex_dump(FILE *dump_to)
+void hex_dump(void)
 {
-
 	uint8_t buffer[8];
 	for (uint8_t pos = 0; pos < 0x7F; pos += 8)
 	{
 		read(pos, buffer, 8);
-		fprintf(dump_to, "# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
+		printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
 	}
 }
 
@@ -535,16 +535,16 @@ bool detectChip()
 
 	// FOUT/nIRQ  will go HIGH when the chip is ready to respond
 
-	unsigned long start = HAL_GetTick();
+	uint32_t start = HAL_GetTick();
 	bool ready = false;
-	while (HAL_GetTick() - start < 1000)
+	while (HAL_GetTick() - start < 2000)
 	{
 		if (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) == GPIO_PIN_SET) // B12
 		{
 			ready = true;
 			break;
 		}
-		if (!ready)
+		else
 		{
 			printf("FOUT did not go HIGH\n");
 			// May just want to return false here
@@ -554,9 +554,11 @@ bool detectChip()
 	bResult = read(AB1815_REG_ID0, &value, 1); // REG_ID0 = 0x28, the upper RW bit indicating read (if 0) or write (if 1).
 	if (bResult && value == REG_ID0_AB18XX)
 	{
+		printf("REG_ID0 = %X", value);
 		bResult = read(AB1815_REG_ID1, &value, 1);
 		if (bResult && value == REG_ID1_ABXX15)
 		{
+			printf("%X\n", value);
 			finalResult = true;
 		}
 	}
@@ -566,4 +568,80 @@ bool detectChip()
 	}
 
 	return finalResult;
+}
+
+void initialize_clock(void)
+{
+	oscillator_control_t oscillator_control;
+	get_oscillator_control(&oscillator_control);
+	printf("# retrieved oscillator_control: %X\n", oscillator_control.value);
+
+	//  OSEL = 1 when using RC oscillator instead of XTAL
+	oscillator_control.fields.OSEL = 1;
+
+	//  Disable I/O Interface during sleep to ensure the clock it not corrupted
+	//  by floating pins and what not.
+	oscillator_control.fields.PWGT = 1;
+	printf("# set oscillator_control: %X\n", oscillator_control.value);
+
+	set_oscillator_control(&oscillator_control);
+
+	//  Hundredths don't seem to tick over when using the RC clock source
+	//  So I clear them
+	clear_hundrdeds();
+
+	control1_t control1;
+	get_control1(&control1);
+
+	//	0 is 24 Hour Mode
+	control1.fields._12_24 = 0;
+
+	//  1 is Power Switch Mode
+	control1.fields.PWR2 = 1;
+	set_control1(&control1);
+
+	inturrupt_mask_t int_mask;
+	get_interrupt_mask(&int_mask);
+
+	//  Alarm Interrupt Enable = true
+	int_mask.fields.AIE = 1;
+
+	//  Set Interrupt Mode to be a Logic Level (opposed to a pulse)
+	int_mask.fields.IM = ab1815_interrupt_im_level;
+	set_interrupt_mask(&int_mask);
+
+	control2_t control2;
+
+	//  Set NIRQ Pin to output NIRQ (since AIE is enabled)
+	//    control2.fields.OUT1S = ab1815_fout_nIRQ_or_OUT;
+
+	//  Set NIRQ2 pin to be power switched sleep
+	control2.fields.OUT2S = ab1815_psw_SLEEP;
+	set_control2(&control2);
+}
+
+void set_timer(void)
+{
+	countdown_control_t control;
+	inturrupt_mask_t int_mask;
+	int_mask.fields.TIE = 1;
+	set_interrupt_mask(&int_mask);
+	// Clear any pending interrupts
+	write(AB1815_REG_STATUS, 0, 1); // REG_STATUS_DEFAULT= 0x00; //!< Status register, default
+	// Stop countdown timer if already running since it can't be set while running
+	// REG_TIMER_CTRL_DEFAULT   = 0x23; //!< Countdown timer control, 0b00100011 (TFPT + TFS = 1/60 Hz0)
+	write(AB1815_REG_COUNTDOWN_TIMER_CONTROL, (uint8_t *)0x23, 1);
+
+	control.fields.TM = 1;
+	control.fields.TRPT = 1;
+	control.fields.TFS = 0b11;
+	set_countdown_control(&control);
+	set_countdown_timer(60);
+}
+
+void enable_countdown(void)
+{
+	countdown_control_t control;
+	control.fields.TE = 1;
+	set_countdown_control(&control);
 }

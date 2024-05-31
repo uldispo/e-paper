@@ -61,7 +61,7 @@
 #define REG_ID0_AB18XX 0x18 //!< Part number, upper, AB18xx
 
 #define REG_ID1_ABXX05 0x05 //!< Part number, lower, AB1805 or AB0805 (I2C)
-#define REG_ID1_ABXX15 0x05
+#define REG_ID1_ABXX15 0x15
 
 #define AB1815_EXTENTION_RAM 0x3F
 
