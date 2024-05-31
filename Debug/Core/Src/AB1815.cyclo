@@ -50,6 +50,6 @@
 ../Core/Src/AB1815.c:518:6:get_extension_ram	1
 ../Core/Src/AB1815.c:523:6:hex_dump	2
 ../Core/Src/AB1815.c:533:6:detectChip	8
-../Core/Src/AB1815.c:574:6:initialize_clock	1
-../Core/Src/AB1815.c:624:6:set_timer	1
-../Core/Src/AB1815.c:643:6:enable_countdown	1
+../Core/Src/AB1815.c:571:6:initialize_clock	1
+../Core/Src/AB1815.c:621:6:set_timer	1
+../Core/Src/AB1815.c:640:6:enable_countdown	1

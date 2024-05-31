@@ -539,18 +539,15 @@ bool detectChip()
 
 	uint32_t start = HAL_GetTick();
 
-	while (HAL_GetTick() - start < 2000)
-	{
-		if (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) == GPIO_PIN_SET) // B12
+		while (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) != GPIO_PIN_SET) // B12
 		{
-			break;
+			if((HAL_GetTick() - start) > 5000)
+			{
+				printf("FOUT did not go HIGH\n");
+				break;
+			}
 		}
-		else
-		{
-			printf("FOUT did not go HIGH\n");
-			// May just want to return false here
-		}
-	}
+
 
 	bResult = read(AB1815_REG_ID0, &value, 1); // REG_ID0 = 0x28, the upper RW bit indicating read (if 0) or write (if 1).
 	if (bResult && value == REG_ID0_AB18XX)

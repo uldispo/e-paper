@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00020a3a  00000000  00000000  000295f2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001cff0  00000000  00000000  0004a02c  2**0
+ 17 .debug_line   0001cfeb  00000000  00000000  0004a02c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000c42bc  00000000  00000000  0006701c  2**0
+ 18 .debug_str    000c42bc  00000000  00000000  00067017  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0012b2d8  2**0
+ 19 .comment      00000043  00000000  00000000  0012b2d3  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005228  00000000  00000000  0012b31c  2**2
+ 20 .debug_frame  00005228  00000000  00000000  0012b318  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004f  00000000  00000000  00130544  2**0
+ 21 .debug_line_str 0000004f  00000000  00000000  00130540  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -5052,133 +5052,128 @@ bool detectChip()
  80026f4:	0003      	movs	r3, r0
  80026f6:	60bb      	str	r3, [r7, #8]
 
-	while (HAL_GetTick() - start < 2000)
- 80026f8:	e00d      	b.n	8002716 <detectChip+0x3a>
-	{
-		if (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) == GPIO_PIN_SET) // B12
- 80026fa:	2380      	movs	r3, #128	@ 0x80
- 80026fc:	015b      	lsls	r3, r3, #5
- 80026fe:	4a30      	ldr	r2, [pc, #192]	@ (80027c0 <detectChip+0xe4>)
- 8002700:	0019      	movs	r1, r3
- 8002702:	0010      	movs	r0, r2
- 8002704:	f003 f964 	bl	80059d0 <HAL_GPIO_ReadPin>
- 8002708:	0003      	movs	r3, r0
- 800270a:	2b01      	cmp	r3, #1
- 800270c:	d00d      	beq.n	800272a <detectChip+0x4e>
+		while (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) != GPIO_PIN_SET) // B12
+ 80026f8:	e00c      	b.n	8002714 <detectChip+0x38>
 		{
-			break;
+			if((HAL_GetTick() - start) > 5000)
+ 80026fa:	f002 fb03 	bl	8004d04 <HAL_GetTick>
+ 80026fe:	0002      	movs	r2, r0
+ 8002700:	68bb      	ldr	r3, [r7, #8]
+ 8002702:	1ad3      	subs	r3, r2, r3
+ 8002704:	4a2d      	ldr	r2, [pc, #180]	@ (80027bc <detectChip+0xe0>)
+ 8002706:	4293      	cmp	r3, r2
+ 8002708:	d904      	bls.n	8002714 <detectChip+0x38>
+			{
+				printf("FOUT did not go HIGH\n");
+ 800270a:	4b2d      	ldr	r3, [pc, #180]	@ (80027c0 <detectChip+0xe4>)
+ 800270c:	0018      	movs	r0, r3
+ 800270e:	f002 f813 	bl	8004738 <printf_>
+				break;
+ 8002712:	e009      	b.n	8002728 <detectChip+0x4c>
+		while (HAL_GPIO_ReadPin(NIRQ_GPIO_Port, NIRQ_Pin) != GPIO_PIN_SET) // B12
+ 8002714:	2380      	movs	r3, #128	@ 0x80
+ 8002716:	015b      	lsls	r3, r3, #5
+ 8002718:	4a2a      	ldr	r2, [pc, #168]	@ (80027c4 <detectChip+0xe8>)
+ 800271a:	0019      	movs	r1, r3
+ 800271c:	0010      	movs	r0, r2
+ 800271e:	f003 f957 	bl	80059d0 <HAL_GPIO_ReadPin>
+ 8002722:	0003      	movs	r3, r0
+ 8002724:	2b01      	cmp	r3, #1
+ 8002726:	d1e8      	bne.n	80026fa <detectChip+0x1e>
+			}
 		}
-		else
-		{
-			printf("FOUT did not go HIGH\n");
- 800270e:	4b2d      	ldr	r3, [pc, #180]	@ (80027c4 <detectChip+0xe8>)
- 8002710:	0018      	movs	r0, r3
- 8002712:	f002 f811 	bl	8004738 <printf_>
-	while (HAL_GetTick() - start < 2000)
- 8002716:	f002 faf5 	bl	8004d04 <HAL_GetTick>
- 800271a:	0002      	movs	r2, r0
- 800271c:	68bb      	ldr	r3, [r7, #8]
- 800271e:	1ad2      	subs	r2, r2, r3
- 8002720:	23fa      	movs	r3, #250	@ 0xfa
- 8002722:	00db      	lsls	r3, r3, #3
- 8002724:	429a      	cmp	r2, r3
- 8002726:	d3e8      	bcc.n	80026fa <detectChip+0x1e>
- 8002728:	e000      	b.n	800272c <detectChip+0x50>
-			break;
- 800272a:	46c0      	nop			@ (mov r8, r8)
-			// May just want to return false here
-		}
-	}
+
 
 	bResult = read(AB1815_REG_ID0, &value, 1); // REG_ID0 = 0x28, the upper RW bit indicating read (if 0) or write (if 1).
- 800272c:	1dfc      	adds	r4, r7, #7
- 800272e:	1dbb      	adds	r3, r7, #6
- 8002730:	2201      	movs	r2, #1
- 8002732:	0019      	movs	r1, r3
- 8002734:	2028      	movs	r0, #40	@ 0x28
- 8002736:	f7ff fe83 	bl	8002440 <read>
- 800273a:	0003      	movs	r3, r0
- 800273c:	7023      	strb	r3, [r4, #0]
+ 8002728:	1dfc      	adds	r4, r7, #7
+ 800272a:	1dbb      	adds	r3, r7, #6
+ 800272c:	2201      	movs	r2, #1
+ 800272e:	0019      	movs	r1, r3
+ 8002730:	2028      	movs	r0, #40	@ 0x28
+ 8002732:	f7ff fe85 	bl	8002440 <read>
+ 8002736:	0003      	movs	r3, r0
+ 8002738:	7023      	strb	r3, [r4, #0]
 	if (bResult && value == REG_ID0_AB18XX)
- 800273e:	1dfb      	adds	r3, r7, #7
- 8002740:	781b      	ldrb	r3, [r3, #0]
- 8002742:	2b00      	cmp	r3, #0
- 8002744:	d028      	beq.n	8002798 <detectChip+0xbc>
- 8002746:	1dbb      	adds	r3, r7, #6
- 8002748:	781b      	ldrb	r3, [r3, #0]
- 800274a:	2b18      	cmp	r3, #24
- 800274c:	d124      	bne.n	8002798 <detectChip+0xbc>
+ 800273a:	1dfb      	adds	r3, r7, #7
+ 800273c:	781b      	ldrb	r3, [r3, #0]
+ 800273e:	2b00      	cmp	r3, #0
+ 8002740:	d028      	beq.n	8002794 <detectChip+0xb8>
+ 8002742:	1dbb      	adds	r3, r7, #6
+ 8002744:	781b      	ldrb	r3, [r3, #0]
+ 8002746:	2b18      	cmp	r3, #24
+ 8002748:	d124      	bne.n	8002794 <detectChip+0xb8>
 	{
 		printf("REG_ID0 = %X", value);
- 800274e:	1dbb      	adds	r3, r7, #6
- 8002750:	781b      	ldrb	r3, [r3, #0]
- 8002752:	001a      	movs	r2, r3
- 8002754:	4b1c      	ldr	r3, [pc, #112]	@ (80027c8 <detectChip+0xec>)
- 8002756:	0011      	movs	r1, r2
- 8002758:	0018      	movs	r0, r3
- 800275a:	f001 ffed 	bl	8004738 <printf_>
+ 800274a:	1dbb      	adds	r3, r7, #6
+ 800274c:	781b      	ldrb	r3, [r3, #0]
+ 800274e:	001a      	movs	r2, r3
+ 8002750:	4b1d      	ldr	r3, [pc, #116]	@ (80027c8 <detectChip+0xec>)
+ 8002752:	0011      	movs	r1, r2
+ 8002754:	0018      	movs	r0, r3
+ 8002756:	f001 ffef 	bl	8004738 <printf_>
 		bResult = read(AB1815_REG_ID1, &value, 1);
- 800275e:	1dfc      	adds	r4, r7, #7
- 8002760:	1dbb      	adds	r3, r7, #6
- 8002762:	2201      	movs	r2, #1
- 8002764:	0019      	movs	r1, r3
- 8002766:	2029      	movs	r0, #41	@ 0x29
- 8002768:	f7ff fe6a 	bl	8002440 <read>
- 800276c:	0003      	movs	r3, r0
- 800276e:	7023      	strb	r3, [r4, #0]
+ 800275a:	1dfc      	adds	r4, r7, #7
+ 800275c:	1dbb      	adds	r3, r7, #6
+ 800275e:	2201      	movs	r2, #1
+ 8002760:	0019      	movs	r1, r3
+ 8002762:	2029      	movs	r0, #41	@ 0x29
+ 8002764:	f7ff fe6c 	bl	8002440 <read>
+ 8002768:	0003      	movs	r3, r0
+ 800276a:	7023      	strb	r3, [r4, #0]
 		if (bResult && value == REG_ID1_ABXX15)
- 8002770:	1dfb      	adds	r3, r7, #7
- 8002772:	781b      	ldrb	r3, [r3, #0]
- 8002774:	2b00      	cmp	r3, #0
- 8002776:	d00f      	beq.n	8002798 <detectChip+0xbc>
- 8002778:	1dbb      	adds	r3, r7, #6
- 800277a:	781b      	ldrb	r3, [r3, #0]
- 800277c:	2b15      	cmp	r3, #21
- 800277e:	d10b      	bne.n	8002798 <detectChip+0xbc>
+ 800276c:	1dfb      	adds	r3, r7, #7
+ 800276e:	781b      	ldrb	r3, [r3, #0]
+ 8002770:	2b00      	cmp	r3, #0
+ 8002772:	d00f      	beq.n	8002794 <detectChip+0xb8>
+ 8002774:	1dbb      	adds	r3, r7, #6
+ 8002776:	781b      	ldrb	r3, [r3, #0]
+ 8002778:	2b15      	cmp	r3, #21
+ 800277a:	d10b      	bne.n	8002794 <detectChip+0xb8>
 		{
 			printf("%X\n", value);
- 8002780:	1dbb      	adds	r3, r7, #6
- 8002782:	781b      	ldrb	r3, [r3, #0]
- 8002784:	001a      	movs	r2, r3
- 8002786:	4b11      	ldr	r3, [pc, #68]	@ (80027cc <detectChip+0xf0>)
- 8002788:	0011      	movs	r1, r2
- 800278a:	0018      	movs	r0, r3
- 800278c:	f001 ffd4 	bl	8004738 <printf_>
+ 800277c:	1dbb      	adds	r3, r7, #6
+ 800277e:	781b      	ldrb	r3, [r3, #0]
+ 8002780:	001a      	movs	r2, r3
+ 8002782:	4b12      	ldr	r3, [pc, #72]	@ (80027cc <detectChip+0xf0>)
+ 8002784:	0011      	movs	r1, r2
+ 8002786:	0018      	movs	r0, r3
+ 8002788:	f001 ffd6 	bl	8004738 <printf_>
 			finalResult = true;
- 8002790:	230f      	movs	r3, #15
- 8002792:	18fb      	adds	r3, r7, r3
- 8002794:	2201      	movs	r2, #1
- 8002796:	701a      	strb	r2, [r3, #0]
+ 800278c:	230f      	movs	r3, #15
+ 800278e:	18fb      	adds	r3, r7, r3
+ 8002790:	2201      	movs	r2, #1
+ 8002792:	701a      	strb	r2, [r3, #0]
 		}
 	}
 	if (!finalResult)
- 8002798:	230f      	movs	r3, #15
- 800279a:	18fb      	adds	r3, r7, r3
- 800279c:	781b      	ldrb	r3, [r3, #0]
- 800279e:	2201      	movs	r2, #1
- 80027a0:	4053      	eors	r3, r2
- 80027a2:	b2db      	uxtb	r3, r3
- 80027a4:	2b00      	cmp	r3, #0
- 80027a6:	d003      	beq.n	80027b0 <detectChip+0xd4>
+ 8002794:	230f      	movs	r3, #15
+ 8002796:	18fb      	adds	r3, r7, r3
+ 8002798:	781b      	ldrb	r3, [r3, #0]
+ 800279a:	2201      	movs	r2, #1
+ 800279c:	4053      	eors	r3, r2
+ 800279e:	b2db      	uxtb	r3, r3
+ 80027a0:	2b00      	cmp	r3, #0
+ 80027a2:	d003      	beq.n	80027ac <detectChip+0xd0>
 	{
 		printf("not detected\n");
- 80027a8:	4b09      	ldr	r3, [pc, #36]	@ (80027d0 <detectChip+0xf4>)
- 80027aa:	0018      	movs	r0, r3
- 80027ac:	f001 ffc4 	bl	8004738 <printf_>
+ 80027a4:	4b0a      	ldr	r3, [pc, #40]	@ (80027d0 <detectChip+0xf4>)
+ 80027a6:	0018      	movs	r0, r3
+ 80027a8:	f001 ffc6 	bl	8004738 <printf_>
 	}
 
 	return finalResult;
- 80027b0:	230f      	movs	r3, #15
- 80027b2:	18fb      	adds	r3, r7, r3
- 80027b4:	781b      	ldrb	r3, [r3, #0]
+ 80027ac:	230f      	movs	r3, #15
+ 80027ae:	18fb      	adds	r3, r7, r3
+ 80027b0:	781b      	ldrb	r3, [r3, #0]
 }
- 80027b6:	0018      	movs	r0, r3
- 80027b8:	46bd      	mov	sp, r7
- 80027ba:	b005      	add	sp, #20
- 80027bc:	bd90      	pop	{r4, r7, pc}
- 80027be:	46c0      	nop			@ (mov r8, r8)
- 80027c0:	50000400 	.word	0x50000400
- 80027c4:	0800973c 	.word	0x0800973c
+ 80027b2:	0018      	movs	r0, r3
+ 80027b4:	46bd      	mov	sp, r7
+ 80027b6:	b005      	add	sp, #20
+ 80027b8:	bd90      	pop	{r4, r7, pc}
+ 80027ba:	46c0      	nop			@ (mov r8, r8)
+ 80027bc:	00001388 	.word	0x00001388
+ 80027c0:	0800973c 	.word	0x0800973c
+ 80027c4:	50000400 	.word	0x50000400
  80027c8:	08009754 	.word	0x08009754
  80027cc:	08009764 	.word	0x08009764
  80027d0:	08009768 	.word	0x08009768
