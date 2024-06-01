@@ -212,9 +212,6 @@
 // void begin();
 // void begin(short sda_pin, short scl_pin);
 
-inline static uint8_t read_rtc_register(uint8_t reg_addr);
-inline static uint8_t write_rtc_register(uint8_t rtc_register, uint8_t data);
-
 uint8_t get_rtc_data(const uint8_t rtc_register, const uint8_t register_mask);
 
 uint8_t get_hundredths(void);
@@ -395,35 +392,6 @@ uint8_t hex_dec(uint8_t hex);
 
 // func
 void hex_dump(void);
-// data
-
-volatile uint8_t _year;
-volatile uint8_t _month;
-volatile uint8_t _date;
-volatile uint8_t _weekday;
-volatile uint8_t _hour;
-volatile uint8_t _minute;
-volatile uint8_t _second;
-volatile uint8_t _hundredth;
-
-volatile uint8_t _alarm_year;
-volatile uint8_t _alarm_month;
-volatile uint8_t _alarm_date;
-volatile uint8_t _alarm_weekday;
-volatile uint8_t _alarm_hour;
-volatile uint8_t _alarm_minute;
-volatile uint8_t _alarm_second;
-char data_time_string[CONST_DATE_TIME_STRING_LEN];
-
-uint8_t _status;
-uint8_t _control1;
-uint8_t _control2;
-uint8_t _interrupt;
-uint8_t _sleep_mode;
-uint8_t _timer_control_mode;
-uint8_t _outcontrol;
-uint8_t _osc_control;
-uint8_t _wdt_register;
 
 // #define DEBUG_SIO Serial
 

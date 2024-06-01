@@ -1,8 +1,6 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
- ../Core/Inc/stm32u0xx_hal_conf.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h \
+Core/Src/AB1805.o: ../Core/Src/AB1805.c ../Core/Inc/AB1805.h \
+ ../Core/Inc/printf.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u0xx.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h \
  ../Drivers/CMSIS/Include/core_cm0plus.h \
@@ -11,6 +9,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/system_stm32u0xx.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
+ ../Core/Inc/stm32u0xx_hal_conf.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc_ex.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_gpio.h \
@@ -37,16 +39,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_spi_ex.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h \
+ ../Core/Inc/main.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h ../Core/Inc/adc.h \
- ../Core/Inc/main.h ../Core/Inc/i2c.h ../Core/Inc/rtc.h ../Core/Inc/spi.h \
- ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/printf.h \
- ../Core/Inc/AB1805.h
-../Core/Inc/main.h:
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
-../Core/Inc/stm32u0xx_hal_conf.h:
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h:
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h:
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h
+../Core/Inc/AB1805.h:
+../Core/Inc/printf.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h:
 ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u0xx.h:
 ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h:
 ../Drivers/CMSIS/Include/core_cm0plus.h:
@@ -55,6 +53,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/system_stm32u0xx.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
+../Core/Inc/stm32u0xx_hal_conf.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc_ex.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_gpio.h:
@@ -81,14 +83,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_spi_ex.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h:
+../Core/Inc/main.h:
 ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h:
-../Core/Inc/adc.h:
-../Core/Inc/main.h:
-../Core/Inc/i2c.h:
-../Core/Inc/rtc.h:
-../Core/Inc/spi.h:
-../Core/Inc/usart.h:
-../Core/Inc/gpio.h:
-../Core/Inc/printf.h:
-../Core/Inc/AB1805.h:

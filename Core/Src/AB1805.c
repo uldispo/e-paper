@@ -3,8 +3,40 @@
 #include "stm32u0xx_ll_spi.h"
 #include "main.h"
 
-// inline static uint8_t SPI1_SendByte(uint8_t data);
-// inline static uint8_t SPI1_Readbyte(uint8_t reg_addr);
+inline static uint8_t read_rtc_register(uint8_t reg_addr);
+inline static uint8_t write_rtc_register(uint8_t rtc_register, uint8_t data);
+#define AB1815_SPI_READ(offset) (127 & offset)
+#define AB1815_SPI_WRITE(offset) (128 | offset)
+
+// data
+
+volatile uint8_t _year;
+volatile uint8_t _month;
+volatile uint8_t _date;
+volatile uint8_t _weekday;
+volatile uint8_t _hour;
+volatile uint8_t _minute;
+volatile uint8_t _second;
+volatile uint8_t _hundredth;
+
+volatile uint8_t _alarm_year;
+volatile uint8_t _alarm_month;
+volatile uint8_t _alarm_date;
+volatile uint8_t _alarm_weekday;
+volatile uint8_t _alarm_hour;
+volatile uint8_t _alarm_minute;
+volatile uint8_t _alarm_second;
+char data_time_string[CONST_DATE_TIME_STRING_LEN];
+
+uint8_t _status;
+uint8_t _control1;
+uint8_t _control2;
+uint8_t _interrupt;
+uint8_t _sleep_mode;
+uint8_t _timer_control_mode;
+uint8_t _outcontrol;
+uint8_t _osc_control;
+uint8_t _wdt_register;
 
 void spi_select_slave(bool select) // 1 = high, 0 = low
 {
@@ -448,6 +480,7 @@ uint8_t clean_CB_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_CB_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_BAT_status(void)
@@ -456,6 +489,7 @@ uint8_t clean_BAT_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_BAT_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_WDT_status(void)
@@ -464,6 +498,7 @@ uint8_t clean_WDT_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_WDT_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_BL_status(void)
@@ -472,6 +507,7 @@ uint8_t clean_BL_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_BL_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_TIM_status(void)
@@ -480,6 +516,7 @@ uint8_t clean_TIM_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_TIM_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_ALM_status(void)
@@ -488,6 +525,7 @@ uint8_t clean_ALM_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_ALM_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_EX2_status(void)
@@ -496,6 +534,7 @@ uint8_t clean_EX2_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_EX2_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 uint8_t clean_EX1_status(void)
@@ -504,6 +543,7 @@ uint8_t clean_EX1_status(void)
   c1 = read_rtc_register(STATU_REGISTER);
   c1 &= ~STATUS_EX1_MASK;
   write_rtc_register(STATU_REGISTER, c1);
+  return 1;
 }
 
 // set func
@@ -524,6 +564,7 @@ uint8_t set_1224(uint8_t value)
     c1 |= CONTROL1_1224_MASK;
   }
   write_rtc_register(CONTROL1_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_RSP(uint8_t value)
@@ -536,6 +577,7 @@ uint8_t set_RSP(uint8_t value)
     c1 |= CONTROL1_RSP_MASK;
   }
   write_rtc_register(CONTROL1_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_ARST(uint8_t value)
@@ -548,6 +590,7 @@ uint8_t set_ARST(uint8_t value)
     c1 |= CONTROL1_ARST_MASK;
   }
   write_rtc_register(CONTROL1_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_PWR2(uint8_t value)
@@ -560,6 +603,7 @@ uint8_t set_PWR2(uint8_t value)
     c1 |= CONTROL1_PWR2_MASK;
   }
   write_rtc_register(CONTROL1_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_WRTC(uint8_t value)
@@ -572,6 +616,7 @@ uint8_t set_WRTC(uint8_t value)
     c1 |= CONTROL1_WRTC_MASK;
   }
   write_rtc_register(CONTROL1_REGISTER, c1);
+  return 1;
 }
 
 // interrupt
@@ -628,6 +673,7 @@ uint8_t set_BLIE_interrupt(uint8_t value)
     c1 |= INTERRUPT_BLIE_MASK;
   }
   write_rtc_register(INT_MASK_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_TIE_interrupt(uint8_t value)
@@ -640,6 +686,7 @@ uint8_t set_TIE_interrupt(uint8_t value)
     c1 |= INTERRUPT_TIE_MASK;
   }
   write_rtc_register(INT_MASK_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_AIE_interrupt(uint8_t value)
@@ -652,6 +699,7 @@ uint8_t set_AIE_interrupt(uint8_t value)
     c1 |= INTERRUPT_AIE_MASK;
   }
   write_rtc_register(INT_MASK_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_EX1E_interrupt(uint8_t value)
@@ -664,6 +712,7 @@ uint8_t set_EX1E_interrupt(uint8_t value)
     c1 |= INTERRUPT_EX1E_MASK;
   }
   write_rtc_register(INT_MASK_REGISTER, c1);
+  return 1;
 }
 
 uint8_t set_EX2E_interrupt(uint8_t value)
@@ -676,6 +725,7 @@ uint8_t set_EX2E_interrupt(uint8_t value)
     c1 |= INTERRUPT_EX2E_MASK;
   }
   write_rtc_register(INT_MASK_REGISTER, c1);
+  return 1;
 }
 
 // control2
@@ -1377,7 +1427,6 @@ uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
   uint8_t address = AB1815_SPI_WRITE(offset);
   spi_select_slave(0);
 
-  uint8_t i = 0;
   if (!((SPI1)->CR1 & SPI_CR1_SPE))
   {
     SPI1->CR1 |= SPI_CR1_SPE;

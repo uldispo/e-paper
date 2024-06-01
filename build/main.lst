@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   21:Core/Src/main.c **** #include "adc.h"
   22:Core/Src/main.c **** #include "i2c.h"
   23:Core/Src/main.c **** #include "rtc.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 2
 
 
   24:Core/Src/main.c **** #include "spi.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   78:Core/Src/main.c **** 
   79:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
   80:Core/Src/main.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 3
 
 
   81:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  135:Core/Src/main.c ****     hex_dump();
  136:Core/Src/main.c ****     HAL_Delay(3000);
  137:Core/Src/main.c ****   }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 4
 
 
  138:Core/Src/main.c ****   /* USER CODE END 3 */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   40              		.cfi_offset 4, -8
   41              		.cfi_offset 14, -4
   42 0002 0A00     		movs	r2, r1
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 5
 
 
  184:Core/Src/main.c ****   printf(" *** Error:  %s ,   %d\n", func, line);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   84              	.LBB4:
   85              	.LBI4:
   86              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 6
 
 
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 7
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 7
 
 
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 8
 
 
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
  170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
  171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 9
 
 
  172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  226:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  227:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  228:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __NOP()                             __ASM volatile ("nop")
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 10
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 10
 
 
  229:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  283:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  284:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  285:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 11
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 11
 
 
  286:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  340:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Rotate Right in unsigned value (32 bit)
  341:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Rotate Right (immediate) provides the value of the contents of a register rotated by a v
  342:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op1  Value to rotate
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 12
 
 
  343:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op2  Number of Bits to rotate
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  397:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  398:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Count leading zeros
  399:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Counts the number of leading zeros of a data value.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 13
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 13
 
 
  400:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to count the leading zeros
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
  455:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  456:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 14
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 14
 
 
  457:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  511:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  512:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
  513:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 15
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 15
 
 
  514:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  568:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  569:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  570:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 16
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 16
 
 
  571:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Unsigned Saturate
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  625:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (16 bit)
  626:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 16 bit values.
  627:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 17
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 17
 
 
  628:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  682:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  683:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  684:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 18
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 18
 
 
  685:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  739:Drivers/CMSIS/Include/cmsis_gcc.h ****       return max;
  740:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
  741:Drivers/CMSIS/Include/cmsis_gcc.h ****     else if (val < 0)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 19
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 19
 
 
  742:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  796:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("lda %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  797:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  798:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 20
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 20
 
 
  799:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  853:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (16 bit)
  854:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a LDAH exclusive instruction for 16 bit values.
  855:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 21
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 21
 
 
  856:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  910:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  911:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("stlexh %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "mem
  912:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 22
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 22
 
 
  913:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
   91              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
   92 0000 72B6     		cpsid i
   93              	@ 0 "" 2
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 23
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 23
 
 
   94              		.thumb
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  140              		.loc 1 152 3 is_stmt 1 view .LVU19
  141 0018 8020     		movs	r0, #128
  142 001a C000     		lsls	r0, r0, #3
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 24
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 24
 
 
  143 001c FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  180 0044 0293     		str	r3, [sp, #8]
  171:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
  181              		.loc 1 171 3 is_stmt 1 view .LVU37
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 25
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 25
 
 
  171:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  221 0028 53746174 		.ascii	"Status2 = %X\012\000"
  221      75733220 
  221      3D202558 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 26
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 26
 
 
  221      0A00
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  110:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
  267              		.loc 1 110 3 view .LVU56
  110:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 27
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 27
 
 
  268              		.loc 1 110 18 is_stmt 0 view .LVU57
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  310 0052 0021     		movs	r1, #0
  311 0054 FFF7FEFF 		bl	printf_
  312              	.LVL31:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 28
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 28
 
 
  132:Core/Src/main.c ****     HAL_Delay(62000);
@@ -1660,206 +1660,45 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 1
  343 0090 B80B0000 		.word	3000
  344              		.cfi_endproc
  345              	.LFE426:
- 347              		.global	_wdt_register
- 348              		.section	.bss._wdt_register,"aw",%nobits
- 351              	_wdt_register:
- 352 0000 00       		.space	1
- 353              		.global	_osc_control
- 354              		.section	.bss._osc_control,"aw",%nobits
- 357              	_osc_control:
- 358 0000 00       		.space	1
- 359              		.global	_outcontrol
- 360              		.section	.bss._outcontrol,"aw",%nobits
- 363              	_outcontrol:
- 364 0000 00       		.space	1
- 365              		.global	_timer_control_mode
- 366              		.section	.bss._timer_control_mode,"aw",%nobits
- 369              	_timer_control_mode:
- 370 0000 00       		.space	1
- 371              		.global	_sleep_mode
- 372              		.section	.bss._sleep_mode,"aw",%nobits
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 29
+ 347              		.text
+ 348              	.Letext0:
+ 349              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 350              		.file 4 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 351              		.file 5 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
+ 352              		.file 6 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
+ 353              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
+ 354              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
+ 355              		.file 9 "Core\\Inc/printf.h"
+ 356              		.file 10 "Core\\Inc/AB1805.h"
+ 357              		.file 11 "Core\\Inc/usart.h"
+ 358              		.file 12 "Core\\Inc/spi.h"
+ 359              		.file 13 "Core\\Inc/rtc.h"
+ 360              		.file 14 "Core\\Inc/i2c.h"
+ 361              		.file 15 "Core\\Inc/adc.h"
+ 362              		.file 16 "Core\\Inc/gpio.h"
+ 363              		.file 17 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
+ 364              		.file 18 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 29
 
 
- 375              	_sleep_mode:
- 376 0000 00       		.space	1
- 377              		.global	_interrupt
- 378              		.section	.bss._interrupt,"aw",%nobits
- 381              	_interrupt:
- 382 0000 00       		.space	1
- 383              		.global	_control2
- 384              		.section	.bss._control2,"aw",%nobits
- 387              	_control2:
- 388 0000 00       		.space	1
- 389              		.global	_control1
- 390              		.section	.bss._control1,"aw",%nobits
- 393              	_control1:
- 394 0000 00       		.space	1
- 395              		.global	_status
- 396              		.section	.bss._status,"aw",%nobits
- 399              	_status:
- 400 0000 00       		.space	1
- 401              		.global	data_time_string
- 402              		.section	.bss.data_time_string,"aw",%nobits
- 403              		.align	2
- 406              	data_time_string:
- 407 0000 00000000 		.space	30
- 407      00000000 
- 407      00000000 
- 407      00000000 
- 407      00000000 
- 408              		.global	_alarm_second
- 409              		.section	.bss._alarm_second,"aw",%nobits
- 412              	_alarm_second:
- 413 0000 00       		.space	1
- 414              		.global	_alarm_minute
- 415              		.section	.bss._alarm_minute,"aw",%nobits
- 418              	_alarm_minute:
- 419 0000 00       		.space	1
- 420              		.global	_alarm_hour
- 421              		.section	.bss._alarm_hour,"aw",%nobits
- 424              	_alarm_hour:
- 425 0000 00       		.space	1
- 426              		.global	_alarm_weekday
- 427              		.section	.bss._alarm_weekday,"aw",%nobits
- 430              	_alarm_weekday:
- 431 0000 00       		.space	1
- 432              		.global	_alarm_date
- 433              		.section	.bss._alarm_date,"aw",%nobits
- 436              	_alarm_date:
- 437 0000 00       		.space	1
- 438              		.global	_alarm_month
- 439              		.section	.bss._alarm_month,"aw",%nobits
- 442              	_alarm_month:
- 443 0000 00       		.space	1
- 444              		.global	_alarm_year
- 445              		.section	.bss._alarm_year,"aw",%nobits
- 448              	_alarm_year:
- 449 0000 00       		.space	1
- 450              		.global	_hundredth
- 451              		.section	.bss._hundredth,"aw",%nobits
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 30
-
-
- 454              	_hundredth:
- 455 0000 00       		.space	1
- 456              		.global	_second
- 457              		.section	.bss._second,"aw",%nobits
- 460              	_second:
- 461 0000 00       		.space	1
- 462              		.global	_minute
- 463              		.section	.bss._minute,"aw",%nobits
- 466              	_minute:
- 467 0000 00       		.space	1
- 468              		.global	_hour
- 469              		.section	.bss._hour,"aw",%nobits
- 472              	_hour:
- 473 0000 00       		.space	1
- 474              		.global	_weekday
- 475              		.section	.bss._weekday,"aw",%nobits
- 478              	_weekday:
- 479 0000 00       		.space	1
- 480              		.global	_date
- 481              		.section	.bss._date,"aw",%nobits
- 484              	_date:
- 485 0000 00       		.space	1
- 486              		.global	_month
- 487              		.section	.bss._month,"aw",%nobits
- 490              	_month:
- 491 0000 00       		.space	1
- 492              		.global	_year
- 493              		.section	.bss._year,"aw",%nobits
- 496              	_year:
- 497 0000 00       		.space	1
- 498              		.text
- 499              	.Letext0:
- 500              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 501              		.file 4 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 502              		.file 5 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
- 503              		.file 6 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
- 504              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
- 505              		.file 8 "Core\\Inc/AB1805.h"
- 506              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
- 507              		.file 10 "Core\\Inc/printf.h"
- 508              		.file 11 "Core\\Inc/usart.h"
- 509              		.file 12 "Core\\Inc/spi.h"
- 510              		.file 13 "Core\\Inc/rtc.h"
- 511              		.file 14 "Core\\Inc/i2c.h"
- 512              		.file 15 "Core\\Inc/adc.h"
- 513              		.file 16 "Core\\Inc/gpio.h"
- 514              		.file 17 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
- 515              		.file 18 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
- 516              		.file 19 "<built-in>"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 31
+ 365              		.file 19 "<built-in>"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 30
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:19     .rodata.print_error.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:23     .text.print_error:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:29     .text.print_error:00000000 print_error
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:64     .text.print_error:00000018 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:69     .text.Error_Handler:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:75     .text.Error_Handler:00000000 Error_Handler
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:107    .text.SystemClock_Config:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:113    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:213    .rodata.main.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:226    .text.main:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:232    .text.main:00000000 main
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:337    .text.main:00000078 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:351    .bss._wdt_register:00000000 _wdt_register
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:352    .bss._wdt_register:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:357    .bss._osc_control:00000000 _osc_control
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:358    .bss._osc_control:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:363    .bss._outcontrol:00000000 _outcontrol
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:364    .bss._outcontrol:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:369    .bss._timer_control_mode:00000000 _timer_control_mode
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:370    .bss._timer_control_mode:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:375    .bss._sleep_mode:00000000 _sleep_mode
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:376    .bss._sleep_mode:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:381    .bss._interrupt:00000000 _interrupt
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:382    .bss._interrupt:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:387    .bss._control2:00000000 _control2
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:388    .bss._control2:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:393    .bss._control1:00000000 _control1
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:394    .bss._control1:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:399    .bss._status:00000000 _status
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:400    .bss._status:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:406    .bss.data_time_string:00000000 data_time_string
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:403    .bss.data_time_string:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:412    .bss._alarm_second:00000000 _alarm_second
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:413    .bss._alarm_second:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:418    .bss._alarm_minute:00000000 _alarm_minute
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:419    .bss._alarm_minute:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:424    .bss._alarm_hour:00000000 _alarm_hour
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:425    .bss._alarm_hour:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:430    .bss._alarm_weekday:00000000 _alarm_weekday
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:431    .bss._alarm_weekday:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:436    .bss._alarm_date:00000000 _alarm_date
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:437    .bss._alarm_date:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:442    .bss._alarm_month:00000000 _alarm_month
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:443    .bss._alarm_month:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:448    .bss._alarm_year:00000000 _alarm_year
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:449    .bss._alarm_year:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:454    .bss._hundredth:00000000 _hundredth
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:455    .bss._hundredth:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:460    .bss._second:00000000 _second
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:461    .bss._second:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:466    .bss._minute:00000000 _minute
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:467    .bss._minute:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:472    .bss._hour:00000000 _hour
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:473    .bss._hour:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:478    .bss._weekday:00000000 _weekday
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s 			page 32
-
-
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:479    .bss._weekday:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:484    .bss._date:00000000 _date
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:485    .bss._date:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:490    .bss._month:00000000 _month
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:491    .bss._month:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:496    .bss._year:00000000 _year
-C:\Users\upo\AppData\Local\Temp\ccyuHCJa.s:497    .bss._year:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:19     .rodata.print_error.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:23     .text.print_error:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:29     .text.print_error:00000000 print_error
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:64     .text.print_error:00000018 $d
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:69     .text.Error_Handler:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:75     .text.Error_Handler:00000000 Error_Handler
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:107    .text.SystemClock_Config:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:113    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:213    .rodata.main.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:226    .text.main:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:232    .text.main:00000000 main
+C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:337    .text.main:00000078 $d
 
 UNDEFINED SYMBOLS
 printf_
