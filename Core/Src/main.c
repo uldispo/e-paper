@@ -29,7 +29,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "printf.h"
-#include "AB1815_A.h"
+#include "AB1805.h"
 
 /* USER CODE END Includes */
 
@@ -103,20 +103,19 @@ int main(void)
 
   // Detect power om mode. First time or after sleep!!
 
-  if(!detectChip())
-  {
-	  print_error(__func__, __LINE__);
-  }
+  // if (!detectChip())
+  // {
+  //   print_error(__func__, __LINE__);
+  // }
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
-  initialize_clock();
-  set_timer();
-  //hex_dump();
-  status_t stat;
-  get_status( &stat);
+
+  // hex_dump();
+
+  uint8_t stat = get_status();
   printf("Status1 = %X\n", stat);
-  enable_countdown();
-  get_status(&stat);
+
+  stat = get_status();
   printf("Status2 = %X\n", stat);
   hex_dump();
   /* USER CODE END 2 */
