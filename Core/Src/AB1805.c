@@ -1,15 +1,18 @@
 #include "AB1805.h"
+#include <stdint.h>
 #include "printf.h"
 #include "stm32u0xx_ll_spi.h"
 #include "main.h"
+extern SPI_HandleTypeDef hspi1;
 
 inline static uint8_t read_rtc_register(uint8_t reg_addr);
 inline static uint8_t write_rtc_register(uint8_t rtc_register, uint8_t data);
+static inline uint32_t utils_enter_critical_section(void);
+static inline void utils_exit_critical_section(uint32_t primask_bit);
 #define AB1815_SPI_READ(offset) (127 & offset)
 #define AB1815_SPI_WRITE(offset) (128 | offset)
-
+#define DEBUG_SIO
 // data
-
 volatile uint8_t _year;
 volatile uint8_t _month;
 volatile uint8_t _date;
@@ -1070,6 +1073,8 @@ uint8_t set_outcontrol_value(uint8_t value)
 uint8_t set_outcontrol_value_mask(uint8_t value, uint8_t mask)
 {
   uint8_t c1;
+  uint32_t primask_bit = utils_enter_critical_section();
+
   c1 = get_outcontrol();
   switch (mask)
   {
@@ -1113,6 +1118,7 @@ uint8_t set_outcontrol_value_mask(uint8_t value, uint8_t mask)
     c1 = value;
   }
   return set_outcontrol_value(c1);
+  utils_exit_critical_section(primask_bit);
 }
 
 // OSC control registers
@@ -1294,7 +1300,7 @@ void enter_sleep_mode_PWR_value(uint8_t value)
  *  timeout - minimum timeout period in 7.8 ms periods (0 to 7)
  *  mode - sleep mode (nRST modes not available in AM08xx)
  *      0 => nRST is pulled low in sleep mode
- *      1 => PSW/nIRQ2 is pulled high on a sleep
+ *      1 => PSW/nIRQ2 is pulled high on a sleep      <-- This one!!!
  *      2 => nRST pulled low and PSW/nIRQ2 pulled high on sleep
  *  error ?returned value of the attempted sleep command
  *      0 => sleep request accepted, sleep mode will be initiated in timeout seconds
@@ -1313,11 +1319,11 @@ uint8_t enter_sleep_mode(uint8_t timeout, uint8_t mode)
 
   if ((temp) == 0)
   {
-    DBGPRINT("\r\nPrevious Sleep Failed");
+    printf("\r\nPrevious Sleep Failed");
   }
   else
   {
-    DBGPRINT("\r\nPrevious Sleep Successful");
+    printf("\r\nPrevious Sleep Successful");
   }
   clean_SLST_sleep(); // Clear SLST
 
@@ -1325,11 +1331,11 @@ uint8_t enter_sleep_mode(uint8_t timeout, uint8_t mode)
 
   if ((temp) == 0)
   {
-    DBGPRINT("\r\nClear Succ");
+    printf("\r\nClear Succ");
   }
   else
   {
-    DBGPRINT("\r\nClear Fail");
+    printf("\r\nClear Fail");
   }
   clean_SLST_sleep(); // Clear SLST
 #endif
@@ -1359,18 +1365,18 @@ uint8_t enter_sleep_mode(uint8_t timeout, uint8_t mode)
     if (((temp & 0x0F) == 0) & (((reg_wdi_value & 0x7C) == 0) || ((reg_wdi_value & 0x80) == 0x80)))
     {
       ret = 3;
-      DBGPRINT("\r\nNo trigger interrupts enabled");
+      printf("\r\nNo trigger interrupts enabled");
     }
     else
     {
       ret = 2;
-      DBGPRINT("\r\nInterrupt pending");
+      printf("\r\nInterrupt pending");
     }
   }
   else
   {
     ret = 0;
-    DBGPRINT("\r\nSLEEP request successful");
+    printf("\r\nSLEEP request successful");
   }
 #endif
   return ret;
@@ -1391,11 +1397,16 @@ inline static uint8_t SPI1_SendByte(uint8_t data)
 inline static uint8_t read_rtc_register(uint8_t reg_addr)
 {
   uint8_t val;
+  uint32_t primask_bit = utils_enter_critical_section();
 
-  CSB_L();
-  SPI1_SendByte(reg_addr);
+  // #define AB1815_SPI_READ(offset) (127 & offset)		127 - 0x7F
+  // #define AB1815_SPI_WRITE(offset) (128 | offset)  	128 - 0x80
+  uint8_t addr = AB1815_SPI_READ(reg_addr);
+  RTC_L();
+  SPI1_SendByte(addr);
   val = SPI1_SendByte(0x00); // Send DUMMY to read data
-  CSB_H();
+  RTC_H();
+  utils_exit_critical_section(primask_bit);
 
   return val;
 }
@@ -1425,23 +1436,26 @@ inline static uint8_t read_rtc_register(uint8_t reg_addr)
 uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 {
   uint8_t address = AB1815_SPI_WRITE(offset);
+  uint32_t primask_bit = utils_enter_critical_section();
+
   spi_select_slave(0);
 
   if (!((SPI1)->CR1 & SPI_CR1_SPE))
   {
     SPI1->CR1 |= SPI_CR1_SPE;
   }
-  CSB_L();
+  RTC_L();
   SPI1_SendByte(address);
   SPI1_SendByte(buf); // Send Data to write
 
-  spi_select_slave(1); // set 1
+  RTC_H();
+  utils_exit_critical_section(primask_bit);
   return 1;
 };
 
 void hex_dump(void)
 {
-  uint8_t buffer[8];
+  uint8_t buffer[9];
   for (uint8_t pos = 0; pos < 0x7F; pos += 8)
   {
 
@@ -1452,4 +1466,67 @@ void hex_dump(void)
     }
     printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
   }
+}
+
+bool resetConfig(void)
+{
+  printf("resetConfig\n");
+
+  // wire.lock();
+
+  // // Reset configuration registers to default values
+  // writeRegister(REG_STATUS, REG_STATUS_DEFAULT, false);
+  // writeRegister(REG_CTRL_1, REG_CTRL_1_DEFAULT, false);
+  // writeRegister(REG_CTRL_2, REG_CTRL_2_DEFAULT, false);
+  // writeRegister(REG_INT_MASK, REG_INT_MASK_DEFAULT, false);
+  // writeRegister(REG_SQW, REG_SQW_DEFAULT, false);
+  // writeRegister(REG_SLEEP_CTRL, REG_SLEEP_CTRL_DEFAULT, false);
+
+  // writeRegister(REG_TIMER_CTRL, REG_TIMER_CTRL_DEFAULT, false);
+
+  // writeRegister(REG_TIMER, REG_TIMER_DEFAULT, false);
+  // writeRegister(REG_TIMER_INITIAL, REG_TIMER_INITIAL_DEFAULT, false);
+  // writeRegister(REG_WDT, REG_WDT_DEFAULT, false);
+
+  // uint8_t oscCtrl = REG_OSC_CTRL_DEFAULT;
+
+  // writeRegister(REG_OSC_CTRL, oscCtrl, false);
+  // writeRegister(REG_TRICKLE, REG_TRICKLE_DEFAULT, false);
+  // writeRegister(REG_BREF_CTRL, REG_BREF_CTRL_DEFAULT, false);
+  // writeRegister(REG_AFCTRL, REG_AFCTRL_DEFAULT, false);
+  // writeRegister(REG_BATMODE_IO, REG_BATMODE_IO_DEFAULT, false);
+  // writeRegister(REG_OCTRL, REG_OCTRL_DEFAULT, false);
+
+  write_rtc_register(STATU_REGISTER, 0x0);          //!< Status register, default
+  write_rtc_register(CONTROL1_REGISTER, 0x13);      //!< Control register 1, 0b00010011 (OUT | RSO | PWR2 | WRTC)
+  write_rtc_register(CONTROL2_REGISTER, 0x3c);      //!< Control register 2, 0b00111100 (OUT2S = OUTB)
+  write_rtc_register(INT_MASK_REGISTER, 0xe0);      //!< Interrupt mask, default 0b11100000 (CEB | IM=1/4 seconds)
+  write_rtc_register(SQW_REGISTER, 0x26);           //!< Square wave output control, default 0b00100110
+  write_rtc_register(SLEEP_CONTROL_REGISTER, 0x00); //!< Sleep control default (0b00000000)
+  write_rtc_register(TIMER_CONTROL_REGISTER, 0x23); //!< Timer control default (0b00010011)//!< Countdown timer control, 0b00100011 (TFPT + TFS = 1/60 Hz0)
+  write_rtc_register(TIMER_REGISTER, 0x00);         //!< Countdown timer current value register default value (0x00)
+  write_rtc_register(TIMER_INITIAL_REGISTER, 0x0);  //!< Countdown timer inital value register default value
+  write_rtc_register(WDT_REGISTER, 0x0);            //!< Watchdog timer control, default value
+  write_rtc_register(OSC_CONTROL_REGISTER, 0x0);    //!< Oscillator control register, default value
+  write_rtc_register(TRICKLE_REGISTER, 0x0);        //!< Trickle charger control register, default value
+  write_rtc_register(BREF_CONTROL_REGISTER, 0xf0);  //!< Wakeup control system default 0b11110000
+  write_rtc_register(AFCTRL_REGISTER, 0x0);         //!< Auto-calibration filter, default
+  write_rtc_register(BATMODE_REGISTER, 0x80);       //!< Brownout control for IO interface, default value
+  write_rtc_register(OCTRL_REGISTER, 0x0);          //!< Output control register, default
+
+  // wire.unlock();
+
+  return true;
+}
+
+static inline uint32_t utils_enter_critical_section(void)
+{
+  uint32_t primask_bit = __get_PRIMASK();
+  __disable_irq();
+  return primask_bit;
+}
+
+static inline void utils_exit_critical_section(uint32_t primask_bit)
+{
+  __set_PRIMASK(primask_bit);
 }

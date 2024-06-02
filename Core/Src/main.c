@@ -30,6 +30,7 @@
 
 #include "printf.h"
 #include "AB1805.h"
+#include "stm32u0xx_ll_spi.h"
 
 /* USER CODE END Includes */
 
@@ -100,40 +101,39 @@ int main(void)
   MX_SPI1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
-  // Detect power om mode. First time or after sleep!!
-
-  // if (!detectChip())
-  // {
-  //   print_error(__func__, __LINE__);
-  // }
+  LL_SPI_Enable(SPI1);
+  LED1_ON();
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
-
-  // hex_dump();
 
   uint8_t stat = get_status();
   printf("Status1 = %X\n", stat);
 
   stat = get_status();
   printf("Status2 = %X\n", stat);
-  hex_dump();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint32_t ii = 0;
+
+  HAL_Delay(2000);
+  resetConfig();
+  hex_dump();
+  enter_sleep_mode(30, 1);
+  LED1_OFF();
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    printf("%d\n", ii);
+
     LED1_ON();
-    HAL_Delay(62000);
+    HAL_Delay(100);
     LED1_OFF();
-    hex_dump();
-    HAL_Delay(3000);
+    //    hex_dump();
+    HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }

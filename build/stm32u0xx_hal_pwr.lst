@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
   30:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
   31:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** /** @defgroup PWR PWR
   32:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @brief PWR HAL module driver
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 2
 
 
   33:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @{
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
   87:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @{
   88:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   */
   89:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 3
 
 
   90:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  109:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        back-up domain.
  110:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @retval None
  111:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 4
 
 
  112:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** void HAL_PWR_EnableBkUpAccess(void)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  106              		.loc 1 125 1 is_stmt 0 view .LVU9
  107              		@ sp needed
  108 000a 7047     		bx	lr
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 5
 
 
  109              	.L9:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  164:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****     =====================================
  165:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****     [..]
  166:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****       The devices feature 8 low-power modes:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 6
 
 
  167:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****       (+) Low-power Run mode: core and peripherals are running, main regulator off, low power regul
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  221:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****                for porting reasons HAL_PWR_EnterSTOPMode().
  222:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****           (++) HAL_PWREx_EnterSTOP2Mode() for mode 2.
  223:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****       (+) Regulator setting (applicable to HAL_PWR_EnterSTOPMode() only):
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 7
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 7
 
 
  224:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****           (++) PWR_MAINREGULATOR_ON
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  278:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****           (++) WKUP pin rising edge, RTC alarm or wakeup, tamper event, time-stamp event,
  279:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****                external reset in NRST pin.
  280:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 8
 
 
  281:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****          [..] After waking up from Shutdown mode, program execution restarts in the same way as aft
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  323:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   /* Set PLS bits according to PVDLevel value */
  324:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   MODIFY_REG(PWR->CR2, PWR_CR2_PLS, sConfigPVD->PVDLevel);
  139              		.loc 1 324 3 view .LVU14
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 9
 
 
  140 0002 1F4A     		ldr	r2, .L19
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  337:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
  338:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   /* Configure event mode */
  339:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   if ((sConfigPVD->Mode & PVD_MODE_EVT) == PVD_MODE_EVT)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 10
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 10
 
 
  182              		.loc 1 339 3 view .LVU23
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  223 007a 5360     		str	r3, [r2, #4]
  224              	.L14:
  353:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 11
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 11
 
 
  354:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  269              	.LFE338:
  271              		.section	.text.HAL_PWR_DisablePVD,"ax",%progbits
  272              		.align	1
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 12
 
 
  273              		.global	HAL_PWR_DisablePVD
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  385:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *           @arg @ref PWR_WAKEUP_PIN1_HIGH or PWR_WAKEUP_PIN1_LOW
  386:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *           @arg @ref PWR_WAKEUP_PIN2_HIGH or PWR_WAKEUP_PIN2_LOW
  387:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *           @arg @ref PWR_WAKEUP_PIN3_HIGH or PWR_WAKEUP_PIN3_LOW
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 13
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 13
 
 
  388:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *           @arg @ref PWR_WAKEUP_PIN4_HIGH or PWR_WAKEUP_PIN4_LOW
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  351              	.LFB341:
  404:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
  405:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 14
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 14
 
 
  406:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @brief Disable the WakeUp PINx functionality.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  429:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        Flash in power-down monde in setting the SLEEP_PD bit in FLASH_ACR register.
  430:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        Additionally, the clock frequency must be reduced below 2 MHz.
  431:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        Setting SLEEP_PD in FLASH_ACR then appropriately reducing the clock frequency must
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 15
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 15
 
 
  432:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        be done before calling HAL_PWR_EnterSLEEPMode() API.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  460:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****     /* Regulator now in main mode. */
  461:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   }
  462:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   else
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 16
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 16
 
 
  463:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  439 0024 10BD     		pop	{r4, pc}
  440              	.LVL7:
  441              	.L40:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 17
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 17
 
 
  455:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****       {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  489              	.LVL11:
  490              	.LFB343:
  489:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 18
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 18
 
 
  490:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** /**
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  507 0008 2340     		ands	r3, r4
  508 000a 0343     		orrs	r3, r0
  509 000c 1360     		str	r3, [r2]
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 19
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 19
 
 
  528:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   /* Stop 0 mode with Main Regulator */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  545 002c 1369     		ldr	r3, [r2, #16]
  546 002e 0421     		movs	r1, #4
  547              	.LVL13:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 20
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 20
 
 
  548              		.loc 1 546 3 is_stmt 0 view .LVU93
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  568:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** {
  582              		.loc 1 568 1 view -0
  583              		.cfi_startproc
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 21
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 21
 
 
  584              		@ args = 0, pretend = 0, frame = 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  581:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @note  In Shutdown mode, the PLL, the HSI, the MSI, the LSI and the HSE oscillators are switche
  582:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        off. The voltage regulator is disabled and Vcore domain is powered off.
  583:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        SRAM1, SRAM2 and registers contents are lost except for registers in the Backup domain.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 22
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 22
 
 
  584:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   *        The BOR is not available.
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  661              		.cfi_endproc
  662              	.LFE345:
  664              		.section	.text.HAL_PWR_EnableSleepOnExit,"ax",%progbits
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 23
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 23
 
 
  665              		.align	1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  624:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @retval None
  625:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   */
  626:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** void HAL_PWR_DisableSleepOnExit(void)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 24
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 24
 
 
  627:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  642:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** }
  744              		.loc 1 642 1 is_stmt 0 view .LVU114
  745              		@ sp needed
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 25
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 25
 
 
  746 000a 7047     		bx	lr
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  792              	.LFB350:
  655:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** 
  656:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 26
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 26
 
 
  657:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c ****   * @brief PWR PVD interrupt callback
@@ -1531,61 +1531,61 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 1
  812              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr.h"
  813              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
  814              		.file 10 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\cckTdCcT.s 			page 27
+ARM GAS  C:\Users\upo\AppData\Local\Temp\cc8h153q.s 			page 27
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32u0xx_hal_pwr.c
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:19     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:25     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:50     .text.HAL_PWR_DeInit:00000018 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:56     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:62     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:82     .text.HAL_PWR_EnableBkUpAccess:00000010 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:87     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:93     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:112    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:118    .text.HAL_PWR_ConfigPVD:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:124    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:235    .text.HAL_PWR_ConfigPVD:00000080 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:242    .text.HAL_PWR_EnablePVD:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:248    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:267    .text.HAL_PWR_EnablePVD:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:272    .text.HAL_PWR_DisablePVD:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:278    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:297    .text.HAL_PWR_DisablePVD:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:302    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:308    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:338    .text.HAL_PWR_EnableWakeUpPin:00000018 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:343    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:349    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:371    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:376    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:382    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:476    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:482    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:488    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:567    .text.HAL_PWR_EnterSTOPMode:0000003c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:574    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:580    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:614    .text.HAL_PWR_EnterSTANDBYMode:0000001c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:620    .text.HAL_PWR_EnterSHUTDOWNMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:626    .text.HAL_PWR_EnterSHUTDOWNMode:00000000 HAL_PWR_EnterSHUTDOWNMode
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:659    .text.HAL_PWR_EnterSHUTDOWNMode:0000001c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:665    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:671    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:690    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:695    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:701    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:720    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:725    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:731    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:750    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:755    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:761    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:780    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:785    .text.HAL_PWR_PVDCallback:00000000 $t
-C:\Users\upo\AppData\Local\Temp\cckTdCcT.s:791    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:19     .text.HAL_PWR_DeInit:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:25     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:50     .text.HAL_PWR_DeInit:00000018 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:56     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:62     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:82     .text.HAL_PWR_EnableBkUpAccess:00000010 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:87     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:93     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:112    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:118    .text.HAL_PWR_ConfigPVD:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:124    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:235    .text.HAL_PWR_ConfigPVD:00000080 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:242    .text.HAL_PWR_EnablePVD:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:248    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:267    .text.HAL_PWR_EnablePVD:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:272    .text.HAL_PWR_DisablePVD:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:278    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:297    .text.HAL_PWR_DisablePVD:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:302    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:308    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:338    .text.HAL_PWR_EnableWakeUpPin:00000018 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:343    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:349    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:371    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:376    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:382    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:476    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:482    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:488    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:567    .text.HAL_PWR_EnterSTOPMode:0000003c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:574    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:580    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:614    .text.HAL_PWR_EnterSTANDBYMode:0000001c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:620    .text.HAL_PWR_EnterSHUTDOWNMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:626    .text.HAL_PWR_EnterSHUTDOWNMode:00000000 HAL_PWR_EnterSHUTDOWNMode
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:659    .text.HAL_PWR_EnterSHUTDOWNMode:0000001c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:665    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:671    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:690    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:695    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:701    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:720    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:725    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:731    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:750    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:755    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:761    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:780    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:785    .text.HAL_PWR_PVDCallback:00000000 $t
+C:\Users\upo\AppData\Local\Temp\cc8h153q.s:791    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
 
 UNDEFINED SYMBOLS
 HAL_PWREx_DisableLowPowerRunMode

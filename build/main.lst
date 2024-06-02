@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -34,7 +34,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   27              		.thumb_func
   29              	print_error:
   30              	.LVL0:
-  31              	.LFB428:
+  31              	.LFB501:
    1:Core/Src/main.c **** /* USER CODE BEGIN Header */
    2:Core/Src/main.c **** /**
    3:Core/Src/main.c ****  ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   21:Core/Src/main.c **** #include "adc.h"
   22:Core/Src/main.c **** #include "i2c.h"
   23:Core/Src/main.c **** #include "rtc.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 2
 
 
   24:Core/Src/main.c **** #include "spi.h"
@@ -70,196 +70,195 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   30:Core/Src/main.c **** 
   31:Core/Src/main.c **** #include "printf.h"
   32:Core/Src/main.c **** #include "AB1805.h"
-  33:Core/Src/main.c **** 
-  34:Core/Src/main.c **** /* USER CODE END Includes */
-  35:Core/Src/main.c **** 
-  36:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
-  37:Core/Src/main.c **** /* USER CODE BEGIN PTD */
-  38:Core/Src/main.c **** 
-  39:Core/Src/main.c **** /* USER CODE END PTD */
-  40:Core/Src/main.c **** 
-  41:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-  42:Core/Src/main.c **** /* USER CODE BEGIN PD */
-  43:Core/Src/main.c **** 
-  44:Core/Src/main.c **** /* USER CODE END PD */
-  45:Core/Src/main.c **** 
-  46:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
-  47:Core/Src/main.c **** /* USER CODE BEGIN PM */
-  48:Core/Src/main.c **** 
-  49:Core/Src/main.c **** /* USER CODE END PM */
-  50:Core/Src/main.c **** 
-  51:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
-  52:Core/Src/main.c **** 
-  53:Core/Src/main.c **** /* USER CODE BEGIN PV */
-  54:Core/Src/main.c **** 
-  55:Core/Src/main.c **** /* USER CODE END PV */
-  56:Core/Src/main.c **** 
-  57:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
-  58:Core/Src/main.c **** void SystemClock_Config(void);
-  59:Core/Src/main.c **** /* USER CODE BEGIN PFP */
-  60:Core/Src/main.c **** 
-  61:Core/Src/main.c **** /* USER CODE END PFP */
-  62:Core/Src/main.c **** 
-  63:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
-  64:Core/Src/main.c **** /* USER CODE BEGIN 0 */
-  65:Core/Src/main.c **** 
-  66:Core/Src/main.c **** /* USER CODE END 0 */
-  67:Core/Src/main.c **** 
-  68:Core/Src/main.c **** /**
-  69:Core/Src/main.c ****  * @brief  The application entry point.
-  70:Core/Src/main.c ****  * @retval int
-  71:Core/Src/main.c ****  */
-  72:Core/Src/main.c **** int main(void)
-  73:Core/Src/main.c **** {
-  74:Core/Src/main.c **** 
-  75:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
-  76:Core/Src/main.c **** 
-  77:Core/Src/main.c ****   /* USER CODE END 1 */
-  78:Core/Src/main.c **** 
-  79:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
-  80:Core/Src/main.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 3
+  33:Core/Src/main.c **** #include "stm32u0xx_ll_spi.h"
+  34:Core/Src/main.c **** 
+  35:Core/Src/main.c **** /* USER CODE END Includes */
+  36:Core/Src/main.c **** 
+  37:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  38:Core/Src/main.c **** /* USER CODE BEGIN PTD */
+  39:Core/Src/main.c **** 
+  40:Core/Src/main.c **** /* USER CODE END PTD */
+  41:Core/Src/main.c **** 
+  42:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  43:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  44:Core/Src/main.c **** 
+  45:Core/Src/main.c **** /* USER CODE END PD */
+  46:Core/Src/main.c **** 
+  47:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  48:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  49:Core/Src/main.c **** 
+  50:Core/Src/main.c **** /* USER CODE END PM */
+  51:Core/Src/main.c **** 
+  52:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  53:Core/Src/main.c **** 
+  54:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  55:Core/Src/main.c **** 
+  56:Core/Src/main.c **** /* USER CODE END PV */
+  57:Core/Src/main.c **** 
+  58:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  59:Core/Src/main.c **** void SystemClock_Config(void);
+  60:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  61:Core/Src/main.c **** 
+  62:Core/Src/main.c **** /* USER CODE END PFP */
+  63:Core/Src/main.c **** 
+  64:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  65:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  66:Core/Src/main.c **** 
+  67:Core/Src/main.c **** /* USER CODE END 0 */
+  68:Core/Src/main.c **** 
+  69:Core/Src/main.c **** /**
+  70:Core/Src/main.c ****  * @brief  The application entry point.
+  71:Core/Src/main.c ****  * @retval int
+  72:Core/Src/main.c ****  */
+  73:Core/Src/main.c **** int main(void)
+  74:Core/Src/main.c **** {
+  75:Core/Src/main.c **** 
+  76:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  77:Core/Src/main.c **** 
+  78:Core/Src/main.c ****   /* USER CODE END 1 */
+  79:Core/Src/main.c **** 
+  80:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 3
 
 
-  81:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  82:Core/Src/main.c ****   HAL_Init();
-  83:Core/Src/main.c **** 
-  84:Core/Src/main.c ****   /* USER CODE BEGIN Init */
-  85:Core/Src/main.c **** 
-  86:Core/Src/main.c ****   /* USER CODE END Init */
-  87:Core/Src/main.c **** 
-  88:Core/Src/main.c ****   /* Configure the system clock */
-  89:Core/Src/main.c ****   SystemClock_Config();
-  90:Core/Src/main.c **** 
-  91:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-  92:Core/Src/main.c **** 
-  93:Core/Src/main.c ****   /* USER CODE END SysInit */
-  94:Core/Src/main.c **** 
-  95:Core/Src/main.c ****   /* Initialize all configured peripherals */
-  96:Core/Src/main.c ****   MX_GPIO_Init();
-  97:Core/Src/main.c ****   MX_ADC1_Init();
-  98:Core/Src/main.c ****   MX_I2C1_Init();
-  99:Core/Src/main.c ****   MX_RTC_Init();
- 100:Core/Src/main.c ****   MX_SPI1_Init();
- 101:Core/Src/main.c ****   MX_USART2_UART_Init();
- 102:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 103:Core/Src/main.c **** 
- 104:Core/Src/main.c ****   // Detect power om mode. First time or after sleep!!
- 105:Core/Src/main.c **** 
- 106:Core/Src/main.c ****   // if (!detectChip())
- 107:Core/Src/main.c ****   // {
- 108:Core/Src/main.c ****   //   print_error(__func__, __LINE__);
- 109:Core/Src/main.c ****   // }
- 110:Core/Src/main.c ****   uint32_t clk = HAL_RCC_GetSysClockFreq();
- 111:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
- 112:Core/Src/main.c **** 
- 113:Core/Src/main.c ****   // hex_dump();
- 114:Core/Src/main.c **** 
- 115:Core/Src/main.c ****   uint8_t stat = get_status();
- 116:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
- 117:Core/Src/main.c **** 
- 118:Core/Src/main.c ****   stat = get_status();
- 119:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
- 120:Core/Src/main.c ****   hex_dump();
- 121:Core/Src/main.c ****   /* USER CODE END 2 */
- 122:Core/Src/main.c **** 
- 123:Core/Src/main.c ****   /* Infinite loop */
- 124:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
- 125:Core/Src/main.c ****   uint32_t ii = 0;
- 126:Core/Src/main.c ****   while (1)
- 127:Core/Src/main.c ****   {
- 128:Core/Src/main.c ****     /* USER CODE END WHILE */
- 129:Core/Src/main.c **** 
- 130:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
- 131:Core/Src/main.c ****     printf("%d\n", ii);
- 132:Core/Src/main.c ****     LED1_ON();
- 133:Core/Src/main.c ****     HAL_Delay(62000);
- 134:Core/Src/main.c ****     LED1_OFF();
- 135:Core/Src/main.c ****     hex_dump();
- 136:Core/Src/main.c ****     HAL_Delay(3000);
- 137:Core/Src/main.c ****   }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 4
+  81:Core/Src/main.c **** 
+  82:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  83:Core/Src/main.c ****   HAL_Init();
+  84:Core/Src/main.c **** 
+  85:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  86:Core/Src/main.c **** 
+  87:Core/Src/main.c ****   /* USER CODE END Init */
+  88:Core/Src/main.c **** 
+  89:Core/Src/main.c ****   /* Configure the system clock */
+  90:Core/Src/main.c ****   SystemClock_Config();
+  91:Core/Src/main.c **** 
+  92:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  93:Core/Src/main.c **** 
+  94:Core/Src/main.c ****   /* USER CODE END SysInit */
+  95:Core/Src/main.c **** 
+  96:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  97:Core/Src/main.c ****   MX_GPIO_Init();
+  98:Core/Src/main.c ****   MX_ADC1_Init();
+  99:Core/Src/main.c ****   MX_I2C1_Init();
+ 100:Core/Src/main.c ****   MX_RTC_Init();
+ 101:Core/Src/main.c ****   MX_SPI1_Init();
+ 102:Core/Src/main.c ****   MX_USART2_UART_Init();
+ 103:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 104:Core/Src/main.c ****   LL_SPI_Enable(SPI1);
+ 105:Core/Src/main.c ****   LED1_ON();
+ 106:Core/Src/main.c ****   uint32_t clk = HAL_RCC_GetSysClockFreq();
+ 107:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
+ 108:Core/Src/main.c **** 
+ 109:Core/Src/main.c ****   uint8_t stat = get_status();
+ 110:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
+ 111:Core/Src/main.c **** 
+ 112:Core/Src/main.c ****   stat = get_status();
+ 113:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
+ 114:Core/Src/main.c ****   hex_dump();
+ 115:Core/Src/main.c ****   /* USER CODE END 2 */
+ 116:Core/Src/main.c **** 
+ 117:Core/Src/main.c ****   /* Infinite loop */
+ 118:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+ 119:Core/Src/main.c **** 
+ 120:Core/Src/main.c ****   HAL_Delay(2000);
+ 121:Core/Src/main.c ****   resetConfig();
+ 122:Core/Src/main.c ****   enter_sleep_mode(30, 1);
+ 123:Core/Src/main.c ****   LED1_OFF();
+ 124:Core/Src/main.c **** 
+ 125:Core/Src/main.c ****   while (1)
+ 126:Core/Src/main.c ****   {
+ 127:Core/Src/main.c ****     /* USER CODE END WHILE */
+ 128:Core/Src/main.c **** 
+ 129:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 130:Core/Src/main.c **** 
+ 131:Core/Src/main.c ****     LED1_ON();
+ 132:Core/Src/main.c ****     HAL_Delay(100);
+ 133:Core/Src/main.c ****     LED1_OFF();
+ 134:Core/Src/main.c ****     //    hex_dump();
+ 135:Core/Src/main.c ****     HAL_Delay(100);
+ 136:Core/Src/main.c ****   }
+ 137:Core/Src/main.c ****   /* USER CODE END 3 */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 4
 
 
- 138:Core/Src/main.c ****   /* USER CODE END 3 */
- 139:Core/Src/main.c **** }
- 140:Core/Src/main.c **** 
- 141:Core/Src/main.c **** /**
- 142:Core/Src/main.c ****  * @brief System Clock Configuration
- 143:Core/Src/main.c ****  * @retval None
- 144:Core/Src/main.c ****  */
- 145:Core/Src/main.c **** void SystemClock_Config(void)
- 146:Core/Src/main.c **** {
- 147:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 148:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 149:Core/Src/main.c **** 
- 150:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
- 151:Core/Src/main.c ****    */
- 152:Core/Src/main.c ****   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
- 153:Core/Src/main.c **** 
- 154:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
- 155:Core/Src/main.c ****    * in the RCC_OscInitTypeDef structure.
- 156:Core/Src/main.c ****    */
- 157:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_LSI;
- 158:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 159:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 160:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 161:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 162:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 163:Core/Src/main.c ****   {
- 164:Core/Src/main.c ****     Error_Handler();
- 165:Core/Src/main.c ****   }
- 166:Core/Src/main.c **** 
- 167:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
- 168:Core/Src/main.c ****    */
- 169:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1;
- 170:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 171:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 172:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 173:Core/Src/main.c **** 
- 174:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
- 175:Core/Src/main.c ****   {
- 176:Core/Src/main.c ****     Error_Handler();
- 177:Core/Src/main.c ****   }
- 178:Core/Src/main.c **** }
- 179:Core/Src/main.c **** 
- 180:Core/Src/main.c **** /* USER CODE BEGIN 4 */
- 181:Core/Src/main.c **** 
- 182:Core/Src/main.c **** void print_error(const char *func, uint32_t line)
- 183:Core/Src/main.c **** {
-  32              		.loc 1 183 1 view -0
+ 138:Core/Src/main.c **** }
+ 139:Core/Src/main.c **** 
+ 140:Core/Src/main.c **** /**
+ 141:Core/Src/main.c ****  * @brief System Clock Configuration
+ 142:Core/Src/main.c ****  * @retval None
+ 143:Core/Src/main.c ****  */
+ 144:Core/Src/main.c **** void SystemClock_Config(void)
+ 145:Core/Src/main.c **** {
+ 146:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 147:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 148:Core/Src/main.c **** 
+ 149:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
+ 150:Core/Src/main.c ****    */
+ 151:Core/Src/main.c ****   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 152:Core/Src/main.c **** 
+ 153:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 154:Core/Src/main.c ****    * in the RCC_OscInitTypeDef structure.
+ 155:Core/Src/main.c ****    */
+ 156:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_LSI;
+ 157:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 158:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 159:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 160:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 161:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 162:Core/Src/main.c ****   {
+ 163:Core/Src/main.c ****     Error_Handler();
+ 164:Core/Src/main.c ****   }
+ 165:Core/Src/main.c **** 
+ 166:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 167:Core/Src/main.c ****    */
+ 168:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1;
+ 169:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 170:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 171:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 172:Core/Src/main.c **** 
+ 173:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+ 174:Core/Src/main.c ****   {
+ 175:Core/Src/main.c ****     Error_Handler();
+ 176:Core/Src/main.c ****   }
+ 177:Core/Src/main.c **** }
+ 178:Core/Src/main.c **** 
+ 179:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 180:Core/Src/main.c **** 
+ 181:Core/Src/main.c **** void print_error(const char *func, uint32_t line)
+ 182:Core/Src/main.c **** {
+  32              		.loc 1 182 1 view -0
   33              		.cfi_startproc
   34              		@ args = 0, pretend = 0, frame = 0
   35              		@ frame_needed = 0, uses_anonymous_args = 0
-  36              		.loc 1 183 1 is_stmt 0 view .LVU1
+  36              		.loc 1 182 1 is_stmt 0 view .LVU1
   37 0000 10B5     		push	{r4, lr}
   38              	.LCFI0:
   39              		.cfi_def_cfa_offset 8
   40              		.cfi_offset 4, -8
   41              		.cfi_offset 14, -4
   42 0002 0A00     		movs	r2, r1
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 5
+ 183:Core/Src/main.c ****   printf(" *** Error:  %s ,   %d\n", func, line);
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 5
 
 
- 184:Core/Src/main.c ****   printf(" *** Error:  %s ,   %d\n", func, line);
-  43              		.loc 1 184 3 is_stmt 1 view .LVU2
+  43              		.loc 1 183 3 is_stmt 1 view .LVU2
   44 0004 044B     		ldr	r3, .L2
   45 0006 0100     		movs	r1, r0
   46              	.LVL1:
-  47              		.loc 1 184 3 is_stmt 0 view .LVU3
+  47              		.loc 1 183 3 is_stmt 0 view .LVU3
   48 0008 1800     		movs	r0, r3
   49              	.LVL2:
-  50              		.loc 1 184 3 view .LVU4
+  50              		.loc 1 183 3 view .LVU4
   51 000a FFF7FEFF 		bl	printf_
   52              	.LVL3:
- 185:Core/Src/main.c ****   HAL_Delay(1000);
-  53              		.loc 1 185 3 is_stmt 1 view .LVU5
+ 184:Core/Src/main.c ****   HAL_Delay(1000);
+  53              		.loc 1 184 3 is_stmt 1 view .LVU5
   54 000e FA20     		movs	r0, #250
   55 0010 8000     		lsls	r0, r0, #2
   56 0012 FFF7FEFF 		bl	HAL_Delay
   57              	.LVL4:
- 186:Core/Src/main.c **** }
-  58              		.loc 1 186 1 is_stmt 0 view .LVU6
+ 185:Core/Src/main.c **** }
+  58              		.loc 1 185 1 is_stmt 0 view .LVU6
   59              		@ sp needed
   60 0016 10BD     		pop	{r4, pc}
   61              	.L3:
@@ -267,7 +266,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   63              	.L2:
   64 0018 00000000 		.word	.LC0
   65              		.cfi_endproc
-  66              	.LFE428:
+  66              	.LFE501:
   68              		.section	.text.Error_Handler,"ax",%progbits
   69              		.align	1
   70              		.global	Error_Handler
@@ -275,33 +274,33 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   72              		.code	16
   73              		.thumb_func
   75              	Error_Handler:
-  76              	.LFB429:
- 187:Core/Src/main.c **** 
- 188:Core/Src/main.c **** /* USER CODE END 4 */
- 189:Core/Src/main.c **** 
- 190:Core/Src/main.c **** /**
- 191:Core/Src/main.c ****  * @brief  This function is executed in case of error occurrence.
- 192:Core/Src/main.c ****  * @retval None
- 193:Core/Src/main.c ****  */
- 194:Core/Src/main.c **** void Error_Handler(void)
- 195:Core/Src/main.c **** {
-  77              		.loc 1 195 1 is_stmt 1 view -0
+  76              	.LFB502:
+ 186:Core/Src/main.c **** 
+ 187:Core/Src/main.c **** /* USER CODE END 4 */
+ 188:Core/Src/main.c **** 
+ 189:Core/Src/main.c **** /**
+ 190:Core/Src/main.c ****  * @brief  This function is executed in case of error occurrence.
+ 191:Core/Src/main.c ****  * @retval None
+ 192:Core/Src/main.c ****  */
+ 193:Core/Src/main.c **** void Error_Handler(void)
+ 194:Core/Src/main.c **** {
+  77              		.loc 1 194 1 is_stmt 1 view -0
   78              		.cfi_startproc
   79              		@ Volatile: function does not return.
   80              		@ args = 0, pretend = 0, frame = 0
   81              		@ frame_needed = 0, uses_anonymous_args = 0
   82              		@ link register save eliminated.
- 196:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
- 197:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 198:Core/Src/main.c ****   __disable_irq();
-  83              		.loc 1 198 3 view .LVU8
-  84              	.LBB4:
-  85              	.LBI4:
+ 195:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 196:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 197:Core/Src/main.c ****   __disable_irq();
+  83              		.loc 1 197 3 view .LVU8
+  84              	.LBB6:
+  85              	.LBI6:
   86              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 6
-
-
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 6
+
+
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
    4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.4.1
@@ -358,10 +357,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 7
-
-
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 7
+
+
   59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
   60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
@@ -418,10 +417,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 8
-
-
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 8
+
+
  116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
  117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
  118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -478,10 +477,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
  170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
  171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 9
-
-
  172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 9
+
+
  173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
  174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
  175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -538,10 +537,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  226:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  227:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  228:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __NOP()                             __ASM volatile ("nop")
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 10
-
-
  229:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 10
+
+
  230:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  231:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
  232:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
@@ -598,10 +597,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  283:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  284:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  285:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 11
-
-
  286:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 11
+
+
  287:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse byte order (32 bit)
  288:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the byte order in unsigned integer value. For example, 0x12345678 becomes 0x785
  289:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
@@ -658,10 +657,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  340:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Rotate Right in unsigned value (32 bit)
  341:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Rotate Right (immediate) provides the value of the contents of a register rotated by a v
  342:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op1  Value to rotate
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 12
-
-
  343:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    op2  Number of Bits to rotate
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 12
+
+
  344:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Rotated value
  345:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  346:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
@@ -718,10 +717,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  397:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  398:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Count leading zeros
  399:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Counts the number of leading zeros of a data value.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 13
-
-
  400:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to count the leading zeros
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 13
+
+
  401:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return             number of leading zeros in value
  402:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  403:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
@@ -778,10 +777,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
  455:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  456:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 14
-
-
  457:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 14
+
+
  458:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
  459:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexh %0, %1" : "=r" (result) : "Q" (*addr) );
  460:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
@@ -838,10 +837,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  511:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  512:Drivers/CMSIS/Include/cmsis_gcc.h ****    uint32_t result;
  513:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 15
-
-
  514:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 15
+
+
  515:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  516:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  517:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -898,10 +897,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  568:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  569:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  570:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 16
-
-
  571:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Unsigned Saturate
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 16
+
+
  572:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Saturates an unsigned value.
  573:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  ARG1  Value to be saturated
  574:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  ARG2  Bit position to saturate to (0..31)
@@ -958,10 +957,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  625:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (16 bit)
  626:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 16 bit values.
  627:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 17
-
-
  628:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 17
+
+
  629:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  630:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDRHT(volatile uint16_t *ptr)
  631:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1018,10 +1017,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  682:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  683:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  684:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 18
-
-
  685:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 18
+
+
  686:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   STRT Unprivileged (32 bit)
  687:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a Unprivileged STRT instruction for 32 bit values.
  688:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
@@ -1078,10 +1077,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  739:Drivers/CMSIS/Include/cmsis_gcc.h ****       return max;
  740:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
  741:Drivers/CMSIS/Include/cmsis_gcc.h ****     else if (val < 0)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 19
-
-
  742:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 19
+
+
  743:Drivers/CMSIS/Include/cmsis_gcc.h ****       return 0U;
  744:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
  745:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
@@ -1138,10 +1137,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  796:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("lda %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  797:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  798:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 20
-
-
  799:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 20
+
+
  800:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  801:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  802:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Store-Release (8 bit)
@@ -1198,10 +1197,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  853:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (16 bit)
  854:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a LDAH exclusive instruction for 16 bit values.
  855:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 21
-
-
  856:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 21
+
+
  857:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  858:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDAEXH(volatile uint16_t *ptr)
  859:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1258,10 +1257,10 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  910:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  911:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("stlexh %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "mem
  912:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 22
-
-
  913:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 22
+
+
  914:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  915:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  916:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1310,7 +1309,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  959:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  960:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
   87              		.loc 2 960 27 view .LVU9
-  88              	.LBB5:
+  88              	.LBB7:
  961:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  962:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
   89              		.loc 2 962 3 view .LVU10
@@ -1318,24 +1317,24 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
   91              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
   92 0000 72B6     		cpsid i
   93              	@ 0 "" 2
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 23
-
-
   94              		.thumb
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 23
+
+
   95              		.syntax unified
   96              	.L5:
-  97              	.LBE5:
-  98              	.LBE4:
- 199:Core/Src/main.c ****   while (1)
-  99              		.loc 1 199 3 discriminator 1 view .LVU11
- 200:Core/Src/main.c ****   {
- 201:Core/Src/main.c ****   }
- 100              		.loc 1 201 3 discriminator 1 view .LVU12
- 199:Core/Src/main.c ****   while (1)
- 101              		.loc 1 199 9 discriminator 1 view .LVU13
+  97              	.LBE7:
+  98              	.LBE6:
+ 198:Core/Src/main.c ****   while (1)
+  99              		.loc 1 198 3 discriminator 1 view .LVU11
+ 199:Core/Src/main.c ****   {
+ 200:Core/Src/main.c ****   }
+ 100              		.loc 1 200 3 discriminator 1 view .LVU12
+ 198:Core/Src/main.c ****   while (1)
+ 101              		.loc 1 198 9 discriminator 1 view .LVU13
  102 0002 FEE7     		b	.L5
  103              		.cfi_endproc
- 104              	.LFE429:
+ 104              	.LFE502:
  106              		.section	.text.SystemClock_Config,"ax",%progbits
  107              		.align	1
  108              		.global	SystemClock_Config
@@ -1343,9 +1342,9 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  110              		.code	16
  111              		.thumb_func
  113              	SystemClock_Config:
- 114              	.LFB427:
- 146:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 115              		.loc 1 146 1 view -0
+ 114              	.LFB500:
+ 145:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 115              		.loc 1 145 1 view -0
  116              		.cfi_startproc
  117              		@ args = 0, pretend = 0, frame = 96
  118              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1356,129 +1355,129 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  123 0002 99B0     		sub	sp, sp, #100
  124              	.LCFI2:
  125              		.cfi_def_cfa_offset 104
- 147:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 126              		.loc 1 147 3 view .LVU15
- 147:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 127              		.loc 1 147 22 is_stmt 0 view .LVU16
+ 146:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 126              		.loc 1 146 3 view .LVU15
+ 146:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 127              		.loc 1 146 22 is_stmt 0 view .LVU16
  128 0004 4C22     		movs	r2, #76
  129 0006 0021     		movs	r1, #0
  130 0008 05A8     		add	r0, sp, #20
  131 000a FFF7FEFF 		bl	memset
  132              	.LVL5:
- 148:Core/Src/main.c **** 
- 133              		.loc 1 148 3 is_stmt 1 view .LVU17
- 148:Core/Src/main.c **** 
- 134              		.loc 1 148 22 is_stmt 0 view .LVU18
+ 147:Core/Src/main.c **** 
+ 133              		.loc 1 147 3 is_stmt 1 view .LVU17
+ 147:Core/Src/main.c **** 
+ 134              		.loc 1 147 22 is_stmt 0 view .LVU18
  135 000e 1022     		movs	r2, #16
  136 0010 0021     		movs	r1, #0
  137 0012 01A8     		add	r0, sp, #4
  138 0014 FFF7FEFF 		bl	memset
  139              	.LVL6:
- 152:Core/Src/main.c **** 
- 140              		.loc 1 152 3 is_stmt 1 view .LVU19
+ 151:Core/Src/main.c **** 
+ 140              		.loc 1 151 3 is_stmt 1 view .LVU19
  141 0018 8020     		movs	r0, #128
  142 001a C000     		lsls	r0, r0, #3
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 24
-
-
  143 001c FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 24
+
+
  144              	.LVL7:
- 157:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 145              		.loc 1 157 3 view .LVU20
- 157:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 146              		.loc 1 157 36 is_stmt 0 view .LVU21
+ 156:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 145              		.loc 1 156 3 view .LVU20
+ 156:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 146              		.loc 1 156 36 is_stmt 0 view .LVU21
  147 0020 0A23     		movs	r3, #10
  148 0022 0593     		str	r3, [sp, #20]
- 158:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 149              		.loc 1 158 3 is_stmt 1 view .LVU22
- 158:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 150              		.loc 1 158 30 is_stmt 0 view .LVU23
+ 157:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 149              		.loc 1 157 3 is_stmt 1 view .LVU22
+ 157:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 150              		.loc 1 157 30 is_stmt 0 view .LVU23
  151 0024 F633     		adds	r3, r3, #246
  152 0026 0893     		str	r3, [sp, #32]
- 159:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 153              		.loc 1 159 3 is_stmt 1 view .LVU24
- 159:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
- 154              		.loc 1 159 41 is_stmt 0 view .LVU25
+ 158:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 153              		.loc 1 158 3 is_stmt 1 view .LVU24
+ 158:Core/Src/main.c ****   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+ 154              		.loc 1 158 41 is_stmt 0 view .LVU25
  155 0028 C03B     		subs	r3, r3, #192
  156 002a 0993     		str	r3, [sp, #36]
- 160:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 157              		.loc 1 160 3 is_stmt 1 view .LVU26
- 160:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 158              		.loc 1 160 30 is_stmt 0 view .LVU27
+ 159:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 157              		.loc 1 159 3 is_stmt 1 view .LVU26
+ 159:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 158              		.loc 1 159 30 is_stmt 0 view .LVU27
  159 002c 3F3B     		subs	r3, r3, #63
  160 002e 0A93     		str	r3, [sp, #40]
- 161:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 161              		.loc 1 161 3 is_stmt 1 view .LVU28
- 161:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 162              		.loc 1 161 34 is_stmt 0 view .LVU29
+ 160:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 161              		.loc 1 160 3 is_stmt 1 view .LVU28
+ 160:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 162              		.loc 1 160 34 is_stmt 0 view .LVU29
  163 0030 0023     		movs	r3, #0
  164 0032 1093     		str	r3, [sp, #64]
- 162:Core/Src/main.c ****   {
- 165              		.loc 1 162 3 is_stmt 1 view .LVU30
- 162:Core/Src/main.c ****   {
- 166              		.loc 1 162 7 is_stmt 0 view .LVU31
+ 161:Core/Src/main.c ****   {
+ 165              		.loc 1 161 3 is_stmt 1 view .LVU30
+ 161:Core/Src/main.c ****   {
+ 166              		.loc 1 161 7 is_stmt 0 view .LVU31
  167 0034 05A8     		add	r0, sp, #20
  168 0036 FFF7FEFF 		bl	HAL_RCC_OscConfig
  169              	.LVL8:
- 162:Core/Src/main.c ****   {
- 170              		.loc 1 162 6 view .LVU32
+ 161:Core/Src/main.c ****   {
+ 170              		.loc 1 161 6 view .LVU32
  171 003a 0028     		cmp	r0, #0
  172 003c 0ED1     		bne	.L9
- 169:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 173              		.loc 1 169 3 is_stmt 1 view .LVU33
- 169:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 174              		.loc 1 169 31 is_stmt 0 view .LVU34
+ 168:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 173              		.loc 1 168 3 is_stmt 1 view .LVU33
+ 168:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 174              		.loc 1 168 31 is_stmt 0 view .LVU34
  175 003e 0723     		movs	r3, #7
  176 0040 0193     		str	r3, [sp, #4]
- 170:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 177              		.loc 1 170 3 is_stmt 1 view .LVU35
- 170:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 178              		.loc 1 170 34 is_stmt 0 view .LVU36
+ 169:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 177              		.loc 1 169 3 is_stmt 1 view .LVU35
+ 169:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 178              		.loc 1 169 34 is_stmt 0 view .LVU36
  179 0042 063B     		subs	r3, r3, #6
  180 0044 0293     		str	r3, [sp, #8]
- 171:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 181              		.loc 1 171 3 is_stmt 1 view .LVU37
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 25
+ 170:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 181              		.loc 1 170 3 is_stmt 1 view .LVU37
+ 170:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 25
 
 
- 171:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 182              		.loc 1 171 35 is_stmt 0 view .LVU38
+ 182              		.loc 1 170 35 is_stmt 0 view .LVU38
  183 0046 0023     		movs	r3, #0
  184 0048 0393     		str	r3, [sp, #12]
- 172:Core/Src/main.c **** 
- 185              		.loc 1 172 3 is_stmt 1 view .LVU39
- 172:Core/Src/main.c **** 
- 186              		.loc 1 172 36 is_stmt 0 view .LVU40
+ 171:Core/Src/main.c **** 
+ 185              		.loc 1 171 3 is_stmt 1 view .LVU39
+ 171:Core/Src/main.c **** 
+ 186              		.loc 1 171 36 is_stmt 0 view .LVU40
  187 004a 0493     		str	r3, [sp, #16]
- 174:Core/Src/main.c ****   {
- 188              		.loc 1 174 3 is_stmt 1 view .LVU41
- 174:Core/Src/main.c ****   {
- 189              		.loc 1 174 7 is_stmt 0 view .LVU42
+ 173:Core/Src/main.c ****   {
+ 188              		.loc 1 173 3 is_stmt 1 view .LVU41
+ 173:Core/Src/main.c ****   {
+ 189              		.loc 1 173 7 is_stmt 0 view .LVU42
  190 004c 0121     		movs	r1, #1
  191 004e 01A8     		add	r0, sp, #4
  192 0050 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  193              	.LVL9:
- 174:Core/Src/main.c ****   {
- 194              		.loc 1 174 6 view .LVU43
+ 173:Core/Src/main.c ****   {
+ 194              		.loc 1 173 6 view .LVU43
  195 0054 0028     		cmp	r0, #0
  196 0056 03D1     		bne	.L10
- 178:Core/Src/main.c **** 
- 197              		.loc 1 178 1 view .LVU44
+ 177:Core/Src/main.c **** 
+ 197              		.loc 1 177 1 view .LVU44
  198 0058 19B0     		add	sp, sp, #100
  199              		@ sp needed
  200 005a 00BD     		pop	{pc}
  201              	.L9:
- 164:Core/Src/main.c ****   }
- 202              		.loc 1 164 5 is_stmt 1 view .LVU45
+ 163:Core/Src/main.c ****   }
+ 202              		.loc 1 163 5 is_stmt 1 view .LVU45
  203 005c FFF7FEFF 		bl	Error_Handler
  204              	.LVL10:
  205              	.L10:
- 176:Core/Src/main.c ****   }
- 206              		.loc 1 176 5 view .LVU46
+ 175:Core/Src/main.c ****   }
+ 206              		.loc 1 175 5 view .LVU46
  207 0060 FFF7FEFF 		bl	Error_Handler
  208              	.LVL11:
  209              		.cfi_endproc
- 210              	.LFE427:
+ 210              	.LFE500:
  212              		.section	.rodata.main.str1.4,"aMS",%progbits,1
  213              		.align	2
  214              	.LC2:
@@ -1498,207 +1497,611 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 1
  221 0028 53746174 		.ascii	"Status2 = %X\012\000"
  221      75733220 
  221      3D202558 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 26
-
-
  221      0A00
- 222 0036 0000     		.align	2
- 223              	.LC8:
- 224 0038 25640A00 		.ascii	"%d\012\000"
- 225              		.section	.text.main,"ax",%progbits
- 226              		.align	1
- 227              		.global	main
- 228              		.syntax unified
- 229              		.code	16
- 230              		.thumb_func
- 232              	main:
- 233              	.LFB426:
-  73:Core/Src/main.c **** 
- 234              		.loc 1 73 1 view -0
- 235              		.cfi_startproc
- 236              		@ args = 0, pretend = 0, frame = 0
- 237              		@ frame_needed = 0, uses_anonymous_args = 0
- 238 0000 10B5     		push	{r4, lr}
- 239              	.LCFI3:
- 240              		.cfi_def_cfa_offset 8
- 241              		.cfi_offset 4, -8
- 242              		.cfi_offset 14, -4
-  82:Core/Src/main.c **** 
- 243              		.loc 1 82 3 view .LVU48
- 244 0002 FFF7FEFF 		bl	HAL_Init
- 245              	.LVL12:
-  89:Core/Src/main.c **** 
- 246              		.loc 1 89 3 view .LVU49
- 247 0006 FFF7FEFF 		bl	SystemClock_Config
- 248              	.LVL13:
-  96:Core/Src/main.c ****   MX_ADC1_Init();
- 249              		.loc 1 96 3 view .LVU50
- 250 000a FFF7FEFF 		bl	MX_GPIO_Init
- 251              	.LVL14:
-  97:Core/Src/main.c ****   MX_I2C1_Init();
- 252              		.loc 1 97 3 view .LVU51
- 253 000e FFF7FEFF 		bl	MX_ADC1_Init
- 254              	.LVL15:
-  98:Core/Src/main.c ****   MX_RTC_Init();
- 255              		.loc 1 98 3 view .LVU52
- 256 0012 FFF7FEFF 		bl	MX_I2C1_Init
- 257              	.LVL16:
-  99:Core/Src/main.c ****   MX_SPI1_Init();
- 258              		.loc 1 99 3 view .LVU53
- 259 0016 FFF7FEFF 		bl	MX_RTC_Init
- 260              	.LVL17:
- 100:Core/Src/main.c ****   MX_USART2_UART_Init();
- 261              		.loc 1 100 3 view .LVU54
- 262 001a FFF7FEFF 		bl	MX_SPI1_Init
- 263              	.LVL18:
- 101:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 264              		.loc 1 101 3 view .LVU55
- 265 001e FFF7FEFF 		bl	MX_USART2_UART_Init
- 266              	.LVL19:
- 110:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
- 267              		.loc 1 110 3 view .LVU56
- 110:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 27
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 26
 
 
- 268              		.loc 1 110 18 is_stmt 0 view .LVU57
- 269 0022 FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
- 270              	.LVL20:
- 271 0026 0100     		movs	r1, r0
- 272              	.LVL21:
- 111:Core/Src/main.c **** 
- 273              		.loc 1 111 3 is_stmt 1 view .LVU58
- 274 0028 134B     		ldr	r3, .L13
- 275 002a 1800     		movs	r0, r3
- 276              	.LVL22:
- 111:Core/Src/main.c **** 
- 277              		.loc 1 111 3 is_stmt 0 view .LVU59
- 278 002c FFF7FEFF 		bl	printf_
- 279              	.LVL23:
- 115:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
- 280              		.loc 1 115 3 is_stmt 1 view .LVU60
- 115:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
- 281              		.loc 1 115 18 is_stmt 0 view .LVU61
- 282 0030 FFF7FEFF 		bl	get_status
- 283              	.LVL24:
- 284 0034 0100     		movs	r1, r0
- 285              	.LVL25:
- 116:Core/Src/main.c **** 
- 286              		.loc 1 116 3 is_stmt 1 view .LVU62
- 287 0036 114B     		ldr	r3, .L13+4
- 288 0038 1800     		movs	r0, r3
- 289 003a FFF7FEFF 		bl	printf_
- 290              	.LVL26:
- 118:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
- 291              		.loc 1 118 3 view .LVU63
- 118:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
- 292              		.loc 1 118 10 is_stmt 0 view .LVU64
- 293 003e FFF7FEFF 		bl	get_status
- 294              	.LVL27:
- 295 0042 0100     		movs	r1, r0
- 296              	.LVL28:
- 119:Core/Src/main.c ****   hex_dump();
- 297              		.loc 1 119 3 is_stmt 1 view .LVU65
- 298 0044 0E4B     		ldr	r3, .L13+8
- 299 0046 1800     		movs	r0, r3
- 300 0048 FFF7FEFF 		bl	printf_
- 301              	.LVL29:
- 120:Core/Src/main.c ****   /* USER CODE END 2 */
- 302              		.loc 1 120 3 view .LVU66
- 303 004c FFF7FEFF 		bl	hex_dump
- 304              	.LVL30:
- 125:Core/Src/main.c ****   while (1)
- 305              		.loc 1 125 3 view .LVU67
- 306              	.L12:
- 126:Core/Src/main.c ****   {
- 307              		.loc 1 126 3 discriminator 1 view .LVU68
- 131:Core/Src/main.c ****     LED1_ON();
- 308              		.loc 1 131 5 discriminator 1 view .LVU69
- 309 0050 0C48     		ldr	r0, .L13+12
- 310 0052 0021     		movs	r1, #0
- 311 0054 FFF7FEFF 		bl	printf_
- 312              	.LVL31:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 28
+ 222              		.section	.text.main,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	main
+ 225              		.syntax unified
+ 226              		.code	16
+ 227              		.thumb_func
+ 229              	main:
+ 230              	.LFB499:
+  74:Core/Src/main.c **** 
+ 231              		.loc 1 74 1 view -0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 10B5     		push	{r4, lr}
+ 236              	.LCFI3:
+ 237              		.cfi_def_cfa_offset 8
+ 238              		.cfi_offset 4, -8
+ 239              		.cfi_offset 14, -4
+  83:Core/Src/main.c **** 
+ 240              		.loc 1 83 3 view .LVU48
+ 241 0002 FFF7FEFF 		bl	HAL_Init
+ 242              	.LVL12:
+  90:Core/Src/main.c **** 
+ 243              		.loc 1 90 3 view .LVU49
+ 244 0006 FFF7FEFF 		bl	SystemClock_Config
+ 245              	.LVL13:
+  97:Core/Src/main.c ****   MX_ADC1_Init();
+ 246              		.loc 1 97 3 view .LVU50
+ 247 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 248              	.LVL14:
+  98:Core/Src/main.c ****   MX_I2C1_Init();
+ 249              		.loc 1 98 3 view .LVU51
+ 250 000e FFF7FEFF 		bl	MX_ADC1_Init
+ 251              	.LVL15:
+  99:Core/Src/main.c ****   MX_RTC_Init();
+ 252              		.loc 1 99 3 view .LVU52
+ 253 0012 FFF7FEFF 		bl	MX_I2C1_Init
+ 254              	.LVL16:
+ 100:Core/Src/main.c ****   MX_SPI1_Init();
+ 255              		.loc 1 100 3 view .LVU53
+ 256 0016 FFF7FEFF 		bl	MX_RTC_Init
+ 257              	.LVL17:
+ 101:Core/Src/main.c ****   MX_USART2_UART_Init();
+ 258              		.loc 1 101 3 view .LVU54
+ 259 001a FFF7FEFF 		bl	MX_SPI1_Init
+ 260              	.LVL18:
+ 102:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 261              		.loc 1 102 3 view .LVU55
+ 262 001e FFF7FEFF 		bl	MX_USART2_UART_Init
+ 263              	.LVL19:
+ 104:Core/Src/main.c ****   LED1_ON();
+ 264              		.loc 1 104 3 view .LVU56
+ 265              	.LBB8:
+ 266              	.LBI8:
+ 267              		.file 3 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h"
+   1:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+   2:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   ******************************************************************************
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 27
 
 
- 132:Core/Src/main.c ****     HAL_Delay(62000);
- 313              		.loc 1 132 5 discriminator 1 view .LVU70
- 314 0058 0B4C     		ldr	r4, .L13+16
- 315 005a 0223     		movs	r3, #2
- 316 005c A361     		str	r3, [r4, #24]
- 133:Core/Src/main.c ****     LED1_OFF();
- 317              		.loc 1 133 5 discriminator 1 view .LVU71
- 318 005e 0B48     		ldr	r0, .L13+20
- 319 0060 FFF7FEFF 		bl	HAL_Delay
- 320              	.LVL32:
- 134:Core/Src/main.c ****     hex_dump();
- 321              		.loc 1 134 5 discriminator 1 view .LVU72
- 322 0064 8023     		movs	r3, #128
- 323 0066 9B02     		lsls	r3, r3, #10
- 324 0068 A361     		str	r3, [r4, #24]
- 135:Core/Src/main.c ****     HAL_Delay(3000);
- 325              		.loc 1 135 5 discriminator 1 view .LVU73
- 326 006a FFF7FEFF 		bl	hex_dump
- 327              	.LVL33:
- 136:Core/Src/main.c ****   }
- 328              		.loc 1 136 5 discriminator 1 view .LVU74
- 329 006e 0848     		ldr	r0, .L13+24
- 330 0070 FFF7FEFF 		bl	HAL_Delay
- 331              	.LVL34:
- 126:Core/Src/main.c ****   {
- 332              		.loc 1 126 9 discriminator 1 view .LVU75
- 333 0074 ECE7     		b	.L12
- 334              	.L14:
- 335 0076 C046     		.align	2
- 336              	.L13:
- 337 0078 00000000 		.word	.LC2
- 338 007c 18000000 		.word	.LC4
- 339 0080 28000000 		.word	.LC6
- 340 0084 38000000 		.word	.LC8
- 341 0088 00040050 		.word	1342178304
- 342 008c 30F20000 		.word	62000
- 343 0090 B80B0000 		.word	3000
- 344              		.cfi_endproc
- 345              	.LFE426:
- 347              		.text
- 348              	.Letext0:
- 349              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 350              		.file 4 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
- 351              		.file 5 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
- 352              		.file 6 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
- 353              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
- 354              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
- 355              		.file 9 "Core\\Inc/printf.h"
- 356              		.file 10 "Core\\Inc/AB1805.h"
- 357              		.file 11 "Core\\Inc/usart.h"
- 358              		.file 12 "Core\\Inc/spi.h"
- 359              		.file 13 "Core\\Inc/rtc.h"
- 360              		.file 14 "Core\\Inc/i2c.h"
- 361              		.file 15 "Core\\Inc/adc.h"
- 362              		.file 16 "Core\\Inc/gpio.h"
- 363              		.file 17 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
- 364              		.file 18 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 29
+   3:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @file    stm32u0xx_ll_spi.h
+   4:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @author  MCD Application Team
+   5:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief   Header file of SPI LL module.
+   6:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   ******************************************************************************
+   7:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @attention
+   8:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   *
+   9:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * Copyright (c) 2023 STMicroelectronics.
+  10:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * All rights reserved.
+  11:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   *
+  12:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * in the root directory of this software component.
+  14:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   *
+  16:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   ******************************************************************************
+  17:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+  18:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  19:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Define to prevent recursive inclusion -------------------------------------*/
+  20:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #ifndef STM32U0xx_LL_SPI_H
+  21:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define STM32U0xx_LL_SPI_H
+  22:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  23:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #ifdef __cplusplus
+  24:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** extern "C" {
+  25:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #endif
+  26:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  27:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Includes ------------------------------------------------------------------*/
+  28:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #include "stm32u0xx.h"
+  29:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  30:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @addtogroup STM32U0xx_LL_Driver
+  31:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+  32:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+  33:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  34:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #if defined (SPI1) || defined (SPI2) || defined (SPI3)
+  35:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  36:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL SPI
+  37:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+  38:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+  39:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  40:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Private types -------------------------------------------------------------*/
+  41:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Private variables ---------------------------------------------------------*/
+  42:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Private macros ------------------------------------------------------------*/
+  43:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  44:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Exported types ------------------------------------------------------------*/
+  45:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #if defined(USE_FULL_LL_DRIVER)
+  46:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_ES_INIT SPI Exported Init structure
+  47:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+  48:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+  49:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  50:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+  51:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief  SPI Init structures definition
+  52:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+  53:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** typedef struct
+  54:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** {
+  55:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t TransferDirection;       /*!< Specifies the SPI unidirectional or bidirectional data mod
+  56:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_TRANSFER_M
+  57:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  58:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  59:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 28
 
 
- 365              		.file 19 "<built-in>"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s 			page 30
+  60:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t Mode;                    /*!< Specifies the SPI mode (Master/Slave).
+  61:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_MODE.
+  62:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  63:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  64:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  65:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t DataWidth;               /*!< Specifies the SPI data width.
+  66:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_DATAWIDTH.
+  67:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  68:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  69:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  70:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t ClockPolarity;           /*!< Specifies the serial clock steady state.
+  71:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_POLARITY.
+  72:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  73:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  74:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  75:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t ClockPhase;              /*!< Specifies the clock active edge for the bit capture.
+  76:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_PHASE.
+  77:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  78:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  79:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  80:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t NSS;                     /*!< Specifies whether the NSS signal is managed by hardware (N
+  81:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_NSS_MODE.
+  82:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  83:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  84:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  85:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t BaudRate;                /*!< Specifies the BaudRate prescaler value which will be used 
+  86:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_BAUDRATEPR
+  87:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          @note The communication clock is derived from the master c
+  88:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  89:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  90:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  91:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t BitOrder;                /*!< Specifies whether data transfers start from MSB or LSB bit
+  92:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_BIT_ORDER.
+  93:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  94:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+  95:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  96:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t CRCCalculation;          /*!< Specifies if the CRC calculation is enabled or not.
+  97:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter can be a value of @ref SPI_LL_EC_CRC_CALCUL
+  98:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+  99:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+ 100:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 101:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   uint32_t CRCPoly;                 /*!< Specifies the polynomial used for the CRC calculation.
+ 102:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This parameter must be a number between Min_Data = 0x00 an
+ 103:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 104:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****                                          This feature can be modified afterwards using unitary func
+ 105:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 106:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** } LL_SPI_InitTypeDef;
+ 107:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 108:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 109:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 110:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 111:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #endif /* USE_FULL_LL_DRIVER */
+ 112:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 113:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Exported constants --------------------------------------------------------*/
+ 114:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_Exported_Constants SPI Exported Constants
+ 115:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 116:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 29
+
+
+ 117:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 118:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_GET_FLAG Get Flags Defines
+ 119:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief    Flags defines which can be used with LL_SPI_ReadReg function
+ 120:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 121:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 122:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_RXNE                     SPI_SR_RXNE               /*!< Rx buffer not empty flag 
+ 123:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_TXE                      SPI_SR_TXE                /*!< Tx buffer empty flag     
+ 124:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_BSY                      SPI_SR_BSY                /*!< Busy flag                
+ 125:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_CRCERR                   SPI_SR_CRCERR             /*!< CRC error flag           
+ 126:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_MODF                     SPI_SR_MODF               /*!< Mode fault flag          
+ 127:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_OVR                      SPI_SR_OVR                /*!< Overrun flag             
+ 128:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SR_FRE                      SPI_SR_FRE                /*!< TI mode frame format erro
+ 129:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 130:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 131:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 132:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 133:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_IT IT Defines
+ 134:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief    IT defines which can be used with LL_SPI_ReadReg and  LL_SPI_WriteReg functions
+ 135:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 136:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 137:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CR2_RXNEIE                  SPI_CR2_RXNEIE            /*!< Rx buffer not empty inter
+ 138:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CR2_TXEIE                   SPI_CR2_TXEIE             /*!< Tx buffer empty interrupt
+ 139:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CR2_ERRIE                   SPI_CR2_ERRIE             /*!< Error interrupt enable   
+ 140:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 141:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 142:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 143:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 144:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_MODE Operation Mode
+ 145:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 146:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 147:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_MODE_MASTER                 (SPI_CR1_MSTR | SPI_CR1_SSI)    /*!< Master configuratio
+ 148:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_MODE_SLAVE                  0x00000000U                     /*!< Slave configuration
+ 149:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 150:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 151:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 152:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 153:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_PROTOCOL Serial Protocol
+ 154:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 155:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 156:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_PROTOCOL_MOTOROLA           0x00000000U               /*!< Motorola mode. Used as de
+ 157:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_PROTOCOL_TI                 (SPI_CR2_FRF)             /*!< TI mode                  
+ 158:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 159:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 160:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 161:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 162:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_PHASE Clock Phase
+ 163:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 164:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 165:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_PHASE_1EDGE                 0x00000000U               /*!< First clock transition is
+ 166:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_PHASE_2EDGE                 (SPI_CR1_CPHA)            /*!< Second clock transition i
+ 167:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 168:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 169:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 170:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 171:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_POLARITY Clock Polarity
+ 172:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 173:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 30
+
+
+ 174:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_POLARITY_LOW                0x00000000U               /*!< Clock to 0 when idle */
+ 175:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_POLARITY_HIGH               (SPI_CR1_CPOL)            /*!< Clock to 1 when idle */
+ 176:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 177:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 178:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 179:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 180:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_BAUDRATEPRESCALER Baud Rate Prescaler
+ 181:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 182:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 183:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV2      0x00000000U                                    /*!< Baud
+ 184:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV4      (SPI_CR1_BR_0)                                 /*!< Baud
+ 185:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV8      (SPI_CR1_BR_1)                                 /*!< Baud
+ 186:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV16     (SPI_CR1_BR_1 | SPI_CR1_BR_0)                  /*!< Baud
+ 187:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV32     (SPI_CR1_BR_2)                                 /*!< Baud
+ 188:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV64     (SPI_CR1_BR_2 | SPI_CR1_BR_0)                  /*!< Baud
+ 189:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV128    (SPI_CR1_BR_2 | SPI_CR1_BR_1)                  /*!< Baud
+ 190:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_BAUDRATEPRESCALER_DIV256    (SPI_CR1_BR_2 | SPI_CR1_BR_1 | SPI_CR1_BR_0)   /*!< Baud
+ 191:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 192:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 193:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 194:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 195:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_BIT_ORDER Transmission Bit Order
+ 196:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 197:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 198:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_LSB_FIRST                   (SPI_CR1_LSBFIRST)        /*!< Data is transmitted/recei
+ 199:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_MSB_FIRST                   0x00000000U               /*!< Data is transmitted/recei
+ 200:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 201:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 202:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 203:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 204:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_TRANSFER_MODE Transfer Mode
+ 205:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 206:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 207:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_FULL_DUPLEX                 0x00000000U                          /*!< Full-Duplex mo
+ 208:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_SIMPLEX_RX                  (SPI_CR1_RXONLY)                     /*!< Simplex Rx mod
+ 209:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_HALF_DUPLEX_RX              (SPI_CR1_BIDIMODE)                   /*!< Half-Duplex Rx
+ 210:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_HALF_DUPLEX_TX              (SPI_CR1_BIDIMODE | SPI_CR1_BIDIOE)  /*!< Half-Duplex Tx
+ 211:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 212:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 213:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 214:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 215:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_NSS_MODE Slave Select Pin Mode
+ 216:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 217:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 218:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_NSS_SOFT                    (SPI_CR1_SSM)                     /*!< NSS managed inter
+ 219:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_NSS_HARD_INPUT              0x00000000U                       /*!< NSS pin used in I
+ 220:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_NSS_HARD_OUTPUT             (((uint32_t)SPI_CR2_SSOE << 16U)) /*!< NSS pin used in O
+ 221:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 222:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 223:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 224:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 225:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_DATAWIDTH Datawidth
+ 226:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 227:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 228:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_4BIT              (SPI_CR2_DS_0 | SPI_CR2_DS_1)                           
+ 229:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_5BIT              (SPI_CR2_DS_2)                                          
+ 230:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_6BIT              (SPI_CR2_DS_2 | SPI_CR2_DS_0)                           
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 31
+
+
+ 231:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_7BIT              (SPI_CR2_DS_2 | SPI_CR2_DS_1)                           
+ 232:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_8BIT              (SPI_CR2_DS_2 | SPI_CR2_DS_1 | SPI_CR2_DS_0)            
+ 233:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_9BIT              (SPI_CR2_DS_3)                                          
+ 234:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_10BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_0)                           
+ 235:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_11BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_1)                           
+ 236:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_12BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_1 | SPI_CR2_DS_0)            
+ 237:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_13BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_2)                           
+ 238:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_14BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_2 | SPI_CR2_DS_0)            
+ 239:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_15BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_2 | SPI_CR2_DS_1)            
+ 240:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DATAWIDTH_16BIT             (SPI_CR2_DS_3 | SPI_CR2_DS_2 | SPI_CR2_DS_1 | SPI_CR2_DS
+ 241:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 242:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 243:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 244:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #if defined(USE_FULL_LL_DRIVER)
+ 245:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 246:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_CRC_CALCULATION CRC Calculation
+ 247:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 248:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 249:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CRCCALCULATION_DISABLE      0x00000000U               /*!< CRC calculation disabled 
+ 250:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CRCCALCULATION_ENABLE       (SPI_CR1_CRCEN)           /*!< CRC calculation enabled  
+ 251:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 252:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 253:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 254:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #endif /* USE_FULL_LL_DRIVER */
+ 255:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 256:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_CRC_LENGTH CRC Length
+ 257:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 258:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 259:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CRC_8BIT                    0x00000000U               /*!<  8-bit CRC length */
+ 260:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_CRC_16BIT                   (SPI_CR1_CRCL)            /*!< 16-bit CRC length */
+ 261:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 262:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 263:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 264:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 265:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_RX_FIFO_TH RX FIFO Threshold
+ 266:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 267:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 268:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_TH_HALF             0x00000000U               /*!< RXNE event is generated i
+ 269:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_TH_QUARTER          (SPI_CR2_FRXTH)           /*!< RXNE event is generated i
+ 270:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 271:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 272:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 273:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 274:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_RX_FIFO RX FIFO Level
+ 275:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 276:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 277:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_EMPTY               0x00000000U                       /*!< FIFO reception em
+ 278:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_QUARTER_FULL        (SPI_SR_FRLVL_0)                  /*!< FIFO reception 1/
+ 279:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_HALF_FULL           (SPI_SR_FRLVL_1)                  /*!< FIFO reception 1/
+ 280:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_RX_FIFO_FULL                (SPI_SR_FRLVL_1 | SPI_SR_FRLVL_0) /*!< FIFO reception fu
+ 281:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 282:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 283:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 284:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 285:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_TX_FIFO TX FIFO Level
+ 286:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 287:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 32
+
+
+ 288:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_TX_FIFO_EMPTY               0x00000000U                       /*!< FIFO transmission
+ 289:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_TX_FIFO_QUARTER_FULL        (SPI_SR_FTLVL_0)                  /*!< FIFO transmission
+ 290:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_TX_FIFO_HALF_FULL           (SPI_SR_FTLVL_1)                  /*!< FIFO transmission
+ 291:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_TX_FIFO_FULL                (SPI_SR_FTLVL_1 | SPI_SR_FTLVL_0) /*!< FIFO transmission
+ 292:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 293:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 294:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 295:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 296:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EC_DMA_PARITY DMA Parity
+ 297:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 298:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 299:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DMA_PARITY_EVEN             0x00000000U   /*!< Select DMA parity Even */
+ 300:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_DMA_PARITY_ODD              0x00000001U   /*!< Select DMA parity Odd  */
+ 301:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 302:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 303:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 304:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 305:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 306:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 307:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 308:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 309:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 310:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Exported macro ------------------------------------------------------------*/
+ 311:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_Exported_Macros SPI Exported Macros
+ 312:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 313:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 314:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 315:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EM_WRITE_READ Common Write and read registers Macros
+ 316:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 317:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 318:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 319:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 320:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief  Write a value in SPI register
+ 321:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  __INSTANCE__ SPI Instance
+ 322:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  __REG__ Register to be written
+ 323:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  __VALUE__ Value to be written in the register
+ 324:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @retval None
+ 325:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 326:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALUE
+ 327:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 328:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 329:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief  Read a value in SPI register
+ 330:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  __INSTANCE__ SPI Instance
+ 331:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  __REG__ Register to be read
+ 332:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @retval Register value
+ 333:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 334:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** #define LL_SPI_ReadReg(__INSTANCE__, __REG__) READ_REG(__INSTANCE__->__REG__)
+ 335:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 336:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 337:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 338:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 339:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 340:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @}
+ 341:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 342:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 343:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /* Exported functions --------------------------------------------------------*/
+ 344:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_Exported_Functions SPI Exported Functions
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 33
+
+
+ 345:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 346:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 347:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 348:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /** @defgroup SPI_LL_EF_Configuration Configuration
+ 349:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @{
+ 350:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 351:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** 
+ 352:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** /**
+ 353:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @brief  Enable SPI peripheral
+ 354:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @rmtoll CR1          SPE           LL_SPI_Enable
+ 355:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @param  SPIx SPI Instance
+ 356:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   * @retval None
+ 357:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   */
+ 358:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** __STATIC_INLINE void LL_SPI_Enable(SPI_TypeDef *SPIx)
+ 268              		.loc 3 358 22 view .LVU57
+ 269              	.LBB9:
+ 359:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h **** {
+ 360:Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h ****   SET_BIT(SPIx->CR1, SPI_CR1_SPE);
+ 270              		.loc 3 360 3 view .LVU58
+ 271 0022 1C4A     		ldr	r2, .L13
+ 272 0024 1368     		ldr	r3, [r2]
+ 273 0026 4021     		movs	r1, #64
+ 274 0028 0B43     		orrs	r3, r1
+ 275 002a 1360     		str	r3, [r2]
+ 276              	.LVL20:
+ 277              		.loc 3 360 3 is_stmt 0 view .LVU59
+ 278              	.LBE9:
+ 279              	.LBE8:
+ 105:Core/Src/main.c ****   uint32_t clk = HAL_RCC_GetSysClockFreq();
+ 280              		.loc 1 105 3 is_stmt 1 view .LVU60
+ 281 002c 1A4C     		ldr	r4, .L13+4
+ 282 002e 0223     		movs	r3, #2
+ 283 0030 A361     		str	r3, [r4, #24]
+ 106:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
+ 284              		.loc 1 106 3 view .LVU61
+ 106:Core/Src/main.c ****   printf("\nMAIN. Power ON.   %d\n", clk);
+ 285              		.loc 1 106 18 is_stmt 0 view .LVU62
+ 286 0032 FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
+ 287              	.LVL21:
+ 288 0036 0100     		movs	r1, r0
+ 289              	.LVL22:
+ 107:Core/Src/main.c **** 
+ 290              		.loc 1 107 3 is_stmt 1 view .LVU63
+ 291 0038 184B     		ldr	r3, .L13+8
+ 292 003a 1800     		movs	r0, r3
+ 293              	.LVL23:
+ 107:Core/Src/main.c **** 
+ 294              		.loc 1 107 3 is_stmt 0 view .LVU64
+ 295 003c FFF7FEFF 		bl	printf_
+ 296              	.LVL24:
+ 109:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
+ 297              		.loc 1 109 3 is_stmt 1 view .LVU65
+ 109:Core/Src/main.c ****   printf("Status1 = %X\n", stat);
+ 298              		.loc 1 109 18 is_stmt 0 view .LVU66
+ 299 0040 FFF7FEFF 		bl	get_status
+ 300              	.LVL25:
+ 301 0044 0100     		movs	r1, r0
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 34
+
+
+ 302              	.LVL26:
+ 110:Core/Src/main.c **** 
+ 303              		.loc 1 110 3 is_stmt 1 view .LVU67
+ 304 0046 164B     		ldr	r3, .L13+12
+ 305 0048 1800     		movs	r0, r3
+ 306 004a FFF7FEFF 		bl	printf_
+ 307              	.LVL27:
+ 112:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
+ 308              		.loc 1 112 3 view .LVU68
+ 112:Core/Src/main.c ****   printf("Status2 = %X\n", stat);
+ 309              		.loc 1 112 10 is_stmt 0 view .LVU69
+ 310 004e FFF7FEFF 		bl	get_status
+ 311              	.LVL28:
+ 312 0052 0100     		movs	r1, r0
+ 313              	.LVL29:
+ 113:Core/Src/main.c ****   hex_dump();
+ 314              		.loc 1 113 3 is_stmt 1 view .LVU70
+ 315 0054 134B     		ldr	r3, .L13+16
+ 316 0056 1800     		movs	r0, r3
+ 317 0058 FFF7FEFF 		bl	printf_
+ 318              	.LVL30:
+ 114:Core/Src/main.c ****   /* USER CODE END 2 */
+ 319              		.loc 1 114 3 view .LVU71
+ 320 005c FFF7FEFF 		bl	hex_dump
+ 321              	.LVL31:
+ 120:Core/Src/main.c ****   resetConfig();
+ 322              		.loc 1 120 3 view .LVU72
+ 323 0060 FA20     		movs	r0, #250
+ 324 0062 C000     		lsls	r0, r0, #3
+ 325 0064 FFF7FEFF 		bl	HAL_Delay
+ 326              	.LVL32:
+ 121:Core/Src/main.c ****   enter_sleep_mode(30, 1);
+ 327              		.loc 1 121 3 view .LVU73
+ 328 0068 FFF7FEFF 		bl	resetConfig
+ 329              	.LVL33:
+ 122:Core/Src/main.c ****   LED1_OFF();
+ 330              		.loc 1 122 3 view .LVU74
+ 331 006c 0121     		movs	r1, #1
+ 332 006e 1E20     		movs	r0, #30
+ 333 0070 FFF7FEFF 		bl	enter_sleep_mode
+ 334              	.LVL34:
+ 123:Core/Src/main.c **** 
+ 335              		.loc 1 123 3 view .LVU75
+ 336 0074 8023     		movs	r3, #128
+ 337 0076 9B02     		lsls	r3, r3, #10
+ 338 0078 A361     		str	r3, [r4, #24]
+ 339              	.L12:
+ 125:Core/Src/main.c ****   {
+ 340              		.loc 1 125 3 discriminator 1 view .LVU76
+ 131:Core/Src/main.c ****     HAL_Delay(100);
+ 341              		.loc 1 131 5 discriminator 1 view .LVU77
+ 342 007a 074C     		ldr	r4, .L13+4
+ 343 007c 0223     		movs	r3, #2
+ 344 007e A361     		str	r3, [r4, #24]
+ 132:Core/Src/main.c ****     LED1_OFF();
+ 345              		.loc 1 132 5 discriminator 1 view .LVU78
+ 346 0080 6420     		movs	r0, #100
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 35
+
+
+ 347 0082 FFF7FEFF 		bl	HAL_Delay
+ 348              	.LVL35:
+ 133:Core/Src/main.c ****     //    hex_dump();
+ 349              		.loc 1 133 5 discriminator 1 view .LVU79
+ 350 0086 8023     		movs	r3, #128
+ 351 0088 9B02     		lsls	r3, r3, #10
+ 352 008a A361     		str	r3, [r4, #24]
+ 135:Core/Src/main.c ****   }
+ 353              		.loc 1 135 5 discriminator 1 view .LVU80
+ 354 008c 6420     		movs	r0, #100
+ 355 008e FFF7FEFF 		bl	HAL_Delay
+ 356              	.LVL36:
+ 125:Core/Src/main.c ****   {
+ 357              		.loc 1 125 9 discriminator 1 view .LVU81
+ 358 0092 F2E7     		b	.L12
+ 359              	.L14:
+ 360              		.align	2
+ 361              	.L13:
+ 362 0094 00300140 		.word	1073819648
+ 363 0098 00040050 		.word	1342178304
+ 364 009c 00000000 		.word	.LC2
+ 365 00a0 18000000 		.word	.LC4
+ 366 00a4 28000000 		.word	.LC6
+ 367              		.cfi_endproc
+ 368              	.LFE499:
+ 370              		.text
+ 371              	.Letext0:
+ 372              		.file 4 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 373              		.file 5 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 374              		.file 6 "Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h"
+ 375              		.file 7 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h"
+ 376              		.file 8 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h"
+ 377              		.file 9 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_pwr_ex.h"
+ 378              		.file 10 "Core\\Inc/AB1805.h"
+ 379              		.file 11 "Core\\Inc/printf.h"
+ 380              		.file 12 "Core\\Inc/usart.h"
+ 381              		.file 13 "Core\\Inc/spi.h"
+ 382              		.file 14 "Core\\Inc/rtc.h"
+ 383              		.file 15 "Core\\Inc/i2c.h"
+ 384              		.file 16 "Core\\Inc/adc.h"
+ 385              		.file 17 "Core\\Inc/gpio.h"
+ 386              		.file 18 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
+ 387              		.file 19 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
+ 388              		.file 20 "<built-in>"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccacSw2j.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:19     .rodata.print_error.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:23     .text.print_error:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:29     .text.print_error:00000000 print_error
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:64     .text.print_error:00000018 $d
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:69     .text.Error_Handler:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:75     .text.Error_Handler:00000000 Error_Handler
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:107    .text.SystemClock_Config:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:113    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:213    .rodata.main.str1.4:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:226    .text.main:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:232    .text.main:00000000 main
-C:\Users\upo\AppData\Local\Temp\ccNtgnGW.s:337    .text.main:00000078 $d
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:19     .rodata.print_error.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:23     .text.print_error:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:29     .text.print_error:00000000 print_error
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:64     .text.print_error:00000018 $d
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:69     .text.Error_Handler:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:75     .text.Error_Handler:00000000 Error_Handler
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:107    .text.SystemClock_Config:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:113    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:213    .rodata.main.str1.4:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:223    .text.main:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:229    .text.main:00000000 main
+C:\Users\upo\AppData\Local\Temp\ccacSw2j.s:362    .text.main:00000094 $d
 
 UNDEFINED SYMBOLS
 printf_
@@ -1717,3 +2120,5 @@ MX_USART2_UART_Init
 HAL_RCC_GetSysClockFreq
 get_status
 hex_dump
+resetConfig
+enter_sleep_mode

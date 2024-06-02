@@ -381,9 +381,7 @@ uint8_t set_WDT_register_value(uint8_t value);
 uint8_t set_WDT_register_mask(uint8_t value, uint8_t mask);
 
 // sleep control methods
-void enter_sleep_mode_PWR(void);
 void enter_sleep_mode_PWR_value(uint8_t value);
-
 uint8_t enter_sleep_mode(uint8_t timeout, uint8_t mode);
 
 // convert func
@@ -393,19 +391,30 @@ uint8_t hex_dec(uint8_t hex);
 // func
 void hex_dump(void);
 
+/**
+ * @brief Resets the configuration of the AB1805 to default settings
+ *
+ * @param flags flags to customize reset behavior (default: 0)
+ *
+ * @return true on success or false if an error occurs.
+ *
+ * The only exception currently defined is `AB1805::RESET_PRESERVE_REPEATING_TIMER` that
+ * keeps repeating timers programmed when resetting configuration.
+ */
+bool resetConfig(void);
 // #define DEBUG_SIO Serial
 
 // #if defined(DEBUG_SIO)
 // #define SERIAL_DEBUG_BEGIN DEBUG_SIO.begin(74880);
-// #define DBGPRINT(__VA_ARGS__) DEBUG_SIO.print(__VA_ARGS__)
-// #define DBGPRINTLN(__VA_ARGS__) DEBUG_SIO.println(__VA_ARGS__)
-// #define DBGPRINTF(fmt, ...) DEBUG_SIO.printf(fmt, __VA_ARGS__)
+// #define printf(__VA_ARGS__) DEBUG_SIO.print(__VA_ARGS__)
+// #define printfLN(__VA_ARGS__) DEBUG_SIO.println(__VA_ARGS__)
+// #define printfF(fmt, ...) DEBUG_SIO.printf(fmt, __VA_ARGS__)
 
 // #else
 // #define SERIAL_DEBUG_BEGIN
-// #define DBGPRINT(__VA_ARGS__)
-// #define DBGPRINTLN(__VA_ARGS__)
-// #define DBGPRINTF(fmt, ...)
+// #define printf(__VA_ARGS__)
+// #define printfLN(__VA_ARGS__)
+// #define printfF(fmt, ...)
 // #endif
 
 #endif
