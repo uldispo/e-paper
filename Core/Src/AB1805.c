@@ -1,14 +1,25 @@
+
+/* AB1805: a library to provide high level APIs to interface with the
+* Abracon Corporation Real-time Clock. It is possible to use this library
+* in Energia (the Arduino port for MSP microcontrollers) or in other
+* toolchains.
+
+* This file is free software; you can redistribute it and/or modify
+* it under the terms of the GNU Lesser General Public License
+* version 3, both as published by the Free Software Foundation.
+*/
+
+#include "main.h"
 #include "AB1805.h"
-#include <stdint.h>
 #include "printf.h"
 #include "stm32u0xx_ll_spi.h"
-#include "main.h"
 extern SPI_HandleTypeDef hspi1;
 
 inline static uint8_t read_rtc_register(uint8_t reg_addr);
 inline static uint8_t write_rtc_register(uint8_t rtc_register, uint8_t data);
-static inline uint32_t utils_enter_critical_section(void);
-static inline void utils_exit_critical_section(uint32_t primask_bit);
+inline static uint32_t utils_enter_critical_section(void);
+inline static void utils_exit_critical_section(uint32_t primask_bit);
+
 #define AB1815_SPI_READ(offset) (127 & offset)
 #define AB1815_SPI_WRITE(offset) (128 | offset)
 #define DEBUG_SIO
@@ -29,7 +40,8 @@ volatile uint8_t _alarm_weekday;
 volatile uint8_t _alarm_hour;
 volatile uint8_t _alarm_minute;
 volatile uint8_t _alarm_second;
-char data_time_string[CONST_DATE_TIME_STRING_LEN];
+
+char data_time_string[CONST_DATE_TIME_STRING_LEN]; // CONST_DATE_TIME_STRING_LEN=30
 
 uint8_t _status;
 uint8_t _control1;
@@ -1529,4 +1541,140 @@ static inline uint32_t utils_enter_critical_section(void)
 static inline void utils_exit_critical_section(uint32_t primask_bit)
 {
   __set_PRIMASK(primask_bit);
+}
+
+// ****************************__________ deepPowerDown __________****************************
+
+bool deepPowerDown(int seconds)
+{
+  static const char *errorMsg = "failure in deepPowerDown %d";
+  bool bResult;
+
+  printf("deepPowerDown %d", seconds);
+
+  // Disable watchdog
+  // bResult = setWDT(0);
+  bResult = set_WDT_register_mask(0, 0x7c); // BMB
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  bResult = setCountdownTimer(seconds, false);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Make sure STOP (stop clocking system is 0, otherwise sleep mode cannot be entered)
+  // PWR2 = 1 (low resistance power switch)
+  // (also would probably work with PWR2 = 0, as nIRQ2 should be high-true for sleep mode)
+  bResult = maskRegister(REG_CTRL_1, (uint8_t) ~(0x80 | 0x08), 0x02);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Disable the I/O interface in sleep
+  bResult = setRegisterBit(REG_OSC_CTRL, REG_OSC_CTRL_PWGT);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // OUT2S = 6 to enable sleep mode
+  bResult = maskRegister(REG_CTRL_2, (uint8_t)~REG_CTRL_2_OUT2S_MASK, REG_CTRL_2_OUT2S_SLEEP);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Enter sleep mode and set nRST low
+  bResult = writeRegister(REG_SLEEP_CTRL, REG_SLEEP_CTRL_SLP | REG_SLEEP_CTRL_SLRES);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // _log.trace("delay in case we didn't power down");
+  unsigned long start = millis();
+  while (millis() - start < (unsigned long)(seconds * 1000))
+  {
+    printf("REG_SLEEP_CTRL=0x%2x", readRegister(REG_SLEEP_CTRL));
+    delay(1000);
+  }
+
+  printf("didn't power down");
+  return true;
+}
+
+// ****************************__________ setcountdownTimer __________****************************
+
+bool setCountdownTimer(int value, bool minutes)
+{
+  static const char *errorMsg = "failure in setCountdownTimer %d";
+  bool bResult;
+
+  // Clear any pending interrupts
+  bResult = write_rtc_register(STATU_REGISTER, 0x00);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Stop countdown timer if already running since it can't be set while running
+  bResult = write_rtc_register(TIMER_CONTROL_REGISTER, 0x23);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Set countdown timer duration
+  if (value < 1)
+  {
+    value = 1;
+  }
+  if (value > 255)
+  {
+    value = 255;
+  }
+  bResult = write_rtc_register(TIMER_REGISTER, (uint8_t)value);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Enable countdown timer interrupt (TIE = 1) in IntMask
+  // bResult = setRegisterBit(REG_INT_MASK, REG_INT_MASK_TIE);
+  bResult = set_TIE_interrupt(1);
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  // Set the TFS frequency to 1/60 Hz for minutes or 1 Hz for seconds
+  // static const uint8_t   REG_TIMER_CTRL_TFS_1     = 0x02;      //!< Countdown timer control, clock frequency 1 Hz
+  // static const uint8_t   REG_TIMER_CTRL_TFS_1_60  = 0x03;      //!< Countdown timer control, clock frequency
+  uint8_t tfs = (minutes ? 0x03 : 0x02);
+
+  // Enable countdown timer (TE = 1) in countdown timer control register
+  // static const uint8_t   REG_TIMER_CTRL_TE        = 0x80;      //!< Countdown timer control, timer enable
+  bResult = write_rtc_register(TIMER_CONTROL_REGISTER, TIMER_CONTROL_TE_MASK | tfs); // TIMER_CONTROL_TE_MASK 0x80
+  if (!bResult)
+  {
+    printf(errorMsg, __LINE__);
+    return false;
+  }
+
+  return true;
 }

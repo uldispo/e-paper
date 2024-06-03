@@ -101,6 +101,7 @@ int main(void)
   MX_SPI1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+
   LL_SPI_Enable(SPI1);
   LED1_ON();
   uint32_t clk = HAL_RCC_GetSysClockFreq();
@@ -108,9 +109,6 @@ int main(void)
 
   uint8_t stat = get_status();
   printf("Status1 = %X\n", stat);
-
-  stat = get_status();
-  printf("Status2 = %X\n", stat);
 
   /* USER CODE END 2 */
 

@@ -2768,7 +2768,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
 LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a
 
-.debug_info     0x00000000    0x243db
+.debug_info     0x00000000    0x243df
  .debug_info    0x00000000      0x8b9 build/main.o
  .debug_info    0x000008b9      0x73f build/gpio.o
  .debug_info    0x00000ff8      0xe09 build/adc.o
@@ -2794,8 +2794,8 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_info    0x0001d5e1     0x1432 build/stm32u0xx_hal_uart_ex.o
  .debug_info    0x0001ea13      0x76a build/system_stm32u0xx.o
  .debug_info    0x0001f17d     0x1da3 build/printf.o
- .debug_info    0x00020f20     0x348b build/AB1805.o
- .debug_info    0x000243ab       0x30 build/startup_stm32u073xx.o
+ .debug_info    0x00020f20     0x348f build/AB1805.o
+ .debug_info    0x000243af       0x30 build/startup_stm32u073xx.o
 
 .debug_abbrev   0x00000000     0x419c
  .debug_abbrev  0x00000000      0x2dd build/main.o
@@ -2939,7 +2939,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_ranges  0x00001390      0x440 build/AB1805.o
  .debug_ranges  0x000017d0       0x20 build/startup_stm32u073xx.o
 
-.debug_line     0x00000000    0x1b1d3
+.debug_line     0x00000000    0x1b164
  .debug_line    0x00000000      0x412 build/main.o
  .debug_line    0x00000412      0x311 build/gpio.o
  .debug_line    0x00000723      0x3d4 build/adc.o
@@ -2965,8 +2965,8 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_line    0x00016f83      0xd1d build/stm32u0xx_hal_uart_ex.o
  .debug_line    0x00017ca0      0x352 build/system_stm32u0xx.o
  .debug_line    0x00017ff2     0x1385 build/printf.o
- .debug_line    0x00019377     0x1de5 build/AB1805.o
- .debug_line    0x0001b15c       0x77 build/startup_stm32u073xx.o
+ .debug_line    0x00019377     0x1d76 build/AB1805.o
+ .debug_line    0x0001b0ed       0x77 build/startup_stm32u073xx.o
 
 .debug_str      0x00000000     0x66eb
  .debug_str     0x00000000      0x493 build/main.o

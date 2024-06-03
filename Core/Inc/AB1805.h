@@ -1,12 +1,16 @@
+/* AB1850.h
+ * AB1805: a library to provide high level APIs to interface with the
+ * Abracon Corporation Real-time Clock. It is possible to use this library
+ * in Energia (the Arduino port for MSP microcontrollers) or in other
+ * toolchains.
+
+ * This file is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License
+ * version 3, both as published by the Free Software Foundation.
+ */
+
 #ifndef AB1850_h
 #define AB1850_h
-////#include <Arduino.h>
-// #include <I2C.h>
-// #include <Wire.h>
-
-#include <stdint.h>
-#include <stdbool.h>
-// #define AM1805 0x69
 
 #define HUNDRETH_REGISTER 0x00
 #define SECOND_REGISTER 0x01
@@ -377,7 +381,7 @@ uint8_t set_osc_control_value_mask(uint8_t value, uint8_t mask);
 uint8_t get_WDT_register(void);
 uint8_t get_WDT_register_mask(uint8_t mask);
 
-uint8_t set_WDT_register_value(uint8_t value);
+// uint8_t set_WDT_register_value(uint8_t value);
 uint8_t set_WDT_register_mask(uint8_t value, uint8_t mask);
 
 // sleep control methods
