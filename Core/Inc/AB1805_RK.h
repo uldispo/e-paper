@@ -457,7 +457,7 @@ bool setCountdownTimer(int value, bool minutes);
  * better because you can tell the difference between a value of 0 and a failure
  * (false is returned).
  */
-inline static uint8_t read_rtc_register(uint8_t regAddr);
+// inline static uint8_t read_rtc_register(uint8_t regAddr);
 
 /**
  * @brief Reads sequential registers
@@ -492,7 +492,7 @@ bool readRegisters(uint8_t offset, uint8_t *buf, uint8_t length);
  *
  * @return true on success or false on error
  */
-inline static uint8_t write_rtc_register(uint8_t regAddr, uint8_t value);
+// inline static uint8_t write_rtc_register(uint8_t regAddr, uint8_t value);
 
 /**
  * @brief Writes sequential AB1805 registers

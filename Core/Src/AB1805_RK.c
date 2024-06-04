@@ -11,6 +11,8 @@
 
 static inline uint32_t utils_enter_critical_section(void);
 static inline void utils_exit_critical_section(uint32_t primask_bit);
+inline static uint8_t read_rtc_register(uint8_t regAddr);
+inline static uint8_t write_rtc_register(uint8_t regAddr, uint8_t value);
 
 #define AB1815_SPI_READ(offset) (127 & offset)
 #define AB1815_SPI_WRITE(offset) (128 | offset)

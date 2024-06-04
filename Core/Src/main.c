@@ -29,7 +29,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "printf.h"
-// #include "AB1805_RK.h"
+#include "AB1805_RK.h"
 #include "stm32u0xx_ll_spi.h"
 
 /* USER CODE END Includes */
@@ -57,6 +57,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void timeout_reset(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -107,8 +108,9 @@ int main(void)
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
 
-  // uint8_t stat = get_status();
-  // printf("Status1 = %X\n", stat);
+  resetConfig(0);
+  HAL_Delay(1500);
+  deepPowerDown(30);
 
   /* USER CODE END 2 */
 
@@ -184,7 +186,7 @@ void print_error(const char *func, uint32_t line)
   timeout_reset();
 }
 
-__attribute__((noreturn)) void timeout_reset(void)
+void timeout_reset(void)
 {
   LL_PWR_ClearFlag_CSB(); // Clear standby flag
   // printf(" *** timeout_reset:  %s    %d\n", func, line);
