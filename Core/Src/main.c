@@ -108,20 +108,20 @@ int main(void)
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
 
-  resetConfig(0);
-  HAL_Delay(1500);
-  deepPowerDown(30);
+//  resetConfig(0);
+//  HAL_Delay(1500);
+//  deepPowerDown(30);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  HAL_Delay(2000);
-  // resetConfig();
-  // hex_dump();
-  // enter_sleep_mode(30, 1);
-  LED1_OFF();
+   resetConfig(0);
+   hex_dump();
+   deepPowerDown(30);
+   hex_dump();
+   LED1_OFF();
 
   while (1)
   {

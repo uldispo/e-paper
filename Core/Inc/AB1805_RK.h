@@ -14,7 +14,7 @@ enum WakeReason
     DEEP_POWER_DOWN, //!< The deepPowerDown() function was used (RTC was in sleep mode)
     COUNTDOWN_TIMER, //!< The interruptCountdownTimer() was used
     ALARM            //!< RTC clock alarm (periodic or single) trigged wake
-} WakeReason;
+};	// WakeReason
 
 /**
  * @brief Call this from main setup() to initialize the library.
@@ -96,24 +96,24 @@ bool updateWakeReason();
  */
 bool setWDT(int seconds);
 
-/**
- * @brief Stops the watchdog timer. Useful before entering sleep mode.
- *
- * This is done automatically right before reset (using the reset system event)
- * so the watchdog won't trigger during a firmware update.
- */
-bool stopWDT() { return setWDT(0); };
-
-/**
- * @brief Resumes watchdog with same settings as before
- *
- * This is useful after returning from `System.sleep()` in STOP or ULTRA_LOW_POWER
- * sleep modes where executinon continues. You may also want to call `updateWakeReason()`.
- *
- * It's safe to call resumeWDT() even if the WDT has never been set, it does nothing
- * in this case, leaving the watchdog off.
- */
-bool resumeWDT() { return setWDT(-1); };
+///**
+// * @brief Stops the watchdog timer. Useful before entering sleep mode.
+// *
+// * This is done automatically right before reset (using the reset system event)
+// * so the watchdog won't trigger during a firmware update.
+// */
+//bool stopWDT() { return setWDT(0); };
+//
+///**
+// * @brief Resumes watchdog with same settings as before
+// *
+// * This is useful after returning from `System.sleep()` in STOP or ULTRA_LOW_POWER
+// * sleep modes where executinon continues. You may also want to call `updateWakeReason()`.
+// *
+// * It's safe to call resumeWDT() even if the WDT has never been set, it does nothing
+// * in this case, leaving the watchdog off.
+// */
+//bool resumeWDT() { return setWDT(-1); };
 
 /**
  * @brief Get the time from the RTC as a time_t
@@ -725,193 +725,195 @@ int bcdToValue(uint8_t bcd);
  */
 uint8_t valueToBcd(int value);
 
-static const uint32_t RESET_PRESERVE_REPEATING_TIMER = 0x00000001; //!< When resetting registers, leave repeating timer settings intact
-static const uint32_t RESET_DISABLE_XT = 0x00000002;               //!< When resetting registers, disable XT oscillator
+void hex_dump(void);
 
-static const int WATCHDOG_MAX_SECONDS = 124; //!< Maximum value that can be passed to setWDT().
+extern const uint32_t RESET_PRESERVE_REPEATING_TIMER; //!< When resetting registers, leave repeating timer settings intact
+extern const uint32_t RESET_DISABLE_XT;               //!< When resetting registers, disable XT oscillator
 
-static const uint8_t REG_HUNDREDTH = 0x00;             //!< Hundredths of a second, 2 BCD digits
-static const uint8_t REG_SECOND = 0x01;                //!< Seconds, 2 BCD digits, MSB is GP0
-static const uint8_t REG_MINUTE = 0x02;                //!< Minutes, 2 BCD digits, MSB is GP1
-static const uint8_t REG_HOUR = 0x03;                  //!< Hours, GP2, GP3
-static const uint8_t REG_DATE = 0x04;                  //!< Day of month (1-31), 2 BCD digits, GP4, GP5
-static const uint8_t REG_MONTH = 0x05;                 //!< Month (1-12), 2 BCD digits, GP6 - GP8
-static const uint8_t REG_YEAR = 0x06;                  //!< Year (0-99), 2 BCD digits
-static const uint8_t REG_WEEKDAY = 0x07;               //!< Weekday (0-6), GP9 - GP13
-static const uint8_t REG_HUNDREDTH_ALARM = 0x08;       //!< Alarm on hundredths of a second (0-99), 2 BCD digits
-static const uint8_t REG_SECOND_ALARM = 0x09;          //!< Alarm on seconds (0-59), 2 BCD digits, GP14
-static const uint8_t REG_MINUTE_ALARM = 0x0a;          //!< Alarm on minutes (0-59), 2 BCD digits, GP15
-static const uint8_t REG_HOUR_ALARM = 0x0b;            //!< Alarm on hour, GP16, GP17
-static const uint8_t REG_DATE_ALARM = 0x0c;            //!< Alarm on date (1-31), 2 BCD digits, GP18-GP19
-static const uint8_t REG_MONTH_ALARM = 0x0d;           //!< Alarm on month (1-12). 2 BCD digits, GP20-GP22
-static const uint8_t REG_WEEKDAY_ALARM = 0x0e;         //!< Alarm on day of week (0-6). GP23-GP27
-static const uint8_t REG_STATUS = 0x0f;                //!< Status register
-static const uint8_t REG_STATUS_CB = 0x80;             //!< Status register century bit mask
-static const uint8_t REG_STATUS_BAT = 0x40;            //!< Status register switched to VBAT bit mask
-static const uint8_t REG_STATUS_WDT = 0x20;            //!< Status register watchdog timer enabled and triggered bit mask
-static const uint8_t REG_STATUS_BL = 0x10;             //!< Status register battery voltage crossing bit mask
-static const uint8_t REG_STATUS_TIM = 0x08;            //!< Status register countdown timer reaches 0 bit mask
-static const uint8_t REG_STATUS_ALM = 0x04;            //!< Status register alarm register match bit mask
-static const uint8_t REG_STATUS_EX2 = 0x02;            //!< Status register WDI interrupt bit mask
-static const uint8_t REG_STATUS_EX1 = 0x01;            //!< Status register EXTI interrupt bit mask
-static const uint8_t REG_STATUS_DEFAULT = 0x00;        //!< Status register, default
-static const uint8_t REG_CTRL_1 = 0x10;                //!< Control register 1
-static const uint8_t REG_CTRL_1_STOP = 0x80;           //!< Control register 1, stop clocking system
-static const uint8_t REG_CTRL_1_12_24 = 0x40;          //!< Control register 1, 12/24 hour mode select (0 = 24 hour)
-static const uint8_t REG_CTRL_1_OUTB = 0x20;           //!< Control register 1, value for nIRQ2
-static const uint8_t REG_CTRL_1_OUT = 0x10;            //!< Control register 1, value for FOUT/nIRQ
-static const uint8_t REG_CTRL_1_RSP = 0x08;            //!< Control register 1, Reset polarity
-static const uint8_t REG_CTRL_1_ARST = 0x04;           //!< Control register 1, Auto reset enable
-static const uint8_t REG_CTRL_1_PWR2 = 0x02;           //!< Control register 1, PWW/nIRQ pull-down enable
-static const uint8_t REG_CTRL_1_WRTC = 0x01;           //!< Control register 1, write RTC mode
-static const uint8_t REG_CTRL_1_DEFAULT = 0x13;        //!< Control register 1, 0b00010011 (OUT | RSO | PWR2 | WRTC)
-static const uint8_t REG_CTRL_2 = 0x11;                //!< Control register 2
-static const uint8_t REG_CTRL_2_RS1E = 0x20;           //!< Control register 2, nIRQ2 output mode
-static const uint8_t REG_CTRL_2_OUT2S_MASK = 0x1c;     //!< Control register 2, nIRQ2 output mode
-static const uint8_t REG_CTRL_2_OUT2S_nIRQ = 0x00;     //!< Control register 2, nIRQ2 output mode, nIRQ or OUTB
-static const uint8_t REG_CTRL_2_OUT2S_SQW = 0x04;      //!< Control register 2, nIRQ2 output mode, SQW or OUTB
-static const uint8_t REG_CTRL_2_OUT2S_nAIRQ = 0x0c;    //!< Control register 2, nIRQ2 output mode, nAIRQ or OUTB
-static const uint8_t REG_CTRL_2_OUT2S_TIRQ = 0x10;     //!< Control register 2, nIRQ2 output mode, TIRQ or OUTB
-static const uint8_t REG_CTRL_2_OUT2S_nTIRQ = 0x14;    //!< Control register 2, nIRQ2 output mode, nTIRQ or OUTB
-static const uint8_t REG_CTRL_2_OUT2S_SLEEP = 0x18;    //!< Control register 2, nIRQ2 output mode, sleep mode
-static const uint8_t REG_CTRL_2_OUT2S_OUTB = 0x1c;     //!< Control register 2, nIRQ2 output mode, OUTB
-static const uint8_t REG_CTRL_2_OUT1S_MASK = 0x03;     //!< Control register 2, FOUT/nIRQ output mode
-static const uint8_t REG_CTRL_2_OUT1S_nIRQ = 0x00;     //!< Control register 2, FOUT/nIRQ output mode, nIRQ, or OUT
-static const uint8_t REG_CTRL_2_OUT1S_SQW = 0x01;      //!< Control register 2, FOUT/nIRQ output mode, SQW or OUT
-static const uint8_t REG_CTRL_2_OUT1S_SQW_nIRQ = 0x02; //!< Control register 2, FOUT/nIRQ output mode, SQW, nIRQ, or OUT
-static const uint8_t REG_CTRL_2_OUT1S_nAIRQ = 0x03;    //!< Control register 2, FOUT/nIRQ output mode, nIRQ or OUT
-static const uint8_t REG_CTRL_2_DEFAULT = 0x3c;        //!< Control register 2, 0b00111100 (OUT2S = OUTB)
-static const uint8_t REG_INT_MASK = 0x12;              //!< Interrupt mask
-static const uint8_t REG_INT_MASK_CEB = 0x80;          //!< Interrupt mask, century enable
-static const uint8_t REG_INT_MASK_IM = 0x60;           //!< Interrupt mask, interrupt mode bits (2 bits)
-static const uint8_t REG_INT_MASK_BLIE = 0x10;         //!< Interrupt mask, battery low interrupt enable
-static const uint8_t REG_INT_MASK_TIE = 0x08;          //!< Interrupt mask, timer interrupt enable
-static const uint8_t REG_INT_MASK_AIE = 0x04;          //!< Interrupt mask, alarm interrupt enable
-static const uint8_t REG_INT_MASK_EX2E = 0x02;         //!< Interrupt mask, XT2 interrupt enable
-static const uint8_t REG_INT_MASK_EX1E = 0x01;         //!< Interrupt mask, XT1 interrupt enable
-static const uint8_t REG_INT_MASK_DEFAULT = 0xe0;      //!< Interrupt mask, default 0b11100000 (CEB | IM=1/4 seconds)
-static const uint8_t REG_SQW = 0x13;                   //!< Square wave output control
-static const uint8_t REG_SQW_SQWE = 0x80;              //!< Square wave output control, enable
-static const uint8_t REG_SQW_DEFAULT = 0x26;           //!< Square wave output control, default 0b00100110
-static const uint8_t REG_CAL_XT = 0x14;                //!< Calibration for the XT oscillator
-static const uint8_t REG_CAL_RC_HIGH = 0x15;           //!< Calibration for the RC oscillator, upper 8 bits
-static const uint8_t REG_CAL_RC_LOW = 0x16;            //!< Calibration for the RC oscillator, lower 8 bits
-static const uint8_t REG_SLEEP_CTRL = 0x17;            //!< Power control system sleep function
-static const uint8_t REG_SLEEP_CTRL_SLP = 0x80;        //!< Sleep control, enter sleep mode
-static const uint8_t REG_SLEEP_CTRL_SLRES = 0x40;      //!< Sleep control, nRST low on sleep
-static const uint8_t REG_SLEEP_CTRL_EX2P = 0x20;       //!< Sleep control, XT2 on rising WDI
-static const uint8_t REG_SLEEP_CTRL_EX1P = 0x10;       //!< Sleep control, XT1 on rising EXTI
-static const uint8_t REG_SLEEP_CTRL_SLST = 0x08;       //!< Sleep control, set when sleep has occurred
-static const uint8_t REG_SLEEP_CTRL_SLTO_MASK = 0x07;  //!< Sleep control, number of 7.8ms periods before sleep
-static const uint8_t REG_SLEEP_CTRL_DEFAULT = 0x00;    //!< Sleep control default (0b00000000)
-static const uint8_t REG_TIMER_CTRL = 0x18;            //!< Countdown timer control
-static const uint8_t REG_TIMER_CTRL_TE = 0x80;         //!< Countdown timer control, timer enable
-static const uint8_t REG_TIMER_CTRL_TM = 0x40;         //!< Countdown timer control, timer interrupt mode
-static const uint8_t REG_TIMER_CTRL_TRPT = 0x20;       //!< Countdown timer control, timer repeat function
-static const uint8_t REG_TIMER_CTRL_RPT_MASK = 0x1c;   //!< Countdown timer control, repeat function
-static const uint8_t REG_TIMER_CTRL_RPT_HUN = 0x1c;    //!< Countdown timer control, repeat hundredths match (7)
-static const uint8_t REG_TIMER_CTRL_RPT_SEC = 0x18;    //!< Countdown timer control, repeat hundredths, seconds match (once per minute) (6)
-static const uint8_t REG_TIMER_CTRL_RPT_MIN = 0x14;    //!< Countdown timer control, repeat hundredths, seconds, minutes match (once per hour) (5)
-static const uint8_t REG_TIMER_CTRL_RPT_HOUR = 0x10;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours match (once per day) (4)
-static const uint8_t REG_TIMER_CTRL_RPT_WKDY = 0x0c;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, weekday match (once per week) (3)
-static const uint8_t REG_TIMER_CTRL_RPT_DATE = 0x08;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, date match (once per month) (2)
-static const uint8_t REG_TIMER_CTRL_RPT_MON = 0x04;    //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, date, month match (once per year) (1)
-static const uint8_t REG_TIMER_CTRL_RPT_DIS = 0x00;    //!< Countdown timer control, alarm disabled (0)
-static const uint8_t REG_TIMER_CTRL_TFS_MASK = 0x03;   //!< Countdown timer control, clock frequency
-static const uint8_t REG_TIMER_CTRL_TFS_FAST = 0x00;   //!< Countdown timer control, clock frequency 4.096 kHz or 128 Hz
-static const uint8_t REG_TIMER_CTRL_TFS_64 = 0x01;     //!< Countdown timer control, clock frequency 64 Hz
-static const uint8_t REG_TIMER_CTRL_TFS_1 = 0x02;      //!< Countdown timer control, clock frequency 1 Hz
-static const uint8_t REG_TIMER_CTRL_TFS_1_60 = 0x03;   //!< Countdown timer control, clock frequency 1/60 Hz (1 minute)
-static const uint8_t REG_TIMER_CTRL_DEFAULT = 0x23;    //!< Countdown timer control, 0b00100011 (TFPT + TFS = 1/60 Hz0)
-static const uint8_t REG_TIMER = 0x19;                 //!< Countdown timer current value register
-static const uint8_t REG_TIMER_DEFAULT = 0x00;         //!< Countdown timer current value register default value (0x00)
-static const uint8_t REG_TIMER_INITIAL = 0x1a;         //!< Countdown timer inital (reload) value register
-static const uint8_t REG_TIMER_INITIAL_DEFAULT = 0x00; //!< Countdown timer inital value register default value
-static const uint8_t REG_WDT = 0x1b;                   //!< Watchdog timer control register
-static const uint8_t REG_WDT_RESET = 0x80;             //!< Watchdog timer control, enable reset (1) or WIRQ (0)
-static const uint8_t REG_WDT_WRB_16_HZ = 0x00;         //!< Watchdog timer control, WRB watchdog clock = 16 Hz
-static const uint8_t REG_WDT_WRB_4_HZ = 0x01;          //!< Watchdog timer control, WRB watchdog clock = 4 Hz
-static const uint8_t REG_WDT_WRB_1_HZ = 0x02;          //!< Watchdog timer control, WRB watchdog clock = 1 Hz
-static const uint8_t REG_WDT_WRB_1_4_HZ = 0x03;        //!< Watchdog timer control, WRB watchdog clock = 1/4 Hz
-static const uint8_t REG_WDT_DEFAULT = 0x00;           //!< Watchdog timer control, default value
-static const uint8_t REG_OSC_CTRL = 0x1c;              //!< Oscillator control register
-static const uint8_t REG_OSC_CTRL_OSEL = 0x80;         //!< Oscillator control, clock select 32.768 kHz (0) or 128 Hz (1)
-static const uint8_t REG_OSC_CTRL_ACAL = 0x60;         //!< Oscillator control, auto-calibration
-static const uint8_t REG_OSC_CTRL_AOS = 0x10;          //!< Oscillator control, automatic switch to RC oscillator on battery
-static const uint8_t REG_OSC_CTRL_FOS = 0x08;          //!< Oscillator control, automatic switch to RC oscillator on failure
-static const uint8_t REG_OSC_CTRL_PWGT = 0x04;         //!< Oscillator control, IO interface disable
-static const uint8_t REG_OSC_CTRL_OFIE = 0x02;         //!< Oscillator control, oscillator fail interrupt enable
-static const uint8_t REG_OSC_CTRL_ACIE = 0x01;         //!< Oscillator control, auto-calibration fail interrupt enable
-static const uint8_t REG_OSC_CTRL_DEFAULT = 0x00;      //!< Oscillator control, default value
-static const uint8_t REG_OSC_STATUS = 0x1d;            //!< Oscillator status register
-static const uint8_t REG_OSC_STATUS_XTCAL = 0x0c;      //!< Oscillator status register, extended crystal calibration
-static const uint8_t REG_OSC_STATUS_LKO2 = 0x04;       //!< Oscillator status register, lock OUT2
-static const uint8_t REG_OSC_STATUS_OMODE = 0x01;      //!< Oscillator status register, oscillator mode (read-only)
-static const uint8_t REG_OSC_STATUS_OF = 0x02;         //!< Oscillator status register, oscillator failure
-static const uint8_t REG_OSC_STATUS_ACF = 0x01;        //!< Oscillator status register, auto-calibration failure
-static const uint8_t REG_CONFIG_KEY = 0x1f;            //!< Register to set to modify certain other keys
-static const uint8_t REG_CONFIG_KEY_OSC_CTRL = 0xa1;   //!< Configuration key, enable setting REG_OSC_CTRL
-static const uint8_t REG_CONFIG_KEY_SW_RESET = 0x3c;   //!< Configuration key, software reset
-static const uint8_t REG_CONFIG_KEY_OTHER = 0x9d;      //!< Configuration key, REG_TRICKLE, REG_BREF_CTRL, REG_AFCTRL, REG_BATMODE_IO, REG_OCTRL
-static const uint8_t REG_TRICKLE = 0x20;               //!< Trickle charger control register
-static const uint8_t REG_TRICKLE_DEFAULT = 0x00;       //!< Trickle charger control register, default value
-static const uint8_t REG_TRICKLE_TCS_MASK = 0xf0;      //!< Trickle charger control register, enable mask
-static const uint8_t REG_TRICKLE_TCS_ENABLE = 0xa0;    //!< Trickle charger control register, enable value (0b10100000)
-static const uint8_t REG_TRICKLE_DIODE_MASK = 0x0c;    //!< Trickle charger control register, diode mask
-static const uint8_t REG_TRICKLE_DIODE_0_6 = 0x08;     //!< Trickle charger control register, diode 0.6V drop
-static const uint8_t REG_TRICKLE_DIODE_0_3 = 0x04;     //!< Trickle charger control register, diode 0.3V drop
-static const uint8_t REG_TRICKLE_ROUT_MASK = 0x03;     //!< Trickle charger control register, rout mask
-static const uint8_t REG_TRICKLE_ROUT_11K = 0x03;      //!< Trickle charger control register, rout 11K
-static const uint8_t REG_TRICKLE_ROUT_6K = 0x02;       //!< Trickle charger control register, rout 6K
-static const uint8_t REG_TRICKLE_ROUT_3K = 0x01;       //!< Trickle charger control register, rout 3K
-static const uint8_t REG_TRICKLE_ROUT_DISABLE = 0x00;  //!< Trickle charger control register, rout disable
-static const uint8_t REG_BREF_CTRL = 0x21;             //!< Wakeup control system reference voltages
-static const uint8_t REG_BREF_CTRL_DEFAULT = 0xf0;     //!< Wakeup control system default 0b11110000
-static const uint8_t REG_BREF_CTRL_25_30 = 0x70;       //!< Wakeup control falling 2.5V rising 3.0V
-static const uint8_t REG_BREF_CTRL_21_25 = 0xb0;       //!< Wakeup control falling 2.1V rising 2.5V
-static const uint8_t REG_BREF_CTRL_18_22 = 0xd0;       //!< Wakeup control falling 1.8V rising 2.2V
-static const uint8_t REG_BREF_CTRL_14_16 = 0xf0;       //!< Wakeup control falling 1.4V rising 1.6V, default value
-static const uint8_t REG_AFCTRL = 0x26;                //!< Auto-calibration filter capacitor enable register
-static const uint8_t REG_AFCTRL_ENABLE = 0xa0;         //!< Auto-calibration filter capacitor enable
-static const uint8_t REG_AFCTRL_DISABLE = 0x00;        //!< Auto-calibration filter capacitor disable
-static const uint8_t REG_AFCTRL_DEFAULT = 0x00;        //!< Auto-calibration filter, default
-static const uint8_t REG_BATMODE_IO = 0x27;            //!< Brownout control for IO interface
-static const uint8_t REG_BATMODE_IO_DEFAULT = 0x80;    //!< Brownout control for IO interface, default value
-static const uint8_t REG_BATMODE_IO_IOBM = 0x80;       //!< Brownout control for IO interface, enable IO when on VBAT
-static const uint8_t REG_ID0 = 0x28;                   //!< Part number, upper (read-only)
-static const uint8_t REG_ID0_AB08XX = 0x18;            //!< Part number, upper, AB08xx
-static const uint8_t REG_ID0_AB18XX = 0x18;            //!< Part number, upper, AB18xx
-static const uint8_t REG_ID1 = 0x29;                   //!< Part number, lower (read-only)
-static const uint8_t REG_ID1_ABXX05 = 0x05;            //!< Part number, lower, AB1805 or AB0805 (I2C)
-static const uint8_t REG_ID1_ABXX15 = 0x05;            //!< Part number, lower, AB1815 or AB0815 (SPI)
-static const uint8_t REG_ID2 = 0x2a;                   //!< Part revision (read-only)
-static const uint8_t REG_ID3 = 0x2b;                   //!< Lot number, lower (read-only)
-static const uint8_t REG_ID4 = 0x2c;                   //!< Manufacturing unique ID upper (read-only)
-static const uint8_t REG_ID5 = 0x2d;                   //!< Manufacturing unique ID lower (read-only)
-static const uint8_t REG_ID6 = 0x2e;                   //!< Lot and wafer information (read-only)
-static const uint8_t REG_ASTAT = 0x2f;                 //!< Analog status register (read-only)
-static const uint8_t REG_ASTAT_BBOD = 0x80;            //!< Analog status register. VBAT is above BREF (read-only)
-static const uint8_t REG_ASTAT_BMIN = 0x40;            //!< Analog status register. VBAT is above minimum operating voltage 1.2V (read-only)
-static const uint8_t REG_ASTAT_VINIT = 0x02;           //!< Analog status register. VCC is about minimum 1.6V (read-only)
-static const uint8_t REG_OCTRL = 0x30;                 //!< Output control register at power-down
-static const uint8_t REG_OCTRL_WDBM = 0x80;            //!< Output control register, WDI enabled when powered from VBAT
-static const uint8_t REG_OCTRL_EXBM = 0x40;            //!< Output control register, EXTI enabled when powered from VBAT
-static const uint8_t REG_OCTRL_WDDS = 0x20;            //!< Output control register, WDI disabled in sleep
-static const uint8_t REG_OCTRL_EXDS = 0x10;            //!< Output control register, EXTI disabled in sleep
-static const uint8_t REG_OCTRL_RSEN = 0x08;            //!< Output control register, nRST output enabled in sleep
-static const uint8_t REG_OCTRL_O4EN = 0x04;            //!< Output control register, CLKOUT/nIRQ3 enabled in sleep
-static const uint8_t REG_OCTRL_O3EN = 0x02;            //!< Output control register, nTIRQ enabled in sleep
-static const uint8_t REG_OCTRL_O1EN = 0x01;            //!< Output control register, FOUT/nIRQ enabled in sleep
-static const uint8_t REG_OCTRL_DEFAULT = 0x00;         //!< Output control register, default
-static const uint8_t REG_EXT_ADDR = 0x3f;              //!< Extension RAM address
-static const uint8_t REG_EXT_ADDR_O4MB = 0x80;         //!< Extension RAM address, CLKOUT/nIRQ3 enabled when powered from VBAT
-static const uint8_t REG_EXT_ADDR_BPOL = 0x40;         //!< Extension RAM address, BL polarity
-static const uint8_t REG_EXT_ADDR_WDIN = 0x20;         //!< Extension RAM address, level of WDI pin (read-only)
-static const uint8_t REG_EXT_ADDR_EXIN = 0x10;         //!< Extension RAM address, level of EXTI pin (read-only)
-static const uint8_t REG_EXT_ADDR_XADA = 0x04;         //!< Extension RAM address, Upper bit of alternate RAM address
-static const uint8_t REG_EXT_ADDR_XADS = 0x03;         //!< Extension RAM address, Upper 2 bits of standard RAM address
-static const uint8_t REG_RAM = 0x40;                   //!< Standard RAM
-static const uint8_t REG_ALT_RAM = 0x80;               //!< Alternate RAM address
+extern const int WATCHDOG_MAX_SECONDS; //!< Maximum value that can be passed to setWDT().
+
+extern const uint8_t REG_HUNDREDTH;             //!< Hundredths of a second, 2 BCD digits
+extern const uint8_t REG_SECOND;                //!< Seconds, 2 BCD digits, MSB is GP0
+extern const uint8_t REG_MINUTE;                //!< Minutes, 2 BCD digits, MSB is GP1
+extern const uint8_t REG_HOUR;                  //!< Hours, GP2, GP3
+extern const uint8_t REG_DATE;                  //!< Day of month (1-31), 2 BCD digits, GP4, GP5
+extern const uint8_t REG_MONTH;                 //!< Month (1-12), 2 BCD digits, GP6 - GP8
+extern const uint8_t REG_YEAR;                  //!< Year (0-99), 2 BCD digits
+extern const uint8_t REG_WEEKDAY;               //!< Weekday (0-6), GP9 - GP13
+extern const uint8_t REG_HUNDREDTH_ALARM;       //!< Alarm on hundredths of a second (0-99), 2 BCD digits
+extern const uint8_t REG_SECOND_ALARM;          //!< Alarm on seconds (0-59), 2 BCD digits, GP14
+extern const uint8_t REG_MINUTE_ALARM;          //!< Alarm on minutes (0-59), 2 BCD digits, GP15
+extern const uint8_t REG_HOUR_ALARM;            //!< Alarm on hour, GP16, GP17
+extern const uint8_t REG_DATE_ALARM;            //!< Alarm on date (1-31), 2 BCD digits, GP18-GP19
+extern const uint8_t REG_MONTH_ALARM;           //!< Alarm on month (1-12). 2 BCD digits, GP20-GP22
+extern const uint8_t REG_WEEKDAY_ALARM;         //!< Alarm on day of week (0-6). GP23-GP27
+extern const uint8_t REG_STATUS;                //!< Status register
+extern const uint8_t REG_STATUS_CB;             //!< Status register century bit mask
+extern const uint8_t REG_STATUS_BAT;            //!< Status register switched to VBAT bit mask
+extern const uint8_t REG_STATUS_WDT;            //!< Status register watchdog timer enabled and triggered bit mask
+extern const uint8_t REG_STATUS_BL;             //!< Status register battery voltage crossing bit mask
+extern const uint8_t REG_STATUS_TIM;            //!< Status register countdown timer reaches 0 bit mask
+extern const uint8_t REG_STATUS_ALM;            //!< Status register alarm register match bit mask
+extern const uint8_t REG_STATUS_EX2;            //!< Status register WDI interrupt bit mask
+extern const uint8_t REG_STATUS_EX1;            //!< Status register EXTI interrupt bit mask
+extern const uint8_t REG_STATUS_DEFAULT;        //!< Status register, default
+extern const uint8_t REG_CTRL_1;                //!< Control register 1
+extern const uint8_t REG_CTRL_1_STOP;           //!< Control register 1, stop clocking system
+extern const uint8_t REG_CTRL_1_12_24;          //!< Control register 1, 12/24 hour mode select (0 = 24 hour)
+extern const uint8_t REG_CTRL_1_OUTB;           //!< Control register 1, value for nIRQ2
+extern const uint8_t REG_CTRL_1_OUT;            //!< Control register 1, value for FOUT/nIRQ
+extern const uint8_t REG_CTRL_1_RSP;            //!< Control register 1, Reset polarity
+extern const uint8_t REG_CTRL_1_ARST;           //!< Control register 1, Auto reset enable
+extern const uint8_t REG_CTRL_1_PWR2;           //!< Control register 1, PWW/nIRQ pull-down enable
+extern const uint8_t REG_CTRL_1_WRTC;           //!< Control register 1, write RTC mode
+extern const uint8_t REG_CTRL_1_DEFAULT;        //!< Control register 1, 0b00010011 (OUT | RSO | PWR2 | WRTC)
+extern const uint8_t REG_CTRL_2;                //!< Control register 2
+extern const uint8_t REG_CTRL_2_RS1E;           //!< Control register 2, nIRQ2 output mode
+extern const uint8_t REG_CTRL_2_OUT2S_MASK;     //!< Control register 2, nIRQ2 output mode
+extern const uint8_t REG_CTRL_2_OUT2S_nIRQ;     //!< Control register 2, nIRQ2 output mode, nIRQ or OUTB
+extern const uint8_t REG_CTRL_2_OUT2S_SQW;      //!< Control register 2, nIRQ2 output mode, SQW or OUTB
+extern const uint8_t REG_CTRL_2_OUT2S_nAIRQ;    //!< Control register 2, nIRQ2 output mode, nAIRQ or OUTB
+extern const uint8_t REG_CTRL_2_OUT2S_TIRQ;     //!< Control register 2, nIRQ2 output mode, TIRQ or OUTB
+extern const uint8_t REG_CTRL_2_OUT2S_nTIRQ;    //!< Control register 2, nIRQ2 output mode, nTIRQ or OUTB
+extern const uint8_t REG_CTRL_2_OUT2S_SLEEP;    //!< Control register 2, nIRQ2 output mode, sleep mode
+extern const uint8_t REG_CTRL_2_OUT2S_OUTB;     //!< Control register 2, nIRQ2 output mode, OUTB
+extern const uint8_t REG_CTRL_2_OUT1S_MASK;     //!< Control register 2, FOUT/nIRQ output mode
+extern const uint8_t REG_CTRL_2_OUT1S_nIRQ;     //!< Control register 2, FOUT/nIRQ output mode, nIRQ, or OUT
+extern const uint8_t REG_CTRL_2_OUT1S_SQW;      //!< Control register 2, FOUT/nIRQ output mode, SQW or OUT
+extern const uint8_t REG_CTRL_2_OUT1S_SQW_nIRQ; //!< Control register 2, FOUT/nIRQ output mode, SQW, nIRQ, or OUT
+extern const uint8_t REG_CTRL_2_OUT1S_nAIRQ;    //!< Control register 2, FOUT/nIRQ output mode, nIRQ or OUT
+extern const uint8_t REG_CTRL_2_DEFAULT;        //!< Control register 2, 0b00111100 (OUT2S = OUTB)
+extern const uint8_t REG_INT_MASK;              //!< Interrupt mask
+extern const uint8_t REG_INT_MASK_CEB;          //!< Interrupt mask, century enable
+extern const uint8_t REG_INT_MASK_IM;           //!< Interrupt mask, interrupt mode bits (2 bits)
+extern const uint8_t REG_INT_MASK_BLIE;         //!< Interrupt mask, battery low interrupt enable
+extern const uint8_t REG_INT_MASK_TIE;          //!< Interrupt mask, timer interrupt enable
+extern const uint8_t REG_INT_MASK_AIE;          //!< Interrupt mask, alarm interrupt enable
+extern const uint8_t REG_INT_MASK_EX2E;         //!< Interrupt mask, XT2 interrupt enable
+extern const uint8_t REG_INT_MASK_EX1E;         //!< Interrupt mask, XT1 interrupt enable
+extern const uint8_t REG_INT_MASK_DEFAULT;      //!< Interrupt mask, default 0b11100000 (CEB | IM=1/4 seconds)
+extern const uint8_t REG_SQW;                   //!< Square wave output control
+extern const uint8_t REG_SQW_SQWE;              //!< Square wave output control, enable
+extern const uint8_t REG_SQW_DEFAULT;           //!< Square wave output control, default 0b00100110
+extern const uint8_t REG_CAL_XT;                //!< Calibration for the XT oscillator
+extern const uint8_t REG_CAL_RC_HIGH;           //!< Calibration for the RC oscillator, upper 8 bits
+extern const uint8_t REG_CAL_RC_LOW;            //!< Calibration for the RC oscillator, lower 8 bits
+extern const uint8_t REG_SLEEP_CTRL;            //!< Power control system sleep function
+extern const uint8_t REG_SLEEP_CTRL_SLP;        //!< Sleep control, enter sleep mode
+extern const uint8_t REG_SLEEP_CTRL_SLRES;      //!< Sleep control, nRST low on sleep
+extern const uint8_t REG_SLEEP_CTRL_EX2P;       //!< Sleep control, XT2 on rising WDI
+extern const uint8_t REG_SLEEP_CTRL_EX1P;       //!< Sleep control, XT1 on rising EXTI
+extern const uint8_t REG_SLEEP_CTRL_SLST;       //!< Sleep control, set when sleep has occurred
+extern const uint8_t REG_SLEEP_CTRL_SLTO_MASK;  //!< Sleep control, number of 7.8ms periods before sleep
+extern const uint8_t REG_SLEEP_CTRL_DEFAULT;    //!< Sleep control default (0b00000000)
+extern const uint8_t REG_TIMER_CTRL;            //!< Countdown timer control
+extern const uint8_t REG_TIMER_CTRL_TE;         //!< Countdown timer control, timer enable
+extern const uint8_t REG_TIMER_CTRL_TM;         //!< Countdown timer control, timer interrupt mode
+extern const uint8_t REG_TIMER_CTRL_TRPT;       //!< Countdown timer control, timer repeat function
+extern const uint8_t REG_TIMER_CTRL_RPT_MASK;   //!< Countdown timer control, repeat function
+extern const uint8_t REG_TIMER_CTRL_RPT_HUN;    //!< Countdown timer control, repeat hundredths match (7)
+extern const uint8_t REG_TIMER_CTRL_RPT_SEC;    //!< Countdown timer control, repeat hundredths, seconds match (once per minute) (6)
+extern const uint8_t REG_TIMER_CTRL_RPT_MIN;    //!< Countdown timer control, repeat hundredths, seconds, minutes match (once per hour) (5)
+extern const uint8_t REG_TIMER_CTRL_RPT_HOUR;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours match (once per day) (4)
+extern const uint8_t REG_TIMER_CTRL_RPT_WKDY;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, weekday match (once per week) (3)
+extern const uint8_t REG_TIMER_CTRL_RPT_DATE;   //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, date match (once per month) (2)
+extern const uint8_t REG_TIMER_CTRL_RPT_MON;    //!< Countdown timer control, repeat hundredths, seconds, minutes, hours, date, month match (once per year) (1)
+extern const uint8_t REG_TIMER_CTRL_RPT_DIS;    //!< Countdown timer control, alarm disabled (0)
+extern const uint8_t REG_TIMER_CTRL_TFS_MASK;   //!< Countdown timer control, clock frequency
+extern const uint8_t REG_TIMER_CTRL_TFS_FAST;   //!< Countdown timer control, clock frequency 4.096 kHz or 128 Hz
+extern const uint8_t REG_TIMER_CTRL_TFS_64;     //!< Countdown timer control, clock frequency 64 Hz
+extern const uint8_t REG_TIMER_CTRL_TFS_1;      //!< Countdown timer control, clock frequency 1 Hz
+extern const uint8_t REG_TIMER_CTRL_TFS_1_60;   //!< Countdown timer control, clock frequency 1/60 Hz (1 minute)
+extern const uint8_t REG_TIMER_CTRL_DEFAULT;    //!< Countdown timer control, 0b00100011 (TFPT + TFS = 1/60 Hz0)
+extern const uint8_t REG_TIMER;                 //!< Countdown timer current value register
+extern const uint8_t REG_TIMER_DEFAULT;         //!< Countdown timer current value register default value (0x00)
+extern const uint8_t REG_TIMER_INITIAL;         //!< Countdown timer inital (reload) value register
+extern const uint8_t REG_TIMER_INITIAL_DEFAULT; //!< Countdown timer inital value register default value
+extern const uint8_t REG_WDT;                   //!< Watchdog timer control register
+extern const uint8_t REG_WDT_RESET;             //!< Watchdog timer control, enable reset (1) or WIRQ (0)
+extern const uint8_t REG_WDT_WRB_16_HZ;         //!< Watchdog timer control, WRB watchdog clock = 16 Hz
+extern const uint8_t REG_WDT_WRB_4_HZ;          //!< Watchdog timer control, WRB watchdog clock = 4 Hz
+extern const uint8_t REG_WDT_WRB_1_HZ;          //!< Watchdog timer control, WRB watchdog clock = 1 Hz
+extern const uint8_t REG_WDT_WRB_1_4_HZ;        //!< Watchdog timer control, WRB watchdog clock = 1/4 Hz
+extern const uint8_t REG_WDT_DEFAULT;           //!< Watchdog timer control, default value
+extern const uint8_t REG_OSC_CTRL;              //!< Oscillator control register
+extern const uint8_t REG_OSC_CTRL_OSEL;         //!< Oscillator control, clock select 32.768 kHz (0) or 128 Hz (1)
+extern const uint8_t REG_OSC_CTRL_ACAL;         //!< Oscillator control, auto-calibration
+extern const uint8_t REG_OSC_CTRL_AOS;          //!< Oscillator control, automatic switch to RC oscillator on battery
+extern const uint8_t REG_OSC_CTRL_FOS;          //!< Oscillator control, automatic switch to RC oscillator on failure
+extern const uint8_t REG_OSC_CTRL_PWGT;         //!< Oscillator control, IO interface disable
+extern const uint8_t REG_OSC_CTRL_OFIE;         //!< Oscillator control, oscillator fail interrupt enable
+extern const uint8_t REG_OSC_CTRL_ACIE;         //!< Oscillator control, auto-calibration fail interrupt enable
+extern const uint8_t REG_OSC_CTRL_DEFAULT;      //!< Oscillator control, default value
+extern const uint8_t REG_OSC_STATUS;            //!< Oscillator status register
+extern const uint8_t REG_OSC_STATUS_XTCAL;      //!< Oscillator status register, extended crystal calibration
+extern const uint8_t REG_OSC_STATUS_LKO2;       //!< Oscillator status register, lock OUT2
+extern const uint8_t REG_OSC_STATUS_OMODE;      //!< Oscillator status register, oscillator mode (read-only)
+extern const uint8_t REG_OSC_STATUS_OF;         //!< Oscillator status register, oscillator failure
+extern const uint8_t REG_OSC_STATUS_ACF;        //!< Oscillator status register, auto-calibration failure
+extern const uint8_t REG_CONFIG_KEY;            //!< Register to set to modify certain other keys
+extern const uint8_t REG_CONFIG_KEY_OSC_CTRL;   //!< Configuration key, enable setting REG_OSC_CTRL
+extern const uint8_t REG_CONFIG_KEY_SW_RESET;   //!< Configuration key, software reset
+extern const uint8_t REG_CONFIG_KEY_OTHER;      //!< Configuration key, REG_TRICKLE, REG_BREF_CTRL, REG_AFCTRL, REG_BATMODE_IO, REG_OCTRL
+extern const uint8_t REG_TRICKLE;               //!< Trickle charger control register
+extern const uint8_t REG_TRICKLE_DEFAULT;       //!< Trickle charger control register, default value
+extern const uint8_t REG_TRICKLE_TCS_MASK;      //!< Trickle charger control register, enable mask
+extern const uint8_t REG_TRICKLE_TCS_ENABLE;    //!< Trickle charger control register, enable value (0b10100000)
+extern const uint8_t REG_TRICKLE_DIODE_MASK;    //!< Trickle charger control register, diode mask
+extern const uint8_t REG_TRICKLE_DIODE_0_6;     //!< Trickle charger control register, diode 0.6V drop
+extern const uint8_t REG_TRICKLE_DIODE_0_3;     //!< Trickle charger control register, diode 0.3V drop
+extern const uint8_t REG_TRICKLE_ROUT_MASK;     //!< Trickle charger control register, rout mask
+extern const uint8_t REG_TRICKLE_ROUT_11K;      //!< Trickle charger control register, rout 11K
+extern const uint8_t REG_TRICKLE_ROUT_6K;       //!< Trickle charger control register, rout 6K
+extern const uint8_t REG_TRICKLE_ROUT_3K;       //!< Trickle charger control register, rout 3K
+extern const uint8_t REG_TRICKLE_ROUT_DISABLE;  //!< Trickle charger control register, rout disable
+extern const uint8_t REG_BREF_CTRL;             //!< Wakeup control system reference voltages
+extern const uint8_t REG_BREF_CTRL_DEFAULT;     //!< Wakeup control system default 0b11110000
+extern const uint8_t REG_BREF_CTRL_25_30;       //!< Wakeup control falling 2.5V rising 3.0V
+extern const uint8_t REG_BREF_CTRL_21_25;       //!< Wakeup control falling 2.1V rising 2.5V
+extern const uint8_t REG_BREF_CTRL_18_22;       //!< Wakeup control falling 1.8V rising 2.2V
+extern const uint8_t REG_BREF_CTRL_14_16;       //!< Wakeup control falling 1.4V rising 1.6V, default value
+extern const uint8_t REG_AFCTRL;                //!< Auto-calibration filter capacitor enable register
+extern const uint8_t REG_AFCTRL_ENABLE;         //!< Auto-calibration filter capacitor enable
+extern const uint8_t REG_AFCTRL_DISABLE;        //!< Auto-calibration filter capacitor disable
+extern const uint8_t REG_AFCTRL_DEFAULT;        //!< Auto-calibration filter, default
+extern const uint8_t REG_BATMODE_IO;            //!< Brownout control for IO interface
+extern const uint8_t REG_BATMODE_IO_DEFAULT;    //!< Brownout control for IO interface, default value
+extern const uint8_t REG_BATMODE_IO_IOBM;       //!< Brownout control for IO interface, enable IO when on VBAT
+extern const uint8_t REG_ID0;                   //!< Part number, upper (read-only)
+extern const uint8_t REG_ID0_AB08XX;            //!< Part number, upper, AB08xx
+extern const uint8_t REG_ID0_AB18XX;            //!< Part number, upper, AB18xx
+extern const uint8_t REG_ID1;                   //!< Part number, lower (read-only)
+extern const uint8_t REG_ID1_ABXX05;            //!< Part number, lower, AB1805 or AB0805 (I2C)
+extern const uint8_t REG_ID1_ABXX15;            //!< Part number, lower, AB1815 or AB0815 (SPI)
+extern const uint8_t REG_ID2;                   //!< Part revision (read-only)
+extern const uint8_t REG_ID3;                   //!< Lot number, lower (read-only)
+extern const uint8_t REG_ID4;                   //!< Manufacturing unique ID upper (read-only)
+extern const uint8_t REG_ID5;                   //!< Manufacturing unique ID lower (read-only)
+extern const uint8_t REG_ID6;                   //!< Lot and wafer information (read-only)
+extern const uint8_t REG_ASTAT;                 //!< Analog status register (read-only)
+extern const uint8_t REG_ASTAT_BBOD;            //!< Analog status register. VBAT is above BREF (read-only)
+extern const uint8_t REG_ASTAT_BMIN;            //!< Analog status register. VBAT is above minimum operating voltage 1.2V (read-only)
+extern const uint8_t REG_ASTAT_VINIT;           //!< Analog status register. VCC is about minimum 1.6V (read-only)
+extern const uint8_t REG_OCTRL;                 //!< Output control register at power-down
+extern const uint8_t REG_OCTRL_WDBM;            //!< Output control register, WDI enabled when powered from VBAT
+extern const uint8_t REG_OCTRL_EXBM;            //!< Output control register, EXTI enabled when powered from VBAT
+extern const uint8_t REG_OCTRL_WDDS;            //!< Output control register, WDI disabled in sleep
+extern const uint8_t REG_OCTRL_EXDS;            //!< Output control register, EXTI disabled in sleep
+extern const uint8_t REG_OCTRL_RSEN;            //!< Output control register, nRST output enabled in sleep
+extern const uint8_t REG_OCTRL_O4EN;            //!< Output control register, CLKOUT/nIRQ3 enabled in sleep
+extern const uint8_t REG_OCTRL_O3EN;            //!< Output control register, nTIRQ enabled in sleep
+extern const uint8_t REG_OCTRL_O1EN;            //!< Output control register, FOUT/nIRQ enabled in sleep
+extern const uint8_t REG_OCTRL_DEFAULT;         //!< Output control register, default
+extern const uint8_t REG_EXT_ADDR;              //!< Extension RAM address
+extern const uint8_t REG_EXT_ADDR_O4MB;         //!< Extension RAM address, CLKOUT/nIRQ3 enabled when powered from VBAT
+extern const uint8_t REG_EXT_ADDR_BPOL;         //!< Extension RAM address, BL polarity
+extern const uint8_t REG_EXT_ADDR_WDIN;         //!< Extension RAM address, level of WDI pin (read-only)
+extern const uint8_t REG_EXT_ADDR_EXIN;         //!< Extension RAM address, level of EXTI pin (read-only)
+extern const uint8_t REG_EXT_ADDR_XADA;         //!< Extension RAM address, Upper bit of alternate RAM address
+extern const uint8_t REG_EXT_ADDR_XADS;         //!< Extension RAM address, Upper 2 bits of standard RAM address
+extern const uint8_t REG_RAM;                   //!< Standard RAM
+extern const uint8_t REG_ALT_RAM;               //!< Alternate RAM address
 
 /**
  * @brief Internal function used to handle system events
@@ -936,7 +938,7 @@ static const uint8_t REG_ALT_RAM = 0x80;               //!< Alternate RAM addres
 /**
  * @brief I2C address, always 0x69 as that is the address hardwired in the AB1805
  */
-// uint8_t i2cAddr = 0x69;
+// uint8_t i2cAddr;
 
 /**
  * @brief Which GPIO is connected to FOUT/nIRQ

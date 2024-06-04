@@ -94,11 +94,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
- .text.stopWDT  0x00000000        0xa build/main.o
- .text.resumeWDT
-                0x00000000        0xc build/main.o
- .bss.WakeReason
-                0x00000000        0x1 build/main.o
  .text          0x00000000        0x0 build/gpio.o
  .data          0x00000000        0x0 build/gpio.o
  .bss           0x00000000        0x0 build/gpio.o
@@ -1507,9 +1502,6 @@ Discarded input sections
                 0x00000000       0x5c build/AB1805_RK.o
  .text.usingRCOscillator
                 0x00000000        0xe build/AB1805_RK.o
- .text.stopWDT  0x00000000        0xa build/AB1805_RK.o
- .text.resumeWDT
-                0x00000000        0xc build/AB1805_RK.o
  .text.isBitClear
                 0x00000000       0x12 build/AB1805_RK.o
  .text.isBitSet
@@ -1517,18 +1509,18 @@ Discarded input sections
  .text.clearRegisterBit
                 0x00000000       0x10 build/AB1805_RK.o
  .rodata.updateWakeReason.str1.4
-                0x00000000       0x45 build/AB1805_RK.o
+                0x00000000       0x46 build/AB1805_RK.o
  .text.updateWakeReason
                 0x00000000       0x8c build/AB1805_RK.o
  .rodata.setup.str1.4
-                0x00000000       0x18 build/AB1805_RK.o
+                0x00000000       0x19 build/AB1805_RK.o
  .text.setup    0x00000000       0x1c build/AB1805_RK.o
  .rodata.clearRepeatingInterrupt.str1.4
-                0x00000000       0x26 build/AB1805_RK.o
+                0x00000000       0x27 build/AB1805_RK.o
  .text.clearRepeatingInterrupt
                 0x00000000       0x5c build/AB1805_RK.o
  .rodata.interruptCountdownTimer.str1.4
-                0x00000000       0x26 build/AB1805_RK.o
+                0x00000000       0x27 build/AB1805_RK.o
  .text.interruptCountdownTimer
                 0x00000000       0x58 build/AB1805_RK.o
  .text.bcdToValue
@@ -1551,14 +1543,385 @@ Discarded input sections
  .text.writeRam
                 0x00000000       0x5c build/AB1805_RK.o
  .rodata.eraseRam.str1.4
-                0x00000000       0x15 build/AB1805_RK.o
+                0x00000000       0x16 build/AB1805_RK.o
  .text.eraseRam
                 0x00000000       0x40 build/AB1805_RK.o
- .bss.wakeReason
+ .text.stopWDT  0x00000000        0xa build/AB1805_RK.o
+ .text.resumeWDT
+                0x00000000        0xc build/AB1805_RK.o
+ .rodata.REG_ALT_RAM
                 0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_RAM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_XADS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_XADA
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_EXIN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_WDIN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_BPOL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR_O4MB
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_EXT_ADDR
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_O1EN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_O3EN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_O4EN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_RSEN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_EXDS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_WDDS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_EXBM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL_WDBM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OCTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ASTAT_VINIT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ASTAT_BMIN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ASTAT_BBOD
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ASTAT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID6
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID5
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID4
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID3
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID2
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID1_ABXX15
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID1_ABXX05
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID1
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID0_AB18XX
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID0_AB08XX
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_ID0
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BATMODE_IO_IOBM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BATMODE_IO_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BATMODE_IO
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_AFCTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_AFCTRL_DISABLE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_AFCTRL_ENABLE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_AFCTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL_14_16
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL_18_22
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL_21_25
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL_25_30
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_BREF_CTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_ROUT_DISABLE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_ROUT_3K
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_ROUT_6K
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_ROUT_11K
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_ROUT_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_DIODE_0_3
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_DIODE_0_6
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_DIODE_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_TCS_ENABLE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_TCS_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TRICKLE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CONFIG_KEY_OTHER
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CONFIG_KEY_SW_RESET
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CONFIG_KEY_OSC_CTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CONFIG_KEY
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS_ACF
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS_OF
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS_OMODE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS_LKO2
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS_XTCAL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_STATUS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_ACIE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_OFIE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_PWGT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_FOS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_AOS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_ACAL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL_OSEL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_OSC_CTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_WRB_1_4_HZ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_WRB_1_HZ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_WRB_4_HZ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_WRB_16_HZ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT_RESET
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WDT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_INITIAL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_INITIAL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TFS_1_60
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TFS_1
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TFS_64
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TFS_FAST
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TFS_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_DIS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_MON
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_DATE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_WKDY
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_HOUR
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_MIN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_SEC
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_HUN
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_RPT_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TRPT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL_TE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_TIMER_CTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_SLTO_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_SLST
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_EX1P
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_EX2P
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_SLRES
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL_SLP
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SLEEP_CTRL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CAL_RC_LOW
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CAL_RC_HIGH
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CAL_XT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SQW_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SQW_SQWE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SQW
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_EX1E
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_EX2E
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_AIE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_TIE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_BLIE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_IM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK_CEB
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_INT_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT1S_nAIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT1S_SQW_nIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT1S_SQW
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT1S_nIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT1S_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_OUTB
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_SLEEP
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_nTIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_TIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_nAIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_SQW
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_nIRQ
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_OUT2S_MASK
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2_RS1E
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_2
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_WRTC
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_PWR2
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_ARST
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_RSP
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_OUT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_OUTB
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_12_24
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1_STOP
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_CTRL_1
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_DEFAULT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_EX1
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_EX2
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_ALM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_TIM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_BL
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_WDT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_BAT
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS_CB
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_STATUS
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WEEKDAY_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_MONTH_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_DATE_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_HOUR_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_MINUTE_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SECOND_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_HUNDREDTH_ALARM
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_WEEKDAY
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_YEAR
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_MONTH
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_DATE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_HOUR
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_MINUTE
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_SECOND
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.REG_HUNDREDTH
+                0x00000000        0x1 build/AB1805_RK.o
+ .rodata.WATCHDOG_MAX_SECONDS
+                0x00000000        0x4 build/AB1805_RK.o
+ .rodata.RESET_DISABLE_XT
+                0x00000000        0x4 build/AB1805_RK.o
+ .rodata.RESET_PRESERVE_REPEATING_TIMER
+                0x00000000        0x4 build/AB1805_RK.o
  .bss.lastWatchdogMillis
                 0x00000000        0x4 build/AB1805_RK.o
- .bss.WakeReason
+ .bss.wakeReason
                 0x00000000        0x1 build/AB1805_RK.o
  .text          0x00000000       0x14 build/startup_stm32u073xx.o
  .data          0x00000000        0x0 build/startup_stm32u073xx.o
@@ -2273,7 +2636,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
 .iplt           0x080068c4        0x0
  .iplt          0x080068c4        0x0 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x080068c8      0x458
+.rodata         0x080068c8      0x468
                 0x080068c8                        . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x080068c8       0x40 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divdf3.o)
@@ -2309,63 +2672,65 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .rodata.pow10.0
                 0x08006be0       0x50 build/printf.o
  .rodata.setWDT.str1.4
-                0x08006c30       0x4c build/AB1805_RK.o
+                0x08006c30       0x51 build/AB1805_RK.o
+ *fill*         0x08006c81        0x3 
  .rodata.resetConfig.str1.4
-                0x08006c7c       0x15 build/AB1805_RK.o
- *fill*         0x08006c91        0x3 
+                0x08006c84       0x16 build/AB1805_RK.o
+ *fill*         0x08006c9a        0x2 
  .rodata.setCountdownTimer.str1.4
-                0x08006c94       0x20 build/AB1805_RK.o
+                0x08006c9c       0x21 build/AB1805_RK.o
+ *fill*         0x08006cbd        0x3 
  .rodata.deepPowerDown.str1.4
-                0x08006cb4       0x5a build/AB1805_RK.o
- *fill*         0x08006d0e        0x2 
- .rodata.__func__.4
-                0x08006d10        0xe build/AB1805_RK.o
-                0x08006d20                        . = ALIGN (0x4)
+                0x08006cc0       0x5e build/AB1805_RK.o
  *fill*         0x08006d1e        0x2 
+ .rodata.__func__.0
+                0x08006d20        0xe build/AB1805_RK.o
+                0x08006d30                        . = ALIGN (0x4)
+ *fill*         0x08006d2e        0x2 
 
-.ARM.extab      0x08006d20        0x0
-                0x08006d20                        . = ALIGN (0x4)
+.ARM.extab      0x08006d30        0x0
+                0x08006d30                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08006d20                        . = ALIGN (0x4)
+                0x08006d30                        . = ALIGN (0x4)
 
-.ARM            0x08006d20        0x8
-                0x08006d20                        . = ALIGN (0x4)
-                0x08006d20                        __exidx_start = .
+.ARM            0x08006d30        0x8
+                0x08006d30                        . = ALIGN (0x4)
+                0x08006d30                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08006d20        0x8 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
-                0x08006d28                        __exidx_end = .
-                0x08006d28                        . = ALIGN (0x4)
+ .ARM.exidx     0x08006d30        0x8 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
+                0x08006d38                        __exidx_end = .
+                0x08006d38                        . = ALIGN (0x4)
 
-.rel.dyn        0x08006d28        0x0
- .rel.iplt      0x08006d28        0x0 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x08006d38        0x0
+ .rel.iplt      0x08006d38        0x0 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.preinit_array  0x08006d28        0x0
-                0x08006d28                        . = ALIGN (0x4)
-                0x08006d28                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08006d38        0x0
+                0x08006d38                        . = ALIGN (0x4)
+                0x08006d38                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08006d28                        PROVIDE (__preinit_array_end = .)
-                0x08006d28                        . = ALIGN (0x4)
+                0x08006d38                        PROVIDE (__preinit_array_end = .)
+                0x08006d38                        . = ALIGN (0x4)
 
-.init_array     0x08006d28        0x4
-                0x08006d28                        . = ALIGN (0x4)
-                0x08006d28                        PROVIDE (__init_array_start = .)
+.init_array     0x08006d38        0x4
+                0x08006d38                        . = ALIGN (0x4)
+                0x08006d38                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08006d28        0x4 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x08006d2c                        PROVIDE (__init_array_end = .)
-                0x08006d2c                        . = ALIGN (0x4)
+ .init_array    0x08006d38        0x4 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x08006d3c                        PROVIDE (__init_array_end = .)
+                0x08006d3c                        . = ALIGN (0x4)
 
-.fini_array     0x08006d2c        0x4
-                0x08006d2c                        . = ALIGN (0x4)
+.fini_array     0x08006d3c        0x4
+                0x08006d3c                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08006d2c        0x4 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+ .fini_array    0x08006d3c        0x4 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08006d30                        . = ALIGN (0x4)
-                0x08006d30                        _sidata = LOADADDR (.data)
+                0x08006d40                        . = ALIGN (0x4)
+                0x08006d40                        _sidata = LOADADDR (.data)
 
-.data           0x20000000        0xc load address 0x08006d30
+.data           0x20000000        0xc load address 0x08006d40
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2384,11 +2749,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x2000000c                        . = ALIGN (0x4)
                 0x2000000c                        _edata = .
 
-.igot.plt       0x2000000c        0x0 load address 0x08006d3c
+.igot.plt       0x2000000c        0x0 load address 0x08006d4c
  .igot.plt      0x2000000c        0x0 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
                 0x2000000c                        . = ALIGN (0x4)
 
-.bss            0x2000000c      0x208 load address 0x08006d3c
+.bss            0x2000000c      0x208 load address 0x08006d4c
                 0x2000000c                        _sbss = .
                 0x2000000c                        __bss_start__ = _sbss
  *(.bss)
@@ -2418,7 +2783,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x20000214                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000214      0x604 load address 0x08006d3c
+                0x20000214      0x604 load address 0x08006d4c
                 0x20000218                        . = ALIGN (0x8)
  *fill*         0x20000214        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -2545,258 +2910,258 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
 LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a
 
-.debug_info     0x00000000    0x24810
- .debug_info    0x00000000     0x15ff build/main.o
- .debug_info    0x000015ff      0x73f build/gpio.o
- .debug_info    0x00001d3e      0xe09 build/adc.o
- .debug_info    0x00002b47      0xf96 build/i2c.o
- .debug_info    0x00003add      0x993 build/rtc.o
- .debug_info    0x00004470      0xd35 build/spi.o
- .debug_info    0x000051a5     0x107d build/usart.o
- .debug_info    0x00006222      0x14d build/stm32u0xx_it.o
- .debug_info    0x0000636f      0x39d build/stm32u0xx_hal_msp.o
- .debug_info    0x0000670c     0x27a9 build/stm32u0xx_hal_adc.o
- .debug_info    0x00008eb5     0x119f build/stm32u0xx_hal_rcc.o
- .debug_info    0x0000a054     0x14b5 build/stm32u0xx_hal_rcc_ex.o
- .debug_info    0x0000b509      0x6b4 build/stm32u0xx_hal_gpio.o
- .debug_info    0x0000bbbd      0xa41 build/stm32u0xx_hal_pwr_ex.o
- .debug_info    0x0000c5fe      0xb70 build/stm32u0xx_hal_cortex.o
- .debug_info    0x0000d16e      0xcac build/stm32u0xx_hal.o
- .debug_info    0x0000de1a     0x4722 build/stm32u0xx_hal_i2c.o
- .debug_info    0x0001253c      0x951 build/stm32u0xx_hal_i2c_ex.o
- .debug_info    0x00012e8d     0x11ca build/stm32u0xx_hal_rtc.o
- .debug_info    0x00014057     0x1969 build/stm32u0xx_hal_rtc_ex.o
- .debug_info    0x000159c0     0x24b7 build/stm32u0xx_hal_spi.o
- .debug_info    0x00017e77     0x64b0 build/stm32u0xx_hal_uart.o
- .debug_info    0x0001e327     0x1432 build/stm32u0xx_hal_uart_ex.o
- .debug_info    0x0001f759      0x76a build/system_stm32u0xx.o
- .debug_info    0x0001fec3     0x1da3 build/printf.o
- .debug_info    0x00021c66     0x2b7a build/AB1805_RK.o
- .debug_info    0x000247e0       0x30 build/startup_stm32u073xx.o
+.debug_info     0x00000000    0x248b1
+ .debug_info    0x00000000      0xb1d build/main.o
+ .debug_info    0x00000b1d      0x73f build/gpio.o
+ .debug_info    0x0000125c      0xe09 build/adc.o
+ .debug_info    0x00002065      0xf96 build/i2c.o
+ .debug_info    0x00002ffb      0x993 build/rtc.o
+ .debug_info    0x0000398e      0xd35 build/spi.o
+ .debug_info    0x000046c3     0x107d build/usart.o
+ .debug_info    0x00005740      0x14d build/stm32u0xx_it.o
+ .debug_info    0x0000588d      0x39d build/stm32u0xx_hal_msp.o
+ .debug_info    0x00005c2a     0x27a9 build/stm32u0xx_hal_adc.o
+ .debug_info    0x000083d3     0x119f build/stm32u0xx_hal_rcc.o
+ .debug_info    0x00009572     0x14b5 build/stm32u0xx_hal_rcc_ex.o
+ .debug_info    0x0000aa27      0x6b4 build/stm32u0xx_hal_gpio.o
+ .debug_info    0x0000b0db      0xa41 build/stm32u0xx_hal_pwr_ex.o
+ .debug_info    0x0000bb1c      0xb70 build/stm32u0xx_hal_cortex.o
+ .debug_info    0x0000c68c      0xcac build/stm32u0xx_hal.o
+ .debug_info    0x0000d338     0x4722 build/stm32u0xx_hal_i2c.o
+ .debug_info    0x00011a5a      0x951 build/stm32u0xx_hal_i2c_ex.o
+ .debug_info    0x000123ab     0x11ca build/stm32u0xx_hal_rtc.o
+ .debug_info    0x00013575     0x1969 build/stm32u0xx_hal_rtc_ex.o
+ .debug_info    0x00014ede     0x24b7 build/stm32u0xx_hal_spi.o
+ .debug_info    0x00017395     0x64b0 build/stm32u0xx_hal_uart.o
+ .debug_info    0x0001d845     0x1432 build/stm32u0xx_hal_uart_ex.o
+ .debug_info    0x0001ec77      0x76a build/system_stm32u0xx.o
+ .debug_info    0x0001f3e1     0x1da3 build/printf.o
+ .debug_info    0x00021184     0x36fd build/AB1805_RK.o
+ .debug_info    0x00024881       0x30 build/startup_stm32u073xx.o
 
-.debug_abbrev   0x00000000     0x42be
- .debug_abbrev  0x00000000      0x33e build/main.o
- .debug_abbrev  0x0000033e      0x18c build/gpio.o
- .debug_abbrev  0x000004ca      0x225 build/adc.o
- .debug_abbrev  0x000006ef      0x23a build/i2c.o
- .debug_abbrev  0x00000929      0x1e2 build/rtc.o
- .debug_abbrev  0x00000b0b      0x218 build/spi.o
- .debug_abbrev  0x00000d23      0x22f build/usart.o
- .debug_abbrev  0x00000f52       0xb9 build/stm32u0xx_it.o
- .debug_abbrev  0x0000100b       0xeb build/stm32u0xx_hal_msp.o
- .debug_abbrev  0x000010f6      0x354 build/stm32u0xx_hal_adc.o
- .debug_abbrev  0x0000144a      0x2f5 build/stm32u0xx_hal_rcc.o
- .debug_abbrev  0x0000173f      0x304 build/stm32u0xx_hal_rcc_ex.o
- .debug_abbrev  0x00001a43      0x239 build/stm32u0xx_hal_gpio.o
- .debug_abbrev  0x00001c7c      0x259 build/stm32u0xx_hal_pwr_ex.o
- .debug_abbrev  0x00001ed5      0x32e build/stm32u0xx_hal_cortex.o
- .debug_abbrev  0x00002203      0x2f9 build/stm32u0xx_hal.o
- .debug_abbrev  0x000024fc      0x318 build/stm32u0xx_hal_i2c.o
- .debug_abbrev  0x00002814      0x1c9 build/stm32u0xx_hal_i2c_ex.o
- .debug_abbrev  0x000029dd      0x265 build/stm32u0xx_hal_rtc.o
- .debug_abbrev  0x00002c42      0x271 build/stm32u0xx_hal_rtc_ex.o
- .debug_abbrev  0x00002eb3      0x2d5 build/stm32u0xx_hal_spi.o
- .debug_abbrev  0x00003188      0x393 build/stm32u0xx_hal_uart.o
- .debug_abbrev  0x0000351b      0x381 build/stm32u0xx_hal_uart_ex.o
- .debug_abbrev  0x0000389c      0x145 build/system_stm32u0xx.o
- .debug_abbrev  0x000039e1      0x431 build/printf.o
- .debug_abbrev  0x00003e12      0x48f build/AB1805_RK.o
- .debug_abbrev  0x000042a1       0x1d build/startup_stm32u073xx.o
+.debug_abbrev   0x00000000     0x428b
+ .debug_abbrev  0x00000000      0x2e9 build/main.o
+ .debug_abbrev  0x000002e9      0x18c build/gpio.o
+ .debug_abbrev  0x00000475      0x225 build/adc.o
+ .debug_abbrev  0x0000069a      0x23a build/i2c.o
+ .debug_abbrev  0x000008d4      0x1e2 build/rtc.o
+ .debug_abbrev  0x00000ab6      0x218 build/spi.o
+ .debug_abbrev  0x00000cce      0x22f build/usart.o
+ .debug_abbrev  0x00000efd       0xb9 build/stm32u0xx_it.o
+ .debug_abbrev  0x00000fb6       0xeb build/stm32u0xx_hal_msp.o
+ .debug_abbrev  0x000010a1      0x354 build/stm32u0xx_hal_adc.o
+ .debug_abbrev  0x000013f5      0x2f5 build/stm32u0xx_hal_rcc.o
+ .debug_abbrev  0x000016ea      0x304 build/stm32u0xx_hal_rcc_ex.o
+ .debug_abbrev  0x000019ee      0x239 build/stm32u0xx_hal_gpio.o
+ .debug_abbrev  0x00001c27      0x259 build/stm32u0xx_hal_pwr_ex.o
+ .debug_abbrev  0x00001e80      0x32e build/stm32u0xx_hal_cortex.o
+ .debug_abbrev  0x000021ae      0x2f9 build/stm32u0xx_hal.o
+ .debug_abbrev  0x000024a7      0x318 build/stm32u0xx_hal_i2c.o
+ .debug_abbrev  0x000027bf      0x1c9 build/stm32u0xx_hal_i2c_ex.o
+ .debug_abbrev  0x00002988      0x265 build/stm32u0xx_hal_rtc.o
+ .debug_abbrev  0x00002bed      0x271 build/stm32u0xx_hal_rtc_ex.o
+ .debug_abbrev  0x00002e5e      0x2d5 build/stm32u0xx_hal_spi.o
+ .debug_abbrev  0x00003133      0x393 build/stm32u0xx_hal_uart.o
+ .debug_abbrev  0x000034c6      0x381 build/stm32u0xx_hal_uart_ex.o
+ .debug_abbrev  0x00003847      0x145 build/system_stm32u0xx.o
+ .debug_abbrev  0x0000398c      0x431 build/printf.o
+ .debug_abbrev  0x00003dbd      0x4b1 build/AB1805_RK.o
+ .debug_abbrev  0x0000426e       0x1d build/startup_stm32u073xx.o
 
-.debug_loc      0x00000000    0x1a4f8
- .debug_loc     0x00000000      0x16d build/main.o
- .debug_loc     0x0000016d       0x39 build/gpio.o
- .debug_loc     0x000001a6       0x98 build/adc.o
- .debug_loc     0x0000023e      0x10b build/i2c.o
- .debug_loc     0x00000349       0xce build/rtc.o
- .debug_loc     0x00000417       0xed build/spi.o
- .debug_loc     0x00000504       0xee build/usart.o
- .debug_loc     0x000005f2       0x20 build/stm32u0xx_it.o
- .debug_loc     0x00000612       0x20 build/stm32u0xx_hal_msp.o
- .debug_loc     0x00000632     0x1ef3 build/stm32u0xx_hal_adc.o
- .debug_loc     0x00002525      0xb54 build/stm32u0xx_hal_rcc.o
- .debug_loc     0x00003079     0x1ada build/stm32u0xx_hal_rcc_ex.o
- .debug_loc     0x00004b53      0x46a build/stm32u0xx_hal_gpio.o
- .debug_loc     0x00004fbd      0x522 build/stm32u0xx_hal_pwr_ex.o
- .debug_loc     0x000054df      0x39f build/stm32u0xx_hal_cortex.o
- .debug_loc     0x0000587e      0x2cc build/stm32u0xx_hal.o
- .debug_loc     0x00005b4a     0x5c2b build/stm32u0xx_hal_i2c.o
- .debug_loc     0x0000b775      0x35e build/stm32u0xx_hal_i2c_ex.o
- .debug_loc     0x0000bad3      0xf8b build/stm32u0xx_hal_rtc.o
- .debug_loc     0x0000ca5e     0x171f build/stm32u0xx_hal_rtc_ex.o
- .debug_loc     0x0000e17d     0x27b0 build/stm32u0xx_hal_spi.o
- .debug_loc     0x0001092d     0x4e3e build/stm32u0xx_hal_uart.o
- .debug_loc     0x0001576b      0xe2b build/stm32u0xx_hal_uart_ex.o
- .debug_loc     0x00016596      0x17c build/system_stm32u0xx.o
- .debug_loc     0x00016712     0x267f build/printf.o
- .debug_loc     0x00018d91     0x1767 build/AB1805_RK.o
+.debug_loc      0x00000000    0x1a4b8
+ .debug_loc     0x00000000      0x12d build/main.o
+ .debug_loc     0x0000012d       0x39 build/gpio.o
+ .debug_loc     0x00000166       0x98 build/adc.o
+ .debug_loc     0x000001fe      0x10b build/i2c.o
+ .debug_loc     0x00000309       0xce build/rtc.o
+ .debug_loc     0x000003d7       0xed build/spi.o
+ .debug_loc     0x000004c4       0xee build/usart.o
+ .debug_loc     0x000005b2       0x20 build/stm32u0xx_it.o
+ .debug_loc     0x000005d2       0x20 build/stm32u0xx_hal_msp.o
+ .debug_loc     0x000005f2     0x1ef3 build/stm32u0xx_hal_adc.o
+ .debug_loc     0x000024e5      0xb54 build/stm32u0xx_hal_rcc.o
+ .debug_loc     0x00003039     0x1ada build/stm32u0xx_hal_rcc_ex.o
+ .debug_loc     0x00004b13      0x46a build/stm32u0xx_hal_gpio.o
+ .debug_loc     0x00004f7d      0x522 build/stm32u0xx_hal_pwr_ex.o
+ .debug_loc     0x0000549f      0x39f build/stm32u0xx_hal_cortex.o
+ .debug_loc     0x0000583e      0x2cc build/stm32u0xx_hal.o
+ .debug_loc     0x00005b0a     0x5c2b build/stm32u0xx_hal_i2c.o
+ .debug_loc     0x0000b735      0x35e build/stm32u0xx_hal_i2c_ex.o
+ .debug_loc     0x0000ba93      0xf8b build/stm32u0xx_hal_rtc.o
+ .debug_loc     0x0000ca1e     0x171f build/stm32u0xx_hal_rtc_ex.o
+ .debug_loc     0x0000e13d     0x27b0 build/stm32u0xx_hal_spi.o
+ .debug_loc     0x000108ed     0x4e3e build/stm32u0xx_hal_uart.o
+ .debug_loc     0x0001572b      0xe2b build/stm32u0xx_hal_uart_ex.o
+ .debug_loc     0x00016556      0x17c build/system_stm32u0xx.o
+ .debug_loc     0x000166d2     0x267f build/printf.o
+ .debug_loc     0x00018d51     0x1767 build/AB1805_RK.o
 
-.debug_aranges  0x00000000     0x1458
+.debug_aranges  0x00000000     0x1448
  .debug_aranges
-                0x00000000       0x58 build/main.o
+                0x00000000       0x48 build/main.o
  .debug_aranges
-                0x00000058       0x20 build/gpio.o
+                0x00000048       0x20 build/gpio.o
  .debug_aranges
-                0x00000078       0x30 build/adc.o
+                0x00000068       0x30 build/adc.o
  .debug_aranges
-                0x000000a8       0x30 build/i2c.o
+                0x00000098       0x30 build/i2c.o
  .debug_aranges
-                0x000000d8       0x30 build/rtc.o
+                0x000000c8       0x30 build/rtc.o
  .debug_aranges
-                0x00000108       0x30 build/spi.o
+                0x000000f8       0x30 build/spi.o
  .debug_aranges
-                0x00000138       0x30 build/usart.o
+                0x00000128       0x30 build/usart.o
  .debug_aranges
-                0x00000168       0x40 build/stm32u0xx_it.o
+                0x00000158       0x40 build/stm32u0xx_it.o
  .debug_aranges
-                0x000001a8       0x20 build/stm32u0xx_hal_msp.o
+                0x00000198       0x20 build/stm32u0xx_hal_msp.o
  .debug_aranges
-                0x000001c8      0x118 build/stm32u0xx_hal_adc.o
+                0x000001b8      0x118 build/stm32u0xx_hal_adc.o
  .debug_aranges
-                0x000002e0       0x88 build/stm32u0xx_hal_rcc.o
+                0x000002d0       0x88 build/stm32u0xx_hal_rcc.o
  .debug_aranges
-                0x00000368       0xf0 build/stm32u0xx_hal_rcc_ex.o
+                0x00000358       0xf0 build/stm32u0xx_hal_rcc_ex.o
  .debug_aranges
-                0x00000458       0x60 build/stm32u0xx_hal_gpio.o
+                0x00000448       0x60 build/stm32u0xx_hal_gpio.o
  .debug_aranges
-                0x000004b8      0x130 build/stm32u0xx_hal_pwr_ex.o
+                0x000004a8      0x130 build/stm32u0xx_hal_pwr_ex.o
  .debug_aranges
-                0x000005e8       0xc0 build/stm32u0xx_hal_cortex.o
+                0x000005d8       0xc0 build/stm32u0xx_hal_cortex.o
  .debug_aranges
-                0x000006a8      0x158 build/stm32u0xx_hal.o
+                0x00000698      0x158 build/stm32u0xx_hal.o
  .debug_aranges
-                0x00000800      0x2a0 build/stm32u0xx_hal_i2c.o
+                0x000007f0      0x2a0 build/stm32u0xx_hal_i2c.o
  .debug_aranges
-                0x00000aa0       0x40 build/stm32u0xx_hal_i2c_ex.o
+                0x00000a90       0x40 build/stm32u0xx_hal_i2c_ex.o
  .debug_aranges
-                0x00000ae0       0xe8 build/stm32u0xx_hal_rtc.o
+                0x00000ad0       0xe8 build/stm32u0xx_hal_rtc.o
  .debug_aranges
-                0x00000bc8      0x1b8 build/stm32u0xx_hal_rtc_ex.o
+                0x00000bb8      0x1b8 build/stm32u0xx_hal_rtc_ex.o
  .debug_aranges
-                0x00000d80      0x1d8 build/stm32u0xx_hal_spi.o
+                0x00000d70      0x1d8 build/stm32u0xx_hal_spi.o
  .debug_aranges
-                0x00000f58      0x248 build/stm32u0xx_hal_uart.o
+                0x00000f48      0x248 build/stm32u0xx_hal_uart.o
  .debug_aranges
-                0x000011a0       0xa8 build/stm32u0xx_hal_uart_ex.o
+                0x00001190       0xa8 build/stm32u0xx_hal_uart_ex.o
  .debug_aranges
-                0x00001248       0x28 build/system_stm32u0xx.o
+                0x00001238       0x28 build/system_stm32u0xx.o
  .debug_aranges
-                0x00001270       0xb0 build/printf.o
+                0x00001260       0xb0 build/printf.o
  .debug_aranges
-                0x00001320      0x110 build/AB1805_RK.o
+                0x00001310      0x110 build/AB1805_RK.o
  .debug_aranges
-                0x00001430       0x28 build/startup_stm32u073xx.o
+                0x00001420       0x28 build/startup_stm32u073xx.o
 
-.debug_ranges   0x00000000     0x1548
- .debug_ranges  0x00000000       0x48 build/main.o
- .debug_ranges  0x00000048       0x10 build/gpio.o
- .debug_ranges  0x00000058       0x20 build/adc.o
- .debug_ranges  0x00000078       0x20 build/i2c.o
- .debug_ranges  0x00000098       0x20 build/rtc.o
- .debug_ranges  0x000000b8       0x20 build/spi.o
- .debug_ranges  0x000000d8       0x20 build/usart.o
- .debug_ranges  0x000000f8       0x30 build/stm32u0xx_it.o
- .debug_ranges  0x00000128       0x10 build/stm32u0xx_hal_msp.o
- .debug_ranges  0x00000138      0x210 build/stm32u0xx_hal_adc.o
- .debug_ranges  0x00000348       0x90 build/stm32u0xx_hal_rcc.o
- .debug_ranges  0x000003d8       0xf8 build/stm32u0xx_hal_rcc_ex.o
- .debug_ranges  0x000004d0       0x50 build/stm32u0xx_hal_gpio.o
- .debug_ranges  0x00000520      0x120 build/stm32u0xx_hal_pwr_ex.o
- .debug_ranges  0x00000640       0xc8 build/stm32u0xx_hal_cortex.o
- .debug_ranges  0x00000708      0x148 build/stm32u0xx_hal.o
- .debug_ranges  0x00000850      0x290 build/stm32u0xx_hal_i2c.o
- .debug_ranges  0x00000ae0       0x30 build/stm32u0xx_hal_i2c_ex.o
- .debug_ranges  0x00000b10       0xd8 build/stm32u0xx_hal_rtc.o
- .debug_ranges  0x00000be8      0x1a8 build/stm32u0xx_hal_rtc_ex.o
- .debug_ranges  0x00000d90      0x1c8 build/stm32u0xx_hal_spi.o
- .debug_ranges  0x00000f58      0x238 build/stm32u0xx_hal_uart.o
- .debug_ranges  0x00001190       0xc8 build/stm32u0xx_hal_uart_ex.o
- .debug_ranges  0x00001258       0x18 build/system_stm32u0xx.o
- .debug_ranges  0x00001270      0x140 build/printf.o
- .debug_ranges  0x000013b0      0x178 build/AB1805_RK.o
- .debug_ranges  0x00001528       0x20 build/startup_stm32u073xx.o
+.debug_ranges   0x00000000     0x1538
+ .debug_ranges  0x00000000       0x38 build/main.o
+ .debug_ranges  0x00000038       0x10 build/gpio.o
+ .debug_ranges  0x00000048       0x20 build/adc.o
+ .debug_ranges  0x00000068       0x20 build/i2c.o
+ .debug_ranges  0x00000088       0x20 build/rtc.o
+ .debug_ranges  0x000000a8       0x20 build/spi.o
+ .debug_ranges  0x000000c8       0x20 build/usart.o
+ .debug_ranges  0x000000e8       0x30 build/stm32u0xx_it.o
+ .debug_ranges  0x00000118       0x10 build/stm32u0xx_hal_msp.o
+ .debug_ranges  0x00000128      0x210 build/stm32u0xx_hal_adc.o
+ .debug_ranges  0x00000338       0x90 build/stm32u0xx_hal_rcc.o
+ .debug_ranges  0x000003c8       0xf8 build/stm32u0xx_hal_rcc_ex.o
+ .debug_ranges  0x000004c0       0x50 build/stm32u0xx_hal_gpio.o
+ .debug_ranges  0x00000510      0x120 build/stm32u0xx_hal_pwr_ex.o
+ .debug_ranges  0x00000630       0xc8 build/stm32u0xx_hal_cortex.o
+ .debug_ranges  0x000006f8      0x148 build/stm32u0xx_hal.o
+ .debug_ranges  0x00000840      0x290 build/stm32u0xx_hal_i2c.o
+ .debug_ranges  0x00000ad0       0x30 build/stm32u0xx_hal_i2c_ex.o
+ .debug_ranges  0x00000b00       0xd8 build/stm32u0xx_hal_rtc.o
+ .debug_ranges  0x00000bd8      0x1a8 build/stm32u0xx_hal_rtc_ex.o
+ .debug_ranges  0x00000d80      0x1c8 build/stm32u0xx_hal_spi.o
+ .debug_ranges  0x00000f48      0x238 build/stm32u0xx_hal_uart.o
+ .debug_ranges  0x00001180       0xc8 build/stm32u0xx_hal_uart_ex.o
+ .debug_ranges  0x00001248       0x18 build/system_stm32u0xx.o
+ .debug_ranges  0x00001260      0x140 build/printf.o
+ .debug_ranges  0x000013a0      0x178 build/AB1805_RK.o
+ .debug_ranges  0x00001518       0x20 build/startup_stm32u073xx.o
 
-.debug_line     0x00000000    0x1a588
- .debug_line    0x00000000      0x4de build/main.o
- .debug_line    0x000004de      0x311 build/gpio.o
- .debug_line    0x000007ef      0x3d4 build/adc.o
- .debug_line    0x00000bc3      0x3be build/i2c.o
- .debug_line    0x00000f81      0x356 build/rtc.o
- .debug_line    0x000012d7      0x365 build/spi.o
- .debug_line    0x0000163c      0x3db build/usart.o
- .debug_line    0x00001a17      0x222 build/stm32u0xx_it.o
- .debug_line    0x00001c39      0x1e7 build/stm32u0xx_hal_msp.o
- .debug_line    0x00001e20     0x1afc build/stm32u0xx_hal_adc.o
- .debug_line    0x0000391c      0xff9 build/stm32u0xx_hal_rcc.o
- .debug_line    0x00004915     0x1385 build/stm32u0xx_hal_rcc_ex.o
- .debug_line    0x00005c9a      0x74c build/stm32u0xx_hal_gpio.o
- .debug_line    0x000063e6      0xa90 build/stm32u0xx_hal_pwr_ex.o
- .debug_line    0x00006e76      0x71d build/stm32u0xx_hal_cortex.o
- .debug_line    0x00007593      0x770 build/stm32u0xx_hal.o
- .debug_line    0x00007d03     0x52bd build/stm32u0xx_hal_i2c.o
- .debug_line    0x0000cfc0      0x597 build/stm32u0xx_hal_i2c_ex.o
- .debug_line    0x0000d557      0xfb9 build/stm32u0xx_hal_rtc.o
- .debug_line    0x0000e510     0x1571 build/stm32u0xx_hal_rtc_ex.o
- .debug_line    0x0000fa81     0x298f build/stm32u0xx_hal_spi.o
- .debug_line    0x00012410     0x4c3f build/stm32u0xx_hal_uart.o
- .debug_line    0x0001704f      0xd1d build/stm32u0xx_hal_uart_ex.o
- .debug_line    0x00017d6c      0x352 build/system_stm32u0xx.o
- .debug_line    0x000180be     0x1385 build/printf.o
- .debug_line    0x00019443     0x10ce build/AB1805_RK.o
- .debug_line    0x0001a511       0x77 build/startup_stm32u073xx.o
+.debug_line     0x00000000    0x1a54b
+ .debug_line    0x00000000      0x4a2 build/main.o
+ .debug_line    0x000004a2      0x311 build/gpio.o
+ .debug_line    0x000007b3      0x3d4 build/adc.o
+ .debug_line    0x00000b87      0x3be build/i2c.o
+ .debug_line    0x00000f45      0x356 build/rtc.o
+ .debug_line    0x0000129b      0x365 build/spi.o
+ .debug_line    0x00001600      0x3db build/usart.o
+ .debug_line    0x000019db      0x222 build/stm32u0xx_it.o
+ .debug_line    0x00001bfd      0x1e7 build/stm32u0xx_hal_msp.o
+ .debug_line    0x00001de4     0x1afc build/stm32u0xx_hal_adc.o
+ .debug_line    0x000038e0      0xff9 build/stm32u0xx_hal_rcc.o
+ .debug_line    0x000048d9     0x1385 build/stm32u0xx_hal_rcc_ex.o
+ .debug_line    0x00005c5e      0x74c build/stm32u0xx_hal_gpio.o
+ .debug_line    0x000063aa      0xa90 build/stm32u0xx_hal_pwr_ex.o
+ .debug_line    0x00006e3a      0x71d build/stm32u0xx_hal_cortex.o
+ .debug_line    0x00007557      0x770 build/stm32u0xx_hal.o
+ .debug_line    0x00007cc7     0x52bd build/stm32u0xx_hal_i2c.o
+ .debug_line    0x0000cf84      0x597 build/stm32u0xx_hal_i2c_ex.o
+ .debug_line    0x0000d51b      0xfb9 build/stm32u0xx_hal_rtc.o
+ .debug_line    0x0000e4d4     0x1571 build/stm32u0xx_hal_rtc_ex.o
+ .debug_line    0x0000fa45     0x298f build/stm32u0xx_hal_spi.o
+ .debug_line    0x000123d4     0x4c3f build/stm32u0xx_hal_uart.o
+ .debug_line    0x00017013      0xd1d build/stm32u0xx_hal_uart_ex.o
+ .debug_line    0x00017d30      0x352 build/system_stm32u0xx.o
+ .debug_line    0x00018082     0x1385 build/printf.o
+ .debug_line    0x00019407     0x10cd build/AB1805_RK.o
+ .debug_line    0x0001a4d4       0x77 build/startup_stm32u073xx.o
 
 .debug_str      0x00000000     0x6d85
- .debug_str     0x00000000     0x1220 build/main.o
-                               0x128a (size before relaxing)
- .debug_str     0x00001220      0x1a9 build/gpio.o
+ .debug_str     0x00000000      0x540 build/main.o
+                                0x599 (size before relaxing)
+ .debug_str     0x00000540      0x1a9 build/gpio.o
                                 0x3a7 (size before relaxing)
- .debug_str     0x000013c9      0x6d3 build/adc.o
+ .debug_str     0x000006e9      0x6d3 build/adc.o
                                 0xa4e (size before relaxing)
- .debug_str     0x00001a9c      0x2e5 build/i2c.o
+ .debug_str     0x00000dbc      0x2e5 build/i2c.o
                                 0xb27 (size before relaxing)
- .debug_str     0x00001d81      0x1d4 build/rtc.o
+ .debug_str     0x000010a1      0x1d4 build/rtc.o
                                 0x6c8 (size before relaxing)
- .debug_str     0x00001f55      0x1eb build/spi.o
+ .debug_str     0x00001275      0x1eb build/spi.o
                                 0x8cb (size before relaxing)
- .debug_str     0x00002140      0x27d build/usart.o
+ .debug_str     0x00001460      0x27d build/usart.o
                                 0xb3a (size before relaxing)
- .debug_str     0x000023bd       0x6d build/stm32u0xx_it.o
+ .debug_str     0x000016dd       0x6d build/stm32u0xx_it.o
                                 0x1d2 (size before relaxing)
- .debug_str     0x0000242a       0x29 build/stm32u0xx_hal_msp.o
+ .debug_str     0x0000174a       0x29 build/stm32u0xx_hal_msp.o
                                 0x2d0 (size before relaxing)
- .debug_str     0x00002453      0x85a build/stm32u0xx_hal_adc.o
+ .debug_str     0x00001773      0x85a build/stm32u0xx_hal_adc.o
                                 0xffc (size before relaxing)
- .debug_str     0x00002cad      0x307 build/stm32u0xx_hal_rcc.o
+ .debug_str     0x00001fcd      0x307 build/stm32u0xx_hal_rcc.o
                                 0x890 (size before relaxing)
- .debug_str     0x00002fb4      0x4f3 build/stm32u0xx_hal_rcc_ex.o
+ .debug_str     0x000022d4      0x4f3 build/stm32u0xx_hal_rcc_ex.o
                                 0xb8a (size before relaxing)
- .debug_str     0x000034a7       0xed build/stm32u0xx_hal_gpio.o
+ .debug_str     0x000027c7       0xed build/stm32u0xx_hal_gpio.o
                                 0x3df (size before relaxing)
- .debug_str     0x00003594      0x444 build/stm32u0xx_hal_pwr_ex.o
+ .debug_str     0x000028b4      0x444 build/stm32u0xx_hal_pwr_ex.o
                                 0x76c (size before relaxing)
- .debug_str     0x000039d8      0x5a3 build/stm32u0xx_hal_cortex.o
+ .debug_str     0x00002cf8      0x5a3 build/stm32u0xx_hal_cortex.o
                                 0x7d6 (size before relaxing)
- .debug_str     0x00003f7b      0x41d build/stm32u0xx_hal.o
+ .debug_str     0x0000329b      0x41d build/stm32u0xx_hal.o
                                 0xa2b (size before relaxing)
- .debug_str     0x00004398      0x8b1 build/stm32u0xx_hal_i2c.o
+ .debug_str     0x000036b8      0x8b1 build/stm32u0xx_hal_i2c.o
                                0x10a1 (size before relaxing)
- .debug_str     0x00004c49       0x84 build/stm32u0xx_hal_i2c_ex.o
+ .debug_str     0x00003f69       0x84 build/stm32u0xx_hal_i2c_ex.o
                                 0x819 (size before relaxing)
- .debug_str     0x00004ccd      0x3a7 build/stm32u0xx_hal_rtc.o
+ .debug_str     0x00003fed      0x3a7 build/stm32u0xx_hal_rtc.o
                                 0x7d7 (size before relaxing)
- .debug_str     0x00005074      0x77a build/stm32u0xx_hal_rtc_ex.o
+ .debug_str     0x00004394      0x77a build/stm32u0xx_hal_rtc_ex.o
                                 0xcfd (size before relaxing)
- .debug_str     0x000057ee      0x537 build/stm32u0xx_hal_spi.o
+ .debug_str     0x00004b0e      0x537 build/stm32u0xx_hal_spi.o
                                 0xcb7 (size before relaxing)
- .debug_str     0x00005d25      0x7ea build/stm32u0xx_hal_uart.o
+ .debug_str     0x00005045      0x7ea build/stm32u0xx_hal_uart.o
                                0x1002 (size before relaxing)
- .debug_str     0x0000650f      0x253 build/stm32u0xx_hal_uart_ex.o
+ .debug_str     0x0000582f      0x253 build/stm32u0xx_hal_uart_ex.o
                                 0xb51 (size before relaxing)
- .debug_str     0x00006762       0x3d build/system_stm32u0xx.o
+ .debug_str     0x00005a82       0x3d build/system_stm32u0xx.o
                                 0x410 (size before relaxing)
- .debug_str     0x0000679f      0x27c build/printf.o
+ .debug_str     0x00005abf      0x27c build/printf.o
                                 0x4b0 (size before relaxing)
- .debug_str     0x00006a1b      0x338 build/AB1805_RK.o
+ .debug_str     0x00005d3b     0x1018 build/AB1805_RK.o
                                0x135f (size before relaxing)
  .debug_str     0x00006d53       0x32 build/startup_stm32u073xx.o
                                  0x53 (size before relaxing)
@@ -2830,49 +3195,49 @@ LOAD C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .comment       0x00000043       0x44 build/printf.o
  .comment       0x00000043       0x44 build/AB1805_RK.o
 
-.debug_frame    0x00000000     0x398c
- .debug_frame   0x00000000       0xc0 build/main.o
- .debug_frame   0x000000c0       0x3c build/gpio.o
- .debug_frame   0x000000fc       0x58 build/adc.o
- .debug_frame   0x00000154       0x5c build/i2c.o
- .debug_frame   0x000001b0       0x54 build/rtc.o
- .debug_frame   0x00000204       0x5c build/spi.o
- .debug_frame   0x00000260       0x5c build/usart.o
- .debug_frame   0x000002bc       0x68 build/stm32u0xx_it.o
- .debug_frame   0x00000324       0x24 build/stm32u0xx_hal_msp.o
- .debug_frame   0x00000348      0x304 build/stm32u0xx_hal_adc.o
- .debug_frame   0x0000064c      0x164 build/stm32u0xx_hal_rcc.o
- .debug_frame   0x000007b0      0x24c build/stm32u0xx_hal_rcc_ex.o
- .debug_frame   0x000009fc       0xd0 build/stm32u0xx_hal_gpio.o
- .debug_frame   0x00000acc      0x260 build/stm32u0xx_hal_pwr_ex.o
- .debug_frame   0x00000d2c      0x194 build/stm32u0xx_hal_cortex.o
- .debug_frame   0x00000ec0      0x2c4 build/stm32u0xx_hal.o
- .debug_frame   0x00001184      0x8a8 build/stm32u0xx_hal_i2c.o
- .debug_frame   0x00001a2c       0xa0 build/stm32u0xx_hal_i2c_ex.o
- .debug_frame   0x00001acc      0x260 build/stm32u0xx_hal_rtc.o
- .debug_frame   0x00001d2c      0x4f8 build/stm32u0xx_hal_rtc_ex.o
- .debug_frame   0x00002224      0x5a0 build/stm32u0xx_hal_spi.o
- .debug_frame   0x000027c4      0x6f0 build/stm32u0xx_hal_uart.o
- .debug_frame   0x00002eb4      0x1e0 build/stm32u0xx_hal_uart_ex.o
- .debug_frame   0x00003094       0x38 build/system_stm32u0xx.o
- .debug_frame   0x000030cc      0x264 build/printf.o
- .debug_frame   0x00003330      0x344 build/AB1805_RK.o
- .debug_frame   0x00003674       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00003694       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_frame   0x000036c0       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
- .debug_frame   0x000036e0       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
- .debug_frame   0x00003700       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_fixunsdfsi.o)
- .debug_frame   0x0000372c       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
- .debug_frame   0x00003768       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(adddf3.o)
- .debug_frame   0x000037a4       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divdf3.o)
- .debug_frame   0x000037e0       0x38 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(eqdf2.o)
- .debug_frame   0x00003818       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(gedf2.o)
- .debug_frame   0x00003854       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(ledf2.o)
- .debug_frame   0x00003890       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(muldf3.o)
- .debug_frame   0x000038cc       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(subdf3.o)
- .debug_frame   0x00003908       0x30 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(fixdfsi.o)
- .debug_frame   0x00003938       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatsidf.o)
- .debug_frame   0x00003964       0x28 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatunsidf.o)
+.debug_frame    0x00000000     0x395c
+ .debug_frame   0x00000000       0x90 build/main.o
+ .debug_frame   0x00000090       0x3c build/gpio.o
+ .debug_frame   0x000000cc       0x58 build/adc.o
+ .debug_frame   0x00000124       0x5c build/i2c.o
+ .debug_frame   0x00000180       0x54 build/rtc.o
+ .debug_frame   0x000001d4       0x5c build/spi.o
+ .debug_frame   0x00000230       0x5c build/usart.o
+ .debug_frame   0x0000028c       0x68 build/stm32u0xx_it.o
+ .debug_frame   0x000002f4       0x24 build/stm32u0xx_hal_msp.o
+ .debug_frame   0x00000318      0x304 build/stm32u0xx_hal_adc.o
+ .debug_frame   0x0000061c      0x164 build/stm32u0xx_hal_rcc.o
+ .debug_frame   0x00000780      0x24c build/stm32u0xx_hal_rcc_ex.o
+ .debug_frame   0x000009cc       0xd0 build/stm32u0xx_hal_gpio.o
+ .debug_frame   0x00000a9c      0x260 build/stm32u0xx_hal_pwr_ex.o
+ .debug_frame   0x00000cfc      0x194 build/stm32u0xx_hal_cortex.o
+ .debug_frame   0x00000e90      0x2c4 build/stm32u0xx_hal.o
+ .debug_frame   0x00001154      0x8a8 build/stm32u0xx_hal_i2c.o
+ .debug_frame   0x000019fc       0xa0 build/stm32u0xx_hal_i2c_ex.o
+ .debug_frame   0x00001a9c      0x260 build/stm32u0xx_hal_rtc.o
+ .debug_frame   0x00001cfc      0x4f8 build/stm32u0xx_hal_rtc_ex.o
+ .debug_frame   0x000021f4      0x5a0 build/stm32u0xx_hal_spi.o
+ .debug_frame   0x00002794      0x6f0 build/stm32u0xx_hal_uart.o
+ .debug_frame   0x00002e84      0x1e0 build/stm32u0xx_hal_uart_ex.o
+ .debug_frame   0x00003064       0x38 build/system_stm32u0xx.o
+ .debug_frame   0x0000309c      0x264 build/printf.o
+ .debug_frame   0x00003300      0x344 build/AB1805_RK.o
+ .debug_frame   0x00003644       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00003664       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00003690       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000036b0       0x20 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .debug_frame   0x000036d0       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_fixunsdfsi.o)
+ .debug_frame   0x000036fc       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00003738       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(adddf3.o)
+ .debug_frame   0x00003774       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divdf3.o)
+ .debug_frame   0x000037b0       0x38 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(eqdf2.o)
+ .debug_frame   0x000037e8       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(gedf2.o)
+ .debug_frame   0x00003824       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(ledf2.o)
+ .debug_frame   0x00003860       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(muldf3.o)
+ .debug_frame   0x0000389c       0x3c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(subdf3.o)
+ .debug_frame   0x000038d8       0x30 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(fixdfsi.o)
+ .debug_frame   0x00003908       0x2c C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatsidf.o)
+ .debug_frame   0x00003934       0x28 C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatunsidf.o)
 
 Cross Reference Table
 
@@ -3466,6 +3831,190 @@ NMI_Handler                                       build/stm32u0xx_it.o
 PVD_PVM_IRQHandler                                build/startup_stm32u073xx.o
 PendSV_Handler                                    build/stm32u0xx_it.o
 RCC_CRS_IRQHandler                                build/startup_stm32u073xx.o
+REG_AFCTRL                                        build/AB1805_RK.o
+REG_AFCTRL_DEFAULT                                build/AB1805_RK.o
+REG_AFCTRL_DISABLE                                build/AB1805_RK.o
+REG_AFCTRL_ENABLE                                 build/AB1805_RK.o
+REG_ALT_RAM                                       build/AB1805_RK.o
+REG_ASTAT                                         build/AB1805_RK.o
+REG_ASTAT_BBOD                                    build/AB1805_RK.o
+REG_ASTAT_BMIN                                    build/AB1805_RK.o
+REG_ASTAT_VINIT                                   build/AB1805_RK.o
+REG_BATMODE_IO                                    build/AB1805_RK.o
+REG_BATMODE_IO_DEFAULT                            build/AB1805_RK.o
+REG_BATMODE_IO_IOBM                               build/AB1805_RK.o
+REG_BREF_CTRL                                     build/AB1805_RK.o
+REG_BREF_CTRL_14_16                               build/AB1805_RK.o
+REG_BREF_CTRL_18_22                               build/AB1805_RK.o
+REG_BREF_CTRL_21_25                               build/AB1805_RK.o
+REG_BREF_CTRL_25_30                               build/AB1805_RK.o
+REG_BREF_CTRL_DEFAULT                             build/AB1805_RK.o
+REG_CAL_RC_HIGH                                   build/AB1805_RK.o
+REG_CAL_RC_LOW                                    build/AB1805_RK.o
+REG_CAL_XT                                        build/AB1805_RK.o
+REG_CONFIG_KEY                                    build/AB1805_RK.o
+REG_CONFIG_KEY_OSC_CTRL                           build/AB1805_RK.o
+REG_CONFIG_KEY_OTHER                              build/AB1805_RK.o
+REG_CONFIG_KEY_SW_RESET                           build/AB1805_RK.o
+REG_CTRL_1                                        build/AB1805_RK.o
+REG_CTRL_1_12_24                                  build/AB1805_RK.o
+REG_CTRL_1_ARST                                   build/AB1805_RK.o
+REG_CTRL_1_DEFAULT                                build/AB1805_RK.o
+REG_CTRL_1_OUT                                    build/AB1805_RK.o
+REG_CTRL_1_OUTB                                   build/AB1805_RK.o
+REG_CTRL_1_PWR2                                   build/AB1805_RK.o
+REG_CTRL_1_RSP                                    build/AB1805_RK.o
+REG_CTRL_1_STOP                                   build/AB1805_RK.o
+REG_CTRL_1_WRTC                                   build/AB1805_RK.o
+REG_CTRL_2                                        build/AB1805_RK.o
+REG_CTRL_2_DEFAULT                                build/AB1805_RK.o
+REG_CTRL_2_OUT1S_MASK                             build/AB1805_RK.o
+REG_CTRL_2_OUT1S_SQW                              build/AB1805_RK.o
+REG_CTRL_2_OUT1S_SQW_nIRQ                         build/AB1805_RK.o
+REG_CTRL_2_OUT1S_nAIRQ                            build/AB1805_RK.o
+REG_CTRL_2_OUT1S_nIRQ                             build/AB1805_RK.o
+REG_CTRL_2_OUT2S_MASK                             build/AB1805_RK.o
+REG_CTRL_2_OUT2S_OUTB                             build/AB1805_RK.o
+REG_CTRL_2_OUT2S_SLEEP                            build/AB1805_RK.o
+REG_CTRL_2_OUT2S_SQW                              build/AB1805_RK.o
+REG_CTRL_2_OUT2S_TIRQ                             build/AB1805_RK.o
+REG_CTRL_2_OUT2S_nAIRQ                            build/AB1805_RK.o
+REG_CTRL_2_OUT2S_nIRQ                             build/AB1805_RK.o
+REG_CTRL_2_OUT2S_nTIRQ                            build/AB1805_RK.o
+REG_CTRL_2_RS1E                                   build/AB1805_RK.o
+REG_DATE                                          build/AB1805_RK.o
+REG_DATE_ALARM                                    build/AB1805_RK.o
+REG_EXT_ADDR                                      build/AB1805_RK.o
+REG_EXT_ADDR_BPOL                                 build/AB1805_RK.o
+REG_EXT_ADDR_EXIN                                 build/AB1805_RK.o
+REG_EXT_ADDR_O4MB                                 build/AB1805_RK.o
+REG_EXT_ADDR_WDIN                                 build/AB1805_RK.o
+REG_EXT_ADDR_XADA                                 build/AB1805_RK.o
+REG_EXT_ADDR_XADS                                 build/AB1805_RK.o
+REG_HOUR                                          build/AB1805_RK.o
+REG_HOUR_ALARM                                    build/AB1805_RK.o
+REG_HUNDREDTH                                     build/AB1805_RK.o
+REG_HUNDREDTH_ALARM                               build/AB1805_RK.o
+REG_ID0                                           build/AB1805_RK.o
+REG_ID0_AB08XX                                    build/AB1805_RK.o
+REG_ID0_AB18XX                                    build/AB1805_RK.o
+REG_ID1                                           build/AB1805_RK.o
+REG_ID1_ABXX05                                    build/AB1805_RK.o
+REG_ID1_ABXX15                                    build/AB1805_RK.o
+REG_ID2                                           build/AB1805_RK.o
+REG_ID3                                           build/AB1805_RK.o
+REG_ID4                                           build/AB1805_RK.o
+REG_ID5                                           build/AB1805_RK.o
+REG_ID6                                           build/AB1805_RK.o
+REG_INT_MASK                                      build/AB1805_RK.o
+REG_INT_MASK_AIE                                  build/AB1805_RK.o
+REG_INT_MASK_BLIE                                 build/AB1805_RK.o
+REG_INT_MASK_CEB                                  build/AB1805_RK.o
+REG_INT_MASK_DEFAULT                              build/AB1805_RK.o
+REG_INT_MASK_EX1E                                 build/AB1805_RK.o
+REG_INT_MASK_EX2E                                 build/AB1805_RK.o
+REG_INT_MASK_IM                                   build/AB1805_RK.o
+REG_INT_MASK_TIE                                  build/AB1805_RK.o
+REG_MINUTE                                        build/AB1805_RK.o
+REG_MINUTE_ALARM                                  build/AB1805_RK.o
+REG_MONTH                                         build/AB1805_RK.o
+REG_MONTH_ALARM                                   build/AB1805_RK.o
+REG_OCTRL                                         build/AB1805_RK.o
+REG_OCTRL_DEFAULT                                 build/AB1805_RK.o
+REG_OCTRL_EXBM                                    build/AB1805_RK.o
+REG_OCTRL_EXDS                                    build/AB1805_RK.o
+REG_OCTRL_O1EN                                    build/AB1805_RK.o
+REG_OCTRL_O3EN                                    build/AB1805_RK.o
+REG_OCTRL_O4EN                                    build/AB1805_RK.o
+REG_OCTRL_RSEN                                    build/AB1805_RK.o
+REG_OCTRL_WDBM                                    build/AB1805_RK.o
+REG_OCTRL_WDDS                                    build/AB1805_RK.o
+REG_OSC_CTRL                                      build/AB1805_RK.o
+REG_OSC_CTRL_ACAL                                 build/AB1805_RK.o
+REG_OSC_CTRL_ACIE                                 build/AB1805_RK.o
+REG_OSC_CTRL_AOS                                  build/AB1805_RK.o
+REG_OSC_CTRL_DEFAULT                              build/AB1805_RK.o
+REG_OSC_CTRL_FOS                                  build/AB1805_RK.o
+REG_OSC_CTRL_OFIE                                 build/AB1805_RK.o
+REG_OSC_CTRL_OSEL                                 build/AB1805_RK.o
+REG_OSC_CTRL_PWGT                                 build/AB1805_RK.o
+REG_OSC_STATUS                                    build/AB1805_RK.o
+REG_OSC_STATUS_ACF                                build/AB1805_RK.o
+REG_OSC_STATUS_LKO2                               build/AB1805_RK.o
+REG_OSC_STATUS_OF                                 build/AB1805_RK.o
+REG_OSC_STATUS_OMODE                              build/AB1805_RK.o
+REG_OSC_STATUS_XTCAL                              build/AB1805_RK.o
+REG_RAM                                           build/AB1805_RK.o
+REG_SECOND                                        build/AB1805_RK.o
+REG_SECOND_ALARM                                  build/AB1805_RK.o
+REG_SLEEP_CTRL                                    build/AB1805_RK.o
+REG_SLEEP_CTRL_DEFAULT                            build/AB1805_RK.o
+REG_SLEEP_CTRL_EX1P                               build/AB1805_RK.o
+REG_SLEEP_CTRL_EX2P                               build/AB1805_RK.o
+REG_SLEEP_CTRL_SLP                                build/AB1805_RK.o
+REG_SLEEP_CTRL_SLRES                              build/AB1805_RK.o
+REG_SLEEP_CTRL_SLST                               build/AB1805_RK.o
+REG_SLEEP_CTRL_SLTO_MASK                          build/AB1805_RK.o
+REG_SQW                                           build/AB1805_RK.o
+REG_SQW_DEFAULT                                   build/AB1805_RK.o
+REG_SQW_SQWE                                      build/AB1805_RK.o
+REG_STATUS                                        build/AB1805_RK.o
+REG_STATUS_ALM                                    build/AB1805_RK.o
+REG_STATUS_BAT                                    build/AB1805_RK.o
+REG_STATUS_BL                                     build/AB1805_RK.o
+REG_STATUS_CB                                     build/AB1805_RK.o
+REG_STATUS_DEFAULT                                build/AB1805_RK.o
+REG_STATUS_EX1                                    build/AB1805_RK.o
+REG_STATUS_EX2                                    build/AB1805_RK.o
+REG_STATUS_TIM                                    build/AB1805_RK.o
+REG_STATUS_WDT                                    build/AB1805_RK.o
+REG_TIMER                                         build/AB1805_RK.o
+REG_TIMER_CTRL                                    build/AB1805_RK.o
+REG_TIMER_CTRL_DEFAULT                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_DATE                           build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_DIS                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_HOUR                           build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_HUN                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_MASK                           build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_MIN                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_MON                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_SEC                            build/AB1805_RK.o
+REG_TIMER_CTRL_RPT_WKDY                           build/AB1805_RK.o
+REG_TIMER_CTRL_TE                                 build/AB1805_RK.o
+REG_TIMER_CTRL_TFS_1                              build/AB1805_RK.o
+REG_TIMER_CTRL_TFS_1_60                           build/AB1805_RK.o
+REG_TIMER_CTRL_TFS_64                             build/AB1805_RK.o
+REG_TIMER_CTRL_TFS_FAST                           build/AB1805_RK.o
+REG_TIMER_CTRL_TFS_MASK                           build/AB1805_RK.o
+REG_TIMER_CTRL_TM                                 build/AB1805_RK.o
+REG_TIMER_CTRL_TRPT                               build/AB1805_RK.o
+REG_TIMER_DEFAULT                                 build/AB1805_RK.o
+REG_TIMER_INITIAL                                 build/AB1805_RK.o
+REG_TIMER_INITIAL_DEFAULT                         build/AB1805_RK.o
+REG_TRICKLE                                       build/AB1805_RK.o
+REG_TRICKLE_DEFAULT                               build/AB1805_RK.o
+REG_TRICKLE_DIODE_0_3                             build/AB1805_RK.o
+REG_TRICKLE_DIODE_0_6                             build/AB1805_RK.o
+REG_TRICKLE_DIODE_MASK                            build/AB1805_RK.o
+REG_TRICKLE_ROUT_11K                              build/AB1805_RK.o
+REG_TRICKLE_ROUT_3K                               build/AB1805_RK.o
+REG_TRICKLE_ROUT_6K                               build/AB1805_RK.o
+REG_TRICKLE_ROUT_DISABLE                          build/AB1805_RK.o
+REG_TRICKLE_ROUT_MASK                             build/AB1805_RK.o
+REG_TRICKLE_TCS_ENABLE                            build/AB1805_RK.o
+REG_TRICKLE_TCS_MASK                              build/AB1805_RK.o
+REG_WDT                                           build/AB1805_RK.o
+REG_WDT_DEFAULT                                   build/AB1805_RK.o
+REG_WDT_RESET                                     build/AB1805_RK.o
+REG_WDT_WRB_16_HZ                                 build/AB1805_RK.o
+REG_WDT_WRB_1_4_HZ                                build/AB1805_RK.o
+REG_WDT_WRB_1_HZ                                  build/AB1805_RK.o
+REG_WDT_WRB_4_HZ                                  build/AB1805_RK.o
+REG_WEEKDAY                                       build/AB1805_RK.o
+REG_WEEKDAY_ALARM                                 build/AB1805_RK.o
+REG_YEAR                                          build/AB1805_RK.o
+RESET_DISABLE_XT                                  build/AB1805_RK.o
+RESET_PRESERVE_REPEATING_TIMER                    build/AB1805_RK.o
 RNG_CRYP_IRQHandler                               build/startup_stm32u073xx.o
 RTC_Bcd2ToByte                                    build/stm32u0xx_hal_rtc.o
                                                   build/stm32u0xx_hal_rtc_ex.o
@@ -3516,8 +4065,8 @@ USART2_LPUART2_IRQHandler                         build/startup_stm32u073xx.o
 USART3_LPUART1_IRQHandler                         build/startup_stm32u073xx.o
 USART4_LPUART3_IRQHandler                         build/startup_stm32u073xx.o
 USB_DRD_FS_IRQHandler                             build/startup_stm32u073xx.o
+WATCHDOG_MAX_SECONDS                              build/AB1805_RK.o
 WWDG_IWDG_IRQHandler                              build/startup_stm32u073xx.o
-WakeReason                                        build/main.o
 _Min_Stack_Size                                   build/sysmem.o
 __aeabi_cdcmpeq                                   C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_arm_cmpdf2.o)
 __aeabi_cdcmple                                   C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_arm_cmpdf2.o)
@@ -3815,16 +4364,15 @@ readRam                                           build/AB1805_RK.o
 readRegisters                                     build/AB1805_RK.o
 resetConfig                                       build/AB1805_RK.o
                                                   build/main.o
-resumeWDT                                         build/main.o
+resumeWDT                                         build/AB1805_RK.o
 setCountdownTimer                                 build/AB1805_RK.o
 setRegisterBit                                    build/AB1805_RK.o
 setWDT                                            build/AB1805_RK.o
-                                                  build/main.o
 setup                                             build/AB1805_RK.o
 snprintf_                                         build/printf.o
 software_init_hook                                C:/ST/STM32CubeCLT_1.15.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o
 sprintf_                                          build/printf.o
-stopWDT                                           build/main.o
+stopWDT                                           build/AB1805_RK.o
 timeout_reset                                     build/main.o
 updateWakeReason                                  build/AB1805_RK.o
 usingRCOscillator                                 build/AB1805_RK.o

@@ -1,4 +1,4 @@
-Core/Src/AB1805_RK.o: ../Core/Src/AB1805_RK.c ../Core/Inc/AB1805_RK.h \
+Core/Src/AB1805_RK.o: ../Core/Src/AB1805_RK.c ../Core/Inc/SPI.h \
  ../Core/Inc/main.h ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
  ../Core/Inc/stm32u0xx_hal_conf.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
@@ -38,8 +38,10 @@ Core/Src/AB1805_RK.o: ../Core/Src/AB1805_RK.c ../Core/Inc/AB1805_RK.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h \
  ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h
-../Core/Inc/AB1805_RK.h:
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h \
+ ../Core/Inc/AB1805_RK.h ../Core/Inc/printf.h \
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h
+../Core/Inc/SPI.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
 ../Core/Inc/stm32u0xx_hal_conf.h:
@@ -81,3 +83,6 @@ Core/Src/AB1805_RK.o: ../Core/Src/AB1805_RK.c ../Core/Inc/AB1805_RK.h \
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h:
 ../Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u073xx.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h:
+../Core/Inc/AB1805_RK.h:
+../Core/Inc/printf.h:
+../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h:
