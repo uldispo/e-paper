@@ -107,6 +107,7 @@ extern "C"
 #define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
     void print_error(const char *func, uint32_t line);
+
     /* USER CODE END Private defines */
 
 #ifdef __cplusplus

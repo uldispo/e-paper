@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   30:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     (#) For the UART RS485 Driver Enable mode, initialize the UART registers
   31:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****         by calling the HAL_RS485Ex_Init() API.
   32:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 2
 
 
   33:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     (#) FIFO mode enabling/disabling and RX/TX FIFO threshold programming.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   87:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   */
   88:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
   89:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** /** @defgroup UARTEx_Exported_Functions_Group1 Initialization and de-initialization functions
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 3
 
 
   90:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @brief    Extended Initialization and Configuration Functions
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  144:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @{
  145:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   */
  146:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 4
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 4
 
 
  147:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  201:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     /* Init the low level hardware */
  202:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     huart->MspInitCallback(huart);
  203:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** #else
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 5
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 5
 
 
  204:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     /* Init the low level hardware : GPIO, CLOCK, CORTEX */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  258:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     (#) Wakeup from Stop mode Callback:
  259:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****         (+) HAL_UARTEx_WakeupCallback()
  260:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 6
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 6
 
 
  261:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     (#) TX/RX Fifos Callbacks:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  315:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @}
  316:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   */
  317:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 7
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 7
 
 
  318:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** /** @defgroup UARTEx_Exported_Functions_Group3 Peripheral Control functions
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  372:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** @endverbatim
  373:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @{
  374:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 8
 
 
  375:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  429:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
  430:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   uint32_t tickstart;
  431:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 9
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 9
 
 
  432:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* check the wake-up from stop mode UART instance */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  486:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  487:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* Set UESM bit */
  488:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   ATOMIC_SET_BIT(huart->Instance->CR1, USART_CR1_UESM);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 10
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 10
 
 
  489:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  543:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   WRITE_REG(huart->Instance->CR1, tmpcr1);
  544:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  545:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* Determine the number of data to process during RX/TX ISR execution */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 11
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 11
 
 
  546:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   UARTEx_SetNbDataToProcess(huart);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  600:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_1_4
  601:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_1_2
  602:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_3_4
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 12
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 12
 
 
  603:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_7_8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  657:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** {
  658:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   uint32_t tmpcr1;
  659:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 13
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 13
 
 
  660:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* Check the parameters */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  714:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *                (could be lower than Size, in case reception ends on IDLE event)
  715:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @param Timeout Timeout duration expressed in ms (covers the whole reception sequence).
  716:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   * @retval HAL status
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 14
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 14
 
 
  717:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  771:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  772:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     /* Initialize output number of received elements */
  773:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     *RxLen = 0U;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 15
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 15
 
 
  774:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  828:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     huart->RxState = HAL_UART_STATE_READY;
  829:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  830:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     return HAL_OK;
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 16
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 16
 
 
  831:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  885:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  886:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     if (huart->ReceptionType == HAL_UART_RECEPTION_TOIDLE)
  887:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 17
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 17
 
 
  888:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****       __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  942:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  943:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     /* In case of 9bits/No Parity transfer, pData buffer provided as input parameter
  944:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****        should be aligned on a uint16_t frontier, as data copy from RDR will be
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 18
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 18
 
 
  945:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****        handled by DMA from a uint16_t frontier. */
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  999:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *             received data is lower than expected one)
 1000:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *        In DMA Mode :
 1001:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *           - HAL_UART_RXEVENT_TC : when Reception has been completed (expected nb of data has be
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 19
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 19
 
 
 1002:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   *           - HAL_UART_RXEVENT_HT : when half of expected nb of data has been received
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   42 000a 1021     		movs	r1, #16
   43 000c 8B43     		bics	r3, r1
   44 000e 6946     		mov	r1, sp
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 20
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 20
 
 
   45 0010 8988     		ldrh	r1, [r1, #4]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   87              		.cfi_offset 7, -8
   88              		.cfi_offset 14, -4
   89 0002 0400     		movs	r4, r0
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 21
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 21
 
 
 1055:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   uint8_t rx_fifo_depth;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1069:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     tx_fifo_depth = TX_FIFO_DEPTH;
  120              		.loc 1 1069 5 is_stmt 1 view .LVU23
 1070:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     rx_fifo_threshold = (uint8_t)(READ_BIT(huart->Instance->CR3, USART_CR3_RXFTCFG) >> USART_CR3_RX
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 22
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 22
 
 
  121              		.loc 1 1070 5 view .LVU24
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1075:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****                                (uint16_t)denominator[rx_fifo_threshold];
  159              		.loc 1 1075 57 view .LVU41
  160 003a C000     		lsls	r0, r0, #3
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 23
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 23
 
 
 1076:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   }
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  209              		.loc 1 172 6 is_stmt 0 view .LVU50
  210 000a 0028     		cmp	r0, #0
  211 000c 3BD0     		beq	.L11
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 24
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 24
 
 
  177:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  222:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   {
  250              		.loc 1 222 6 view .LVU67
  251 0032 0128     		cmp	r0, #1
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 25
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 25
 
 
  252 0034 1CD0     		beq	.L8
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  295              	.LVL17:
  296              	.L8:
  243:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 26
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 26
 
 
  297              		.loc 1 243 1 view .LVU79
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  343              		.thumb_func
  345              	HAL_UARTEx_WakeupCallback:
  346              	.LVL26:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 27
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 27
 
 
  347              	.LFB335:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  397              		.loc 1 307 3 view .LVU96
  312:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  398              		.loc 1 312 1 is_stmt 0 view .LVU97
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 28
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 28
 
 
  399              		@ sp needed
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  445              		.loc 1 406 3 view .LVU107
  446 0018 0268     		ldr	r2, [r0]
  447 001a 5168     		ldr	r1, [r2, #4]
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 29
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 29
 
 
  448 001c 1025     		movs	r5, #16
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  495              		.cfi_offset 4, -8
  496              		.cfi_offset 14, -4
  497 0002 84B0     		sub	sp, sp, #16
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 30
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 30
 
 
  498              	.LCFI5:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  538              		.loc 1 448 6 is_stmt 0 discriminator 2 view .LVU130
  539 0034 002A     		cmp	r2, #0
  540 0036 15D0     		beq	.L28
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 31
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 31
 
 
  541              	.LVL37:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  584 006c E4E7     		b	.L24
  585              	.LVL44:
  586              	.L27:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 32
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 32
 
 
  462:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   }
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  633              		@ args = 0, pretend = 0, frame = 0
  634              		@ frame_needed = 0, uses_anonymous_args = 0
  483:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* Process Locked */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 33
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 33
 
 
  635              		.loc 1 483 1 is_stmt 0 view .LVU152
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
   26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 34
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 34
 
 
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
   81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 35
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 35
 
 
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
  140:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 36
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 36
 
 
  141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  195:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __TZ_STACK_SEAL_VALUE     0xFEF5EDA5FEF5EDA5ULL
  196:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  197:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 37
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 37
 
 
  198:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  252:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  253:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
  254:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 38
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 38
 
 
  255:Drivers/CMSIS/Include/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  309:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
  310:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  311:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 39
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 39
 
 
  312:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  366:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  367:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  368:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse bit order of value
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 40
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 40
 
 
  369:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the bit order of the given value.
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  423:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
  424:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
  425:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 41
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 41
 
 
  426:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  480:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
  481:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  482:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 42
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 42
 
 
  483:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  537:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Remove the exclusive lock
  538:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Removes the exclusive lock which is created by LDREX.
  539:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 43
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 43
 
 
  540:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __CLREX(void)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  594:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  595:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  596:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 44
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 44
 
 
  597:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("rrx %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  651:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  652:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDRT(volatile uint32_t *ptr)
  653:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 45
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 45
 
 
  654:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  708:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  709:Drivers/CMSIS/Include/cmsis_gcc.h ****   if ((sat >= 1U) && (sat <= 32U))
  710:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 46
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 46
 
 
  711:Drivers/CMSIS/Include/cmsis_gcc.h ****     const int32_t max = (int32_t)((1U << (sat - 1U)) - 1U);
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  765:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  766:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldab %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  767:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 47
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 47
 
 
  768:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  822:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  823:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  824:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 48
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 48
 
 
  825:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  879:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  880:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  881:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 49
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 49
 
 
  882:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  936:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  937:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  938:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 50
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 50
 
 
  939:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  993:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  994:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  995:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 51
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 51
 
 
  996:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1050:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
 1051:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get xPSR Register
 1052:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the xPSR Register.
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 52
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 52
 
 
 1053:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               xPSR Register value
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1107:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
 1108:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer (PSP) when in secure sta
 1109:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 53
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 53
 
 
 1110:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1164:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
 1165:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSP_NS(uint32_t topOfMainStack)
 1166:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 54
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 54
 
 
 1167:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp_ns, %0" : : "r" (topOfMainStack) : );
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  670              		.thumb
  671              		.syntax unified
  672              	.LBE32:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 55
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 55
 
 
  673              	.LBE31:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  697              	.LVL53:
  698              	.LBB35:
  699              	.LBI35:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 56
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 56
 
 
 1234:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  746              	.LVL58:
  747              	.LFB341:
  502:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   /* Process Locked */
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 57
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 57
 
 
  748              		.loc 1 502 1 is_stmt 1 view -0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  789              	.LBE38:
  507:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  790              		.loc 1 507 3 is_stmt 1 discriminator 2 view .LVU197
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 58
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 58
 
 
  791              	.LBB40:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  836              		.loc 1 512 3 discriminator 2 view .LVU210
  512:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** }
  837              		.loc 1 512 10 is_stmt 0 discriminator 2 view .LVU211
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 59
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 59
 
 
  838 002a 0020     		movs	r0, #0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  528:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  885              		.loc 1 528 3 discriminator 2 view .LVU221
  886 000c 8425     		movs	r5, #132
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 60
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 60
 
 
  887 000e 0120     		movs	r0, #1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  551:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  926              		.loc 1 551 3 is_stmt 1 discriminator 2 view .LVU237
  551:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 61
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 61
 
 
  927              		.loc 1 551 3 discriminator 2 view .LVU238
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  973              		.loc 1 563 3 is_stmt 1 view .LVU248
  566:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  974              		.loc 1 566 3 view .LVU249
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 62
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 62
 
 
  569:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1013              		.loc 1 586 17 is_stmt 0 discriminator 2 view .LVU265
  1014 002c 2023     		movs	r3, #32
  1015              	.LVL78:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 63
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 63
 
 
  586:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1061              	.LCFI10:
  1062              		.cfi_def_cfa_offset 24
  1063              		.cfi_offset 3, -24
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 64
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 64
 
 
  1064              		.cfi_offset 4, -20
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1103 0022 1960     		str	r1, [r3]
  627:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  1104              		.loc 1 627 3 is_stmt 1 discriminator 2 view .LVU292
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 65
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 65
 
 
  1105 0024 2068     		ldr	r0, [r4]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1147              		.section	.text.HAL_UARTEx_SetRxFifoThreshold,"ax",%progbits
  1148              		.align	1
  1149              		.global	HAL_UARTEx_SetRxFifoThreshold
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 66
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 66
 
 
  1150              		.syntax unified
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1193 0018 A251     		str	r2, [r4, r6]
  670:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  1194              		.loc 1 670 3 is_stmt 1 discriminator 2 view .LVU318
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 67
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 67
 
 
  670:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1234              		.loc 1 690 1 view .LVU333
  1235              		@ sp needed
  1236              	.LVL98:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 68
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 68
 
 
  690:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1288 000c 0400     		movs	r4, r0
  1289 000e 0D00     		movs	r5, r1
  1290 0010 9046     		mov	r8, r2
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 69
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 69
 
 
  1291 0012 1F00     		movs	r7, r3
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  737:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     {
  1330              		.loc 1 737 56 discriminator 1 view .LVU354
  1331 0038 002B     		cmp	r3, #0
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 70
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 70
 
 
  1332 003a 02D1     		bne	.L55
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1370 005e E252     		strh	r2, [r4, r3]
  754:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  1371              		.loc 1 754 5 is_stmt 1 view .LVU371
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 71
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 71
 
 
  754:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1416              	.L59:
  757:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     uhMask = huart->Mask;
  1417              		.loc 1 757 5 discriminator 6 view .LVU382
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 72
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 72
 
 
  1418 009e 8022     		movs	r2, #128
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1459 00ca 6032     		adds	r2, r2, #96
  1460 00cc 7F21     		movs	r1, #127
  1461 00ce A152     		strh	r1, [r4, r2]
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 73
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 73
 
 
  1462 00d0 ECE7     		b	.L58
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1503              	.L87:
  800:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****           pdata16bits++;
  1504              		.loc 1 800 11 is_stmt 1 view .LVU409
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 74
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 74
 
 
  800:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****           pdata16bits++;
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1544              		.loc 1 776 31 view .LVU424
  1545 0124 002A     		cmp	r2, #0
  1546 0126 22D0     		beq	.L85
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 75
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 75
 
 
  779:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****       {
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1584 014e 2B70     		strb	r3, [r5]
  806:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****         }
  1585              		.loc 1 806 11 is_stmt 1 view .LVU442
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 76
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 76
 
 
  806:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****         }
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1625 0174 A25A     		ldrh	r2, [r4, r2]
  826:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     /* At end of Rx process, restore huart->RxState to Ready */
  1626              		.loc 1 826 32 view .LVU458
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 77
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 77
 
 
  1627 0176 9B1A     		subs	r3, r3, r2
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1669 0198 F5E7     		b	.L54
  1670              	.LVL126:
  1671              	.L75:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 78
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 78
 
 
  741:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****       }
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  864:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     {
  1718              		.loc 1 864 25 discriminator 1 view .LVU481
  1719 0010 002A     		cmp	r2, #0
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 79
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 79
 
 
  1720 0012 29D0     		beq	.L96
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1758 003a 01D0     		beq	.L99
  897:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     }
  1759              		.loc 1 897 14 view .LVU498
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 80
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 80
 
 
  1760 003c 0120     		movs	r0, #1
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1801 004c 83F31088 		MSR primask, r3
  1802              	@ 0 "" 2
  1803              	.LVL135:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 81
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 81
 
 
  1804              		.loc 2 1236 3 is_stmt 0 view .LVU513
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  906:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  1851              		.loc 1 906 1 view .LVU523
  1852 0062 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 82
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 82
 
 
  1853              	.LVL141:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1899 0006 C358     		ldr	r3, [r0, r3]
  936:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   {
  1900              		.loc 1 936 6 view .LVU534
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 83
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 83
 
 
  1901 0008 202B     		cmp	r3, #32
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  1939 0030 2000     		movs	r0, r4
  1940 0032 FFF7FEFF 		bl	UART_Start_Receive_DMA
  1941              	.LVL147:
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 84
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 84
 
 
  961:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****     {
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
 1209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  1980              		.loc 2 1209 3 is_stmt 0 view .LVU567
  1981              		.thumb
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 85
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 85
 
 
  1982              		.syntax unified
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  982:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c ****   }
  2028              		.loc 1 982 12 view .LVU578
  2029 0062 0220     		movs	r0, #2
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 86
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 86
 
 
  2030              	.LVL154:
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  2076              	.LVL161:
 1015:Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c **** 
  2077              		.loc 1 1015 1 view .LVU589
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 87
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 87
 
 
  2078              		@ sp needed
@@ -5187,57 +5187,57 @@ ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 1
  2104              		.file 10 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h"
  2105              		.file 11 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_dma.h"
  2106              		.file 12 "Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h"
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 88
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 88
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32u0xx_hal_uart_ex.c
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:19     .text.UARTEx_Wakeup_AddressConfig:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:24     .text.UARTEx_Wakeup_AddressConfig:00000000 UARTEx_Wakeup_AddressConfig
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:67     .text.UARTEx_SetNbDataToProcess:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:72     .text.UARTEx_SetNbDataToProcess:00000000 UARTEx_SetNbDataToProcess
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:174    .text.UARTEx_SetNbDataToProcess:00000048 $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2093   .rodata.numerator.1:00000000 numerator.1
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2087   .rodata.denominator.0:00000000 denominator.0
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:180    .text.HAL_RS485Ex_Init:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:186    .text.HAL_RS485Ex_Init:00000000 HAL_RS485Ex_Init
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:333    .text.HAL_RS485Ex_Init:0000008c $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:339    .text.HAL_UARTEx_WakeupCallback:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:345    .text.HAL_UARTEx_WakeupCallback:00000000 HAL_UARTEx_WakeupCallback
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:361    .text.HAL_UARTEx_RxFifoFullCallback:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:367    .text.HAL_UARTEx_RxFifoFullCallback:00000000 HAL_UARTEx_RxFifoFullCallback
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:383    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:389    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 HAL_UARTEx_TxFifoEmptyCallback
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:405    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:411    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 HAL_MultiProcessorEx_AddressLength_Set
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:478    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:484    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 HAL_UARTEx_StopModeWakeUpSourceConfig
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:616    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000080 $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:622    .text.HAL_UARTEx_EnableStopMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:628    .text.HAL_UARTEx_EnableStopMode:00000000 HAL_UARTEx_EnableStopMode
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:739    .text.HAL_UARTEx_DisableStopMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:745    .text.HAL_UARTEx_DisableStopMode:00000000 HAL_UARTEx_DisableStopMode
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:855    .text.HAL_UARTEx_EnableFifoMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:861    .text.HAL_UARTEx_EnableFifoMode:00000000 HAL_UARTEx_EnableFifoMode
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:952    .text.HAL_UARTEx_DisableFifoMode:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:958    .text.HAL_UARTEx_DisableFifoMode:00000000 HAL_UARTEx_DisableFifoMode
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1041   .text.HAL_UARTEx_DisableFifoMode:0000003c $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1046   .text.HAL_UARTEx_SetTxFifoThreshold:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1052   .text.HAL_UARTEx_SetTxFifoThreshold:00000000 HAL_UARTEx_SetTxFifoThreshold
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1148   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1154   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 HAL_UARTEx_SetRxFifoThreshold
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1249   .text.HAL_UARTEx_SetRxFifoThreshold:0000004c $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1254   .text.HAL_UARTEx_ReceiveToIdle:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1260   .text.HAL_UARTEx_ReceiveToIdle:00000000 HAL_UARTEx_ReceiveToIdle
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1680   .text.HAL_UARTEx_ReceiveToIdle:000001a0 $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1685   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1691   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 HAL_UARTEx_ReceiveToIdle_IT
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1875   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:1881   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 HAL_UARTEx_ReceiveToIdle_DMA
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2059   .text.HAL_UARTEx_GetRxEventType:00000000 $t
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2065   .text.HAL_UARTEx_GetRxEventType:00000000 HAL_UARTEx_GetRxEventType
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2084   .rodata.denominator.0:00000000 $d
-C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s:2090   .rodata.numerator.1:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:19     .text.UARTEx_Wakeup_AddressConfig:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:24     .text.UARTEx_Wakeup_AddressConfig:00000000 UARTEx_Wakeup_AddressConfig
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:67     .text.UARTEx_SetNbDataToProcess:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:72     .text.UARTEx_SetNbDataToProcess:00000000 UARTEx_SetNbDataToProcess
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:174    .text.UARTEx_SetNbDataToProcess:00000048 $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2093   .rodata.numerator.1:00000000 numerator.1
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2087   .rodata.denominator.0:00000000 denominator.0
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:180    .text.HAL_RS485Ex_Init:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:186    .text.HAL_RS485Ex_Init:00000000 HAL_RS485Ex_Init
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:333    .text.HAL_RS485Ex_Init:0000008c $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:339    .text.HAL_UARTEx_WakeupCallback:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:345    .text.HAL_UARTEx_WakeupCallback:00000000 HAL_UARTEx_WakeupCallback
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:361    .text.HAL_UARTEx_RxFifoFullCallback:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:367    .text.HAL_UARTEx_RxFifoFullCallback:00000000 HAL_UARTEx_RxFifoFullCallback
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:383    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:389    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 HAL_UARTEx_TxFifoEmptyCallback
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:405    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:411    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 HAL_MultiProcessorEx_AddressLength_Set
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:478    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:484    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 HAL_UARTEx_StopModeWakeUpSourceConfig
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:616    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000080 $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:622    .text.HAL_UARTEx_EnableStopMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:628    .text.HAL_UARTEx_EnableStopMode:00000000 HAL_UARTEx_EnableStopMode
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:739    .text.HAL_UARTEx_DisableStopMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:745    .text.HAL_UARTEx_DisableStopMode:00000000 HAL_UARTEx_DisableStopMode
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:855    .text.HAL_UARTEx_EnableFifoMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:861    .text.HAL_UARTEx_EnableFifoMode:00000000 HAL_UARTEx_EnableFifoMode
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:952    .text.HAL_UARTEx_DisableFifoMode:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:958    .text.HAL_UARTEx_DisableFifoMode:00000000 HAL_UARTEx_DisableFifoMode
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1041   .text.HAL_UARTEx_DisableFifoMode:0000003c $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1046   .text.HAL_UARTEx_SetTxFifoThreshold:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1052   .text.HAL_UARTEx_SetTxFifoThreshold:00000000 HAL_UARTEx_SetTxFifoThreshold
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1148   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1154   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 HAL_UARTEx_SetRxFifoThreshold
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1249   .text.HAL_UARTEx_SetRxFifoThreshold:0000004c $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1254   .text.HAL_UARTEx_ReceiveToIdle:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1260   .text.HAL_UARTEx_ReceiveToIdle:00000000 HAL_UARTEx_ReceiveToIdle
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1680   .text.HAL_UARTEx_ReceiveToIdle:000001a0 $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1685   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1691   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 HAL_UARTEx_ReceiveToIdle_IT
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1875   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:1881   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 HAL_UARTEx_ReceiveToIdle_DMA
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2059   .text.HAL_UARTEx_GetRxEventType:00000000 $t
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2065   .text.HAL_UARTEx_GetRxEventType:00000000 HAL_UARTEx_GetRxEventType
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2084   .rodata.denominator.0:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccmPloVU.s:2090   .rodata.numerator.1:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_idiv
@@ -5247,7 +5247,7 @@ HAL_UART_MspInit
 UART_AdvFeatureConfig
 HAL_GetTick
 UART_WaitOnFlagUntilTimeout
-ARM GAS  C:\Users\upo\AppData\Local\Temp\ccWrNUBA.s 			page 89
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccmPloVU.s 			page 89
 
 
 UART_Start_Receive_IT

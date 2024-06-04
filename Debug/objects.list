@@ -1,4 +1,4 @@
-"./Core/Src/AB1805.o"
+"./Core/Src/AB1805_RK.o"
 "./Core/Src/adc.o"
 "./Core/Src/adc_if.o"
 "./Core/Src/gpio.o"

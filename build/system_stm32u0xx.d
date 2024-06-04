@@ -7,7 +7,7 @@ build/system_stm32u0xx.o: Core/Src/system_stm32u0xx.c \
  Drivers/CMSIS/Include/mpu_armv7.h \
  Drivers/CMSIS/Device/ST/STM32U0xx/Include/system_stm32u0xx.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
- Core\Inc/stm32u0xx_hal_conf.h \
+ Core/Inc/stm32u0xx_hal_conf.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
@@ -45,7 +45,7 @@ Drivers/CMSIS/Include/cmsis_gcc.h:
 Drivers/CMSIS/Include/mpu_armv7.h:
 Drivers/CMSIS/Device/ST/STM32U0xx/Include/system_stm32u0xx.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
-Core\Inc/stm32u0xx_hal_conf.h:
+Core/Inc/stm32u0xx_hal_conf.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:

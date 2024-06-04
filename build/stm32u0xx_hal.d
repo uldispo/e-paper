@@ -1,6 +1,6 @@
 build/stm32u0xx_hal.o: Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal.c \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
- Core\Inc/stm32u0xx_hal_conf.h \
+ Core/Inc/stm32u0xx_hal_conf.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h \
  Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u0xx.h \
@@ -37,7 +37,7 @@ build/stm32u0xx_hal.o: Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal.c \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
  Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
-Core\Inc/stm32u0xx_hal_conf.h:
+Core/Inc/stm32u0xx_hal_conf.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h:
 Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_def.h:
 Drivers/CMSIS/Device/ST/STM32U0xx/Include/stm32u0xx.h:

@@ -75,7 +75,7 @@ Core/Src/system_stm32u0xx.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Core/Src/printf.c \
-Core/Src/AB1805.c 
+Core/Src/AB1805_RK.c 
 
 
 # ASM sources
@@ -136,12 +136,12 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
--ICore\Inc \
+-ICore/Inc \
 -IDrivers/STM32U0xx_HAL_Driver/Inc \
 -IDrivers/STM32U0xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32U0xx/Include \
 -IDrivers/CMSIS/Include \
--ICore/Inc
+
 
 
 # compile gcc flags
