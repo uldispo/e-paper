@@ -21,7 +21,7 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "compilerPath": "C:\\SYSGCC\\12.3 REL1\\BIN\\ARM-NONE-EABI-GCC.EXE",
-            "intelliSenseMode": "gcc-arm"
+            "intelliSenseMode": "windows-gcc-arm"
         }
     ],
     "version": 4

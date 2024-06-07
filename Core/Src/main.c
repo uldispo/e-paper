@@ -57,9 +57,9 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void timeout_reset(void);
-/* USER CODE BEGIN PFP */
 
+/* USER CODE BEGIN PFP */
+void timeout_reset(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,21 +107,20 @@ int main(void)
   LED1_ON();
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
-
-//  resetConfig(0);
-//  HAL_Delay(1500);
-//  deepPowerDown(30);
+  printf("Main  %d\n", detectChip());
+  //  resetConfig(0);
+  //  HAL_Delay(1500);
+  //  deepPowerDown(30);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-   resetConfig(0);
-   hex_dump();
-   deepPowerDown(30);
-   hex_dump();
-   LED1_OFF();
+  resetConfig(0);
+  //  hex_dump();
+  deepPowerDown(30);
+  hex_dump();
 
   while (1)
   {

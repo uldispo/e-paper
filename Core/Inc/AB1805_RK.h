@@ -14,7 +14,7 @@ enum WakeReason
     DEEP_POWER_DOWN, //!< The deepPowerDown() function was used (RTC was in sleep mode)
     COUNTDOWN_TIMER, //!< The interruptCountdownTimer() was used
     ALARM            //!< RTC clock alarm (periodic or single) trigged wake
-};	// WakeReason
+}; // WakeReason
 
 /**
  * @brief Call this from main setup() to initialize the library.
@@ -102,7 +102,7 @@ bool setWDT(int seconds);
 // * This is done automatically right before reset (using the reset system event)
 // * so the watchdog won't trigger during a firmware update.
 // */
-//bool stopWDT() { return setWDT(0); };
+// bool stopWDT() { return setWDT(0); };
 //
 ///**
 // * @brief Resumes watchdog with same settings as before
@@ -113,7 +113,7 @@ bool setWDT(int seconds);
 // * It's safe to call resumeWDT() even if the WDT has never been set, it does nothing
 // * in this case, leaving the watchdog off.
 // */
-//bool resumeWDT() { return setWDT(-1); };
+// bool resumeWDT() { return setWDT(-1); };
 
 /**
  * @brief Get the time from the RTC as a time_t

@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "e-paper_18x5",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"concepts": "cpp",
+			"cstdio": "cpp",
+			"type_traits": "cpp",
+			"new": "cpp",
+			"typeinfo": "cpp",
+			"cstdint": "cpp",
+			"stddef.h": "c",
+			"ab1815_registers.h": "c",
+			"time.h": "c",
+			"ab1815_a.h": "c",
+			"ab1805.h": "c",
+			"stdint.h": "c"
+		}
+	}
+}

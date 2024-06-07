@@ -44,11 +44,11 @@ static inline void spi_select_slave(bool select)
 {
     if (select)
     {
-        RTC_L();
+        RTC_H();
     }
     else
     {
-        RTC_H();
+        RTC_L();
     }
 }
 
@@ -152,11 +152,11 @@ bool resetConfig(uint32_t flags)
         // and ACAL to 0 (however REG_OSC_CTRL_DEFAULT already sets ACAL to 0)
         oscCtrl |= REG_OSC_CTRL_OSEL | REG_OSC_CTRL_FOS;
     }
-    write_rtc_register(REG_OSC_CTRL, oscCtrl);
-    write_rtc_register(REG_TRICKLE, REG_TRICKLE_DEFAULT);
+    // write_rtc_register(REG_OSC_CTRL, oscCtrl);
+    // write_rtc_register(REG_TRICKLE, REG_TRICKLE_DEFAULT);
     write_rtc_register(REG_BREF_CTRL, REG_BREF_CTRL_DEFAULT);
     write_rtc_register(REG_AFCTRL, REG_AFCTRL_DEFAULT);
-    write_rtc_register(REG_BATMODE_IO, REG_BATMODE_IO_DEFAULT);
+    // write_rtc_register(REG_BATMODE_IO, REG_BATMODE_IO_DEFAULT);
     write_rtc_register(REG_OCTRL, REG_OCTRL_DEFAULT);
 
     return true;
@@ -334,6 +334,7 @@ bool deepPowerDown(int seconds)
         printf(errorMsg, __LINE__);
         return false;
     }
+    printf("Ox18: %X  0x19: %X  \n", read_rtc_register(0x18), read_rtc_register(0x19));
 
     // Make sure STOP (stop clocking system is 0, otherwise sleep mode cannot be entered)
     // PWR2 = 1 (low resistance power switch)
@@ -360,15 +361,16 @@ bool deepPowerDown(int seconds)
         printf(errorMsg, __LINE__);
         return false;
     }
-
-    // Enter sleep mode and set nRST low
-    bResult = write_rtc_register(REG_SLEEP_CTRL, REG_SLEEP_CTRL_SLP | REG_SLEEP_CTRL_SLRES);
+    hex_dump();
+    HAL_Delay(1000);
+    // Enter sleep mode
+    bResult = write_rtc_register(REG_SLEEP_CTRL, REG_SLEEP_CTRL_SLP | 0x01); //REG_SLEEP_CTRL_SLP | 0x01
     if (!bResult)
     {
         printf(errorMsg, __LINE__);
         return false;
     }
-
+    bResult = write_rtc_register(REG_TIMER_CTRL, 0xc2); // enable
     // _log.trace("delay in case we didn't power down");
     uint32_t start = HAL_GetTick();
     while ((HAL_GetTick() - start) < (uint32_t)(seconds * 1000))
@@ -377,7 +379,7 @@ bool deepPowerDown(int seconds)
         HAL_Delay(1000);
     }
 
-    printf("didn't power down");
+    printf("didn't power down\n");
 
     return true;
 }
@@ -428,10 +430,12 @@ bool setCountdownTimer(int value, bool minutes)
     }
 
     // Set the TFS frequency to 1/60 Hz for minutes or 1 Hz for seconds
-    uint8_t tfs = (minutes ? REG_TIMER_CTRL_TFS_1_60 : REG_TIMER_CTRL_TFS_1);
+    // uint8_t tfs = (minutes ? REG_TIMER_CTRL_TFS_1_60 : REG_TIMER_CTRL_TFS_1);
 
     // Enable countdown timer (TE = 1) in countdown timer control register
-    bResult = write_rtc_register(REG_TIMER_CTRL, REG_TIMER_CTRL_TE | tfs);
+    // bResult = write_rtc_register(REG_TIMER_CTRL, REG_TIMER_CTRL_TE | tfs);
+    bResult = write_rtc_register(REG_TIMER_CTRL, 0x42); // 0xc2
+
     if (!bResult)
     {
         printf(errorMsg, __LINE__);
@@ -667,7 +671,8 @@ inline static uint8_t read_rtc_register(uint8_t reg_addr)
 
 inline static uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 {
-    uint8_t address = AB1815_SPI_WRITE(offset);
+    // uint8_t address = AB1815_SPI_WRITE(offset);
+    uint8_t address = offset | 0x80;
     uint32_t primask_bit = utils_enter_critical_section();
 
     if (!((SPI1)->CR1 & SPI_CR1_SPE))
@@ -686,7 +691,7 @@ inline static uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 void hex_dump(void)
 {
     uint8_t buffer[9];
-    for (uint8_t pos = 0; pos < 0x7F; pos += 8)
+    for (uint8_t pos = 0; pos < 0x3F; pos += 8) // 0x7f
     {
 
         uint8_t ii = 0;
@@ -790,8 +795,6 @@ bool resumeWDT()
     return setWDT(-1);
 }
 
-
-
 // ################################################################################################
 
 const uint32_t RESET_PRESERVE_REPEATING_TIMER = 0x00000001; //!< When resetting registers, leave repeating timer settings intact
@@ -833,7 +836,7 @@ const uint8_t REG_CTRL_1_RSP = 0x08;            //!< Control register 1, Reset p
 const uint8_t REG_CTRL_1_ARST = 0x04;           //!< Control register 1, Auto reset enable
 const uint8_t REG_CTRL_1_PWR2 = 0x02;           //!< Control register 1, PWW/nIRQ pull-down enable
 const uint8_t REG_CTRL_1_WRTC = 0x01;           //!< Control register 1, write RTC mode
-const uint8_t REG_CTRL_1_DEFAULT = 0x13;        //!< Control register 1, 0b00010011 (OUT | RSO | PWR2 | WRTC)
+const uint8_t REG_CTRL_1_DEFAULT = 0x12;        //!< Control register 1, 0b00010011 (OUT | RSO | PWR2 | WRTC) //!!0x12 not WRTC
 const uint8_t REG_CTRL_2 = 0x11;                //!< Control register 2
 const uint8_t REG_CTRL_2_RS1E = 0x20;           //!< Control register 2, nIRQ2 output mode
 const uint8_t REG_CTRL_2_OUT2S_MASK = 0x1c;     //!< Control register 2, nIRQ2 output mode
