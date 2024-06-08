@@ -207,7 +207,7 @@ bool updateWakeReason()
 bool setWDT(int seconds)
 {
     bool bResult = false;
-    printf("setWDT %d\n", seconds);
+    //printf("setWDT %d\n", seconds);
 
     if (seconds < 0)
     {
@@ -219,7 +219,6 @@ bool setWDT(int seconds)
         // Disable WDT
         bResult = write_rtc_register(REG_WDT, 0x00);
 
-        printf("watchdog cleared bResult=%d\n", bResult);
 
         watchdogSecs = 0;
         watchdogUpdatePeriod = 0;
@@ -334,7 +333,7 @@ bool deepPowerDown(int seconds)
         printf(errorMsg, __LINE__);
         return false;
     }
-    printf("Ox18: %X  0x19: %X  \n", read_rtc_register(0x18), read_rtc_register(0x19));
+
 
     // Make sure STOP (stop clocking system is 0, otherwise sleep mode cannot be entered)
     // PWR2 = 1 (low resistance power switch)
@@ -362,21 +361,21 @@ bool deepPowerDown(int seconds)
         return false;
     }
     hex_dump();
-    HAL_Delay(1000);
+    HAL_Delay(1);
     // Enter sleep mode
-    bResult = write_rtc_register(REG_SLEEP_CTRL, REG_SLEEP_CTRL_SLP | 0x01); //REG_SLEEP_CTRL_SLP | 0x01
+    bResult = write_rtc_register(REG_SLEEP_CTRL, REG_SLEEP_CTRL_SLP | REG_SLEEP_CTRL_SLRES); // REG_SLEEP_CTRL_SLP | 0x01
     if (!bResult)
     {
         printf(errorMsg, __LINE__);
         return false;
     }
-    bResult = write_rtc_register(REG_TIMER_CTRL, 0xc2); // enable
+    // bResult = write_rtc_register(REG_TIMER_CTRL, 0xc2); // enable
     // _log.trace("delay in case we didn't power down");
     uint32_t start = HAL_GetTick();
     while ((HAL_GetTick() - start) < (uint32_t)(seconds * 1000))
     {
         printf("REG_SLEEP_CTRL=0x%2x\n", read_rtc_register(REG_SLEEP_CTRL));
-        HAL_Delay(1000);
+        HAL_Delay(1);
     }
 
     printf("didn't power down\n");
@@ -430,11 +429,11 @@ bool setCountdownTimer(int value, bool minutes)
     }
 
     // Set the TFS frequency to 1/60 Hz for minutes or 1 Hz for seconds
-    // uint8_t tfs = (minutes ? REG_TIMER_CTRL_TFS_1_60 : REG_TIMER_CTRL_TFS_1);
+    uint8_t tfs = (minutes ? REG_TIMER_CTRL_TFS_1_60 : REG_TIMER_CTRL_TFS_1);
 
     // Enable countdown timer (TE = 1) in countdown timer control register
-    // bResult = write_rtc_register(REG_TIMER_CTRL, REG_TIMER_CTRL_TE | tfs);
-    bResult = write_rtc_register(REG_TIMER_CTRL, 0x42); // 0xc2
+    bResult = write_rtc_register(REG_TIMER_CTRL, REG_TIMER_CTRL_TE | tfs);
+    // bResult = write_rtc_register(REG_TIMER_CTRL, 0x42); // 0xc2
 
     if (!bResult)
     {

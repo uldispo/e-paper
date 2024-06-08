@@ -107,10 +107,6 @@ int main(void)
   LED1_ON();
   uint32_t clk = HAL_RCC_GetSysClockFreq();
   printf("\nMAIN. Power ON.   %d\n", clk);
-  printf("Main  %d\n", detectChip());
-  //  resetConfig(0);
-  //  HAL_Delay(1500);
-  //  deepPowerDown(30);
 
   /* USER CODE END 2 */
 
@@ -118,7 +114,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   resetConfig(0);
-  //  hex_dump();
   deepPowerDown(30);
   hex_dump();
 
@@ -131,7 +126,6 @@ int main(void)
     LED1_ON();
     HAL_Delay(100);
     LED1_OFF();
-    //    hex_dump();
     HAL_Delay(100);
   }
   /* USER CODE END 3 */
@@ -181,7 +175,7 @@ void SystemClock_Config(void)
 void print_error(const char *func, uint32_t line)
 {
   printf(" *** Error:  %s ,   %d\n", func, line);
-  HAL_Delay(1000);
+  HAL_Delay(100);
   timeout_reset();
 }
 
@@ -189,8 +183,10 @@ void timeout_reset(void)
 {
   LL_PWR_ClearFlag_CSB(); // Clear standby flag
   // printf(" *** timeout_reset:  %s    %d\n", func, line);
-  HAL_Delay(1000);
-  NVIC_SystemReset();
+  HAL_Delay(100);
+  // NVIC_SystemReset();
+  while (1)
+    ;
 }
 
 /* USER CODE END 4 */
