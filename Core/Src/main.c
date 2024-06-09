@@ -28,9 +28,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "printf.h"
 #include "AB1805_RK.h"
 #include "stm32u0xx_ll_spi.h"
+#include "adc_if.h"
 
 /* USER CODE END Includes */
 
@@ -111,15 +111,20 @@ int main(void)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
-    write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
     resetConfig(0);
-    deepPowerDown(30);
+    write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
+    // deepPowerDown(30);
     hex_dump();
   }
-  else
-  {
-    printf("\nMAIN. Startup from RTC\n"); // Startup from RTC
-    }
+
+  printf("\nMAIN. Startup from RTC\n"); // Startup from RTC
+  Activate_ADC();
+  int32_t vBat = get_vbat();
+  printf("vBat = %d\n", vBat);
+  // vBat = vBat / 10.0; // go with 3 digits
+  vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+  HAL_Delay(5);
+  deepPowerDown(30);
 
   /* USER CODE END 2 */
 

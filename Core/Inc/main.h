@@ -34,11 +34,15 @@ extern "C"
 /* USER CODE BEGIN Includes */
 #include <stm32u073xx.h>
 #include "stm32u0xx_ll_pwr.h"
+#include "stm32u0xx_hal_adc.h"
+#include "stm32u0xx.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include "printf.h"
 
     /* USER CODE END Includes */
 

@@ -72,8 +72,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry excluding="CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry excluding="STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/arm|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/iar|CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -146,8 +146,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry excluding="CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry excluding="STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/arm|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/iar|CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
