@@ -726,6 +726,10 @@ int bcdToValue(uint8_t bcd);
 uint8_t valueToBcd(int value);
 
 void hex_dump(void);
+uint8_t read(uint8_t reg);                 // wraper for read_rtc_register
+uint8_t write(uint8_t reg, uint8_t value); // wraper for write_rtc_register
+
+//
 
 extern const uint32_t RESET_PRESERVE_REPEATING_TIMER; //!< When resetting registers, leave repeating timer settings intact
 extern const uint32_t RESET_DISABLE_XT;               //!< When resetting registers, disable XT oscillator

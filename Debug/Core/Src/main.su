@@ -1,7 +1,7 @@
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_pwr.h:1479:22:LL_PWR_ClearFlag_CSB	8	static
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_spi.h:358:22:LL_SPI_Enable	16	static
-../Core/Src/main.c:74:5:main	16	static
-../Core/Src/main.c:138:6:SystemClock_Config	112	static
-../Core/Src/main.c:175:6:print_error	16	static
-../Core/Src/main.c:182:6:timeout_reset	8	static
-../Core/Src/main.c:198:6:Error_Handler	8	static,ignoring_inline_asm
+../Core/Src/main.c:74:5:main	24	static
+../Core/Src/main.c:147:6:SystemClock_Config	112	static
+../Core/Src/main.c:184:6:print_error	16	static
+../Core/Src/main.c:191:6:timeout_reset	8	static
+../Core/Src/main.c:207:6:Error_Handler	8	static,ignoring_inline_asm

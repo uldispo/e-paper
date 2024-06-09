@@ -207,7 +207,7 @@ bool updateWakeReason()
 bool setWDT(int seconds)
 {
     bool bResult = false;
-    //printf("setWDT %d\n", seconds);
+    // printf("setWDT %d\n", seconds);
 
     if (seconds < 0)
     {
@@ -218,7 +218,6 @@ bool setWDT(int seconds)
     {
         // Disable WDT
         bResult = write_rtc_register(REG_WDT, 0x00);
-
 
         watchdogSecs = 0;
         watchdogUpdatePeriod = 0;
@@ -334,7 +333,6 @@ bool deepPowerDown(int seconds)
         return false;
     }
 
-
     // Make sure STOP (stop clocking system is 0, otherwise sleep mode cannot be entered)
     // PWR2 = 1 (low resistance power switch)
     // (also would probably work with PWR2 = 0, as nIRQ2 should be high-true for sleep mode)
@@ -375,7 +373,7 @@ bool deepPowerDown(int seconds)
     while ((HAL_GetTick() - start) < (uint32_t)(seconds * 1000))
     {
         printf("REG_SLEEP_CTRL=0x%2x\n", read_rtc_register(REG_SLEEP_CTRL));
-        HAL_Delay(1);
+        HAL_Delay(1000);
     }
 
     printf("didn't power down\n");
@@ -792,6 +790,16 @@ bool stopWDT()
 bool resumeWDT()
 {
     return setWDT(-1);
+}
+
+uint8_t read(uint8_t reg)
+{
+    return read_rtc_register(reg);
+}
+
+uint8_t write(uint8_t reg, uint8_t value)
+{
+    return write_rtc_register(reg, value);
 }
 
 // ################################################################################################

@@ -105,17 +105,26 @@ int main(void)
 
   LL_SPI_Enable(SPI1);
   LED1_ON();
-  uint32_t clk = HAL_RCC_GetSysClockFreq();
-  printf("\nMAIN. Power ON.   %d\n", clk);
+
+  uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
+  if ((wdalarm & 0xf8) != 0xa0)              // Startup from power up.
+  {
+    uint32_t clk = HAL_RCC_GetSysClockFreq();
+    printf("\nMAIN. First power ON.   %d\n", clk);
+    write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
+    resetConfig(0);
+    deepPowerDown(30);
+    hex_dump();
+  }
+  else
+  {
+    printf("\nMAIN. Startup from RTC\n"); // Startup from RTC
+    }
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-  resetConfig(0);
-  deepPowerDown(30);
-  hex_dump();
 
   while (1)
   {
