@@ -115,7 +115,7 @@ void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
    */
-  sConfig.Channel = ADC_CHANNEL_VBAT;
+  sConfig.Channel = ADC_CHANNEL_VREFINT;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLINGTIME_COMMON_1;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -178,8 +178,9 @@ uint32_t get_vbat(void)
 {
 	printf("get_vbat\n");
   uint32_t Vdda;
-  uint16_t Vrefcal = (*(uint16_t *)0x1FFF75AA);
+  uint16_t Vrefcal = (*(uint16_t *)0x1FFF6EA4);
 
+  printf("Vrefcal = %d\n", Vrefcal);
   /* Reset status variable of ADC unitary conversion before performing      */
   /* a new ADC conversion start.                                            */
   /* Note: Optionally, for this example purpose, check ADC unitary          */
@@ -213,16 +214,14 @@ uint32_t get_vbat(void)
   printf("uhADCxConvertedData:  %d\n", uhADCxConvertedData);
 
 		// #define VDDA_APPLI ((uint32_t)3300)
-      //uhADCxConvertedData_Voltage_mVolt = __LL_ADC_CALC_DATA_TO_VOLTAGE(VDDA_APPLI, uhADCxConvertedData, LL_ADC_RESOLUTION_12B);
 
-      uhADCxConvertedData_Voltage_mVolt = VDDA_APPLI * LL_ADC_RESOLUTION_12B/uhADCxConvertedData;
 
   printf("uhADCxConvertedData_Voltage_mVolt:  %d\n", uhADCxConvertedData_Voltage_mVolt);
   /* Note: ADC conversion data is stored into variable                      */
   /*       "uhADCxConvertedData".                                           */
   /*       (for debug: see variable content into watch window).             */
 
-  Vdda = uhADCxConvertedData_Voltage_mVolt * 3;
+  Vdda = (3000.0*Vrefcal)/uhADCxConvertedData;;
 
   return Vdda;
 }
