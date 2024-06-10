@@ -60,7 +60,7 @@ void ConversionStartPoll_ADC_GrpRegular(void);
 __IO uint16_t uhADCxConvertedData = (VAR_CONVERTED_DATA_INIT_VALUE); /* ADC group regular conversion data */
 
 /* Variables for ADC conversion data computation to physical values */
-__IO uint16_t uhADCxConvertedData_Voltage_mVolt = 0;  /* Value of voltage calculated from ADC conversion data (unit: mV) */
+__IO uint16_t uhADCxConvertedData_Voltage_mVolt = 0; /* Value of voltage calculated from ADC conversion data (unit: mV) */
 
 /* Variable to report status of ADC group regular unitary conversion          */
 /*  0: ADC group regular unitary conversion is not completed                  */
@@ -176,15 +176,8 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle)
 
 uint32_t get_vbat(void)
 {
-	printf("get_vbat\n");
+  printf("get_vbat\n");
   uint32_t Vdda;
-  uint16_t Vrefcal = (*(uint16_t *)0x1FFF6EA4);
-
-  printf("Vrefcal = %d\n", Vrefcal);
-  /* Reset status variable of ADC unitary conversion before performing      */
-  /* a new ADC conversion start.                                            */
-  /* Note: Optionally, for this example purpose, check ADC unitary          */
-  /*       conversion status before starting another ADC conversion.        */
 
   if (ubAdcGrpRegularUnitaryConvStatus != 0)
   {
@@ -213,16 +206,8 @@ uint32_t get_vbat(void)
   /* using LL ADC driver helper macro.                                    */
   printf("uhADCxConvertedData:  %d\n", uhADCxConvertedData);
 
-		// #define VDDA_APPLI ((uint32_t)3300)
-
-
-  printf("uhADCxConvertedData_Voltage_mVolt:  %d\n", uhADCxConvertedData_Voltage_mVolt);
-  /* Note: ADC conversion data is stored into variable                      */
-  /*       "uhADCxConvertedData".                                           */
-  /*       (for debug: see variable content into watch window).             */
-
-  Vdda = (3000.0*Vrefcal)/uhADCxConvertedData;;
-
+  Vdda = 1220 * 4096 / uhADCxConvertedData;
+  printf("Vdda = %d\n", Vdda);
   return Vdda;
 }
 

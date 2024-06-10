@@ -121,8 +121,7 @@ int main(void)
   Activate_ADC();
   int32_t vBat = get_vbat();
   printf("vBat = %d\n", vBat);
-  // vBat = vBat / 10.0; // go with 3 digits
-  vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+
   HAL_Delay(5);
   deepPowerDown(30);
 
