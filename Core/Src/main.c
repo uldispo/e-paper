@@ -28,9 +28,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "printf.h"
 #include "AB1805_RK.h"
 #include "stm32u0xx_ll_spi.h"
+#include "adc_if.h"
 
 /* USER CODE END Includes */
 
@@ -105,17 +105,30 @@ int main(void)
 
   LL_SPI_Enable(SPI1);
   LED1_ON();
-  uint32_t clk = HAL_RCC_GetSysClockFreq();
-  printf("\nMAIN. Power ON.   %d\n", clk);
+
+  uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
+  if ((wdalarm & 0xf8) != 0xa0)              // Startup from power up.
+  {
+    uint32_t clk = HAL_RCC_GetSysClockFreq();
+    printf("\nMAIN. First power ON.   %d\n", clk);
+    resetConfig(0);
+    write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
+    // deepPowerDown(30);
+    hex_dump();
+  }
+
+  printf("\nMAIN. Startup from RTC\n"); // Startup from RTC
+  Activate_ADC();
+  int32_t vBat = get_vbat();
+  printf("vBat = %d\n", vBat);
+
+  HAL_Delay(5);
+  deepPowerDown(30);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-  resetConfig(0);
-  deepPowerDown(30);
-  hex_dump();
 
   while (1)
   {

@@ -23,6 +23,7 @@
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.2064865264" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="genericBoard" valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.871838853" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.6 || Debug || true || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32U073CCTx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Core/Inc | ../Drivers/STM32U0xx_HAL_Driver/Inc | ../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy | ../Drivers/CMSIS/Device/ST/STM32U0xx/Include | ../Drivers/CMSIS/Include ||  ||  || USE_HAL_DRIVER | STM32U073xx ||  || Drivers | Core/Startup | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32U073CCTX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || None ||  ||  || " valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.debug.option.cpuclock.2020072133" name="Cpu clock frequence" superClass="com.st.stm32cube.ide.mcu.debug.option.cpuclock" useByScannerDiscovery="false" value="16" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.nanoprintffloat.515540026" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.nanoprintffloat" value="true" valueType="boolean"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.263845246" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/e-paper_18x5}/Debug" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.1228932126" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.657268047" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
@@ -72,8 +73,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry excluding="CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry excluding="STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/arm|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/iar|CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -146,8 +147,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry excluding="CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry excluding="STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/arm|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/iar|CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
