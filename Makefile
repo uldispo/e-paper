@@ -75,7 +75,22 @@ Core/Src/system_stm32u0xx.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Core/Src/printf.c \
-Core/Src/AB1805_RK.c 
+Core/Src/AB1805_RK.c \
+User/BME280/bme280.c \
+User/BME280/bme280_utils.c \
+User/e-Paper/calibri_20pts.c \
+User/e-Paper/calibri_24pts.c \
+User/e-Paper/calibri_28pts.c \
+User/e-Paper/calibri_36pts.c \
+User/e-Paper/calibri_72pts.c \
+User/e-Paper/calibri_80pts.c \
+User/e-Paper/calibri_88pts.c \
+User/e-Paper/calibri_104pts.c \
+User/e-Paper/DEV_Config.c \
+User/e-Paper/EPD_1in54_V2.c \
+User/e-Paper/font24.c \
+User/e-Paper/GUI_Paint.c \
+User/e-Paper/paint_sensor.c \
 
 
 # ASM sources
@@ -142,6 +157,8 @@ C_INCLUDES =  \
 -IDrivers/STM32U0xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32U0xx/Include \
 -IDrivers/CMSIS/Include \
+-IUser/e-Paper \
+-IUser/BME280 \
 
 
 

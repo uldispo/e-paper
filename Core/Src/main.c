@@ -59,7 +59,7 @@
 void SystemClock_Config(void);
 
 /* USER CODE BEGIN PFP */
-void timeout_reset(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -189,13 +189,13 @@ void print_error(const char *func, uint32_t line)
 {
   printf(" *** Error:  %s ,   %d\n", func, line);
   HAL_Delay(100);
-  timeout_reset();
+  timeout_reset(__func__, __LINE__);
 }
 
-void timeout_reset(void)
+__attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line)
 {
   LL_PWR_ClearFlag_CSB(); // Clear standby flag
-  // printf(" *** timeout_reset:  %s    %d\n", func, line);
+  printf(" *** timeout_reset:  %s    %d\n", func, line);
   HAL_Delay(100);
   // NVIC_SystemReset();
   while (1)

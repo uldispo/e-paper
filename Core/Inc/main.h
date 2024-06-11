@@ -35,6 +35,8 @@ extern "C"
 #include <stm32u073xx.h>
 #include "stm32u0xx_ll_pwr.h"
 #include "stm32u0xx_hal_adc.h"
+#include "stm32u0xx_ll_spi.h"
+#include "stm32u0xx_ll_rtc.h"
 #include "stm32u0xx.h"
 
 #include <stdio.h>
@@ -110,7 +112,10 @@ extern "C"
 #define RTC_H() GPIOB->BSRR = GPIO_BSRR_BS14 // CS RTC
 #define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
+#define timeout_value 3000
+
     void print_error(const char *func, uint32_t line);
+    __attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line);
 
     /* USER CODE END Private defines */
 
