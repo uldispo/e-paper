@@ -35,6 +35,9 @@
 #include "bme280.h"
 #include "bme280_utils.h"
 
+#include "paint_sensor.h"
+#include "EPD_1in54_V2.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,9 +68,9 @@ int8_t reslt = BME280_OK;
 uint8_t settings_sel;
 uint32_t req_delay;
 
-uint16_t H_old;
-uint16_t T_old;
-uint16_t vbat_old;
+uint16_t H_old = 0;
+uint16_t T_old = 0;
+uint16_t vbat_old = 0;
 
 /* USER CODE END PV */
 
@@ -132,8 +135,11 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  LL_SPI_Enable(SPI1);
+  LL_DBGMCU_DisableDBGStopMode(); // !!!__ Disable debug in stop mode __!!!
+                                  //	LL_DBGMCU_EnableDBGStopMode();
+
   LED1_ON();
+  LL_SPI_Enable(SPI1);
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
   if ((wdalarm & 0xf8) != 0xa0)              // Startup from power up.
@@ -144,10 +150,13 @@ int main(void)
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
     clearRTCRam(1);                 // The initial values of the RAM locations are undefined.
     hex_dump();
+    ESP_Init();
   }
   else
   {
     printf("\nMAIN. Startup from RTC\n");
+    EPD_1IN54_V2_Reset();
+    ESP_Init_standby();
   }
 
   dev.settings.osr_h = BME280_OVERSAMPLING_8X;

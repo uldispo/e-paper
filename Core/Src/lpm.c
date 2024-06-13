@@ -1,14 +1,14 @@
 /**
-  ******************************************************************************
-  * @file    lpm.c
-  * @brief   This file provides code for the configuration
-  *          of low power modes.
-  ******************************************************************************
-	*
-	*  In the Stop 2 mode, all I/O pins keep the same state as in the Run mode.
-	*
-	******************************************************************************
-	**/
+ ******************************************************************************
+ * @file    lpm.c
+ * @brief   This file provides code for the configuration
+ *          of low power modes.
+ ******************************************************************************
+ *
+ *  In the Stop 2 mode, all I/O pins keep the same state as in the Run mode.
+ *
+ ******************************************************************************
+ **/
 
 #include "lpm.h"
 #include "main.h"
@@ -18,7 +18,6 @@
 #include "stm32u0xx_ll_usart.h"
 #include "stm32u0xx_hal_rtc.h"
 
-
 static void gpio_from_stop2(void);
 static void gpio_before_stop2(void);
 
@@ -27,13 +26,13 @@ extern RTC_HandleTypeDef hrtc;
 extern uint8_t ubTransmissionComplete;
 extern uint8_t ubUSARTTransmissionComplete;
 extern uint32_t work_time;
-extern uint32_t time0;	
-
+extern uint32_t time0;
 
 // ##########################################################
 
-__attribute__((noreturn)) void PWR_EnterStandbyMode(void){
-	
+__attribute__((noreturn)) void PWR_EnterStandbyMode(void)
+{
+
 	uint32_t Timeout = 0; /* Variable used for Timeout management */
 	HAL_PWREx_EnablePullUpPullDownConfig();
 
@@ -86,8 +85,8 @@ __attribute__((noreturn)) void PWR_EnterStandbyMode(void){
 	/* Note: Periodic wakeup interrupt should be enabled to exit the device
 	   from low-power modes.*/
 	LL_RTC_EnableIT_WUT(RTC);
-	LL_RTC_WAKEUP_Enable(RTC); 
-	
+	LL_RTC_WAKEUP_Enable(RTC);
+
 	/* ######## ENTER IN STANDBY MODE ######################################*/
 	/* Reset Internal Wake up flag */
 	RTC_Clear_WUT();
@@ -98,12 +97,12 @@ __attribute__((noreturn)) void PWR_EnterStandbyMode(void){
 		/* Need to enable the Internal Wake-up line */
 		LL_PWR_EnableInternWU();
 	}
-	
-	LL_IWDG_ReloadCounter(IWDG);
-	
+
+	// LL_IWDG_ReloadCounter(IWDG);
+
 	HAL_SuspendTick();
-	work_time = (uint32_t)((DWT->CYCCNT - time0) / 24000.0);
-	// Configure MCU low-power mode for CPU deep sleep mode
+	// work_time = (uint32_t)((DWT->CYCCNT - time0) / 24000.0);
+	//  Configure MCU low-power mode for CPU deep sleep mode
 	PWR->CR1 |= PWR_CR1_LPMS_STANDBY; // PWR_CR1_LPMS_SHUTDOWN
 	(void)PWR->CR1;					  // Ensure that the previous PWR register operations have been completed
 
@@ -121,10 +120,8 @@ __attribute__((noreturn)) void PWR_EnterStandbyMode(void){
 		__WFI();
 	}
 
-	//	########__  never be here  ___##########	
+	//	########__  never be here  ___##########
 }
- 
-
 
 // ##########################################################################
 /**
@@ -141,10 +138,9 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 	{
 		Error_Handler();
 	}
-	
+
 	gpio_before_stop2();
-	
-	
+
 	HAL_SuspendTick();
 
 	/* Set Standby mode */
@@ -164,7 +160,6 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 
 	HAL_ResumeTick();
 	gpio_from_stop2();
-
 }
 
 // #############################################################################
@@ -212,44 +207,29 @@ static void gpio_before_stop2(void)
 							  LL_AHB2_GRP1_PERIPH_GPIOC |
 							  LL_AHB2_GRP1_PERIPH_GPIOD |
 							  LL_AHB2_GRP1_PERIPH_GPIOH);
-							  
 }
 
 //  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 static void gpio_from_stop2(void)
 {
- 
+
 	MX_GPIO_Init();
 	HAL_SPI_MspInit(&hspi1);
-	
+
 	/**USART2 GPIO Configuration
 	PA2   ------> USART2_TX
 	PA3   ------> USART2_RX
 	*/
 	LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
-	GPIO_InitStruct.Pin = LL_GPIO_PIN_2|LL_GPIO_PIN_3;
+	GPIO_InitStruct.Pin = LL_GPIO_PIN_2 | LL_GPIO_PIN_3;
 	GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
 	GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
 	GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
 	GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
 	GPIO_InitStruct.Alternate = LL_GPIO_AF_7;
 	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-	
 
 	/* Peripheral clock enable */
 	LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_ADC); // ???
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

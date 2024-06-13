@@ -38,6 +38,16 @@ extern "C"
 #include "stm32u0xx_ll_spi.h"
 #include "stm32u0xx_ll_rtc.h"
 #include "stm32u0xx.h"
+#include "stm32u0xx_ll_system.h"
+#include "stm32u0xx_ll_pwr.h"
+#include "stm32u0xx_ll_bus.h"
+#include "stm32u0xx_ll_cortex.h"
+#include "stm32u0xx_ll_utils.h"
+#include "stm32u0xx_ll_dma.h"
+#include "stm32u0xx_ll_exti.h"
+#include "stm32u0xx_ll_gpio.h"
+#include "stm32u0xx_ll_rcc.h"
+#include "stm32u0xx_ll_usart.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -113,6 +123,15 @@ extern "C"
 #define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
 #define timeout_value 3000
+
+#define RTC_WUT_TIME_SEC ((uint32_t)60) /* 60 s */
+
+#define RTC_Clear_WUT()            \
+    do                             \
+    {                              \
+        LL_RTC_ClearFlag_WUT(RTC); \
+        __ISB();                   \
+    } while (LL_RTC_IsActiveFlag_WUT(RTC));
 
     void print_error(const char *func, uint32_t line);
     __attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line);

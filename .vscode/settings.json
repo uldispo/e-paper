@@ -12,6 +12,8 @@
         "gui_paint.h": "c",
         "fonts.h": "c",
         "stdint.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "paint_sensor.h": "c",
+        "lpm.h": "c"
     }
 }

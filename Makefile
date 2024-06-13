@@ -76,6 +76,7 @@ Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Core/Src/printf.c \
 Core/Src/AB1805_RK.c \
+Core/Src/lpm.c \
 User/BME280/bme280.c \
 User/BME280/bme280_utils.c \
 User/e-Paper/calibri_20pts.c \
