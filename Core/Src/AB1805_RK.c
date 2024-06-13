@@ -688,7 +688,7 @@ inline static uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 void hex_dump(void)
 {
     uint8_t buffer[9];
-    for (uint8_t pos = 0; pos < 0x3F; pos += 8) // 0x7f
+    for (uint8_t pos = 0; pos < 0x7F; pos += 8) // 0x7f
     {
 
         uint8_t ii = 0;

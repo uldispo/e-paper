@@ -123,7 +123,7 @@ void humidity_out(uint16_t hum){
 //  **************************************************************************************
 
 int ESP_Init(void){ 
-	PRINTF("ESP_Init\n");
+	printf("ESP_Init\n");
     DEV_Module_Init();		// DC_L();SPI_CS_H();RST_H(); - set initial values
     EPD_1IN54_V2_Init();	// Reset pin set low, set LUT etc.
 
@@ -194,7 +194,7 @@ void Show_RTC_Calendar(void)
 
 //	**************************___ ESP_Init_after_standby ___**********************
 int ESP_Init_standby(void){ 
-	PRINTF("ESP_Init_standby\n");
+	printf("ESP_Init_standby\n");
     //Create a new image cache    
     /* !!!  you have to edit the startup_stm32fxxx.s file and set a heap size = 1400 !!!  */
     UWORD Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0)? (EPD_1IN54_V2_WIDTH / 8 ): (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;

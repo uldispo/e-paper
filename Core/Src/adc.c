@@ -176,7 +176,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle)
 
 uint32_t get_vbat(void)
 {
-  printf("get_vbat\n");
+  // printf("get_vbat\n");
   uint32_t Vdda;
 
   if (ubAdcGrpRegularUnitaryConvStatus != 0)
@@ -204,10 +204,10 @@ uint32_t get_vbat(void)
 
   /* Computation of ADC conversions raw data to physical values           */
   /* using LL ADC driver helper macro.                                    */
-  printf("uhADCxConvertedData:  %d\n", uhADCxConvertedData);
+  // printf("uhADCxConvertedData:  %d\n", uhADCxConvertedData);
 
   Vdda = 1220 * 4096 / uhADCxConvertedData;
-  printf("Vdda = %d\n", Vdda);
+  // printf("Vdda = %d\n", Vdda);
   return Vdda;
 }
 

@@ -14,5 +14,5 @@
 ../Core/Src/adc.c:130:6:HAL_ADC_MspInit	96	static
 ../Core/Src/adc.c:157:6:HAL_ADC_MspDeInit	16	static
 ../Core/Src/adc.c:177:10:get_vbat	16	static
-../Core/Src/adc.c:242:6:Activate_ADC	16	static
-../Core/Src/adc.c:369:6:ConversionStartPoll_ADC_GrpRegular	8	static
+../Core/Src/adc.c:232:6:Activate_ADC	16	static
+../Core/Src/adc.c:359:6:ConversionStartPoll_ADC_GrpRegular	8	static

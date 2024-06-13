@@ -7,7 +7,9 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/Core/Inc",
                 "${workspaceFolder}/Drivers/STM32U0xx_HAL_Driver/Inc",
-                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32U0xx/Include"
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32U0xx/Include",
+                "${workspaceFolder}/User/e-Paper",
+                "${workspaceFolder}/User/BME280"
             ],
             "defines": [
                 "_DEBUG",
