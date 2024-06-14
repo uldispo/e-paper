@@ -33,7 +33,7 @@ extern uint32_t time0;
 __attribute__((noreturn)) void PWR_EnterStandbyMode(void)
 {
 
-	uint32_t Timeout = 0; /* Variable used for Timeout management */
+	// uint32_t Timeout = 0; /* Variable used for Timeout management */
 	HAL_PWREx_EnablePullUpPullDownConfig();
 
 	/* ######## ENABLE WUT #################################################*/
@@ -103,8 +103,8 @@ __attribute__((noreturn)) void PWR_EnterStandbyMode(void)
 	HAL_SuspendTick();
 	// work_time = (uint32_t)((DWT->CYCCNT - time0) / 24000.0);
 	//  Configure MCU low-power mode for CPU deep sleep mode
-	PWR->CR1 |= PWR_CR1_LPMS_STANDBY; // PWR_CR1_LPMS_SHUTDOWN
-	(void)PWR->CR1;					  // Ensure that the previous PWR register operations have been completed
+	PWR->CR1 |= LL_PWR_MODE_STANDBY; // PWR_CR1_LPMS_SHUTDOWN
+	(void)PWR->CR1;					 // Ensure that the previous PWR register operations have been completed
 
 	// Configure CPU core
 	SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk; // Enable CPU deep sleep mode
@@ -145,8 +145,8 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 
 	/* Set Standby mode */
 	// Configure MCU low-power mode for CPU deep sleep mode
-	PWR->CR1 |= PWR_CR1_LPMS_STOP2; // PWR_CR1_LPMS_SHUTDOWN
-	(void)PWR->CR1;					// Ensure that the previous PWR register operations have been completed
+	PWR->CR1 |= LL_PWR_MODE_STOP2; // PWR_CR1_LPMS_SHUTDOWN
+	(void)PWR->CR1;				   // Ensure that the previous PWR register operations have been completed
 
 	// Configure CPU core
 	SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk; // Enable CPU deep sleep mode
@@ -173,11 +173,10 @@ static void gpio_before_stop2(void)
 
 	LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-	LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOA |
-							 LL_AHB2_GRP1_PERIPH_GPIOB |
-							 LL_AHB2_GRP1_PERIPH_GPIOC |
-							 LL_AHB2_GRP1_PERIPH_GPIOH |
-							 LL_AHB2_GRP1_PERIPH_GPIOD);
+	LL_AHB1_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOA |
+							 LL_IOP_GRP1_PERIPH_GPIOB |
+							 LL_IOP_GRP1_PERIPH_GPIOC |
+							 LL_IOP_GRP1_PERIPH_GPIOD);
 
 	GPIO_InitStruct.Pin = LL_GPIO_PIN_ALL;
 	GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
@@ -190,7 +189,7 @@ static void gpio_before_stop2(void)
 	LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 	LL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 	LL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-	LL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+	// LL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
 	/* Except PA13, PA14, PA10, PA12 */
 	GPIO_InitStruct.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 |
@@ -203,10 +202,9 @@ static void gpio_before_stop2(void)
 	GPIO_InitStruct.Alternate = LL_GPIO_AF_0;
 	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	LL_AHB2_GRP1_DisableClock(LL_AHB2_GRP1_PERIPH_GPIOB |
-							  LL_AHB2_GRP1_PERIPH_GPIOC |
-							  LL_AHB2_GRP1_PERIPH_GPIOD |
-							  LL_AHB2_GRP1_PERIPH_GPIOH);
+	LL_AHB1_GRP1_DisableClock(LL_IOP_GRP1_PERIPH_GPIOB |
+							  LL_IOP_GRP1_PERIPH_GPIOC |
+							  LL_IOP_GRP1_PERIPH_GPIOD);
 }
 
 //  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -231,5 +229,5 @@ static void gpio_from_stop2(void)
 	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 	/* Peripheral clock enable */
-	LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_ADC); // ???
+	LL_AHB1_GRP1_EnableClock(LL_APB1_GRP2_PERIPH_ADC); // ???
 }

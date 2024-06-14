@@ -63,6 +63,7 @@ Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_exti.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c_ex.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_i2c.c \
+Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_gpio.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc_ex.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_spi.c \

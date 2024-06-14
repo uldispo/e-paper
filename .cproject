@@ -76,7 +76,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp|Src/lpm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
+						<entry excluding="Src/adc_if.c|Src/Time.c|Src/lwrb.c|Src/AB1805_RK.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Core"/>
 						<entry excluding="STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/arm|STM32U0xx_HAL_Driver/CMSIS/Device/ST/STM32U0xx/Source/Templates/iar|CMSIS/Core_A|CMSIS/Core|CMSIS/DAP|CMSIS/RTOS|CMSIS/DSP|CMSIS/RTOS2|CMSIS/NN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="User/BME280"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="User/e-Paper"/>
@@ -166,7 +166,14 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/e-paper_18x5"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/e-paper_18x5"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1965368254;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1965368254.;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.911459563;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1831927898">

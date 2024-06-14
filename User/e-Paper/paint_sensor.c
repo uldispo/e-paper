@@ -137,7 +137,7 @@ int ESP_Init(void){
 	
 	Paint_NewImage(BlackImage, EPD_1IN54_V2_WIDTH, EPD_1IN54_V2_HEIGHT, 0, WHITE);
 	
-  	Paint_Clear(WHITE);	
+//  	Paint_Clear(WHITE);
     Paint_SelectImage(BlackImage);
     Paint_Clear(WHITE);
 	Paint_DrawRectangle(2, 3, 198, 140, BLACK, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
@@ -230,7 +230,7 @@ int ESP_Init_standby(void){
 // battery voltage	
 		x = 3;
 		y = 160;
-		sprintf(str_array, "%2d", vbat_old);
+		sprintf(str_array, "%3d", vbat_old);
 		
 		Paint_ClearWindows(x, y, x+40, y+29, WHITE);			
 		Paint_DrawChar(x, y, str_array[0], &calibri_24pts, BLACK, WHITE);	// 	12, 29, 8

@@ -72,6 +72,7 @@ uint16_t H_old = 0;
 uint16_t T_old = 0;
 uint16_t vbat_old = 0;
 
+extern UBYTE *BlackImage;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,7 +138,6 @@ int main(void)
 
   LL_DBGMCU_DisableDBGStopMode(); // !!!__ Disable debug in stop mode __!!!
                                   //	LL_DBGMCU_EnableDBGStopMode();
-
   LED1_ON();
   LL_SPI_Enable(SPI1);
 
@@ -148,17 +148,19 @@ int main(void)
     printf("\nMAIN. First power ON.   %d\n", clk);
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
-    clearRTCRam(1);                 // The initial values of the RAM locations are undefined.
-    hex_dump();
+    clearRTCRam(1);
+    PAPER_ON_H(); // The initial values of the RAM locations are undefined.
     ESP_Init();
   }
   else
   {
+    PAPER_ON_H();
     printf("\nMAIN. Startup from RTC\n");
     EPD_1IN54_V2_Reset();
     ESP_Init_standby();
   }
 
+  printf("BME280");
   dev.settings.osr_h = BME280_OVERSAMPLING_8X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
   dev.settings.osr_t = BME280_OVERSAMPLING_8X;
@@ -204,7 +206,15 @@ int main(void)
   write_ToRTCRam(T_old_RAM_address, t_, 1);
   write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
 
-  HAL_Delay(5);
+  battery_out(vbat_old);
+  humidity_out(h_);
+  temperature_out(t_);
+  EPD_1IN54_V2_DisplayPart(BlackImage);
+  EPD_1IN54_V2_Sleep(); // Deep sleep mode
+
+  hex_dump();
+  HAL_Delay(1);
+  PAPER_ON_L(); // e-Paper OFF
   deepPowerDown(30);
 
   /* USER CODE END 2 */
@@ -274,7 +284,7 @@ bool read_RTCRam(uint8_t address, uint16_t *read_data, bool lock)
   uint8_t data[sizeof(uint16_t)];
 
   // Call the driver's readRam function
-  if (!readRam(address, data, sizeof(data), lock))
+  if (!readRam(address, (uint8_t *)data, sizeof(data), lock))
   {
     // If the read operation fails, return false
     return false;
@@ -297,7 +307,7 @@ bool write_ToRTCRam(uint8_t address, uint16_t write_data, bool lock)
   data[1] = (uint8_t)((write_data >> 8) & 0xFF); // Upper byte
 
   // Call the driver's writeRam function
-  return writeRam(address, data, sizeof(data), lock);
+  return writeRam(address, (uint8_t *)data, sizeof(data), lock);
 }
 
 void print_error(const char *func, uint32_t line)

@@ -122,6 +122,9 @@ extern "C"
 #define RTC_H() GPIOB->BSRR = GPIO_BSRR_BS14 // CS RTC
 #define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
+#define PAPER_ON_H() GPIOB->BSRR = GPIO_BSRR_BS15 // e-Paper power on/pff
+#define PAPER_ON_L() GPIOB->BSRR = GPIO_BSRR_BR15
+
 #define timeout_value 3000
 
 #define RTC_WUT_TIME_SEC ((uint32_t)60) /* 60 s */
