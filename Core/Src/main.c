@@ -50,7 +50,9 @@
 #define H_old_RAM_address 0x40
 #define T_old_RAM_address 0x42
 #define vbat_old_RAM_address 0x44
+#define vbat_output_flag_address 0x46
 
+#define UNDERVOLTAGE 220
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -83,6 +85,7 @@ int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev);
 bool read_RTCRam(uint8_t address, uint16_t *read_data, bool lock);
 bool write_ToRTCRam(uint8_t address, uint16_t write_data, bool lock);
 bool clearRTCRam(bool lock);
+void go_down(uint16_t vBat);
 
 /* USER CODE END PFP */
 
@@ -118,6 +121,10 @@ int main(void)
   /* USER CODE BEGIN Init */
   uint16_t h_;
   uint16_t t_;
+  uint16_t vbat_output_flag = 0;
+  // uint8_t bat_output_flag = 0;
+  uint8_t EPD_reset_flag = 0;
+  uint8_t standby_flag = 1;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -142,10 +149,11 @@ int main(void)
   LL_SPI_Enable(SPI1);
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
-  if ((wdalarm & 0xf8) != 0xa0)              // Startup from power up.
+  if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
+    vbat_output_flag = 10; // First time have to output vbat
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
     clearRTCRam(1);
@@ -154,6 +162,7 @@ int main(void)
   }
   else
   {
+    read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
     PAPER_ON_H();
     printf("\nMAIN. Startup from RTC\n");
     EPD_1IN54_V2_Reset();
@@ -161,9 +170,9 @@ int main(void)
   }
 
   printf("BME280");
-  dev.settings.osr_h = BME280_OVERSAMPLING_8X;
+  dev.settings.osr_h = BME280_OVERSAMPLING_1X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
-  dev.settings.osr_t = BME280_OVERSAMPLING_8X;
+  dev.settings.osr_t = BME280_OVERSAMPLING_2X;
   dev.settings.filter = BME280_FILTER_COEFF_OFF;
 
   rslt = bme280_init(&dev);
@@ -173,7 +182,6 @@ int main(void)
     Error_Handler();
   }
 
-  // settings_sel = BME280_OSR_PRESS_SEL | BME280_OSR_TEMP_SEL | BME280_OSR_HUM_SEL | BME280_FILTER_SEL;
   rslt = bme280_set_sensor_settings(BME280_OSR_PRESS_SEL | BME280_OSR_TEMP_SEL | BME280_OSR_HUM_SEL | BME280_FILTER_SEL, &dev);
   /*Calculate the minimum delay (ms) required between consecutive measurement based upon the sensor enabled
    *  and the oversampling configuration. */
@@ -202,20 +210,83 @@ int main(void)
   read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d  vBat = %d, vbat_old = %d\n", h_, H_old, t_, T_old, vBat, vbat_old);
-  write_ToRTCRam(H_old_RAM_address, h_, 1);
-  write_ToRTCRam(T_old_RAM_address, t_, 1);
-  write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
+  // write_ToRTCRam(H_old_RAM_address, h_, 1);
+  // write_ToRTCRam(T_old_RAM_address, t_, 1);
+  // write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
 
-  battery_out(vbat_old);
-  humidity_out(h_);
-  temperature_out(t_);
+  // ============================================================================================================
+  if (vbat_output_flag >= 10) // output Vbat after every 10 min; (vbat_output_flag >= 10)
+  {
+    vbat_output_flag = 0;
+    write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
+    int32_t vBat = get_vbat();
+    printf("vBat = %d\n", vBat);
+    // vBat = vBat / 10.0; // go with 3 digits
+    vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+
+    if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
+    {
+      final_message(vBat);
+      go_down(vBat); // shutdown forever
+    }
+
+    if (!(vBat == vbat_old)) // it's going to output
+    {
+      // vbat_old = vBat;
+      write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
+      if (standby_flag)
+      {
+        EPD_1IN54_V2_Reset();
+        ESP_Init_standby();
+      }
+      else
+      {
+        ESP_Init();
+      }
+      printf("** Vbat out\n");
+      EPD_reset_flag = 1; // FLAG
+      battery_out(vbat_old);
+    }
+  }
+
+  if (h_ != H_old)
+  {
+    // hum out
+    write_ToRTCRam(H_old_RAM_address, h_, 1);
+    printf("** H out\n");
+
+    if (!EPD_reset_flag)
+    {
+      EPD_reset_flag = 1;
+      EPD_1IN54_V2_Reset();
+      ESP_Init_standby();
+    }
+    humidity_out(h_);
+  }
+
+  if (t_ != T_old)
+  {
+    // Temperature out
+    write_ToRTCRam(T_old_RAM_address, t_, 1);
+    printf("** T out\n");
+    if (!EPD_reset_flag)
+    {
+      EPD_reset_flag = 1;
+      EPD_1IN54_V2_Reset();
+      ESP_Init_standby();
+    }
+    temperature_out(t_);
+  }
+
+  //   humidity_out(h_);
+  // temperature_out(t_);
   EPD_1IN54_V2_DisplayPart(BlackImage);
-  EPD_1IN54_V2_Sleep(); // Deep sleep mode
-
+  EPD_1IN54_V2_Sleep(); // Deep sleep mode  ???
+  PAPER_ON_L();         // e-Paper OFF
   hex_dump();
   HAL_Delay(1);
-  PAPER_ON_L(); // e-Paper OFF
-  deepPowerDown(30);
+
+  deepPowerDown(30); // 30 seconds deep power down
 
   /* USER CODE END 2 */
 
@@ -225,7 +296,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
     // Never be here
     LED1_ON();
@@ -355,22 +425,26 @@ int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev)
 // Function to clear the entire RTC RAM
 bool clearRTCRam(bool lock)
 {
-  uint8_t addr = 0;
-  uint8_t clearValue = 0x00;   // Value to write to clear the RAM
-  uint8_t RTC_RAM_SIZE = 0x80; // Size of the RTC RAM
-  uint8_t size = addr + RTC_RAM_SIZE;
-  // Loop through the entire RTC RAM space and write the clear value
-  // const uint8_t REG_RAM = 0x40;
-  for (addr = REG_RAM; addr < size; ++addr)
-  {
-    if (!writeRam(addr, &clearValue, sizeof(clearValue), lock))
-    {
-      // If the write operation fails, return false
-      return false;
-    }
-  }
+	// Define the start address and size of the memory block
+	    uint8_t *startAddress = (uint8_t *)0x40;
+	    size_t size = 0x80;
+
+	    // Initialize the RAM block to 0x00
+	    memset(startAddress, 0x00, size);
 
   return true;
+}
+
+void go_down(uint16_t vBat)
+{
+  /* S H U T   D O W N */
+
+  printf("Go down\n");
+  printf("Clear...\r\n");
+  final_message(vBat);
+
+  // Turn all power off, exept the RTC
+  // Code here
 }
 
 /* USER CODE END 4 */

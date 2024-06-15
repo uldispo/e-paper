@@ -687,17 +687,13 @@ inline static uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 
 void hex_dump(void)
 {
-    uint8_t buffer[9];
-    for (uint8_t pos = 0; pos < 0x4F; pos += 8) // 0x7f
-    {
-
-        uint8_t ii = 0;
-        for (ii = 0; ii < 7; ii++)
-        {
-            buffer[ii] = read_rtc_register(pos + ii);
-        }
-        printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
-    }
+	uint8_t buffer[8];
+	for(uint8_t pos = 0; pos < 0x7F; pos += 8)
+	{
+		// readRam(size_t ramAddr, uint8_t *data, size_t dataLen, bool lock)
+		readRam(pos, buffer, 8, 0);
+		printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
+	}
 }
 
 static inline uint32_t utils_enter_critical_section(void)
