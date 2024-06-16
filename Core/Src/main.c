@@ -149,22 +149,28 @@ int main(void)
   LL_SPI_Enable(SPI1);
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
+  printf("wdalarm = 0x%X\n", wdalarm);
   if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
-    printf("\nMAIN. First power ON.   %d\n", clk);
+    printf("MAIN. First power ON.   %d\n", clk);
+
     vbat_output_flag = 10; // First time have to output vbat
     resetConfig(0);
+    hex_dump();
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
     clearRTCRam(1);
+    hex_dump();
     PAPER_ON_H(); // The initial values of the RAM locations are undefined.
     ESP_Init();
   }
   else
   {
-    read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
+
+	read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
     PAPER_ON_H();
     printf("\nMAIN. Startup from RTC\n");
+    hex_dump();
     EPD_1IN54_V2_Reset();
     ESP_Init_standby();
   }
@@ -190,7 +196,7 @@ int main(void)
 
   Activate_ADC();
   int32_t vBat = get_vbat();
-  printf("vBat = %d\n", vBat);
+  //printf("vBat = %d\n", vBat);
 
   // =====================================================================
   rslt = stream_sensor_data_forced_mode(&dev); // working time = 0.8 sec
@@ -245,7 +251,7 @@ int main(void)
       }
       printf("** Vbat out\n");
       EPD_reset_flag = 1; // FLAG
-      battery_out(vbat_old);
+      battery_out(vBat);
     }
   }
 
@@ -283,8 +289,8 @@ int main(void)
   EPD_1IN54_V2_DisplayPart(BlackImage);
   EPD_1IN54_V2_Sleep(); // Deep sleep mode  ???
   PAPER_ON_L();         // e-Paper OFF
-  hex_dump();
-  HAL_Delay(1);
+//  hex_dump();
+//  HAL_Delay(1);
 
   deepPowerDown(30); // 30 seconds deep power down
 
@@ -430,8 +436,11 @@ bool clearRTCRam(bool lock)
 	    size_t size = 0x80;
 
 	    // Initialize the RAM block to 0x00
-	    memset(startAddress, 0x00, size);
-
+	    //memset(startAddress, 0x00, size);
+	    // Iterate through each byte in the specified block
+	    for (size_t i = 0; i < size; i++) {
+	    	startAddress[i] = 0x00;
+	    }
   return true;
 }
 
