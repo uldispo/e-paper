@@ -137,7 +137,7 @@ extern "C"
     } while (LL_RTC_IsActiveFlag_WUT(RTC));
 
     void print_error(const char *func, uint32_t line);
-    __attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line);
+    void timeout_reset(const char *func, uint32_t line);
 
     /* USER CODE END Private defines */
 

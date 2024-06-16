@@ -140,7 +140,7 @@ static void EPD_1IN54_V2_ReadBusy(void)
         }
     }
 
-    DE_BUG("busy: %d\r\n", (HAL_GetTick() - time1));
+    //DE_BUG("busy: %d\r\n", (HAL_GetTick() - time1));
 }
 
 /******************************************************************************

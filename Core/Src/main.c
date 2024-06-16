@@ -122,9 +122,8 @@ int main(void)
   uint16_t h_;
   uint16_t t_;
   uint16_t vbat_output_flag = 0;
-  // uint8_t bat_output_flag = 0;
-  uint8_t EPD_reset_flag = 0;
-  uint8_t standby_flag = 1;
+  uint8_t init_flag = 0;
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -149,33 +148,31 @@ int main(void)
   LL_SPI_Enable(SPI1);
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
-  printf("wdalarm = 0x%X\n", wdalarm);
   if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
-    printf("MAIN. First power ON.   %d\n", clk);
+    printf("\nMAIN. First power ON.   %d\n", clk);
 
     vbat_output_flag = 10; // First time have to output vbat
     resetConfig(0);
-    hex_dump();
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
-    clearRTCRam(1);
-    hex_dump();
+    // clearRTCRam(1);
     PAPER_ON_H(); // The initial values of the RAM locations are undefined.
     ESP_Init();
+    init_flag = 1;
   }
   else
   {
-
-	read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
+    read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
     PAPER_ON_H();
     printf("\nMAIN. Startup from RTC\n");
     hex_dump();
-    EPD_1IN54_V2_Reset();
-    ESP_Init_standby();
+
+    read_RTCRam(H_old_RAM_address, &H_old, 1);
+    read_RTCRam(T_old_RAM_address, &T_old, 1);
+    read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
   }
 
-  printf("BME280");
   dev.settings.osr_h = BME280_OVERSAMPLING_1X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
   dev.settings.osr_t = BME280_OVERSAMPLING_2X;
@@ -196,7 +193,7 @@ int main(void)
 
   Activate_ADC();
   int32_t vBat = get_vbat();
-  //printf("vBat = %d\n", vBat);
+  // printf("vBat = %d\n", vBat);
 
   // =====================================================================
   rslt = stream_sensor_data_forced_mode(&dev); // working time = 0.8 sec
@@ -211,87 +208,63 @@ int main(void)
   // t_ = comp_data.temperature / 10.0;
   t_ = (((uint16_t)comp_data.temperature * 6554 + 2) >> 16); // fast_divide_by_10
 
-  read_RTCRam(H_old_RAM_address, &H_old, 1);
-  read_RTCRam(T_old_RAM_address, &T_old, 1);
-  read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
-
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d  vBat = %d, vbat_old = %d\n", h_, H_old, t_, T_old, vBat, vbat_old);
-  // write_ToRTCRam(H_old_RAM_address, h_, 1);
-  // write_ToRTCRam(T_old_RAM_address, t_, 1);
-  // write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
 
-  // ============================================================================================================
-  if (vbat_output_flag >= 10) // output Vbat after every 10 min; (vbat_output_flag >= 10)
-  {
-    vbat_output_flag = 0;
-    write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
-    int32_t vBat = get_vbat();
-    printf("vBat = %d\n", vBat);
-    // vBat = vBat / 10.0; // go with 3 digits
-    vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
-
-    if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
-    {
-      final_message(vBat);
-      go_down(vBat); // shutdown forever
-    }
-
-    if (!(vBat == vbat_old)) // it's going to output
-    {
-      // vbat_old = vBat;
-      write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
-      if (standby_flag)
-      {
-        EPD_1IN54_V2_Reset();
-        ESP_Init_standby();
-      }
-      else
-      {
-        ESP_Init();
-      }
-      printf("** Vbat out\n");
-      EPD_reset_flag = 1; // FLAG
-      battery_out(vBat);
-    }
-  }
-
-  if (h_ != H_old)
-  {
-    // hum out
-    write_ToRTCRam(H_old_RAM_address, h_, 1);
-    printf("** H out\n");
-
-    if (!EPD_reset_flag)
-    {
-      EPD_reset_flag = 1;
-      EPD_1IN54_V2_Reset();
-      ESP_Init_standby();
-    }
-    humidity_out(h_);
-  }
+  // ========================================================================================
 
   if (t_ != T_old)
   {
     // Temperature out
     write_ToRTCRam(T_old_RAM_address, t_, 1);
-    printf("** T out\n");
-    if (!EPD_reset_flag)
+    printf("** T out  init_flag = %d\n", init_flag);
+
+    EPD_1IN54_V2_Reset();
+    if (!init_flag)
     {
-      EPD_reset_flag = 1;
-      EPD_1IN54_V2_Reset();
       ESP_Init_standby();
     }
     temperature_out(t_);
+
+    if (vbat_output_flag >= 10) // output Vbat and Hum after every 10 min; (vbat_output_flag >= 10)
+    {
+      vbat_output_flag = 0;
+      write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
+      int32_t vBat = get_vbat();
+      printf("vBat = %d\n", vBat);
+      // vBat = vBat / 10.0; // go with 3 digits
+      vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+
+      if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
+      {
+        final_message(vBat);
+        go_down(vBat); // shutdown forever  ****  R E W R I T E !!!   *****
+      }
+
+      if (!(vBat == vbat_old)) // it's going to output
+      {
+        // vbat_old = vBat;
+        write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
+
+        printf("** Vbat out\n");
+
+        battery_out(vBat);
+      }
+
+      if (h_ != H_old)
+      {
+        // hum out
+        write_ToRTCRam(H_old_RAM_address, h_, 1);
+        printf("** H out\n");
+        humidity_out(h_);
+      }
+    }
+
+    EPD_1IN54_V2_DisplayPart(BlackImage);
+    EPD_1IN54_V2_Sleep(); // Deep sleep mode ????
+    PAPER_ON_L();         // e-Paper OFF
+                          //  hex_dump();
+                          //  HAL_Delay(1);
   }
-
-  //   humidity_out(h_);
-  // temperature_out(t_);
-  EPD_1IN54_V2_DisplayPart(BlackImage);
-  EPD_1IN54_V2_Sleep(); // Deep sleep mode  ???
-  PAPER_ON_L();         // e-Paper OFF
-//  hex_dump();
-//  HAL_Delay(1);
-
   deepPowerDown(30); // 30 seconds deep power down
 
   /* USER CODE END 2 */
@@ -393,14 +366,11 @@ void print_error(const char *func, uint32_t line)
   timeout_reset(__func__, __LINE__);
 }
 
-__attribute__((noreturn)) void timeout_reset(const char *func, uint32_t line)
+void timeout_reset(const char *func, uint32_t line)
 {
-  LL_PWR_ClearFlag_CSB(); // Clear standby flag
   printf(" *** timeout_reset:  %s    %d\n", func, line);
   HAL_Delay(100);
-  // NVIC_SystemReset();
-  while (1)
-    ;
+  deepPowerDown(10);
 }
 
 // Read BME280 data
@@ -431,16 +401,17 @@ int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev)
 // Function to clear the entire RTC RAM
 bool clearRTCRam(bool lock)
 {
-	// Define the start address and size of the memory block
-	    uint8_t *startAddress = (uint8_t *)0x40;
-	    size_t size = 0x80;
+  // Define the start address and size of the memory block
+  uint8_t *startAddress = (uint8_t *)0x40;
+  size_t size = 0x80;
 
-	    // Initialize the RAM block to 0x00
-	    //memset(startAddress, 0x00, size);
-	    // Iterate through each byte in the specified block
-	    for (size_t i = 0; i < size; i++) {
-	    	startAddress[i] = 0x00;
-	    }
+  // Initialize the RAM block to 0x00
+  // memset(startAddress, 0x00, size);
+  // Iterate through each byte in the specified block
+  for (size_t i = 0; i < size; i++)
+  {
+    startAddress[i] = 0x00;
+  }
   return true;
 }
 

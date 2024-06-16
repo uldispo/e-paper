@@ -13,7 +13,7 @@
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_bus.h:211:22:LL_AHB1_GRP1_EnableClock	1
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_bus.h:269:22:LL_AHB1_GRP1_DisableClock	1
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_usart.h:3023:26:LL_USART_IsActiveFlag_TXE_TXFNF	2
-../Core/Src/lpm.c:33:32:PWR_EnterStandbyMode	5
+../Core/Src/lpm.c:33:32:PWR_EnterStandbyMode	6
 ../Core/Src/lpm.c:133:6:enter_stop2	2
 ../Core/Src/lpm.c:167:13:gpio_before_stop2	1
 ../Core/Src/lpm.c:212:13:gpio_from_stop2	1
