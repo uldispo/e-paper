@@ -53,6 +53,9 @@
 #define vbat_output_flag_address 0x46
 
 #define UNDERVOLTAGE 220
+#define BAT_OUTPUT_PERIOD 15
+#define BAT_OUTPUT_MAX_PERIOD 30
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -67,8 +70,7 @@
 struct bme280_dev dev;
 extern struct bme280_data comp_data;
 int8_t reslt = BME280_OK;
-uint8_t settings_sel;
-uint32_t req_delay;
+uint32_t req_delay = 0;
 
 uint16_t H_old = 0;
 uint16_t T_old = 0;
@@ -121,7 +123,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   uint16_t h_;
   uint16_t t_;
-  uint16_t vbat_output_flag = 0;
+  uint16_t vbat_output_flag;
   uint8_t init_flag = 0;
 
   /* USER CODE END Init */
@@ -153,18 +155,18 @@ int main(void)
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
 
-    vbat_output_flag = 10; // First time have to output vbat
+    vbat_output_flag = BAT_OUTPUT_PERIOD; // For first time output
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
-    // clearRTCRam(1);
-    PAPER_ON_H(); // The initial values of the RAM locations are undefined.
+    // clearRTCRam(1);   // The initial values of the RAM locations are undefined.
+    PAPER_ON_H();
     ESP_Init();
     init_flag = 1;
   }
   else
   {
     read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
-    PAPER_ON_H();
+    vbat_output_flag++;
     printf("\nMAIN. Startup from RTC\n");
     hex_dump();
 
@@ -172,6 +174,8 @@ int main(void)
     read_RTCRam(T_old_RAM_address, &T_old, 1);
     read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
   }
+
+  // ###################################################################
 
   dev.settings.osr_h = BME280_OVERSAMPLING_1X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
@@ -189,7 +193,7 @@ int main(void)
   /*Calculate the minimum delay (ms) required between consecutive measurement based upon the sensor enabled
    *  and the oversampling configuration. */
   req_delay = bme280_cal_meas_delay(&dev.settings);
-  printf("req_delay = %d\n", req_delay);
+  // printf("req_delay = %d\n", req_delay);
 
   Activate_ADC();
   int32_t vBat = get_vbat();
@@ -210,14 +214,15 @@ int main(void)
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d  vBat = %d, vbat_old = %d\n", h_, H_old, t_, T_old, vBat, vbat_old);
 
-  // ========================================================================================
+  // =========================================================================
 
-  if (t_ != T_old)
+  if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
   {
     // Temperature out
     write_ToRTCRam(T_old_RAM_address, t_, 1);
     printf("** T out  init_flag = %d\n", init_flag);
-
+    PAPER_ON_H();
+    HAL_Delay(1); // ????
     EPD_1IN54_V2_Reset();
     if (!init_flag)
     {
@@ -225,10 +230,10 @@ int main(void)
     }
     temperature_out(t_);
 
-    if (vbat_output_flag >= 10) // output Vbat and Hum after every 10 min; (vbat_output_flag >= 10)
+    if (vbat_output_flag > 15) // output Vbat and Hum after every 10 min; (vbat_output_flag >= 10)
     {
       vbat_output_flag = 0;
-      write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
+
       int32_t vBat = get_vbat();
       printf("vBat = %d\n", vBat);
       // vBat = vBat / 10.0; // go with 3 digits
@@ -259,13 +264,16 @@ int main(void)
       }
     }
 
+    PAPER_ON_L();
     EPD_1IN54_V2_DisplayPart(BlackImage);
     EPD_1IN54_V2_Sleep(); // Deep sleep mode ????
     PAPER_ON_L();         // e-Paper OFF
                           //  hex_dump();
                           //  HAL_Delay(1);
   }
-  deepPowerDown(30); // 30 seconds deep power down
+
+  write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
+  deepPowerDown(30);                                             // 30 seconds deep power down
 
   /* USER CODE END 2 */
 
@@ -369,32 +377,18 @@ void print_error(const char *func, uint32_t line)
 void timeout_reset(const char *func, uint32_t line)
 {
   printf(" *** timeout_reset:  %s    %d\n", func, line);
-  HAL_Delay(100);
+  HAL_Delay(10);
   deepPowerDown(10);
 }
 
 // Read BME280 data
 int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev)
 {
-
-  //	dev->settings.osr_h = BME280_OVERSAMPLING_8X;
-  //	dev->settings.osr_p = BME280_NO_OVERSAMPLING;
-  //	dev->settings.osr_t = BME280_OVERSAMPLING_8X;
-  //	dev->settings.filter = BME280_FILTER_COEFF_OFF;
-
-  //	settings_sel = BME280_OSR_PRESS_SEL | BME280_OSR_TEMP_SEL | BME280_OSR_HUM_SEL | BME280_FILTER_SEL;
-  //	reslt = bme280_set_sensor_settings(settings_sel, dev);
-  /*Calculate the minimum delay (ms) required between consecutive measurement based upon the sensor enabled
-   *  and the oversampling configuration. */
-  //	req_delay = bme280_cal_meas_delay(&dev->settings);
-  //    printf("************  req_delay = %d\n",req_delay);
   reslt = bme280_set_sensor_mode(BME280_FORCED_MODE, dev);
   /* Wait for the measurement to complete and print data  */
 
   HAL_Delay(req_delay); // 9 ms !!!
-
   reslt = bme280_get_sensor_data(BME280_TEMP | BME280_HUM, &comp_data, dev);
-
   return reslt;
 }
 
@@ -424,7 +418,7 @@ void go_down(uint16_t vBat)
   final_message(vBat);
 
   // Turn all power off, exept the RTC
-  // Code here
+  // Code must be inserted here !
 }
 
 /* USER CODE END 4 */
