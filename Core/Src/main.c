@@ -54,7 +54,7 @@
 #define initialized_flag_address  0x48
 
 #define UNDERVOLTAGE 220
-#define BAT_OUTPUT_PERIOD 15
+#define BAT_OUTPUT_PERIOD 16
 #define BAT_OUTPUT_MAX_PERIOD 30
 
 /* USER CODE END PD */
@@ -77,7 +77,6 @@ uint16_t H_old = 0;
 uint16_t T_old = 0;
 uint16_t vbat_old = 0;
 uint8_t initialized_flag = 0;
-
 
 extern UBYTE *BlackImage;
 /* USER CODE END PV */
@@ -153,6 +152,7 @@ int main(void)
   LL_DBGMCU_DisableDBGStopMode(); // !!!__ Disable debug in stop mode __!!!
                                   //	LL_DBGMCU_EnableDBGStopMode();
   LED1_ON();
+
   LL_SPI_Enable(SPI1);
 
   //  ==============___ Power ON __=======================
@@ -162,18 +162,17 @@ int main(void)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
+    HAL_Delay(3000);  	// AB1805 self initializtion time
 
-    vbat_output_flag = (BAT_OUTPUT_PERIOD + 1); // For first time output must be bigger 15
+    vbat_output_flag = (BAT_OUTPUT_PERIOD); // For first time output must be bigger 15
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
+    printf("wdalarm = 0x%x\n",read(REG_WEEKDAY_ALARM));
 
  //   return writeRam(address, (uint8_t *)data, sizeof(data), lock);
     writeRam(H_old_RAM_address, 0, 1, 0);
     writeRam(T_old_RAM_address, 0, 1, 0);
     writeRam(vbat_old_RAM_address, 0, 1, 0);
-
-    initialized_flag = 1; // Flag that ESP is initialized, to do it only once
-    write(initialized_flag_address, initialized_flag);
 
   }
   else
@@ -188,8 +187,6 @@ int main(void)
     read_RTCRam(vbat_old_RAM_address, &vbat_old, 0);
     initialized_flag = read(initialized_flag_address); // uint8_t
   }
-
-  // printf("vBat = %d\n", vBat);
 
   // ##################________measureME280_________#########################
 
@@ -231,9 +228,8 @@ int main(void)
   {
 	  int32_t vBat;
 	  // Temperature need output
-    write_ToRTCRam(T_old_RAM_address, t_, 1);
-    //printf("**  T out,  initialized_flag = %d\n", initialized_flag);
-    temperature_new = 1;
+	  write_ToRTCRam(T_old_RAM_address, t_, 1);
+	  temperature_new = 1;
 
     if (vbat_output_flag > 15) // output Vbat and Hum after every 10 min; (vbat_output_flag >= 10)
     {
@@ -268,8 +264,12 @@ int main(void)
     }
 
     PAPER_ON_H();
-    if(initialized_flag){
+    printf("initialized_flag5 = 0x%x\n",initialized_flag);
+    if(initialized_flag == 0){
     	ESP_Init();
+        initialized_flag = 1; // Flag that ESP is initialized, to do it only once
+        write(initialized_flag_address, initialized_flag);
+        printf("initialized_flag = 0x%x\n",read(initialized_flag_address));
     }else
     {
         EPD_1IN54_V2_Reset();
@@ -439,6 +439,10 @@ void go_down(uint16_t vBat)
 
   // Turn all power off, exept the RTC
   // Code must be inserted here !
+  // write RTC_Register Magic2
+  // First at main check Magic2, if true  deepPowerDown
+  // deepPowerDown(255); // need minutes
+
 }
 
 /* USER CODE END 4 */
