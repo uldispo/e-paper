@@ -51,6 +51,7 @@
 #define T_old_RAM_address 0x42
 #define vbat_old_RAM_address 0x44
 #define vbat_output_flag_address 0x46
+#define initialized_flag_address  0x48
 
 #define UNDERVOLTAGE 220
 #define BAT_OUTPUT_PERIOD 15
@@ -75,6 +76,8 @@ uint32_t req_delay = 0;
 uint16_t H_old = 0;
 uint16_t T_old = 0;
 uint16_t vbat_old = 0;
+uint8_t initialized_flag = 0;
+
 
 extern UBYTE *BlackImage;
 /* USER CODE END PV */
@@ -124,7 +127,7 @@ int main(void)
   uint16_t h_;
   uint16_t t_;
   uint16_t vbat_output_flag;
-  uint8_t initialized_flag = 0;
+
   uint8_t temperature_new = 0;
   uint8_t battery_new = 0;
   uint8_t humidity_new = 0;
@@ -164,11 +167,14 @@ int main(void)
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
 
-    write(H_old_RAM_address, 0);
-    write(T_old_RAM_address, 0);
-    write(vbat_old_RAM_address, 0);
+ //   return writeRam(address, (uint8_t *)data, sizeof(data), lock);
+    writeRam(H_old_RAM_address, 0, 1, 0);
+    writeRam(T_old_RAM_address, 0, 1, 0);
+    writeRam(vbat_old_RAM_address, 0, 1, 0);
 
     initialized_flag = 1; // Flag that ESP is initialized, to do it only once
+    write(initialized_flag_address, initialized_flag);
+
   }
   else
   {
@@ -177,9 +183,10 @@ int main(void)
     printf("\nMAIN. Startup from RTC\n");
     //hex_dump();
 
-    read_RTCRam(H_old_RAM_address, &H_old, 1);
-    read_RTCRam(T_old_RAM_address, &T_old, 1);
-    read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
+    read_RTCRam(H_old_RAM_address, &H_old, 0);
+    read_RTCRam(T_old_RAM_address, &T_old, 0);
+    read_RTCRam(vbat_old_RAM_address, &vbat_old, 0);
+    initialized_flag = read(initialized_flag_address); // uint8_t
   }
 
   // printf("vBat = %d\n", vBat);
