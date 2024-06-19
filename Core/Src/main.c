@@ -124,7 +124,7 @@ int main(void)
   uint16_t h_;
   uint16_t t_;
   uint16_t vbat_output_flag;
-  uint8_t init_flag = 0;
+  uint8_t initialized_flag = 0;
 
   /* USER CODE END Init */
 
@@ -149,6 +149,8 @@ int main(void)
   LED1_ON();
   LL_SPI_Enable(SPI1);
 
+  //  ==============___ Power ON __=======================
+
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
   if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
   {
@@ -158,24 +160,34 @@ int main(void)
     vbat_output_flag = BAT_OUTPUT_PERIOD; // For first time output
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
-    // clearRTCRam(1);   // The initial values of the RAM locations are undefined.
+
+    write(H_old_RAM_address, 0);
+    write(T_old_RAM_address, 0);
+    write(vbat_old_RAM_address, 0);
+    write(vbat_output_flag_address, 0);
+
     PAPER_ON_H();
     ESP_Init();
-    init_flag = 1;
+    initialized_flag = 1; // Flag that ESP is initialized, to do it only once
   }
   else
   {
     read_RTCRam(vbat_output_flag_address, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
     vbat_output_flag++;
     printf("\nMAIN. Startup from RTC\n");
-    hex_dump();
+    //hex_dump();
 
     read_RTCRam(H_old_RAM_address, &H_old, 1);
     read_RTCRam(T_old_RAM_address, &T_old, 1);
     read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
   }
 
-  // ###################################################################
+
+  Activate_ADC();
+  int32_t vBat = get_vbat();
+  // printf("vBat = %d\n", vBat);
+
+  // ##################________measureME280_________#########################
 
   dev.settings.osr_h = BME280_OVERSAMPLING_1X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
@@ -195,11 +207,6 @@ int main(void)
   req_delay = bme280_cal_meas_delay(&dev.settings);
   // printf("req_delay = %d\n", req_delay);
 
-  Activate_ADC();
-  int32_t vBat = get_vbat();
-  // printf("vBat = %d\n", vBat);
-
-  // =====================================================================
   rslt = stream_sensor_data_forced_mode(&dev); // working time = 0.8 sec
   if (rslt != BME280_OK)
   {
@@ -214,17 +221,16 @@ int main(void)
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d  vBat = %d, vbat_old = %d\n", h_, H_old, t_, T_old, vBat, vbat_old);
 
-  // =========================================================================
+  // ============================_____END____===================================
 
   if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
   {
-    // Temperature out
+    // Temperature need output
     write_ToRTCRam(T_old_RAM_address, t_, 1);
-    printf("** T out  init_flag = %d\n", init_flag);
+    printf("** T out,  initialized_flag = %d\n", initialized_flag);
     PAPER_ON_H();
-    HAL_Delay(1); // ????
     EPD_1IN54_V2_Reset();
-    if (!init_flag)
+    if (!initialized_flag)
     {
       ESP_Init_standby();
     }
@@ -247,24 +253,19 @@ int main(void)
 
       if (!(vBat == vbat_old)) // it's going to output
       {
-        // vbat_old = vBat;
-        write_ToRTCRam(vbat_old_RAM_address, vBat, 1);
-
+        write_ToRTCRam(vbat_old_RAM_address, vBat, 1); // write vbat_old = vBat
         printf("** Vbat out\n");
-
         battery_out(vBat);
       }
 
       if (h_ != H_old)
       {
-        // hum out
-        write_ToRTCRam(H_old_RAM_address, h_, 1);
+    	write_ToRTCRam(H_old_RAM_address, h_, 1);
         printf("** H out\n");
         humidity_out(h_);
       }
     }
 
-    PAPER_ON_L();
     EPD_1IN54_V2_DisplayPart(BlackImage);
     EPD_1IN54_V2_Sleep(); // Deep sleep mode ????
     PAPER_ON_L();         // e-Paper OFF
