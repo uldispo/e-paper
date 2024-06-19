@@ -125,6 +125,9 @@ int main(void)
   uint16_t t_;
   uint16_t vbat_output_flag;
   uint8_t initialized_flag = 0;
+  uint8_t temperature_new = 0;
+  uint8_t battery_new = 0;
+  uint8_t humidity_new = 0;
 
   /* USER CODE END Init */
 
@@ -157,17 +160,14 @@ int main(void)
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
 
-    vbat_output_flag = BAT_OUTPUT_PERIOD; // For first time output
+    vbat_output_flag = (BAT_OUTPUT_PERIOD + 1); // For first time output must be bigger 15
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, 0xa0); // Magic 0xa0
 
     write(H_old_RAM_address, 0);
     write(T_old_RAM_address, 0);
     write(vbat_old_RAM_address, 0);
-    write(vbat_output_flag_address, 0);
 
-    PAPER_ON_H();
-    ESP_Init();
     initialized_flag = 1; // Flag that ESP is initialized, to do it only once
   }
   else
@@ -182,9 +182,6 @@ int main(void)
     read_RTCRam(vbat_old_RAM_address, &vbat_old, 1);
   }
 
-
-  Activate_ADC();
-  int32_t vBat = get_vbat();
   // printf("vBat = %d\n", vBat);
 
   // ##################________measureME280_________#########################
@@ -219,31 +216,29 @@ int main(void)
   // t_ = comp_data.temperature / 10.0;
   t_ = (((uint16_t)comp_data.temperature * 6554 + 2) >> 16); // fast_divide_by_10
 
-  printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d  vBat = %d, vbat_old = %d\n", h_, H_old, t_, T_old, vBat, vbat_old);
+  printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d\n", h_, H_old, t_, T_old);
 
   // ============================_____END____===================================
 
   if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
   {
-    // Temperature need output
+	  int32_t vBat;
+	  // Temperature need output
     write_ToRTCRam(T_old_RAM_address, t_, 1);
-    printf("** T out,  initialized_flag = %d\n", initialized_flag);
-    PAPER_ON_H();
-    EPD_1IN54_V2_Reset();
-    if (!initialized_flag)
-    {
-      ESP_Init_standby();
-    }
-    temperature_out(t_);
+    //printf("**  T out,  initialized_flag = %d\n", initialized_flag);
+    temperature_new = 1;
 
     if (vbat_output_flag > 15) // output Vbat and Hum after every 10 min; (vbat_output_flag >= 10)
     {
       vbat_output_flag = 0;
+      write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
 
-      int32_t vBat = get_vbat();
-      printf("vBat = %d\n", vBat);
+      Activate_ADC();
+      vBat = get_vbat();
+
       // vBat = vBat / 10.0; // go with 3 digits
       vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+      printf("vBat = %d, vbat_old = %d\n", vBat, vbat_old);
 
       if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
       {
@@ -254,26 +249,43 @@ int main(void)
       if (!(vBat == vbat_old)) // it's going to output
       {
         write_ToRTCRam(vbat_old_RAM_address, vBat, 1); // write vbat_old = vBat
-        printf("** Vbat out\n");
-        battery_out(vBat);
+
+        battery_new = 1;
       }
 
       if (h_ != H_old)
       {
     	write_ToRTCRam(H_old_RAM_address, h_, 1);
-        printf("** H out\n");
-        humidity_out(h_);
+        humidity_new = 1;
       }
     }
 
+    PAPER_ON_H();
+    if(initialized_flag){
+    	ESP_Init();
+    }else
+    {
+        EPD_1IN54_V2_Reset();
+        ESP_Init_standby();
+    }
+
+    if(temperature_new){
+    	temperature_out(t_);
+    }
+    if(battery_new){
+    	battery_out(vBat);
+    }
+    if(humidity_new){
+    	humidity_out(h_);
+    }
+
     EPD_1IN54_V2_DisplayPart(BlackImage);
-    EPD_1IN54_V2_Sleep(); // Deep sleep mode ????
+// EPD_1IN54_V2_Sleep(); // Deep sleep mode ????
     PAPER_ON_L();         // e-Paper OFF
                           //  hex_dump();
                           //  HAL_Delay(1);
   }
 
-  write_ToRTCRam(vbat_output_flag_address, vbat_output_flag, 1); // save vbat_output_flag
   deepPowerDown(30);                                             // 30 seconds deep power down
 
   /* USER CODE END 2 */

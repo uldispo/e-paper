@@ -10,6 +10,7 @@
 #include <string.h> //memset()
 #include <math.h>
 #include <stdbool.h>
+#include "printf.h"
 
 #include "GUI_Paint.h"
 #include "DEV_Config.h"
@@ -71,6 +72,7 @@ static const struct X0_Y0 small_0 = {142,46};		//	Small 0
 
 void battery_out(uint16_t bat){  // Battery voltage out  X.Y
 	
+	printf("**  Vbat out\n");
 	uint8_t x = 3;
 	uint8_t y = 160;
 //	const uint16_t Ubat_min = 220;				// Battery min voltage 2.2 V (display).
@@ -88,6 +90,7 @@ void battery_out(uint16_t bat){  // Battery voltage out  X.Y
 
 void temperature_out(uint16_t tempr){
 	
+	printf("**  T out\n");
 	sprintf(str_array, "%3d", tempr);						
 	Paint_ClearWindows(big_1.x, big_1.y, 142 + 41, big_1.y + 101, WHITE);	// 40 ms		
 
@@ -102,6 +105,7 @@ void temperature_out(uint16_t tempr){
 
 void humidity_out(uint16_t hum){
 
+	printf("**  H out\n");
 	uint8_t x = 125;
 	uint8_t y = 150;
 	char pcent = '%';
