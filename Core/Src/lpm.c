@@ -139,7 +139,7 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 		Error_Handler();
 	}
 
-	gpio_before_stop2();
+	//gpio_before_stop2();
 
 	HAL_SuspendTick();
 
@@ -159,7 +159,7 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 	__WFI();
 
 	HAL_ResumeTick();
-	gpio_from_stop2();
+	//gpio_from_stop2();
 }
 
 // #############################################################################

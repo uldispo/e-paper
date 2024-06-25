@@ -57,11 +57,19 @@ void MX_RTC_Init(void)
 
   /** Enable the WakeUp
   */
-  if (HAL_RTCEx_SetWakeUpTimer(&hrtc, 60, RTC_WAKEUPCLOCK_CK_SPRE_16BITS) != HAL_OK)
-  {
-    Error_Handler();
-  }
+//  if (HAL_RTCEx_SetWakeUpTimer(&hrtc, 60, RTC_WAKEUPCLOCK_CK_SPRE_16BITS) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
   /* USER CODE BEGIN RTC_Init 2 */
+
+  // Configure EXTI line 20 for RTC wakeup interrupt
+  LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_20);
+  LL_EXTI_EnableRisingTrig_0_31(LL_EXTI_LINE_20);
+
+  // Enable RTC wakeup interrupt in NVIC
+      NVIC_EnableIRQ(RTC_TAMP_IRQn);
+      NVIC_SetPriority(RTC_TAMP_IRQn, 0);
 
   /* USER CODE END RTC_Init 2 */
 
