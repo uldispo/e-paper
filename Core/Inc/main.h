@@ -23,8 +23,7 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -56,25 +55,25 @@ extern "C"
 #include <stdint.h>
 #include "printf.h"
 
-    /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-    /* Exported types ------------------------------------------------------------*/
-    /* USER CODE BEGIN ET */
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
 
-    /* USER CODE END ET */
+/* USER CODE END ET */
 
-    /* Exported constants --------------------------------------------------------*/
-    /* USER CODE BEGIN EC */
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
 
-    /* USER CODE END EC */
+/* USER CODE END EC */
 
-    /* Exported macro ------------------------------------------------------------*/
-    /* USER CODE BEGIN EM */
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
 
-    /* USER CODE END EM */
+/* USER CODE END EM */
 
-    /* Exported functions prototypes ---------------------------------------------*/
-    void Error_Handler(void);
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -102,7 +101,7 @@ extern "C"
 #define CS_Pin GPIO_PIN_12
 #define CS_GPIO_Port GPIOA
 
-    /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
 
 #define CS_H() GPIOA->BSRR = GPIO_BSRR_BS12 // CS display
 #define CS_L() GPIOA->BSRR = GPIO_BSRR_BR12
@@ -139,7 +138,7 @@ extern "C"
     void print_error(const char *func, uint32_t line);
     void timeout_reset(const char *func, uint32_t line);
 
-    /* USER CODE END Private defines */
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
