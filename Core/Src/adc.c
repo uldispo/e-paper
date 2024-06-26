@@ -76,104 +76,6 @@ ADC_HandleTypeDef hadc1;
 void MX_ADC1_Init(void)
 {
 
-  /* USER CODE BEGIN ADC1_Init 0 */
-/* Delay between ADC end of calibration and ADC enable.                     */
-/* Delay estimation in CPU cycles: Case of ADC enable done                  */
-/* immediately after ADC calibration, ADC clock setting slow                */
-/* (LL_ADC_CLOCK_ASYNC_DIV32). Use a higher delay if ratio                  */
-/* (CPU clock / ADC clock) is above 32.                                     */
-
-#define ADC_DELAY_CALIB_ENABLE_CPU_CYCLES (LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES * 32)
-#define ADC_CALIBRATION_TIMEOUT_MS ((uint32_t)1)
-#define ADC_ENABLE_TIMEOUT_MS ((uint32_t)1)
-#define ADC_DISABLE_TIMEOUT_MS ((uint32_t)1)
-#define ADC_STOP_CONVERSION_TIMEOUT_MS ((uint32_t)1)
-#define ADC_CONVERSION_TIMEOUT_MS ((uint32_t)500)
-#define ADC_UNITARY_CONVERSION_TIMEOUT_MS ((uint32_t)1)
-
-// #define ADC_DELAY_CALIB_ENABLE_CPU_CYCLES  (LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES * 32)
-/* Definitions of environment analog values */
-/* Value of analog reference voltage (Vref+), connected to analog voltage   */
-/* supply Vdda (unit: mV).
- */
-#define VDDA_APPLI ((uint32_t)3300)
-
-/* Definitions of data related to this example */
-/* Definition of ADCx conversions data table size */
-// #define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   1)
-
-/* Init variable out of expected ADC conversion data range */
-#define VAR_CONVERTED_DATA_INIT_VALUE (__LL_ADC_DIGITAL_SCALE(LL_ADC_RESOLUTION_12B) + 1)
-
-/* Variables for ADC conversion data */
-__IO uint16_t uhADCxConvertedData = (VAR_CONVERTED_DATA_INIT_VALUE); /* ADC group regular conversion data */
-
-/* Variables for ADC conversion data computation to physical values */
-__IO uint16_t uhADCxConvertedData_Voltage_mVolt = 0; /* Value of voltage calculated from ADC conversion data (unit: mV) */
-
-/* Variable to report status of ADC group regular unitary conversion          */
-/*  0: ADC group regular unitary conversion is not completed                  */
-/*  1: ADC group regular unitary conversion is completed                      */
-/*  2: ADC group regular unitary conversion has not been started yet          */
-/*     (initial state)                                                        */
-__IO uint8_t ubAdcGrpRegularUnitaryConvStatus = 2; /* Variable set into ADC interruption callback */
-/* USER CODE END 0 */
-
-ADC_HandleTypeDef hadc1;
-
-/* ADC1 init function */
-void MX_ADC1_Init(void)
-{
-
-  /* USER CODE BEGIN ADC1_Init 0 */
-/* Delay between ADC end of calibration and ADC enable.                     */
-/* Delay estimation in CPU cycles: Case of ADC enable done                  */
-/* immediately after ADC calibration, ADC clock setting slow                */
-/* (LL_ADC_CLOCK_ASYNC_DIV32). Use a higher delay if ratio                  */
-/* (CPU clock / ADC clock) is above 32.                                     */
-
-#define ADC_DELAY_CALIB_ENABLE_CPU_CYCLES (LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES * 32)
-#define ADC_CALIBRATION_TIMEOUT_MS ((uint32_t)1)
-#define ADC_ENABLE_TIMEOUT_MS ((uint32_t)1)
-#define ADC_DISABLE_TIMEOUT_MS ((uint32_t)1)
-#define ADC_STOP_CONVERSION_TIMEOUT_MS ((uint32_t)1)
-#define ADC_CONVERSION_TIMEOUT_MS ((uint32_t)500)
-#define ADC_UNITARY_CONVERSION_TIMEOUT_MS ((uint32_t)1)
-
-// #define ADC_DELAY_CALIB_ENABLE_CPU_CYCLES  (LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES * 32)
-/* Definitions of environment analog values */
-/* Value of analog reference voltage (Vref+), connected to analog voltage   */
-/* supply Vdda (unit: mV).
- */
-#define VDDA_APPLI ((uint32_t)3300)
-
-/* Definitions of data related to this example */
-/* Definition of ADCx conversions data table size */
-// #define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   1)
-
-/* Init variable out of expected ADC conversion data range */
-#define VAR_CONVERTED_DATA_INIT_VALUE (__LL_ADC_DIGITAL_SCALE(LL_ADC_RESOLUTION_12B) + 1)
-
-/* Variables for ADC conversion data */
-__IO uint16_t uhADCxConvertedData = (VAR_CONVERTED_DATA_INIT_VALUE); /* ADC group regular conversion data */
-
-/* Variables for ADC conversion data computation to physical values */
-__IO uint16_t uhADCxConvertedData_Voltage_mVolt = 0; /* Value of voltage calculated from ADC conversion data (unit: mV) */
-
-/* Variable to report status of ADC group regular unitary conversion          */
-/*  0: ADC group regular unitary conversion is not completed                  */
-/*  1: ADC group regular unitary conversion is completed                      */
-/*  2: ADC group regular unitary conversion has not been started yet          */
-/*     (initial state)                                                        */
-__IO uint8_t ubAdcGrpRegularUnitaryConvStatus = 2; /* Variable set into ADC interruption callback */
-/* USER CODE END 0 */
-
-ADC_HandleTypeDef hadc1;
-
-/* ADC1 init function */
-void MX_ADC1_Init(void)
-{
-
   /* USER CODE END ADC1_Init 0 */
 
   ADC_ChannelConfTypeDef sConfig = {0};
@@ -183,7 +85,7 @@ void MX_ADC1_Init(void)
   /* USER CODE END ADC1_Init 1 */
 
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
-  */
+   */
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV1;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
@@ -212,8 +114,8 @@ void MX_ADC1_Init(void)
   }
 
   /** Configure Regular Channel
-  */
-  sConfig.Channel = ADC_CHANNEL_VBAT;
+   */
+  sConfig.Channel = ADC_CHANNEL_VREFINT;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLINGTIME_COMMON_1;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -223,21 +125,20 @@ void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
-
 }
 
-void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
+void HAL_ADC_MspInit(ADC_HandleTypeDef *adcHandle)
 {
 
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  if(adcHandle->Instance==ADC1)
+  if (adcHandle->Instance == ADC1)
   {
-  /* USER CODE BEGIN ADC1_MspInit 0 */
+    /* USER CODE BEGIN ADC1_MspInit 0 */
 
-  /* USER CODE END ADC1_MspInit 0 */
+    /* USER CODE END ADC1_MspInit 0 */
 
-  /** Initializes the peripherals clocks
-  */
+    /** Initializes the peripherals clocks
+     */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
     PeriphClkInit.AdcClockSelection = RCC_ADCCLKSOURCE_SYSCLK;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
@@ -247,25 +148,25 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
 
     /* ADC1 clock enable */
     __HAL_RCC_ADC_CLK_ENABLE();
-  /* USER CODE BEGIN ADC1_MspInit 1 */
+    /* USER CODE BEGIN ADC1_MspInit 1 */
 
-  /* USER CODE END ADC1_MspInit 1 */
+    /* USER CODE END ADC1_MspInit 1 */
   }
 }
 
-void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle)
 {
 
-  if(adcHandle->Instance==ADC1)
+  if (adcHandle->Instance == ADC1)
   {
-  /* USER CODE BEGIN ADC1_MspDeInit 0 */
+    /* USER CODE BEGIN ADC1_MspDeInit 0 */
 
-  /* USER CODE END ADC1_MspDeInit 0 */
+    /* USER CODE END ADC1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ADC_CLK_DISABLE();
-  /* USER CODE BEGIN ADC1_MspDeInit 1 */
+    /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
-  /* USER CODE END ADC1_MspDeInit 1 */
+    /* USER CODE END ADC1_MspDeInit 1 */
   }
 }
 
