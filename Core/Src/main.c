@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
-#include "i2c.h"
 #include "rtc.h"
 #include "spi.h"
 #include "usart.h"
@@ -83,7 +82,6 @@ extern UBYTE *BlackImage;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-
 /* USER CODE BEGIN PFP */
 int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev);
 bool read_RTCRam(uint8_t address, uint16_t *read_data, bool lock);
@@ -99,9 +97,9 @@ void go_down(uint16_t vBat);
 /* USER CODE END 0 */
 
 /**
- * @brief  The application entry point.
- * @retval int
- */
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
 
@@ -143,7 +141,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
-  MX_I2C1_Init();
   MX_RTC_Init();
   MX_SPI1_Init();
   MX_USART2_UART_Init();
@@ -158,7 +155,7 @@ int main(void)
   //  ==============___ Power ON __=======================
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
-  if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
+  if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ******** ((wdalarm & 0xf8) != 0xa0)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
@@ -303,6 +300,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
     // Never be here
     LED1_ON();
@@ -314,44 +312,44 @@ int main(void)
 }
 
 /**
- * @brief System Clock Configuration
- * @retval None
- */
+  * @brief System Clock Configuration
+  * @retval None
+  */
 void SystemClock_Config(void)
 {
-	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-		  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-		  /** Configure the main internal regulator output voltage
-		  */
-		  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
+  /** Configure the main internal regulator output voltage
+  */
+  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE2);
 
-		  /** Initializes the RCC Oscillators according to the specified parameters
-		  * in the RCC_OscInitTypeDef structure.
-		  */
-		  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_MSI;
-		  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
-		  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
-		  RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
-		  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_8;
-		  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-		  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-		  {
-		    Error_Handler();
-		  }
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
+  RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_8;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
 
-		  /** Initializes the CPU, AHB and APB buses clocks
-		  */
-		  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-		                              |RCC_CLOCKTYPE_PCLK1;
-		  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
-		  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-		  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
-		  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-		  {
-		    Error_Handler();
-		  }
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
 }
 
 /* USER CODE BEGIN 4 */
@@ -450,9 +448,9 @@ void go_down(uint16_t vBat)
 /* USER CODE END 4 */
 
 /**
- * @brief  This function is executed in case of error occurrence.
- * @retval None
- */
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
@@ -464,14 +462,14 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef USE_FULL_ASSERT
+#ifdef  USE_FULL_ASSERT
 /**
- * @brief  Reports the name of the source file and the source line number
- *         where the assert_param error has occurred.
- * @param  file: pointer to the source file name
- * @param  line: assert_param error line source number
- * @retval None
- */
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */

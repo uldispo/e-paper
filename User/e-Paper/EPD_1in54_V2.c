@@ -179,7 +179,7 @@ void EPD_1IN54_V2_TurnOnDisplayPart(void)
     // WakeUpCounter = Wakeup Time / (0.244 ms => 570ms /0.244ms=2336=0x920) /// 500/0.244ms=2049
     //	#define SHORT_WUT_WUTR               ((uint32_t)2336)     /* 570 ms -> WUTR = 1163 */
 
-    //enter_stop2(2330, LL_RTC_WAKEUPCLOCK_DIV_8);
+    enter_stop2(2330, LL_RTC_WAKEUPCLOCK_DIV_8);
 
     //  *********************   End S L E E P  571 ms !  *********************
 
