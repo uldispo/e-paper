@@ -178,12 +178,14 @@ void EPD_1IN54_V2_TurnOnDisplayPart(void)
     // Wakeup Time = 0.244 ms  * WakeUpCounter
     // WakeUpCounter = Wakeup Time / (0.244 ms => 570ms /0.244ms=2336=0x920) /// 500/0.244ms=2049
     //	#define SHORT_WUT_WUTR               ((uint32_t)2336)     /* 570 ms -> WUTR = 1163 */
-
-//    enter_stop2(2330, LL_RTC_WAKEUPCLOCK_DIV_8);
+    PB6_H();
+    PB7_H();
+    enter_stop2(2330, LL_RTC_WAKEUPCLOCK_DIV_8);
 
     //  *********************   End S L E E P  571 ms !  *********************
-
+    PB6_L();
     EPD_1IN54_V2_ReadBusy();
+    PB7_L();
 }
 
 static void EPD_1IN54_V2_Lut(UBYTE *lut)
@@ -192,14 +194,7 @@ static void EPD_1IN54_V2_Lut(UBYTE *lut)
     for (UBYTE i = 0; i < 153; i++)
         EPD_1IN54_V2_SendData(lut[i]);
 
-#if (USE_TIME_PROFILING == 1)
-    uint32_t startTick = DWT->CYCCNT;
-#endif /* USE_TIME_PROFILING */
-    EPD_1IN54_V2_ReadBusy();
-#if (USE_TIME_PROFILING == 1)
-    uint32_t tmp = DWT->CYCCNT - startTick;
-    printf("####  EPD_1IN54_V2_Lut: %d\n", (int)(tmp * 0.0000625));
-#endif /* USE_TIME_PROFILING */
+
 }
 
 static void EPD_1IN54_V2_SetLut(UBYTE *lut)

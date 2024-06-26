@@ -15,5 +15,5 @@
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_usart.h:3023:26:LL_USART_IsActiveFlag_TXE_TXFNF	16	static
 ../Core/Src/lpm.c:33:32:PWR_EnterStandbyMode	16	static,ignoring_inline_asm
 ../Core/Src/lpm.c:133:6:enter_stop2	16	static,ignoring_inline_asm
-../Core/Src/lpm.c:167:13:gpio_before_stop2	32	static
-../Core/Src/lpm.c:212:13:gpio_from_stop2	32	static
+../Core/Src/lpm.c:169:13:gpio_before_stop2	32	static
+../Core/Src/lpm.c:214:13:gpio_from_stop2	32	static

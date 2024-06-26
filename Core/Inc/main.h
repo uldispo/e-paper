@@ -124,6 +124,12 @@ void Error_Handler(void);
 #define PAPER_ON_H() GPIOB->BSRR = GPIO_BSRR_BS15 // e-Paper power on/pff
 #define PAPER_ON_L() GPIOB->BSRR = GPIO_BSRR_BR15
 
+#define PB6_H() GPIOB->BSRR = GPIO_BSRR_BS6 // e-Paper power on/pff
+#define PB6_L() GPIOB->BSRR = GPIO_BSRR_BR6
+
+#define PB7_H() GPIOB->BSRR = GPIO_BSRR_BS7 // e-Paper power on/pff
+#define PB7_L() GPIOB->BSRR = GPIO_BSRR_BR7
+
 #define timeout_value 3000
 
 #define RTC_WUT_TIME_SEC ((uint32_t)60) /* 60 s */

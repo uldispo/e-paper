@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
-#include "i2c.h"
 #include "rtc.h"
 #include "spi.h"
 #include "usart.h"
@@ -142,7 +141,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
-  MX_I2C1_Init();
   MX_RTC_Init();
   MX_SPI1_Init();
   MX_USART2_UART_Init();
@@ -157,7 +155,7 @@ int main(void)
   //  ==============___ Power ON __=======================
 
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
-  if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ********
+  if ((wdalarm & 0xf8) != 0xa0)              // ********    Startup from power up.   ******** ((wdalarm & 0xf8) != 0xa0)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
