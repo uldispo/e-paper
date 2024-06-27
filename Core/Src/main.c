@@ -13,6 +13,14 @@
  * in the root directory of this software component.
  * If no LICENSE file comes with this software, it is provided AS-IS.
  *
+ * *	Version: 1.2
+ *
+ *	Optimization -O3
+ *	arm-none-eabi-size  e-paper_18x5.elf
+ *	arm-none-eabi-objdump -h -S e-paper_18x5.elf  > "e-paper_18x5.list"
+ *  text	   data	    bss	    dec	    hex	filename
+ *  108108	    840	   7352	 116300	  1c64c	e-paper_18x5.elf
+ *
  ******************************************************************************
  */
 /* USER CODE END Header */
