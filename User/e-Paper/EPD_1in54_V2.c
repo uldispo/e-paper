@@ -186,6 +186,8 @@ void EPD_1IN54_V2_TurnOnDisplayPart(void)
     PB6_L();
     EPD_1IN54_V2_ReadBusy();
     PB7_L();
+    //uint32_t clk = HAL_RCC_GetSysClockFreq();
+    ///printf("After STOP2:   %d\n", clk); // OK. 16000000
 }
 
 static void EPD_1IN54_V2_Lut(UBYTE *lut)

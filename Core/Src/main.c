@@ -86,7 +86,7 @@ void SystemClock_Config(void);
 int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev);
 bool read_RTCRam(uint8_t address, uint16_t *read_data, bool lock);
 bool write_ToRTCRam(uint8_t address, uint16_t write_data, bool lock);
-bool clearRTCRam(bool lock);
+//bool clearRTCRam(bool lock);
 void go_down(uint16_t vBat);
 
 /* USER CODE END PFP */
@@ -413,21 +413,25 @@ int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev)
 }
 
 // Function to clear the entire RTC RAM
-bool clearRTCRam(bool lock)
-{
-  // Define the start address and size of the memory block
-  uint8_t *startAddress = (uint8_t *)0x40;
-  size_t size = 0x80;
-
-  // Initialize the RAM block to 0x00
-  // memset(startAddress, 0x00, size);
-  // Iterate through each byte in the specified block
-  for (size_t i = 0; i < size; i++)
-  {
-    startAddress[i] = 0x00;
-  }
-  return true;
-}
+//bool clearRTCRam(bool lock)
+//{
+//  // Define the start address and size of the memory block
+//  uint8_t *startAddress = (uint8_t *)0x40;
+//  size_t size = 0x80;
+//
+//  // Initialize the RAM block to 0x00
+//  // Disable specific warning for this block
+//  #pragma GCC diagnostic push
+//  #pragma GCC diagnostic ignored "-Warray-bounds"
+//  memset((uint8_t*)startAddress, 0x00, size);
+//  #pragma GCC diagnostic pop
+//  // Iterate through each byte in the specified block
+////  for (size_t i = 0; i < size; i++)
+////  {
+////    startAddress[i] = 0x00;
+////  }
+//  return true;
+//}
 
 void go_down(uint16_t vBat)
 {

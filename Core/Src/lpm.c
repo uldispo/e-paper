@@ -161,7 +161,7 @@ void enter_stop2(uint32_t sleep_time, uint32_t wakeup_clock)
 	HAL_ResumeTick();
 	LED1_ON();
 	//gpio_from_stop2();
-	printf("Exit from STOP2");
+	//printf("Exit from STOP2\n");
 }
 
 // #############################################################################

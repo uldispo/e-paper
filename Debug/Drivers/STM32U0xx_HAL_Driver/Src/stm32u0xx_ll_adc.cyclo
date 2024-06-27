@@ -1,15 +1,3 @@
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:1992:22:LL_ADC_SetCommonClock	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:2762:26:LL_ADC_REG_GetSequencerConfigurable	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:2834:22:LL_ADC_REG_SetSequencerLength	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4547:22:LL_ADC_Disable	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4566:26:LL_ADC_IsEnabled	2
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4577:26:LL_ADC_IsDisableOngoing	2
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4677:22:LL_ADC_REG_StopConversion	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4704:26:LL_ADC_REG_IsStopConversionOngoing	2
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4827:26:LL_ADC_IsActiveFlag_CCRDY	2
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_adc.h:4940:22:LL_ADC_ClearFlag_CCRDY	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_bus.h:981:22:LL_APB1_GRP2_ForceReset	1
-../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_ll_bus.h:1009:22:LL_APB1_GRP2_ReleaseReset	1
 ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_adc.c:211:13:LL_ADC_CommonDeInit	1
 ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_adc.c:243:13:LL_ADC_CommonInit	2
 ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_adc.c:280:6:LL_ADC_CommonStructInit	1
