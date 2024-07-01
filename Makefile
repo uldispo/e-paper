@@ -22,7 +22,7 @@ TARGET = e-paper_18x5
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Og
+OPT = -O3
 
 
 #######################################
@@ -39,7 +39,6 @@ C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/gpio.c \
 Core/Src/adc.c \
-Core/Src/i2c.c \
 Core/Src/rtc.c \
 Core/Src/spi.c \
 Core/Src/usart.c \
@@ -60,9 +59,6 @@ Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr_ex.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_cortex.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_exti.c \
-Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c.c \
-Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c_ex.c \
-Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_i2c.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_gpio.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc.c \
 Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc_ex.c \
@@ -145,7 +141,8 @@ AS_DEFS =
 # C defines
 C_DEFS =  \
 -DUSE_HAL_DRIVER \
--DSTM32U073xx
+-DSTM32U073xx \
+-DUSE_FULL_LL_DRIVER
 
 
 # AS includes
@@ -229,7 +226,7 @@ $(BUILD_DIR):
 # clean up
 #######################################
 clean:
-	-rm -fR $(BUILD_DIR)
+	-rmdir /S /Q $(BUILD_DIR)
   
 #######################################
 # dependencies
