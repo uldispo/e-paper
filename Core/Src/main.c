@@ -16,10 +16,6 @@
  * *	Version: 1.2
  *
  *	Optimization -O3
- *	arm-none-eabi-size  e-paper_18x5.elf
- *	arm-none-eabi-objdump -h -S e-paper_18x5.elf  > "e-paper_18x5.list"
- *  text	   data	    bss	    dec	    hex	filename
- *  108108	    840	   7352	 116300	  1c64c	e-paper_18x5.elf
  *
  ******************************************************************************
  */
@@ -97,7 +93,6 @@ void SystemClock_Config(void);
 int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev);
 bool read_RTCRam(uint8_t address, uint16_t *read_data, bool lock);
 bool write_ToRTCRam(uint8_t address, uint16_t write_data, bool lock);
-// bool clearRTCRam(bool lock);
 void go_down(uint16_t vBat);
 
 /* USER CODE END PFP */
@@ -159,25 +154,25 @@ int main(void)
 
   LL_DBGMCU_DisableDBGStopMode(); // !!!__ Disable debug in stop mode __!!!
                                   //	LL_DBGMCU_EnableDBGStopMode();
-  LED1_ON();
+  // LED1_ON();
 
   LL_SPI_Enable(SPI1);
 
   //  ==============___ Power ON __=======================
-
-  uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM  0x0e;
-  if ((wdalarm & 0xf8) != MAGIC_WORD_1)      // ********   Startup from power up. **** ((wdalarm & 0xf8) != 0xa0)
+  // Use 0x0E - Weekday Alarm registry 4 bits to detect first time power on
+  // write MAGIC_WORD_1 to REG_WEEKDAY_ALARM general purpuse upper bits
+  uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM = 0x0e;
+  if ((wdalarm & 0xf8) != MAGIC_WORD_1)      // ********   Startup from power on **** ((wdalarm & 0xf8) != 0xa0)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
-    HAL_Delay(3000); // AB1805 self initializtion time
+    HAL_Delay(3000); // AB1805 after ~3 sec start communicate with controller
 
     vbat_output_flag = (BAT_OUTPUT_PERIOD); // For first time output must be bigger 15
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, MAGIC_WORD_1); // Magic word = 0xa0
     printf("wdalarm = 0x%x\n", read(REG_WEEKDAY_ALARM));
 
-    // writeRam(address, (uint8_t *)data, sizeof(data), lock);
     writeRam(H_OLD_RAM_ADDRESS, 0, 1, 0);
     writeRam(T_OLD_RAM_ADDRESS, 0, 1, 0);
     writeRam(VBAT_OLD_RAM_ADDRESS, 0, 1, 0);
@@ -228,7 +223,7 @@ int main(void)
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d\n", h_, H_old, t_, T_old);
 
-  // ========================_____END measureME280____===========================
+  // ========================_____END measure BME280____===========================
 
   if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
   {
@@ -269,11 +264,11 @@ int main(void)
       }
     }
 
-    PAPER_ON_H();
+    PAPER_ON();
     printf("initialized_flag5 = 0x%x\n", initialized_flag);
     if (initialized_flag == 0)
     {
-      ESP_Init();
+      ESP_Init();           // e-paper full initialization
       initialized_flag = 1; // Flag that ESP is initialized, to do it only once
       write(INITIALIZED_FLAG_ADDRESS, initialized_flag);
       printf("initialized_flag = 0x%x\n", read(INITIALIZED_FLAG_ADDRESS));
@@ -281,7 +276,7 @@ int main(void)
     else
     {
       EPD_1IN54_V2_Reset();
-      ESP_Init_standby(); // Initialize after deep power down
+      ESP_Init_after_sleep(); // Initialize after deep power down
     }
 
     if (temperature_new)
@@ -299,10 +294,10 @@ int main(void)
 
     EPD_1IN54_V2_DisplayPart(BlackImage);
     // EPD_1IN54_V2_Sleep(); // No need for Deep sleep mode
-    PAPER_ON_L(); // e-Paper power OFF
+    PAPER_OFF(); // e-Paper power OFF
   }
 
-  deepPowerDown(SLEEP_TIME_SEC); // All Power off for SLEEP_TIME_SEC , except RTC which turn power on
+  deepPowerDown(SLEEP_TIME_SEC); // All Power off for SLEEP_TIME_SEC , except RTC which is on
 
   /* USER CODE END 2 */
 
@@ -398,6 +393,7 @@ bool write_ToRTCRam(uint8_t address, uint16_t write_data, bool lock)
   return writeRam(address, (uint8_t *)data, sizeof(data), lock);
 }
 
+// Function to print timeout errors
 void print_error(const char *func, uint32_t line)
 {
   printf(" *** Error:  %s ,   %d\n", func, line);
@@ -423,27 +419,6 @@ int8_t stream_sensor_data_forced_mode(struct bme280_dev *dev)
   return reslt;
 }
 
-// Function to clear the entire RTC RAM
-// bool clearRTCRam(bool lock)
-//{
-//  // Define the start address and size of the memory block
-//  uint8_t *startAddress = (uint8_t *)0x40;
-//  size_t size = 0x80;
-//
-//  // Initialize the RAM block to 0x00
-//  // Disable specific warning for this block
-//  #pragma GCC diagnostic push
-//  #pragma GCC diagnostic ignored "-Warray-bounds"
-//  memset((uint8_t*)startAddress, 0x00, size);
-//  #pragma GCC diagnostic pop
-//  // Iterate through each byte in the specified block
-////  for (size_t i = 0; i < size; i++)
-////  {
-////    startAddress[i] = 0x00;
-////  }
-//  return true;
-//}
-
 void go_down(uint16_t vBat)
 {
   /* S H U T   D O W N */
@@ -452,7 +427,7 @@ void go_down(uint16_t vBat)
   printf("Clear...\r\n");
   final_message(vBat);
 
-  // Turn all power off, exept the RTC
+  // Turn all power off, exept the RTC.
   // Code must be inserted here !
   // write RTC_Register Magic2
   // First at main check Magic2, if true  deepPowerDown

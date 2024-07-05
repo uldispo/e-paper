@@ -19,8 +19,6 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 
-
-uint32_t battery_voltage(void);
 void Activate_ADC(void);
 
 #ifdef __cplusplus

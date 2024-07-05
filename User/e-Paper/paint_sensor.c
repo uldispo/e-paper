@@ -19,10 +19,6 @@
 #include "paint_sensor.h"
 #include "Debug.h"
 
-// extern uint16_t Ubat;
-extern uint8_t bat_output_flag;
-#define ADC_CONVERTED_DATA_BUFFER_SIZE ((uint32_t)1)
-
 extern uint16_t H_old;
 extern uint16_t T_old;
 extern uint16_t vbat_old;
@@ -41,32 +37,9 @@ struct X0_Y0
 	uint8_t y;
 };
 
-// static uint8_t width_48 = 27;
-// static uint8_t width_36 = 20;
-// static uint8_t width_28 = 14;
-// static uint8_t width_24 = 12;
-// static uint8_t width_20 = 10;
-// static uint8_t width_88 = 45;
-// static uint8_t width_104 = 57;
-
-// static uint8_t height_48 = 47;
-// static uint8_t height_36 = 34;
-// static uint8_t height_28 = 35;
-// static uint8_t height_24 = 29;
-// static uint8_t height_20 = 24;
-// static uint8_t height_88 = 80;
-// static uint8_t height_104 = 101;
-
-// struct X0_Y0 bat_1 = {1, 1};			// battery
-// struct X0_Y0 temp_1 = {1, 1};			// temperature
-// struct X0_Y0 hum_1 = {1, 1};			// humidity
-
-// static const struct X0_Y0 bat_1 = {1, 150};		//	Big 2
-// static const struct X0_Y0 bat_0 = {30, 150};		//	Big 1
-
-static const struct X0_Y0 big_1 = {10, 30};	   //	Big 2
-static const struct X0_Y0 big_0 = {67, 30};	   //	Big 1
-static const struct X0_Y0 small_0 = {142, 46}; //	Small 0
+static const struct X0_Y0 big_1 = {10, 30};	   //	Big digit 2
+static const struct X0_Y0 big_0 = {67, 30};	   //	Big digit 1
+static const struct X0_Y0 small_0 = {142, 46}; //	Small digit 0
 
 // *************************************************************************************
 
@@ -76,7 +49,6 @@ void battery_out(uint16_t bat)
 	printf("**  Vbat out\n");
 	uint8_t x = 3;
 	uint8_t y = 160;
-	//	const uint16_t Ubat_min = 220;				// Battery min voltage 2.2 V (display).
 
 	sprintf(str_array, "%2d", bat);
 	Paint_ClearWindows(x, y, x + 40, y + 29, WHITE);
@@ -90,7 +62,6 @@ void battery_out(uint16_t bat)
 
 void temperature_out(uint16_t tempr)
 {
-
 	printf("**  T out\n");
 	sprintf(str_array, "%3d", tempr);
 	Paint_ClearWindows(big_1.x, big_1.y, 142 + 41, big_1.y + 101, WHITE); // 40 ms
@@ -105,20 +76,15 @@ void temperature_out(uint16_t tempr)
 
 void humidity_out(uint16_t hum)
 {
-
 	printf("**  H out\n");
 	uint8_t x = 125;
 	uint8_t y = 150;
-	// char pcent = '%';
+	//  char pcent = '%';
 	//  sprintf(str_array, "%2d%%", hum);
-	//   append % to string
+	//  append % to string
 	//  strncat(str_array, &pcent, 1);
 	snprintf(str_array, sizeof(str_array), "%2d", hum);					// Format the number
 	strncat(str_array, "%", sizeof(str_array) - strlen(str_array) - 1); // Append %
-
-	/******************************************************************************
-	void Paint_DrawString_EN(UWORD Xstart, UWORD Ystart, const char * pString,tFont* Font, UWORD Color_Foreground, UWORD Color_Background)
-	******************************************************************************/
 
 	Paint_ClearWindows(x, y, 200, 197, WHITE);									// 10^1
 	Paint_DrawString_EN(x, y, (char *)str_array, &calibri_36pts, WHITE, BLACK); // 20, 34
@@ -133,7 +99,7 @@ int ESP_Init(void)
 	EPD_1IN54_V2_Init(); // Reset pin set low, set LUT etc.
 
 	// Create a new image cache
-	/* !!!  you have to edit the startup_stm32fxxx.s file and set a heap size = 1400 !!!  */
+	/* !!!  you have to edit the startup_stm32fxxx.s file and set a heap size = 1500 !!!  */
 	UWORD Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0) ? (EPD_1IN54_V2_WIDTH / 8) : (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;
 	if ((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL)
 	{
@@ -148,7 +114,7 @@ int ESP_Init(void)
 	Paint_Clear(WHITE);
 	Paint_DrawRectangle(2, 3, 198, 140, BLACK, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
 
-	EPD_1IN54_V2_Display(BlackImage); // Write data to display's RAM (do you really need it?)
+	EPD_1IN54_V2_Display(BlackImage); // Write data to display's RAM
 
 	EPD_1IN54_V2_DisplayPartBaseImage(BlackImage);
 	EPD_1IN54_V2_Init_Partial();
@@ -195,10 +161,10 @@ void Show_RTC_Calendar(void)
 	printf("%s\t %s\n", aEndTime, aEndDate);
 }
 
-//	**************************___ ESP_Init_after_standby ___**********************
-int ESP_Init_standby(void)
+//	****************_ ESP_Init_after_sleep, screen hold previous image_**************
+int ESP_Init_after_sleep(void)
 {
-	printf("ESP_Init_standby\n");
+	printf("ESP_Init_after_sleep\n");
 	// Create a new image cache
 	/* !!!  you have to edit the startup_stm32fxxx.s file and set a heap size = 1400 !!!  */
 	UWORD Imagesize = ((EPD_1IN54_V2_WIDTH % 8 == 0) ? (EPD_1IN54_V2_WIDTH / 8) : (EPD_1IN54_V2_WIDTH / 8 + 1)) * EPD_1IN54_V2_HEIGHT;

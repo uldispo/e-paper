@@ -139,8 +139,6 @@ static void EPD_1IN54_V2_ReadBusy(void)
             timeout_reset(__func__, __LINE__);
         }
     }
-
-    //DE_BUG("busy: %d\r\n", (HAL_GetTick() - time1));
 }
 
 /******************************************************************************
@@ -178,16 +176,14 @@ void EPD_1IN54_V2_TurnOnDisplayPart(void)
     // Wakeup Time = 0.244 ms  * WakeUpCounter
     // WakeUpCounter = Wakeup Time / (0.244 ms => 570ms /0.244ms=2336=0x920) /// 500/0.244ms=2049
     //	#define SHORT_WUT_WUTR               ((uint32_t)2336)     /* 570 ms -> WUTR = 1163 */
-    PB6_H();
-    PB7_H();
+    // PB6_H(); // Debuging
+    // PB7_H(); // Debuging
     enter_stop2(2330, LL_RTC_WAKEUPCLOCK_DIV_8);
 
     //  *********************   End S L E E P  571 ms !  *********************
-    PB6_L();
+    // PB6_L(); // Debuging
     EPD_1IN54_V2_ReadBusy();
-    PB7_L();
-    //uint32_t clk = HAL_RCC_GetSysClockFreq();
-    ///printf("After STOP2:   %d\n", clk); // OK. 16000000
+    // PB7_L(); // Debuging
 }
 
 static void EPD_1IN54_V2_Lut(UBYTE *lut)
@@ -195,8 +191,6 @@ static void EPD_1IN54_V2_Lut(UBYTE *lut)
     EPD_1IN54_V2_SendCommand(0x32);
     for (UBYTE i = 0; i < 153; i++)
         EPD_1IN54_V2_SendData(lut[i]);
-
-
 }
 
 static void EPD_1IN54_V2_SetLut(UBYTE *lut)

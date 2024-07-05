@@ -1,2 +1,2 @@
 ../Core/Src/lpm.c:33:32:PWR_EnterStandbyMode	32	static,ignoring_inline_asm
-../Core/Src/lpm.c:133:6:enter_stop2	16	static,ignoring_inline_asm
+../Core/Src/lpm.c:133:6:enter_stop2	8	static,ignoring_inline_asm
