@@ -32,7 +32,6 @@
 /* USER CODE BEGIN Includes */
 
 #include "stm32u0xx_ll_spi.h"
-#include "adc_if.h"
 #include "AB1805_RK.h"
 
 #include "bme280.h"
