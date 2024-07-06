@@ -1,6 +1,0 @@
-../Core/Src/adc.c:76:6:MX_ADC1_Init	3
-../Core/Src/adc.c:130:6:HAL_ADC_MspInit	3
-../Core/Src/adc.c:157:6:HAL_ADC_MspDeInit	2
-../Core/Src/adc.c:177:10:get_vbat	6
-../Core/Src/adc.c:232:6:Activate_ADC	8
-../Core/Src/adc.c:359:6:ConversionStartPoll_ADC_GrpRegular	5

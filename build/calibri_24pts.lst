@@ -1,0 +1,3235 @@
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"calibri_24pts.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "User/e-Paper/calibri_24pts.c"
+  18              		.global	calibri_24pts
+  19              		.section	.data.calibri_24pts,"aw"
+  20              		.align	2
+  23              	calibri_24pts:
+  24 0000 5F000000 		.word	95
+  25 0004 00000000 		.word	calibri_24pts_array
+  26              		.section	.rodata.calibri_24pts_array,"a"
+  27              		.align	2
+  30              	calibri_24pts_array:
+  31 0000 20000000 		.word	32
+  32 0004 00000000 		.word	calibri_24pts_0x20
+  33 0008 21000000 		.word	33
+  34 000c 00000000 		.word	calibri_24pts_0x21
+  35 0010 22000000 		.word	34
+  36 0014 00000000 		.word	calibri_24pts_0x22
+  37 0018 23000000 		.word	35
+  38 001c 00000000 		.word	calibri_24pts_0x23
+  39 0020 24000000 		.word	36
+  40 0024 00000000 		.word	calibri_24pts_0x24
+  41 0028 25000000 		.word	37
+  42 002c 00000000 		.word	calibri_24pts_0x25
+  43 0030 26000000 		.word	38
+  44 0034 00000000 		.word	calibri_24pts_0x26
+  45 0038 27000000 		.word	39
+  46 003c 00000000 		.word	calibri_24pts_0x27
+  47 0040 28000000 		.word	40
+  48 0044 00000000 		.word	calibri_24pts_0x28
+  49 0048 29000000 		.word	41
+  50 004c 00000000 		.word	calibri_24pts_0x29
+  51 0050 2A000000 		.word	42
+  52 0054 00000000 		.word	calibri_24pts_0x2a
+  53 0058 2B000000 		.word	43
+  54 005c 00000000 		.word	calibri_24pts_0x2b
+  55 0060 2C000000 		.word	44
+  56 0064 00000000 		.word	calibri_24pts_0x2c
+  57 0068 2D000000 		.word	45
+  58 006c 00000000 		.word	calibri_24pts_0x2d
+  59 0070 2E000000 		.word	46
+  60 0074 00000000 		.word	calibri_24pts_0x2e
+  61 0078 2F000000 		.word	47
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 2
+
+
+  62 007c 00000000 		.word	calibri_24pts_0x2f
+  63 0080 30000000 		.word	48
+  64 0084 00000000 		.word	calibri_24pts_0x30
+  65 0088 31000000 		.word	49
+  66 008c 00000000 		.word	calibri_24pts_0x31
+  67 0090 32000000 		.word	50
+  68 0094 00000000 		.word	calibri_24pts_0x32
+  69 0098 33000000 		.word	51
+  70 009c 00000000 		.word	calibri_24pts_0x33
+  71 00a0 34000000 		.word	52
+  72 00a4 00000000 		.word	calibri_24pts_0x34
+  73 00a8 35000000 		.word	53
+  74 00ac 00000000 		.word	calibri_24pts_0x35
+  75 00b0 36000000 		.word	54
+  76 00b4 00000000 		.word	calibri_24pts_0x36
+  77 00b8 37000000 		.word	55
+  78 00bc 00000000 		.word	calibri_24pts_0x37
+  79 00c0 38000000 		.word	56
+  80 00c4 00000000 		.word	calibri_24pts_0x38
+  81 00c8 39000000 		.word	57
+  82 00cc 00000000 		.word	calibri_24pts_0x39
+  83 00d0 3A000000 		.word	58
+  84 00d4 00000000 		.word	calibri_24pts_0x3a
+  85 00d8 3B000000 		.word	59
+  86 00dc 00000000 		.word	calibri_24pts_0x3b
+  87 00e0 3C000000 		.word	60
+  88 00e4 00000000 		.word	calibri_24pts_0x3c
+  89 00e8 3D000000 		.word	61
+  90 00ec 00000000 		.word	calibri_24pts_0x3d
+  91 00f0 3E000000 		.word	62
+  92 00f4 00000000 		.word	calibri_24pts_0x3e
+  93 00f8 3F000000 		.word	63
+  94 00fc 00000000 		.word	calibri_24pts_0x3f
+  95 0100 40000000 		.word	64
+  96 0104 00000000 		.word	calibri_24pts_0x40
+  97 0108 41000000 		.word	65
+  98 010c 00000000 		.word	calibri_24pts_0x41
+  99 0110 42000000 		.word	66
+ 100 0114 00000000 		.word	calibri_24pts_0x42
+ 101 0118 43000000 		.word	67
+ 102 011c 00000000 		.word	calibri_24pts_0x43
+ 103 0120 44000000 		.word	68
+ 104 0124 00000000 		.word	calibri_24pts_0x44
+ 105 0128 45000000 		.word	69
+ 106 012c 00000000 		.word	calibri_24pts_0x45
+ 107 0130 46000000 		.word	70
+ 108 0134 00000000 		.word	calibri_24pts_0x46
+ 109 0138 47000000 		.word	71
+ 110 013c 00000000 		.word	calibri_24pts_0x47
+ 111 0140 48000000 		.word	72
+ 112 0144 00000000 		.word	calibri_24pts_0x48
+ 113 0148 49000000 		.word	73
+ 114 014c 00000000 		.word	calibri_24pts_0x49
+ 115 0150 4A000000 		.word	74
+ 116 0154 00000000 		.word	calibri_24pts_0x4a
+ 117 0158 4B000000 		.word	75
+ 118 015c 00000000 		.word	calibri_24pts_0x4b
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 3
+
+
+ 119 0160 4C000000 		.word	76
+ 120 0164 00000000 		.word	calibri_24pts_0x4c
+ 121 0168 4D000000 		.word	77
+ 122 016c 00000000 		.word	calibri_24pts_0x4d
+ 123 0170 4E000000 		.word	78
+ 124 0174 00000000 		.word	calibri_24pts_0x4e
+ 125 0178 4F000000 		.word	79
+ 126 017c 00000000 		.word	calibri_24pts_0x4f
+ 127 0180 50000000 		.word	80
+ 128 0184 00000000 		.word	calibri_24pts_0x50
+ 129 0188 51000000 		.word	81
+ 130 018c 00000000 		.word	calibri_24pts_0x51
+ 131 0190 52000000 		.word	82
+ 132 0194 00000000 		.word	calibri_24pts_0x52
+ 133 0198 53000000 		.word	83
+ 134 019c 00000000 		.word	calibri_24pts_0x53
+ 135 01a0 54000000 		.word	84
+ 136 01a4 00000000 		.word	calibri_24pts_0x54
+ 137 01a8 55000000 		.word	85
+ 138 01ac 00000000 		.word	calibri_24pts_0x55
+ 139 01b0 56000000 		.word	86
+ 140 01b4 00000000 		.word	calibri_24pts_0x56
+ 141 01b8 57000000 		.word	87
+ 142 01bc 00000000 		.word	calibri_24pts_0x57
+ 143 01c0 58000000 		.word	88
+ 144 01c4 00000000 		.word	calibri_24pts_0x58
+ 145 01c8 59000000 		.word	89
+ 146 01cc 00000000 		.word	calibri_24pts_0x59
+ 147 01d0 5A000000 		.word	90
+ 148 01d4 00000000 		.word	calibri_24pts_0x5a
+ 149 01d8 5B000000 		.word	91
+ 150 01dc 00000000 		.word	calibri_24pts_0x5b
+ 151 01e0 5C000000 		.word	92
+ 152 01e4 00000000 		.word	calibri_24pts_0x5c
+ 153 01e8 5D000000 		.word	93
+ 154 01ec 00000000 		.word	calibri_24pts_0x5d
+ 155 01f0 5E000000 		.word	94
+ 156 01f4 00000000 		.word	calibri_24pts_0x5e
+ 157 01f8 5F000000 		.word	95
+ 158 01fc 00000000 		.word	calibri_24pts_0x5f
+ 159 0200 60000000 		.word	96
+ 160 0204 00000000 		.word	calibri_24pts_0x60
+ 161 0208 61000000 		.word	97
+ 162 020c 00000000 		.word	calibri_24pts_0x61
+ 163 0210 62000000 		.word	98
+ 164 0214 00000000 		.word	calibri_24pts_0x62
+ 165 0218 63000000 		.word	99
+ 166 021c 00000000 		.word	calibri_24pts_0x63
+ 167 0220 64000000 		.word	100
+ 168 0224 00000000 		.word	calibri_24pts_0x64
+ 169 0228 65000000 		.word	101
+ 170 022c 00000000 		.word	calibri_24pts_0x65
+ 171 0230 66000000 		.word	102
+ 172 0234 00000000 		.word	calibri_24pts_0x66
+ 173 0238 67000000 		.word	103
+ 174 023c 00000000 		.word	calibri_24pts_0x67
+ 175 0240 68000000 		.word	104
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 4
+
+
+ 176 0244 00000000 		.word	calibri_24pts_0x68
+ 177 0248 69000000 		.word	105
+ 178 024c 00000000 		.word	calibri_24pts_0x69
+ 179 0250 6A000000 		.word	106
+ 180 0254 00000000 		.word	calibri_24pts_0x6a
+ 181 0258 6B000000 		.word	107
+ 182 025c 00000000 		.word	calibri_24pts_0x6b
+ 183 0260 6C000000 		.word	108
+ 184 0264 00000000 		.word	calibri_24pts_0x6c
+ 185 0268 6D000000 		.word	109
+ 186 026c 00000000 		.word	calibri_24pts_0x6d
+ 187 0270 6E000000 		.word	110
+ 188 0274 00000000 		.word	calibri_24pts_0x6e
+ 189 0278 6F000000 		.word	111
+ 190 027c 00000000 		.word	calibri_24pts_0x6f
+ 191 0280 70000000 		.word	112
+ 192 0284 00000000 		.word	calibri_24pts_0x70
+ 193 0288 71000000 		.word	113
+ 194 028c 00000000 		.word	calibri_24pts_0x71
+ 195 0290 72000000 		.word	114
+ 196 0294 00000000 		.word	calibri_24pts_0x72
+ 197 0298 73000000 		.word	115
+ 198 029c 00000000 		.word	calibri_24pts_0x73
+ 199 02a0 74000000 		.word	116
+ 200 02a4 00000000 		.word	calibri_24pts_0x74
+ 201 02a8 75000000 		.word	117
+ 202 02ac 00000000 		.word	calibri_24pts_0x75
+ 203 02b0 76000000 		.word	118
+ 204 02b4 00000000 		.word	calibri_24pts_0x76
+ 205 02b8 77000000 		.word	119
+ 206 02bc 00000000 		.word	calibri_24pts_0x77
+ 207 02c0 78000000 		.word	120
+ 208 02c4 00000000 		.word	calibri_24pts_0x78
+ 209 02c8 79000000 		.word	121
+ 210 02cc 00000000 		.word	calibri_24pts_0x79
+ 211 02d0 7A000000 		.word	122
+ 212 02d4 00000000 		.word	calibri_24pts_0x7a
+ 213 02d8 7B000000 		.word	123
+ 214 02dc 00000000 		.word	calibri_24pts_0x7b
+ 215 02e0 7C000000 		.word	124
+ 216 02e4 00000000 		.word	calibri_24pts_0x7c
+ 217 02e8 7D000000 		.word	125
+ 218 02ec 00000000 		.word	calibri_24pts_0x7d
+ 219 02f0 7E000000 		.word	126
+ 220 02f4 00000000 		.word	calibri_24pts_0x7e
+ 221              		.section	.rodata.calibri_24pts_0x7e,"a"
+ 222              		.align	2
+ 225              	calibri_24pts_0x7e:
+ 226 0000 00000000 		.word	image_data_calibri_24pts_0x7e
+ 227 0004 0C00     		.short	12
+ 228 0006 1D00     		.short	29
+ 229 0008 08       		.byte	8
+ 230 0009 000000   		.space	3
+ 231              		.section	.rodata.image_data_calibri_24pts_0x7e,"a"
+ 232              		.align	2
+ 235              	image_data_calibri_24pts_0x7e:
+ 236 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 5
+
+
+ 236      00000000 
+ 236      00000000 
+ 236      00
+ 237 000d 00000000 		.ascii	"\000\000\000\000\000<0>0b0c\340a\300\000\000\000\000"
+ 237      003C303E 
+ 237      30623063 
+ 237      E061C000 
+ 237      000000
+ 238 0020 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 238      00000000 
+ 238      00000000 
+ 238      00
+ 239 002d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 239      00000000 
+ 239      00000000 
+ 239      00
+ 240              		.section	.rodata.calibri_24pts_0x7d,"a"
+ 241              		.align	2
+ 244              	calibri_24pts_0x7d:
+ 245 0000 00000000 		.word	image_data_calibri_24pts_0x7d
+ 246 0004 0800     		.short	8
+ 247 0006 1D00     		.short	29
+ 248 0008 08       		.byte	8
+ 249 0009 000000   		.space	3
+ 250              		.section	.rodata.image_data_calibri_24pts_0x7d,"a"
+ 251              		.align	2
+ 254              	image_data_calibri_24pts_0x7d:
+ 255 0000 00000000 		.ascii	"\000\000\000\000\000\000px\030\030\030\030\030\030\014"
+ 255      00007078 
+ 255      18181818 
+ 255      18180C
+ 256 000f 0E0E0C18 		.ascii	"\016\016\014\030\030\030\030\030\030\030xp\000\000"
+ 256      18181818 
+ 256      18187870 
+ 256      0000
+ 257              		.section	.rodata.calibri_24pts_0x7c,"a"
+ 258              		.align	2
+ 261              	calibri_24pts_0x7c:
+ 262 0000 00000000 		.word	image_data_calibri_24pts_0x7c
+ 263 0004 0B00     		.short	11
+ 264 0006 1D00     		.short	29
+ 265 0008 08       		.byte	8
+ 266 0009 000000   		.space	3
+ 267              		.section	.rodata.image_data_calibri_24pts_0x7c,"a"
+ 268              		.align	2
+ 271              	image_data_calibri_24pts_0x7c:
+ 272 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\004"
+ 272      00000000 
+ 272      00000000 
+ 272      04
+ 273 000d 00040004 		.ascii	"\000\004\000\004\000\004\000\004\000\004\000\004\000"
+ 273      00040004 
+ 273      00040004 
+ 273      00
+ 274 001a 04000400 		.ascii	"\004\000\004\000\004\000\004\000\004\000\004\000\004"
+ 274      04000400 
+ 274      04000400 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 6
+
+
+ 274      04
+ 275 0027 00040004 		.ascii	"\000\004\000\004\000\004\000\004\000\004\000\004\000"
+ 275      00040004 
+ 275      00040004 
+ 275      00
+ 276 0034 04000000 		.ascii	"\004\000\000\000\000\000"
+ 276      0000
+ 277              		.section	.rodata.calibri_24pts_0x7b,"a"
+ 278              		.align	2
+ 281              	calibri_24pts_0x7b:
+ 282 0000 00000000 		.word	image_data_calibri_24pts_0x7b
+ 283 0004 0800     		.short	8
+ 284 0006 1D00     		.short	29
+ 285 0008 08       		.byte	8
+ 286 0009 000000   		.space	3
+ 287              		.section	.rodata.image_data_calibri_24pts_0x7b,"a"
+ 288              		.align	2
+ 291              	image_data_calibri_24pts_0x7b:
+ 292 0000 00000000 		.ascii	"\000\000\000\000\000\000\016\036\030\030\030\030\030"
+ 292      00000E1E 
+ 292      18181818 
+ 292      18
+ 293 000d 18387070 		.ascii	"\0308pp8\030\030\030\030\030\030\030\036\016\000\000"
+ 293      38181818 
+ 293      18181818 
+ 293      1E0E0000 
+ 294              		.section	.rodata.calibri_24pts_0x7a,"a"
+ 295              		.align	2
+ 298              	calibri_24pts_0x7a:
+ 299 0000 00000000 		.word	image_data_calibri_24pts_0x7a
+ 300 0004 0900     		.short	9
+ 301 0006 1D00     		.short	29
+ 302 0008 08       		.byte	8
+ 303 0009 000000   		.space	3
+ 304              		.section	.rodata.image_data_calibri_24pts_0x7a,"a"
+ 305              		.align	2
+ 308              	image_data_calibri_24pts_0x7a:
+ 309 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 309      00000000 
+ 309      00000000 
+ 309      00
+ 310 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\177\000"
+ 310      00000000 
+ 310      0000007F 
+ 310      00
+ 311 001a 7F000600 		.ascii	"\177\000\006\000\006\000\014\000\030\000\030\0000\000"
+ 311      06000C00 
+ 311      18001800 
+ 311      3000
+ 312 0028 60007F00 		.ascii	"`\000\177\000\177\000\000\000\000\000\000\000\000\000"
+ 312      7F000000 
+ 312      00000000 
+ 312      0000
+ 313 0036 00000000 		.ascii	"\000\000\000\000"
+ 314              		.section	.rodata.calibri_24pts_0x79,"a"
+ 315              		.align	2
+ 318              	calibri_24pts_0x79:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 7
+
+
+ 319 0000 00000000 		.word	image_data_calibri_24pts_0x79
+ 320 0004 0B00     		.short	11
+ 321 0006 1D00     		.short	29
+ 322 0008 08       		.byte	8
+ 323 0009 000000   		.space	3
+ 324              		.section	.rodata.image_data_calibri_24pts_0x79,"a"
+ 325              		.align	2
+ 328              	image_data_calibri_24pts_0x79:
+ 329 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 329      00000000 
+ 329      00000000 
+ 329      00
+ 330 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\340\300"
+ 330      00000000 
+ 330      000000E0 
+ 330      C0
+ 331 001a 60C060C0 		.ascii	"`\300`\3001\2001\2001\200\033\000\033\000\033\000\016"
+ 331      31803180 
+ 331      31801B00 
+ 331      1B001B00 
+ 331      0E
+ 332 002b 000E000C 		.ascii	"\000\016\000\014\000\014\000\014\000\030\000\000\000"
+ 332      000C000C 
+ 332      00180000 
+ 332      00
+ 333 0038 0000     		.ascii	"\000\000"
+ 334              		.section	.rodata.calibri_24pts_0x78,"a"
+ 335              		.align	2
+ 338              	calibri_24pts_0x78:
+ 339 0000 00000000 		.word	image_data_calibri_24pts_0x78
+ 340 0004 0A00     		.short	10
+ 341 0006 1D00     		.short	29
+ 342 0008 08       		.byte	8
+ 343 0009 000000   		.space	3
+ 344              		.section	.rodata.image_data_calibri_24pts_0x78,"a"
+ 345              		.align	2
+ 348              	image_data_calibri_24pts_0x78:
+ 349 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 349      00000000 
+ 349      00000000 
+ 349      00
+ 350 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000a\300q\200"
+ 350      00000000 
+ 350      00000061 
+ 350      C07180
+ 351 001c 33001B00 		.ascii	"3\000\033\000\036\000\016\000\036\0003\0003\000a\200"
+ 351      1E000E00 
+ 351      1E003300 
+ 351      33006180 
+ 352 002c E1C00000 		.ascii	"\341\300\000\000\000\000\000\000\000\000\000\000\000"
+ 352      00000000 
+ 352      00000000 
+ 352      00
+ 353 0039 00       		.ascii	"\000"
+ 354              		.section	.rodata.calibri_24pts_0x77,"a"
+ 355              		.align	2
+ 358              	calibri_24pts_0x77:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 8
+
+
+ 359 0000 00000000 		.word	image_data_calibri_24pts_0x77
+ 360 0004 1100     		.short	17
+ 361 0006 1D00     		.short	29
+ 362 0008 08       		.byte	8
+ 363 0009 000000   		.space	3
+ 364              		.section	.rodata.image_data_calibri_24pts_0x77,"a"
+ 365              		.align	2
+ 368              	image_data_calibri_24pts_0x77:
+ 369 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 369      00000000 
+ 369      00000000 
+ 369      00
+ 370 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 370      00000000 
+ 370      00000000 
+ 370      00
+ 371 001a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000`\301\200`\301"
+ 371      00000000 
+ 371      000060C1 
+ 371      8060C1
+ 372 0029 8031E300 		.ascii	"\2001\343\0001\343\0001\343\000\0312\000\0336\000\033"
+ 372      31E30031 
+ 372      E3001932 
+ 372      001B3600 
+ 372      1B
+ 373 003a 36000E14 		.ascii	"6\000\016\024\000\016\034\000\016\034\000\000\000\000"
+ 373      000E1C00 
+ 373      0E1C0000 
+ 373      0000
+ 374 0048 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 374      00000000 
+ 374      00000000 
+ 374      00
+ 375 0055 0000     		.ascii	"\000\000"
+ 376              		.section	.rodata.calibri_24pts_0x76,"a"
+ 377              		.align	2
+ 380              	calibri_24pts_0x76:
+ 381 0000 00000000 		.word	image_data_calibri_24pts_0x76
+ 382 0004 0B00     		.short	11
+ 383 0006 1D00     		.short	29
+ 384 0008 08       		.byte	8
+ 385 0009 000000   		.space	3
+ 386              		.section	.rodata.image_data_calibri_24pts_0x76,"a"
+ 387              		.align	2
+ 390              	image_data_calibri_24pts_0x76:
+ 391 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 391      00000000 
+ 391      00000000 
+ 391      00
+ 392 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000````0\300"
+ 392      00000000 
+ 392      00000060 
+ 392      60606030 
+ 392      C0
+ 393 001e 30C03080 		.ascii	"0\3000\200\031\200\031\200\033\000\017\000\017\000\006"
+ 393      19801980 
+ 393      1B000F00 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 9
+
+
+ 393      0F0006
+ 394 002d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 394      00000000 
+ 394      00000000 
+ 394      00
+ 395              		.section	.rodata.calibri_24pts_0x75,"a"
+ 396              		.align	2
+ 399              	calibri_24pts_0x75:
+ 400 0000 00000000 		.word	image_data_calibri_24pts_0x75
+ 401 0004 0D00     		.short	13
+ 402 0006 1D00     		.short	29
+ 403 0008 08       		.byte	8
+ 404 0009 000000   		.space	3
+ 405              		.section	.rodata.image_data_calibri_24pts_0x75,"a"
+ 406              		.align	2
+ 409              	image_data_calibri_24pts_0x75:
+ 410 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 410      00000000 
+ 410      00000000 
+ 410      00
+ 411 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\0000`0`0`0"
+ 411      00000000 
+ 411      00000030 
+ 411      60306030 
+ 411      6030
+ 412 001f 60306030 		.ascii	"`0`0`0`0`8\340\037\340\017`\000\000\000\000\000\000"
+ 412      60306030 
+ 412      6038E01F 
+ 412      E00F6000 
+ 412      00000000 
+ 413 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 413      0000
+ 414              		.section	.rodata.calibri_24pts_0x74,"a"
+ 415              		.align	2
+ 418              	calibri_24pts_0x74:
+ 419 0000 00000000 		.word	image_data_calibri_24pts_0x74
+ 420 0004 0800     		.short	8
+ 421 0006 1D00     		.short	29
+ 422 0008 08       		.byte	8
+ 423 0009 000000   		.space	3
+ 424              		.section	.rodata.image_data_calibri_24pts_0x74,"a"
+ 425              		.align	2
+ 428              	image_data_calibri_24pts_0x74:
+ 429 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000000\376\3760000"
+ 429      00000000 
+ 429      00303030 
+ 429      FEFE3030 
+ 429      3030
+ 430 0012 3030303E 		.ascii	"000>\036\000\000\000\000\000\000"
+ 430      1E000000 
+ 430      000000
+ 431              		.section	.rodata.calibri_24pts_0x73,"a"
+ 432              		.align	2
+ 435              	calibri_24pts_0x73:
+ 436 0000 00000000 		.word	image_data_calibri_24pts_0x73
+ 437 0004 0900     		.short	9
+ 438 0006 1D00     		.short	29
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 10
+
+
+ 439 0008 08       		.byte	8
+ 440 0009 000000   		.space	3
+ 441              		.section	.rodata.image_data_calibri_24pts_0x73,"a"
+ 442              		.align	2
+ 445              	image_data_calibri_24pts_0x73:
+ 446 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 446      00000000 
+ 446      00000000 
+ 446      00
+ 447 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\036\000"
+ 447      00000000 
+ 447      0000001E 
+ 447      00
+ 448 001a 7F006100 		.ascii	"\177\000a\000`\000x\000\036\000\007\000\003\000C\000"
+ 448      60007800 
+ 448      1E000700 
+ 448      03004300 
+ 449 002a 7F003C00 		.ascii	"\177\000<\000\000\000\000\000\000\000\000\000\000\000"
+ 449      00000000 
+ 449      00000000 
+ 449      0000
+ 450 0038 0000     		.ascii	"\000\000"
+ 451              		.section	.rodata.calibri_24pts_0x72,"a"
+ 452              		.align	2
+ 455              	calibri_24pts_0x72:
+ 456 0000 00000000 		.word	image_data_calibri_24pts_0x72
+ 457 0004 0800     		.short	8
+ 458 0006 1D00     		.short	29
+ 459 0008 08       		.byte	8
+ 460 0009 000000   		.space	3
+ 461              		.section	.rodata.image_data_calibri_24pts_0x72,"a"
+ 462              		.align	2
+ 465              	image_data_calibri_24pts_0x72:
+ 466 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\0007?8"
+ 466      00000000 
+ 466      00000000 
+ 466      373F38
+ 467 000f 30303030 		.ascii	"00000000\000\000\000\000\000\000"
+ 467      30303030 
+ 467      00000000 
+ 467      0000
+ 468              		.section	.rodata.calibri_24pts_0x71,"a"
+ 469              		.align	2
+ 472              	calibri_24pts_0x71:
+ 473 0000 00000000 		.word	image_data_calibri_24pts_0x71
+ 474 0004 0D00     		.short	13
+ 475 0006 1D00     		.short	29
+ 476 0008 08       		.byte	8
+ 477 0009 000000   		.space	3
+ 478              		.section	.rodata.image_data_calibri_24pts_0x71,"a"
+ 479              		.align	2
+ 482              	image_data_calibri_24pts_0x71:
+ 483 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 483      00000000 
+ 483      00000000 
+ 483      00
+ 484 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\037`?\340"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 11
+
+
+ 484      00000000 
+ 484      0000001F 
+ 484      603FE0
+ 485 001c 30E06060 		.ascii	"0\340``````````0\340?\340\036`\000`\000`\000`\000`\000"
+ 485      60606060 
+ 485      60606060 
+ 485      30E03FE0 
+ 485      1E600060 
+ 486 0037 000000   		.ascii	"\000\000\000"
+ 487              		.section	.rodata.calibri_24pts_0x70,"a"
+ 488              		.align	2
+ 491              	calibri_24pts_0x70:
+ 492 0000 00000000 		.word	image_data_calibri_24pts_0x70
+ 493 0004 0D00     		.short	13
+ 494 0006 1D00     		.short	29
+ 495 0008 08       		.byte	8
+ 496 0009 000000   		.space	3
+ 497              		.section	.rodata.image_data_calibri_24pts_0x70,"a"
+ 498              		.align	2
+ 501              	image_data_calibri_24pts_0x70:
+ 502 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 502      00000000 
+ 502      00000000 
+ 502      00
+ 503 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\0003\300?\340"
+ 503      00000000 
+ 503      00000033 
+ 503      C03FE0
+ 504 001c 38703030 		.ascii	"8p00000000008`?\3407\3000\0000\0000\0000\000\000\000"
+ 504      30303030 
+ 504      30303030 
+ 504      38603FE0 
+ 504      37C03000 
+ 505 0038 0000     		.ascii	"\000\000"
+ 506              		.section	.rodata.calibri_24pts_0x6f,"a"
+ 507              		.align	2
+ 510              	calibri_24pts_0x6f:
+ 511 0000 00000000 		.word	image_data_calibri_24pts_0x6f
+ 512 0004 0D00     		.short	13
+ 513 0006 1D00     		.short	29
+ 514 0008 08       		.byte	8
+ 515 0009 000000   		.space	3
+ 516              		.section	.rodata.image_data_calibri_24pts_0x6f,"a"
+ 517              		.align	2
+ 520              	image_data_calibri_24pts_0x6f:
+ 521 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 521      00000000 
+ 521      00000000 
+ 521      00
+ 522 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\017\200"
+ 522      00000000 
+ 522      0000000F 
+ 522      80
+ 523 001a 3FE03060 		.ascii	"?\3400``0`0`0`0`00`?\340\017\200\000\000\000\000\000"
+ 523      60306030 
+ 523      60306030 
+ 523      60303060 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 12
+
+
+ 523      3FE00F80 
+ 524 0033 00000000 		.ascii	"\000\000\000\000\000\000\000"
+ 524      000000
+ 525              		.section	.rodata.calibri_24pts_0x6e,"a"
+ 526              		.align	2
+ 529              	calibri_24pts_0x6e:
+ 530 0000 00000000 		.word	image_data_calibri_24pts_0x6e
+ 531 0004 0D00     		.short	13
+ 532 0006 1D00     		.short	29
+ 533 0008 08       		.byte	8
+ 534 0009 000000   		.space	3
+ 535              		.section	.rodata.image_data_calibri_24pts_0x6e,"a"
+ 536              		.align	2
+ 539              	image_data_calibri_24pts_0x6e:
+ 540 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 540      00000000 
+ 540      00000000 
+ 540      00
+ 541 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\0007\200?\300"
+ 541      00000000 
+ 541      00000037 
+ 541      803FC0
+ 542 001c 38E03060 		.ascii	"8\3400`0`0`0`0`0`0`0`\000\000\000\000\000\000\000\000"
+ 542      30603060 
+ 542      30603060 
+ 542      30603060 
+ 542      30600000 
+ 543 0036 00000000 		.ascii	"\000\000\000\000"
+ 544              		.section	.rodata.calibri_24pts_0x6d,"a"
+ 545              		.align	2
+ 548              	calibri_24pts_0x6d:
+ 549 0000 00000000 		.word	image_data_calibri_24pts_0x6d
+ 550 0004 1300     		.short	19
+ 551 0006 1D00     		.short	29
+ 552 0008 08       		.byte	8
+ 553 0009 000000   		.space	3
+ 554              		.section	.rodata.image_data_calibri_24pts_0x6d,"a"
+ 555              		.align	2
+ 558              	image_data_calibri_24pts_0x6d:
+ 559 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 559      00000000 
+ 559      00000000 
+ 559      00
+ 560 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 560      00000000 
+ 560      00000000 
+ 560      00
+ 561 001a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\0007\217\000?\337"
+ 561      00000000 
+ 561      0000378F 
+ 561      003FDF
+ 562 0029 8038F1C0 		.ascii	"\2008\361\3000`\3000`\3000`\3000`\3000`\3000`\3000`"
+ 562      3060C030 
+ 562      60C03060 
+ 562      C03060C0 
+ 562      3060C030 
+ 563 0041 C03060C0 		.ascii	"\3000`\300\000\000\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 13
+
+
+ 563      00000000 
+ 563      00000000 
+ 563      000000
+ 564 0050 00000000 		.ascii	"\000\000\000\000\000\000\000"
+ 564      000000
+ 565              		.section	.rodata.calibri_24pts_0x6c,"a"
+ 566              		.align	2
+ 569              	calibri_24pts_0x6c:
+ 570 0000 00000000 		.word	image_data_calibri_24pts_0x6c
+ 571 0004 0600     		.short	6
+ 572 0006 1D00     		.short	29
+ 573 0008 08       		.byte	8
+ 574 0009 000000   		.space	3
+ 575              		.section	.rodata.image_data_calibri_24pts_0x6c,"a"
+ 576              		.align	2
+ 579              	image_data_calibri_24pts_0x6c:
+ 580 0000 00000000 		.ascii	"\000\000\000\000\000\000\0000000000000000000\000\000"
+ 580      00000030 
+ 580      30303030 
+ 580      30303030 
+ 580      30303030 
+ 581 0019 00000000 		.ascii	"\000\000\000\000"
+ 582              		.section	.rodata.calibri_24pts_0x6b,"a"
+ 583              		.align	2
+ 586              	calibri_24pts_0x6b:
+ 587 0000 00000000 		.word	image_data_calibri_24pts_0x6b
+ 588 0004 0B00     		.short	11
+ 589 0006 1D00     		.short	29
+ 590 0008 08       		.byte	8
+ 591 0009 000000   		.space	3
+ 592              		.section	.rodata.image_data_calibri_24pts_0x6b,"a"
+ 593              		.align	2
+ 596              	image_data_calibri_24pts_0x6b:
+ 597 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 597      00000000 
+ 597      00000000 
+ 597      00
+ 598 000d 00300030 		.ascii	"\0000\0000\0000\0000\0000\0000\3401\3003\2006\000<\000"
+ 598      00300030 
+ 598      00300030 
+ 598      E031C033 
+ 598      8036003C 
+ 599 0022 3E003700 		.ascii	">\0007\0003\0001\2000\3000`\000\000\000\000\000\000"
+ 599      33003180 
+ 599      30C03060 
+ 599      00000000 
+ 599      0000
+ 600 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 600      0000
+ 601              		.section	.rodata.calibri_24pts_0x6a,"a"
+ 602              		.align	2
+ 605              	calibri_24pts_0x6a:
+ 606 0000 00000000 		.word	image_data_calibri_24pts_0x6a
+ 607 0004 0600     		.short	6
+ 608 0006 1D00     		.short	29
+ 609 0008 08       		.byte	8
+ 610 0009 000000   		.space	3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 14
+
+
+ 611              		.section	.rodata.image_data_calibri_24pts_0x6a,"a"
+ 612              		.align	2
+ 615              	image_data_calibri_24pts_0x6a:
+ 616 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\00000\000\000000000000"
+ 616      00000000 
+ 616      30300000 
+ 616      30303030 
+ 616      30303030 
+ 617 0015 30303030 		.ascii	"0000\360\340\000\000"
+ 617      F0E00000 
+ 618              		.section	.rodata.calibri_24pts_0x69,"a"
+ 619              		.align	2
+ 622              	calibri_24pts_0x69:
+ 623 0000 00000000 		.word	image_data_calibri_24pts_0x69
+ 624 0004 0600     		.short	6
+ 625 0006 1D00     		.short	29
+ 626 0008 08       		.byte	8
+ 627 0009 000000   		.space	3
+ 628              		.section	.rodata.image_data_calibri_24pts_0x69,"a"
+ 629              		.align	2
+ 632              	image_data_calibri_24pts_0x69:
+ 633 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\00000\000\000000000000"
+ 633      00000000 
+ 633      30300000 
+ 633      30303030 
+ 633      30303030 
+ 634 0015 30300000 		.ascii	"00\000\000\000\000\000\000"
+ 634      00000000 
+ 635              		.section	.rodata.calibri_24pts_0x68,"a"
+ 636              		.align	2
+ 639              	calibri_24pts_0x68:
+ 640 0000 00000000 		.word	image_data_calibri_24pts_0x68
+ 641 0004 0D00     		.short	13
+ 642 0006 1D00     		.short	29
+ 643 0008 08       		.byte	8
+ 644 0009 000000   		.space	3
+ 645              		.section	.rodata.image_data_calibri_24pts_0x68,"a"
+ 646              		.align	2
+ 649              	image_data_calibri_24pts_0x68:
+ 650 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 650      00000000 
+ 650      00000000 
+ 650      00
+ 651 000d 00300030 		.ascii	"\0000\0000\0000\0000\0000\0007\200?\3008\3400`0`0`0"
+ 651      00300030 
+ 651      00300037 
+ 651      803FC038 
+ 651      E0306030 
+ 652 0025 60306030 		.ascii	"`0`0`0`0`\000\000\000\000\000\000\000\000\000\000\000"
+ 652      60306030 
+ 652      60000000 
+ 652      00000000 
+ 652      00000000 
+ 653 0039 00       		.ascii	"\000"
+ 654              		.section	.rodata.calibri_24pts_0x67,"a"
+ 655              		.align	2
+ 658              	calibri_24pts_0x67:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 15
+
+
+ 659 0000 00000000 		.word	image_data_calibri_24pts_0x67
+ 660 0004 0B00     		.short	11
+ 661 0006 1D00     		.short	29
+ 662 0008 08       		.byte	8
+ 663 0009 000000   		.space	3
+ 664              		.section	.rodata.image_data_calibri_24pts_0x67,"a"
+ 665              		.align	2
+ 668              	image_data_calibri_24pts_0x67:
+ 669 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 669      00000000 
+ 669      00000000 
+ 669      00
+ 670 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\017\340"
+ 670      00000000 
+ 670      0000000F 
+ 670      E0
+ 671 001a 1FE039C0 		.ascii	"\037\3409\3000\3000\3009\300\037\200\177\000`\000?\200"
+ 671      30C030C0 
+ 671      39C01F80 
+ 671      7F006000 
+ 671      3F80
+ 672 002c 3FE06060 		.ascii	"?\340````\177\300\037\200\000\000\000\000"
+ 672      60607FC0 
+ 672      1F800000 
+ 672      0000
+ 673              		.section	.rodata.calibri_24pts_0x66,"a"
+ 674              		.align	2
+ 677              	calibri_24pts_0x66:
+ 678 0000 00000000 		.word	image_data_calibri_24pts_0x66
+ 679 0004 0700     		.short	7
+ 680 0006 1D00     		.short	29
+ 681 0008 08       		.byte	8
+ 682 0009 000000   		.space	3
+ 683              		.section	.rodata.image_data_calibri_24pts_0x66,"a"
+ 684              		.align	2
+ 687              	image_data_calibri_24pts_0x66:
+ 688 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\036>000\376\3760000000"
+ 688      0000001E 
+ 688      3E303030 
+ 688      FEFE3030 
+ 688      30303030 
+ 689 0015 30300000 		.ascii	"00\000\000\000\000\000\000"
+ 689      00000000 
+ 690              		.section	.rodata.calibri_24pts_0x65,"a"
+ 691              		.align	2
+ 694              	calibri_24pts_0x65:
+ 695 0000 00000000 		.word	image_data_calibri_24pts_0x65
+ 696 0004 0C00     		.short	12
+ 697 0006 1D00     		.short	29
+ 698 0008 08       		.byte	8
+ 699 0009 000000   		.space	3
+ 700              		.section	.rodata.image_data_calibri_24pts_0x65,"a"
+ 701              		.align	2
+ 704              	image_data_calibri_24pts_0x65:
+ 705 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 705      00000000 
+ 705      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 16
+
+
+ 705      00
+ 706 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\017\200"
+ 706      00000000 
+ 706      0000000F 
+ 706      80
+ 707 001a 3FC030E0 		.ascii	"?\3000\340``\177\340\177\340`\000`\0000`?\340\017\300"
+ 707      60607FE0 
+ 707      7FE06000 
+ 707      60003060 
+ 707      3FE00FC0 
+ 708 002e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 708      00000000 
+ 708      00000000 
+ 709              		.section	.rodata.calibri_24pts_0x64,"a"
+ 710              		.align	2
+ 713              	calibri_24pts_0x64:
+ 714 0000 00000000 		.word	image_data_calibri_24pts_0x64
+ 715 0004 0D00     		.short	13
+ 716 0006 1D00     		.short	29
+ 717 0008 08       		.byte	8
+ 718 0009 000000   		.space	3
+ 719              		.section	.rodata.image_data_calibri_24pts_0x64,"a"
+ 720              		.align	2
+ 723              	image_data_calibri_24pts_0x64:
+ 724 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 724      00000000 
+ 724      00000000 
+ 724      00
+ 725 000d 00006000 		.ascii	"\000\000`\000`\000`\000`\000`\037`?\3400\340```````"
+ 725      60006000 
+ 725      6000601F 
+ 725      603FE030 
+ 725      E0606060 
+ 726 0025 60606030 		.ascii	"```0\340?\340\036`\000\000\000\000\000\000\000\000\000"
+ 726      E03FE01E 
+ 726      60000000 
+ 726      00000000 
+ 726      0000
+ 727 0037 000000   		.ascii	"\000\000\000"
+ 728              		.section	.rodata.calibri_24pts_0x63,"a"
+ 729              		.align	2
+ 732              	calibri_24pts_0x63:
+ 733 0000 00000000 		.word	image_data_calibri_24pts_0x63
+ 734 0004 0A00     		.short	10
+ 735 0006 1D00     		.short	29
+ 736 0008 08       		.byte	8
+ 737 0009 000000   		.space	3
+ 738              		.section	.rodata.image_data_calibri_24pts_0x63,"a"
+ 739              		.align	2
+ 742              	image_data_calibri_24pts_0x63:
+ 743 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 743      00000000 
+ 743      00000000 
+ 743      00
+ 744 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\037\000"
+ 744      00000000 
+ 744      0000001F 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 17
+
+
+ 744      00
+ 745 001a 3F803080 		.ascii	"?\2000\200`\000`\000`\000`\000`\0000\200?\200\037\000"
+ 745      60006000 
+ 745      60006000 
+ 745      60003080 
+ 745      3F801F00 
+ 746 002e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 746      00000000 
+ 746      00000000 
+ 747              		.section	.rodata.calibri_24pts_0x62,"a"
+ 748              		.align	2
+ 751              	calibri_24pts_0x62:
+ 752 0000 00000000 		.word	image_data_calibri_24pts_0x62
+ 753 0004 0D00     		.short	13
+ 754 0006 1D00     		.short	29
+ 755 0008 08       		.byte	8
+ 756 0009 000000   		.space	3
+ 757              		.section	.rodata.image_data_calibri_24pts_0x62,"a"
+ 758              		.align	2
+ 761              	image_data_calibri_24pts_0x62:
+ 762 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 762      00000000 
+ 762      00000000 
+ 762      00
+ 763 000d 00300030 		.ascii	"\0000\0000\0000\0000\0000\0003\300?\3408`0000000000"
+ 763      00300030 
+ 763      00300033 
+ 763      C03FE038 
+ 763      60303030 
+ 764 0028 38603FE0 		.ascii	"8`?\3407\300\000\000\000\000\000\000\000\000\000\000"
+ 764      37C00000 
+ 764      00000000 
+ 764      00000000 
+ 765 0038 0000     		.ascii	"\000\000"
+ 766              		.section	.rodata.calibri_24pts_0x61,"a"
+ 767              		.align	2
+ 770              	calibri_24pts_0x61:
+ 771 0000 00000000 		.word	image_data_calibri_24pts_0x61
+ 772 0004 0C00     		.short	12
+ 773 0006 1D00     		.short	29
+ 774 0008 08       		.byte	8
+ 775 0009 000000   		.space	3
+ 776              		.section	.rodata.image_data_calibri_24pts_0x61,"a"
+ 777              		.align	2
+ 780              	image_data_calibri_24pts_0x61:
+ 781 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 781      00000000 
+ 781      00000000 
+ 781      00
+ 782 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\037\000"
+ 782      00000000 
+ 782      0000001F 
+ 782      00
+ 783 001a 3F8020C0 		.ascii	"?\200 \300\000\300\037\300?\300p\300`\300a\300?\300"
+ 783      00C01FC0 
+ 783      3FC070C0 
+ 783      60C061C0 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 18
+
+
+ 783      3FC0
+ 784 002c 1EC00000 		.ascii	"\036\300\000\000\000\000\000\000\000\000\000\000\000"
+ 784      00000000 
+ 784      00000000 
+ 784      00
+ 785 0039 00       		.ascii	"\000"
+ 786              		.section	.rodata.calibri_24pts_0x60,"a"
+ 787              		.align	2
+ 790              	calibri_24pts_0x60:
+ 791 0000 00000000 		.word	image_data_calibri_24pts_0x60
+ 792 0004 0700     		.short	7
+ 793 0006 1D00     		.short	29
+ 794 0008 08       		.byte	8
+ 795 0009 000000   		.space	3
+ 796              		.section	.rodata.image_data_calibri_24pts_0x60,"a"
+ 797              		.align	2
+ 800              	image_data_calibri_24pts_0x60:
+ 801 0000 00000000 		.ascii	"\000\000\000\000\000\0000\030\030\014\000\000\000\000"
+ 801      00003018 
+ 801      180C0000 
+ 801      0000
+ 802 000e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 802      00000000 
+ 802      00000000 
+ 802      00
+ 803 001b 0000     		.ascii	"\000\000"
+ 804              		.section	.rodata.calibri_24pts_0x5f,"a"
+ 805              		.align	2
+ 808              	calibri_24pts_0x5f:
+ 809 0000 00000000 		.word	image_data_calibri_24pts_0x5f
+ 810 0004 0C00     		.short	12
+ 811 0006 1D00     		.short	29
+ 812 0008 08       		.byte	8
+ 813 0009 000000   		.space	3
+ 814              		.section	.rodata.image_data_calibri_24pts_0x5f,"a"
+ 815              		.align	2
+ 818              	image_data_calibri_24pts_0x5f:
+ 819 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 819      00000000 
+ 819      00000000 
+ 819      00
+ 820 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 820      00000000 
+ 820      00000000 
+ 820      00
+ 821 001a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 821      00000000 
+ 821      00000000 
+ 821      00
+ 822 0027 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\377\360"
+ 822      00000000 
+ 822      000000FF 
+ 822      F0
+ 823 0034 FFF00000 		.ascii	"\377\360\000\000\000\000"
+ 823      0000
+ 824              		.section	.rodata.calibri_24pts_0x5e,"a"
+ 825              		.align	2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 19
+
+
+ 828              	calibri_24pts_0x5e:
+ 829 0000 00000000 		.word	image_data_calibri_24pts_0x5e
+ 830 0004 0C00     		.short	12
+ 831 0006 1D00     		.short	29
+ 832 0008 08       		.byte	8
+ 833 0009 000000   		.space	3
+ 834              		.section	.rodata.image_data_calibri_24pts_0x5e,"a"
+ 835              		.align	2
+ 838              	image_data_calibri_24pts_0x5e:
+ 839 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 839      00000000 
+ 839      00000000 
+ 839      00
+ 840 000d 00000006 		.ascii	"\000\000\000\006\000\017\000\017\000\031\000\031\200"
+ 840      000F000F 
+ 840      00190019 
+ 840      80
+ 841 001a 118030C0 		.ascii	"\021\2000\3000\300``\000\000\000\000\000\000\000\000"
+ 841      30C06060 
+ 841      00000000 
+ 841      00000000 
+ 842 002a 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 842      00000000 
+ 842      00000000 
+ 842      00
+ 843 0037 000000   		.ascii	"\000\000\000"
+ 844              		.section	.rodata.calibri_24pts_0x5d,"a"
+ 845              		.align	2
+ 848              	calibri_24pts_0x5d:
+ 849 0000 00000000 		.word	image_data_calibri_24pts_0x5d
+ 850 0004 0700     		.short	7
+ 851 0006 1D00     		.short	29
+ 852 0008 08       		.byte	8
+ 853 0009 000000   		.space	3
+ 854              		.section	.rodata.image_data_calibri_24pts_0x5d,"a"
+ 855              		.align	2
+ 858              	image_data_calibri_24pts_0x5d:
+ 859 0000 00000000 		.ascii	"\000\000\000\000\000\000\000xx\030\030\030\030\030\030"
+ 859      00000078 
+ 859      78181818 
+ 859      181818
+ 860 000f 18181818 		.ascii	"\030\030\030\030\030\030\030\030\030\030xx\000\000"
+ 860      18181818 
+ 860      18187878 
+ 860      0000
+ 861              		.section	.rodata.calibri_24pts_0x5c,"a"
+ 862              		.align	2
+ 865              	calibri_24pts_0x5c:
+ 866 0000 00000000 		.word	image_data_calibri_24pts_0x5c
+ 867 0004 0900     		.short	9
+ 868 0006 1D00     		.short	29
+ 869 0008 08       		.byte	8
+ 870 0009 000000   		.space	3
+ 871              		.section	.rodata.image_data_calibri_24pts_0x5c,"a"
+ 872              		.align	2
+ 875              	image_data_calibri_24pts_0x5c:
+ 876 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\300"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 20
+
+
+ 876      00000000 
+ 876      00000000 
+ 876      C0
+ 877 000d 00600060 		.ascii	"\000`\000`\000`\0000\0000\0000\000\030\000\030\000\010"
+ 877      00600030 
+ 877      00300030 
+ 877      00180018 
+ 877      0008
+ 878 001f 000C000C 		.ascii	"\000\014\000\014\000\006\000\006\000\006\000\003\000"
+ 878      00060006 
+ 878      00060003 
+ 878      00
+ 879 002c 03000300 		.ascii	"\003\000\003\000\001\200\001\200\000\000\000\000\000"
+ 879      01800180 
+ 879      00000000 
+ 879      00
+ 880 0039 00       		.ascii	"\000"
+ 881              		.section	.rodata.calibri_24pts_0x5b,"a"
+ 882              		.align	2
+ 885              	calibri_24pts_0x5b:
+ 886 0000 00000000 		.word	image_data_calibri_24pts_0x5b
+ 887 0004 0700     		.short	7
+ 888 0006 1D00     		.short	29
+ 889 0008 08       		.byte	8
+ 890 0009 000000   		.space	3
+ 891              		.section	.rodata.image_data_calibri_24pts_0x5b,"a"
+ 892              		.align	2
+ 895              	image_data_calibri_24pts_0x5b:
+ 896 0000 00000000 		.ascii	"\000\000\000\000\000\000\000<<0000000000000000<<\000"
+ 896      0000003C 
+ 896      3C303030 
+ 896      30303030 
+ 896      30303030 
+ 897 001c 00       		.ascii	"\000"
+ 898              		.section	.rodata.calibri_24pts_0x5a,"a"
+ 899              		.align	2
+ 902              	calibri_24pts_0x5a:
+ 903 0000 00000000 		.word	image_data_calibri_24pts_0x5a
+ 904 0004 0B00     		.short	11
+ 905 0006 1D00     		.short	29
+ 906 0008 08       		.byte	8
+ 907 0009 000000   		.space	3
+ 908              		.section	.rodata.image_data_calibri_24pts_0x5a,"a"
+ 909              		.align	2
+ 912              	image_data_calibri_24pts_0x5a:
+ 913 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 913      00000000 
+ 913      00000000 
+ 913      00
+ 914 000d 0000007F 		.ascii	"\000\000\000\177\300\177\300\000\300\001\200\003\200"
+ 914      C07FC000 
+ 914      C0018003 
+ 914      80
+ 915 001a 03000600 		.ascii	"\003\000\006\000\016\000\014\000\030\0008\0000\000`"
+ 915      0E000C00 
+ 915      18003800 
+ 915      300060
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 21
+
+
+ 916 0029 007FE07F 		.ascii	"\000\177\340\177\340\000\000\000\000\000\000\000\000"
+ 916      E0000000 
+ 916      00000000 
+ 916      00
+ 917 0036 00000000 		.ascii	"\000\000\000\000"
+ 918              		.section	.rodata.calibri_24pts_0x59,"a"
+ 919              		.align	2
+ 922              	calibri_24pts_0x59:
+ 923 0000 00000000 		.word	image_data_calibri_24pts_0x59
+ 924 0004 0C00     		.short	12
+ 925 0006 1D00     		.short	29
+ 926 0008 08       		.byte	8
+ 927 0009 000000   		.space	3
+ 928              		.section	.rodata.image_data_calibri_24pts_0x59,"a"
+ 929              		.align	2
+ 932              	image_data_calibri_24pts_0x59:
+ 933 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 933      00000000 
+ 933      00000000 
+ 933      00
+ 934 000d 00000060 		.ascii	"\000\000\000````0\3000\300\031\200\031\200\017\000\017"
+ 934      60606030 
+ 934      C030C019 
+ 934      8019800F 
+ 934      000F
+ 935 001f 00060006 		.ascii	"\000\006\000\006\000\006\000\006\000\006\000\006\000"
+ 935      00060006 
+ 935      00060006 
+ 935      00
+ 936 002c 06000000 		.ascii	"\006\000\000\000\000\000\000\000\000\000\000\000\000"
+ 936      00000000 
+ 936      00000000 
+ 936      00
+ 937 0039 00       		.ascii	"\000"
+ 938              		.section	.rodata.calibri_24pts_0x58,"a"
+ 939              		.align	2
+ 942              	calibri_24pts_0x58:
+ 943 0000 00000000 		.word	image_data_calibri_24pts_0x58
+ 944 0004 0C00     		.short	12
+ 945 0006 1D00     		.short	29
+ 946 0008 08       		.byte	8
+ 947 0009 000000   		.space	3
+ 948              		.section	.rodata.image_data_calibri_24pts_0x58,"a"
+ 949              		.align	2
+ 952              	image_data_calibri_24pts_0x58:
+ 953 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 953      00000000 
+ 953      00000000 
+ 953      00
+ 954 000d 00000060 		.ascii	"\000\000\000`pp`0\300\030\300\031\200\015\200\017\000"
+ 954      70706030 
+ 954      C018C019 
+ 954      800D800F 
+ 954      00
+ 955 001e 07000F00 		.ascii	"\007\000\017\000\015\200\031\2008\3000\340```p\000\000"
+ 955      0D801980 
+ 955      38C030E0 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 22
+
+
+ 955      60606070 
+ 955      0000
+ 956 0030 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 956      00000000 
+ 956      0000
+ 957              		.section	.rodata.calibri_24pts_0x57,"a"
+ 958              		.align	2
+ 961              	calibri_24pts_0x57:
+ 962 0000 00000000 		.word	image_data_calibri_24pts_0x57
+ 963 0004 1500     		.short	21
+ 964 0006 1D00     		.short	29
+ 965 0008 08       		.byte	8
+ 966 0009 000000   		.space	3
+ 967              		.section	.rodata.image_data_calibri_24pts_0x57,"a"
+ 968              		.align	2
+ 971              	image_data_calibri_24pts_0x57:
+ 972 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 972      00000000 
+ 972      00000000 
+ 972      00
+ 973 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000`p\030`"
+ 973      00000000 
+ 973      00000060 
+ 973      701860
+ 974 001c 70306070 		.ascii	"p0`p00X00\330 0\330`8\330`\030\214`\031\214\300\031"
+ 974      30305830 
+ 974      30D82030 
+ 974      D86038D8 
+ 974      60188C60 
+ 975 0034 8CC00D86 		.ascii	"\214\300\015\206\300\015\006\200\017\007\200\007\007"
+ 975      C00D0680 
+ 975      0F078007 
+ 975      07
+ 976 0041 80070380 		.ascii	"\200\007\003\200\000\000\000\000\000\000\000\000\000"
+ 976      00000000 
+ 976      00000000 
+ 976      00
+ 977 004e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000"
+ 977      00000000 
+ 977      00
+ 978              		.section	.rodata.calibri_24pts_0x56,"a"
+ 979              		.align	2
+ 982              	calibri_24pts_0x56:
+ 983 0000 00000000 		.word	image_data_calibri_24pts_0x56
+ 984 0004 0E00     		.short	14
+ 985 0006 1D00     		.short	29
+ 986 0008 08       		.byte	8
+ 987 0009 000000   		.space	3
+ 988              		.section	.rodata.image_data_calibri_24pts_0x56,"a"
+ 989              		.align	2
+ 992              	image_data_calibri_24pts_0x56:
+ 993 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 993      00000000 
+ 993      00000000 
+ 993      00
+ 994 000d 00000060 		.ascii	"\000\000\000`\030`\030`\03000000`\030`\030`\030\300"
+ 994      18601860 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 23
+
+
+ 994      18303030 
+ 994      30306018 
+ 994      60186018 
+ 995 0022 0CC00CC0 		.ascii	"\014\300\014\300\017\200\007\200\007\200\003\000\000"
+ 995      0F800780 
+ 995      07800300 
+ 995      00
+ 996 002f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 996      00000000 
+ 996      000000
+ 997              		.section	.rodata.calibri_24pts_0x55,"a"
+ 998              		.align	2
+ 1001              	calibri_24pts_0x55:
+ 1002 0000 00000000 		.word	image_data_calibri_24pts_0x55
+ 1003 0004 0F00     		.short	15
+ 1004 0006 1D00     		.short	29
+ 1005 0008 08       		.byte	8
+ 1006 0009 000000   		.space	3
+ 1007              		.section	.rodata.image_data_calibri_24pts_0x55,"a"
+ 1008              		.align	2
+ 1011              	image_data_calibri_24pts_0x55:
+ 1012 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1012      00000000 
+ 1012      00000000 
+ 1012      00
+ 1013 000d 00000030 		.ascii	"\000\000\0000\0300\0300\0300\0300\0300\0300\0300\030"
+ 1013      18301830 
+ 1013      18301830 
+ 1013      18301830 
+ 1013      183018
+ 1014 0020 30183018 		.ascii	"0\0300\0300\03088\034p\037\360\007\300\000\000\000\000"
+ 1014      30183838 
+ 1014      1C701FF0 
+ 1014      07C00000 
+ 1014      0000
+ 1015 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1015      00000000 
+ 1016              		.section	.rodata.calibri_24pts_0x54,"a"
+ 1017              		.align	2
+ 1020              	calibri_24pts_0x54:
+ 1021 0000 00000000 		.word	image_data_calibri_24pts_0x54
+ 1022 0004 0C00     		.short	12
+ 1023 0006 1D00     		.short	29
+ 1024 0008 08       		.byte	8
+ 1025 0009 000000   		.space	3
+ 1026              		.section	.rodata.image_data_calibri_24pts_0x54,"a"
+ 1027              		.align	2
+ 1030              	image_data_calibri_24pts_0x54:
+ 1031 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1031      00000000 
+ 1031      00000000 
+ 1031      00
+ 1032 000d 000000FF 		.ascii	"\000\000\000\377\360\377\360\006\000\006\000\006\000"
+ 1032      F0FFF006 
+ 1032      00060006 
+ 1032      00
+ 1033 001a 06000600 		.ascii	"\006\000\006\000\006\000\006\000\006\000\006\000\006"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 24
+
+
+ 1033      06000600 
+ 1033      06000600 
+ 1033      06
+ 1034 0027 00060006 		.ascii	"\000\006\000\006\000\006\000\000\000\000\000\000\000"
+ 1034      00060000 
+ 1034      00000000 
+ 1034      00
+ 1035 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 1035      0000
+ 1036              		.section	.rodata.calibri_24pts_0x53,"a"
+ 1037              		.align	2
+ 1040              	calibri_24pts_0x53:
+ 1041 0000 00000000 		.word	image_data_calibri_24pts_0x53
+ 1042 0004 0B00     		.short	11
+ 1043 0006 1D00     		.short	29
+ 1044 0008 08       		.byte	8
+ 1045 0009 000000   		.space	3
+ 1046              		.section	.rodata.image_data_calibri_24pts_0x53,"a"
+ 1047              		.align	2
+ 1050              	image_data_calibri_24pts_0x53:
+ 1051 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1051      00000000 
+ 1051      00000000 
+ 1051      00
+ 1052 000d 0000001F 		.ascii	"\000\000\000\037\000?\200p\200`\000`\000p\000<\000\017"
+ 1052      003F8070 
+ 1052      80600060 
+ 1052      0070003C 
+ 1052      000F
+ 1053 001f 00038001 		.ascii	"\000\003\200\001\300\000\300\000\300a\300\177\200?\000"
+ 1053      C000C000 
+ 1053      C061C07F 
+ 1053      803F00
+ 1054 002e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1054      00000000 
+ 1054      00000000 
+ 1055              		.section	.rodata.calibri_24pts_0x52,"a"
+ 1056              		.align	2
+ 1059              	calibri_24pts_0x52:
+ 1060 0000 00000000 		.word	image_data_calibri_24pts_0x52
+ 1061 0004 0D00     		.short	13
+ 1062 0006 1D00     		.short	29
+ 1063 0008 08       		.byte	8
+ 1064 0009 000000   		.space	3
+ 1065              		.section	.rodata.image_data_calibri_24pts_0x52,"a"
+ 1066              		.align	2
+ 1069              	image_data_calibri_24pts_0x52:
+ 1070 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1070      00000000 
+ 1070      00000000 
+ 1070      00
+ 1071 000d 0000003F 		.ascii	"\000\000\000?\200?\3000\3400`0`0`0\300?\300?\2001\300"
+ 1071      803FC030 
+ 1071      E0306030 
+ 1071      60306030 
+ 1071      C03FC03F 
+ 1072 0024 30C030E0 		.ascii	"0\3000\3400`0p00\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 25
+
+
+ 1072      30603070 
+ 1072      30300000 
+ 1072      00000000 
+ 1072      000000
+ 1073 0037 000000   		.ascii	"\000\000\000"
+ 1074              		.section	.rodata.calibri_24pts_0x51,"a"
+ 1075              		.align	2
+ 1078              	calibri_24pts_0x51:
+ 1079 0000 00000000 		.word	image_data_calibri_24pts_0x51
+ 1080 0004 1100     		.short	17
+ 1081 0006 1D00     		.short	29
+ 1082 0008 08       		.byte	8
+ 1083 0009 000000   		.space	3
+ 1084              		.section	.rodata.image_data_calibri_24pts_0x51,"a"
+ 1085              		.align	2
+ 1088              	image_data_calibri_24pts_0x51:
+ 1089 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1089      00000000 
+ 1089      00000000 
+ 1089      00
+ 1090 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\007\340"
+ 1090      00000000 
+ 1090      00000007 
+ 1090      E0
+ 1091 001a 001FF800 		.ascii	"\000\037\370\000<\034\0000\014\000p\016\000`\006\000"
+ 1091      3C1C0030 
+ 1091      0C00700E 
+ 1091      00600600 
+ 1092 002a 60060060 		.ascii	"`\006\000`\006\000`\006\000`\006\000p\016\0000\014\000"
+ 1092      06006006 
+ 1092      00600600 
+ 1092      700E0030 
+ 1092      0C00
+ 1093 003c 383C001F 		.ascii	"8<\000\037\374\000\007\356\000\000\007\200\000\001\200"
+ 1093      FC0007EE 
+ 1093      00000780 
+ 1093      000180
+ 1094 004b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1094      00000000 
+ 1094      00000000 
+ 1095              		.section	.rodata.calibri_24pts_0x50,"a"
+ 1096              		.align	2
+ 1099              	calibri_24pts_0x50:
+ 1100 0000 00000000 		.word	image_data_calibri_24pts_0x50
+ 1101 0004 0C00     		.short	12
+ 1102 0006 1D00     		.short	29
+ 1103 0008 08       		.byte	8
+ 1104 0009 000000   		.space	3
+ 1105              		.section	.rodata.image_data_calibri_24pts_0x50,"a"
+ 1106              		.align	2
+ 1109              	image_data_calibri_24pts_0x50:
+ 1110 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1110      00000000 
+ 1110      00000000 
+ 1110      00
+ 1111 000d 0000003F 		.ascii	"\000\000\000?\200?\3000\3400`0`0`0\340?\300?\0000\000"
+ 1111      803FC030 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 26
+
+
+ 1111      E0306030 
+ 1111      60306030 
+ 1111      E03FC03F 
+ 1112 0024 30003000 		.ascii	"0\0000\0000\0000\0000\000\000\000\000\000\000\000\000"
+ 1112      30003000 
+ 1112      30000000 
+ 1112      00000000 
+ 1112      00
+ 1113 0035 00000000 		.ascii	"\000\000\000\000\000"
+ 1113      00
+ 1114              		.section	.rodata.calibri_24pts_0x4f,"a"
+ 1115              		.align	2
+ 1118              	calibri_24pts_0x4f:
+ 1119 0000 00000000 		.word	image_data_calibri_24pts_0x4f
+ 1120 0004 1000     		.short	16
+ 1121 0006 1D00     		.short	29
+ 1122 0008 08       		.byte	8
+ 1123 0009 000000   		.space	3
+ 1124              		.section	.rodata.image_data_calibri_24pts_0x4f,"a"
+ 1125              		.align	2
+ 1128              	image_data_calibri_24pts_0x4f:
+ 1129 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1129      00000000 
+ 1129      00000000 
+ 1129      00
+ 1130 000d 00000007 		.ascii	"\000\000\000\007\340\037\370<\0340\014p\016`\006`\006"
+ 1130      E01FF83C 
+ 1130      1C300C70 
+ 1130      0E600660 
+ 1130      06
+ 1131 001e 60066006 		.ascii	"`\006`\006`\006p\0160\0148<\037\370\007\340\000\000"
+ 1131      6006700E 
+ 1131      300C383C 
+ 1131      1FF807E0 
+ 1131      0000
+ 1132 0030 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 1132      00000000 
+ 1132      0000
+ 1133              		.section	.rodata.calibri_24pts_0x4e,"a"
+ 1134              		.align	2
+ 1137              	calibri_24pts_0x4e:
+ 1138 0000 00000000 		.word	image_data_calibri_24pts_0x4e
+ 1139 0004 1000     		.short	16
+ 1140 0006 1D00     		.short	29
+ 1141 0008 08       		.byte	8
+ 1142 0009 000000   		.space	3
+ 1143              		.section	.rodata.image_data_calibri_24pts_0x4e,"a"
+ 1144              		.align	2
+ 1147              	image_data_calibri_24pts_0x4e:
+ 1148 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1148      00000000 
+ 1148      00000000 
+ 1148      00
+ 1149 000d 00000038 		.ascii	"\000\000\0008\030<\030<\0306\0306\0303\0303\0301\230"
+ 1149      183C183C 
+ 1149      18361836 
+ 1149      18331833 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 27
+
+
+ 1149      183198
+ 1150 0020 319830D8 		.ascii	"1\2300\3300\3300x0x0808\000\000\000\000\000\000\000"
+ 1150      30D83078 
+ 1150      30783038 
+ 1150      30380000 
+ 1150      00000000 
+ 1151 0035 00000000 		.ascii	"\000\000\000\000\000"
+ 1151      00
+ 1152              		.section	.rodata.calibri_24pts_0x4d,"a"
+ 1153              		.align	2
+ 1156              	calibri_24pts_0x4d:
+ 1157 0000 00000000 		.word	image_data_calibri_24pts_0x4d
+ 1158 0004 1500     		.short	21
+ 1159 0006 1D00     		.short	29
+ 1160 0008 08       		.byte	8
+ 1161 0009 000000   		.space	3
+ 1162              		.section	.rodata.image_data_calibri_24pts_0x4d,"a"
+ 1163              		.align	2
+ 1166              	image_data_calibri_24pts_0x4d:
+ 1167 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1167      00000000 
+ 1167      00000000 
+ 1167      00
+ 1168 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\0008\001\300"
+ 1168      00000000 
+ 1168      00000038 
+ 1168      01C0
+ 1169 001b 3C03C03C 		.ascii	"<\003\300<\003\3006\006\3006\006\3006\004\3003\014\300"
+ 1169      03C03606 
+ 1169      C03606C0 
+ 1169      3604C033 
+ 1169      0CC0
+ 1170 002d 330CC031 		.ascii	"3\014\3001\230\3001\230\3001\230\3000\360\3000\360\300"
+ 1170      98C03198 
+ 1170      C03198C0 
+ 1170      30F0C030 
+ 1170      F0C0
+ 1171 003f 3060C030 		.ascii	"0`\3000`\300\000\000\000\000\000\000\000\000\000\000"
+ 1171      60C00000 
+ 1171      00000000 
+ 1171      00000000 
+ 1172 004f 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1172      00000000 
+ 1173              		.section	.rodata.calibri_24pts_0x4c,"a"
+ 1174              		.align	2
+ 1177              	calibri_24pts_0x4c:
+ 1178 0000 00000000 		.word	image_data_calibri_24pts_0x4c
+ 1179 0004 0A00     		.short	10
+ 1180 0006 1D00     		.short	29
+ 1181 0008 08       		.byte	8
+ 1182 0009 000000   		.space	3
+ 1183              		.section	.rodata.image_data_calibri_24pts_0x4c,"a"
+ 1184              		.align	2
+ 1187              	image_data_calibri_24pts_0x4c:
+ 1188 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1188      00000000 
+ 1188      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 28
+
+
+ 1188      00
+ 1189 000d 00000030 		.ascii	"\000\000\0000\0000\0000\0000\0000\0000\0000\0000\000"
+ 1189      00300030 
+ 1189      00300030 
+ 1189      00300030 
+ 1189      003000
+ 1190 0020 30003000 		.ascii	"0\0000\0000\0000\0000\000?\300?\300\000\000\000\000"
+ 1190      30003000 
+ 1190      30003FC0 
+ 1190      3FC00000 
+ 1190      0000
+ 1191 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1191      00000000 
+ 1192              		.section	.rodata.calibri_24pts_0x4b,"a"
+ 1193              		.align	2
+ 1196              	calibri_24pts_0x4b:
+ 1197 0000 00000000 		.word	image_data_calibri_24pts_0x4b
+ 1198 0004 0C00     		.short	12
+ 1199 0006 1D00     		.short	29
+ 1200 0008 08       		.byte	8
+ 1201 0009 000000   		.space	3
+ 1202              		.section	.rodata.image_data_calibri_24pts_0x4b,"a"
+ 1203              		.align	2
+ 1206              	image_data_calibri_24pts_0x4b:
+ 1207 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1207      00000000 
+ 1207      00000000 
+ 1207      00
+ 1208 000d 00000030 		.ascii	"\000\000\0000p0\3400\3001\2003\0006\000>\000>\0006\000"
+ 1208      7030E030 
+ 1208      C0318033 
+ 1208      0036003E 
+ 1208      003E0036 
+ 1209 0022 33003380 		.ascii	"3\0003\2001\3000\3000`0p\000\000\000\000\000\000\000"
+ 1209      31C030C0 
+ 1209      30603070 
+ 1209      00000000 
+ 1209      000000
+ 1210 0035 00000000 		.ascii	"\000\000\000\000\000"
+ 1210      00
+ 1211              		.section	.rodata.calibri_24pts_0x4a,"a"
+ 1212              		.align	2
+ 1215              	calibri_24pts_0x4a:
+ 1216 0000 00000000 		.word	image_data_calibri_24pts_0x4a
+ 1217 0004 0800     		.short	8
+ 1218 0006 1D00     		.short	29
+ 1219 0008 08       		.byte	8
+ 1220 0009 000000   		.space	3
+ 1221              		.section	.rodata.image_data_calibri_24pts_0x4a,"a"
+ 1222              		.align	2
+ 1225              	image_data_calibri_24pts_0x4a:
+ 1226 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\014\014\014\014\014"
+ 1226      00000000 
+ 1226      0C0C0C0C 
+ 1226      0C
+ 1227 000d 0C0C0C0C 		.ascii	"\014\014\014\014\014\014\014\214\374x\000\000\000\000"
+ 1227      0C0C0C8C 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 29
+
+
+ 1227      FC780000 
+ 1227      0000
+ 1228 001b 0000     		.ascii	"\000\000"
+ 1229              		.section	.rodata.calibri_24pts_0x49,"a"
+ 1230              		.align	2
+ 1233              	calibri_24pts_0x49:
+ 1234 0000 00000000 		.word	image_data_calibri_24pts_0x49
+ 1235 0004 0600     		.short	6
+ 1236 0006 1D00     		.short	29
+ 1237 0008 08       		.byte	8
+ 1238 0009 000000   		.space	3
+ 1239              		.section	.rodata.image_data_calibri_24pts_0x49,"a"
+ 1240              		.align	2
+ 1243              	image_data_calibri_24pts_0x49:
+ 1244 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000000000000000000\000"
+ 1244      00000000 
+ 1244      30303030 
+ 1244      30303030 
+ 1244      30303030 
+ 1245 0018 00000000 		.ascii	"\000\000\000\000\000"
+ 1245      00
+ 1246              		.section	.rodata.calibri_24pts_0x48,"a"
+ 1247              		.align	2
+ 1250              	calibri_24pts_0x48:
+ 1251 0000 00000000 		.word	image_data_calibri_24pts_0x48
+ 1252 0004 0F00     		.short	15
+ 1253 0006 1D00     		.short	29
+ 1254 0008 08       		.byte	8
+ 1255 0009 000000   		.space	3
+ 1256              		.section	.rodata.image_data_calibri_24pts_0x48,"a"
+ 1257              		.align	2
+ 1260              	image_data_calibri_24pts_0x48:
+ 1261 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1261      00000000 
+ 1261      00000000 
+ 1261      00
+ 1262 000d 00000030 		.ascii	"\000\000\0000\0300\0300\0300\0300\0300\030?\370?\370"
+ 1262      18301830 
+ 1262      18301830 
+ 1262      1830183F 
+ 1262      F83FF8
+ 1263 0020 30183018 		.ascii	"0\0300\0300\0300\0300\0300\0300\030\000\000\000\000"
+ 1263      30183018 
+ 1263      30183018 
+ 1263      30180000 
+ 1263      0000
+ 1264 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1264      00000000 
+ 1265              		.section	.rodata.calibri_24pts_0x47,"a"
+ 1266              		.align	2
+ 1269              	calibri_24pts_0x47:
+ 1270 0000 00000000 		.word	image_data_calibri_24pts_0x47
+ 1271 0004 0F00     		.short	15
+ 1272 0006 1D00     		.short	29
+ 1273 0008 08       		.byte	8
+ 1274 0009 000000   		.space	3
+ 1275              		.section	.rodata.image_data_calibri_24pts_0x47,"a"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 30
+
+
+ 1276              		.align	2
+ 1279              	image_data_calibri_24pts_0x47:
+ 1280 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1280      00000000 
+ 1280      00000000 
+ 1280      00
+ 1281 000d 00000007 		.ascii	"\000\000\000\007\360\017\370\034\0300\0000\000`\000"
+ 1281      F00FF81C 
+ 1281      18300030 
+ 1281      006000
+ 1282 001c 600061F8 		.ascii	"`\000a\370a\370`\030p\0300\030\034\030\037\370\007\340"
+ 1282      61F86018 
+ 1282      70183018 
+ 1282      1C181FF8 
+ 1282      07E0
+ 1283 002e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1283      00000000 
+ 1283      00000000 
+ 1284              		.section	.rodata.calibri_24pts_0x46,"a"
+ 1285              		.align	2
+ 1288              	calibri_24pts_0x46:
+ 1289 0000 00000000 		.word	image_data_calibri_24pts_0x46
+ 1290 0004 0B00     		.short	11
+ 1291 0006 1D00     		.short	29
+ 1292 0008 08       		.byte	8
+ 1293 0009 000000   		.space	3
+ 1294              		.section	.rodata.image_data_calibri_24pts_0x46,"a"
+ 1295              		.align	2
+ 1298              	image_data_calibri_24pts_0x46:
+ 1299 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1299      00000000 
+ 1299      00000000 
+ 1299      00
+ 1300 000d 0000003F 		.ascii	"\000\000\000?\300?\3000\0000\0000\0000\000?\300?\300"
+ 1300      C03FC030 
+ 1300      00300030 
+ 1300      0030003F 
+ 1300      C03FC0
+ 1301 0020 30003000 		.ascii	"0\0000\0000\0000\0000\0000\0000\000\000\000\000\000"
+ 1301      30003000 
+ 1301      30003000 
+ 1301      30000000 
+ 1301      0000
+ 1302 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1302      00000000 
+ 1303              		.section	.rodata.calibri_24pts_0x45,"a"
+ 1304              		.align	2
+ 1307              	calibri_24pts_0x45:
+ 1308 0000 00000000 		.word	image_data_calibri_24pts_0x45
+ 1309 0004 0C00     		.short	12
+ 1310 0006 1D00     		.short	29
+ 1311 0008 08       		.byte	8
+ 1312 0009 000000   		.space	3
+ 1313              		.section	.rodata.image_data_calibri_24pts_0x45,"a"
+ 1314              		.align	2
+ 1317              	image_data_calibri_24pts_0x45:
+ 1318 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 31
+
+
+ 1318      00000000 
+ 1318      00000000 
+ 1318      00
+ 1319 000d 0000003F 		.ascii	"\000\000\000?\300?\3000\0000\0000\0000\000?\200?\200"
+ 1319      C03FC030 
+ 1319      00300030 
+ 1319      0030003F 
+ 1319      803F80
+ 1320 0020 30003000 		.ascii	"0\0000\0000\0000\0000\000?\300?\300\000\000\000\000"
+ 1320      30003000 
+ 1320      30003FC0 
+ 1320      3FC00000 
+ 1320      0000
+ 1321 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1321      00000000 
+ 1322              		.section	.rodata.calibri_24pts_0x44,"a"
+ 1323              		.align	2
+ 1326              	calibri_24pts_0x44:
+ 1327 0000 00000000 		.word	image_data_calibri_24pts_0x44
+ 1328 0004 0F00     		.short	15
+ 1329 0006 1D00     		.short	29
+ 1330 0008 08       		.byte	8
+ 1331 0009 000000   		.space	3
+ 1332              		.section	.rodata.image_data_calibri_24pts_0x44,"a"
+ 1333              		.align	2
+ 1336              	image_data_calibri_24pts_0x44:
+ 1337 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1337      00000000 
+ 1337      00000000 
+ 1337      00
+ 1338 000d 0000003F 		.ascii	"\000\000\000?\300?\3600x0\0300\0340\0140\0140\0140\014"
+ 1338      C03FF030 
+ 1338      78301830 
+ 1338      1C300C30 
+ 1338      0C300C30 
+ 1339 0022 300C301C 		.ascii	"0\0140\0340\0300x?\340?\300\000\000\000\000\000\000"
+ 1339      30183078 
+ 1339      3FE03FC0 
+ 1339      00000000 
+ 1339      0000
+ 1340 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 1340      0000
+ 1341              		.section	.rodata.calibri_24pts_0x43,"a"
+ 1342              		.align	2
+ 1345              	calibri_24pts_0x43:
+ 1346 0000 00000000 		.word	image_data_calibri_24pts_0x43
+ 1347 0004 0D00     		.short	13
+ 1348 0006 1D00     		.short	29
+ 1349 0008 08       		.byte	8
+ 1350 0009 000000   		.space	3
+ 1351              		.section	.rodata.image_data_calibri_24pts_0x43,"a"
+ 1352              		.align	2
+ 1355              	image_data_calibri_24pts_0x43:
+ 1356 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1356      00000000 
+ 1356      00000000 
+ 1356      00
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 32
+
+
+ 1357 000d 00000007 		.ascii	"\000\000\000\007\340\037\360800\000p\000`\000`\000`"
+ 1357      E01FF038 
+ 1357      30300070 
+ 1357      00600060 
+ 1357      0060
+ 1358 001f 00600060 		.ascii	"\000`\000`\000p\0000\00080\037\360\007\340\000\000\000"
+ 1358      00700030 
+ 1358      0038301F 
+ 1358      F007E000 
+ 1358      0000
+ 1359 0031 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000"
+ 1359      00000000 
+ 1359      00
+ 1360              		.section	.rodata.calibri_24pts_0x42,"a"
+ 1361              		.align	2
+ 1364              	calibri_24pts_0x42:
+ 1365 0000 00000000 		.word	image_data_calibri_24pts_0x42
+ 1366 0004 0D00     		.short	13
+ 1367 0006 1D00     		.short	29
+ 1368 0008 08       		.byte	8
+ 1369 0009 000000   		.space	3
+ 1370              		.section	.rodata.image_data_calibri_24pts_0x42,"a"
+ 1371              		.align	2
+ 1374              	image_data_calibri_24pts_0x42:
+ 1375 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1375      00000000 
+ 1375      00000000 
+ 1375      00
+ 1376 000d 0000003F 		.ascii	"\000\000\000?\200?\3000\3400`0`0\300?\200?\3400p000"
+ 1376      803FC030 
+ 1376      E0306030 
+ 1376      6030C03F 
+ 1376      803FE030 
+ 1377 0025 30303030 		.ascii	"0000p?\340?\200\000\000\000\000\000\000\000\000\000"
+ 1377      703FE03F 
+ 1377      80000000 
+ 1377      00000000 
+ 1377      0000
+ 1378 0037 000000   		.ascii	"\000\000\000"
+ 1379              		.section	.rodata.calibri_24pts_0x41,"a"
+ 1380              		.align	2
+ 1383              	calibri_24pts_0x41:
+ 1384 0000 00000000 		.word	image_data_calibri_24pts_0x41
+ 1385 0004 0E00     		.short	14
+ 1386 0006 1D00     		.short	29
+ 1387 0008 08       		.byte	8
+ 1388 0009 000000   		.space	3
+ 1389              		.section	.rodata.image_data_calibri_24pts_0x41,"a"
+ 1390              		.align	2
+ 1393              	image_data_calibri_24pts_0x41:
+ 1394 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1394      00000000 
+ 1394      00000000 
+ 1394      00
+ 1395 000d 00000003 		.ascii	"\000\000\000\003\000\007\200\007\200\015\200\014\300"
+ 1395      00078007 
+ 1395      800D800C 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 33
+
+
+ 1395      C0
+ 1396 001a 0CC01860 		.ascii	"\014\300\030`\030`\020`?\360?\36000`\030`\030\340\030"
+ 1396      18601060 
+ 1396      3FF03FF0 
+ 1396      30306018 
+ 1396      6018E018 
+ 1397 002e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1397      00000000 
+ 1397      00000000 
+ 1398              		.section	.rodata.calibri_24pts_0x40,"a"
+ 1399              		.align	2
+ 1402              	calibri_24pts_0x40:
+ 1403 0000 00000000 		.word	image_data_calibri_24pts_0x40
+ 1404 0004 1500     		.short	21
+ 1405 0006 1D00     		.short	29
+ 1406 0008 08       		.byte	8
+ 1407 0009 000000   		.space	3
+ 1408              		.section	.rodata.image_data_calibri_24pts_0x40,"a"
+ 1409              		.align	2
+ 1412              	image_data_calibri_24pts_0x40:
+ 1413 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1413      00000000 
+ 1413      00000000 
+ 1413      00
+ 1414 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\376"
+ 1414      00000000 
+ 1414      00000000 
+ 1414      FE
+ 1415 001a 0003FF80 		.ascii	"\000\003\377\200\007\001\300\016\000\340\034\354`\031"
+ 1415      0701C00E 
+ 1415      00E01CEC 
+ 1415      6019
+ 1416 0028 FC60199C 		.ascii	"\374`\031\234`3\034`3\030`3\030`38\3003\377\2001\317"
+ 1416      60331C60 
+ 1416      33186033 
+ 1416      18603338 
+ 1416      C033FF80 
+ 1417 003e 00300000 		.ascii	"\0000\000\000\030\000\000\036\004\000\017\374\000\003"
+ 1417      1800001E 
+ 1417      04000FFC 
+ 1417      0003
+ 1418 004c F8000000 		.ascii	"\370\000\000\000\000\000\000\000\000\000\000"
+ 1418      00000000 
+ 1418      000000
+ 1419              		.section	.rodata.calibri_24pts_0x3f,"a"
+ 1420              		.align	2
+ 1423              	calibri_24pts_0x3f:
+ 1424 0000 00000000 		.word	image_data_calibri_24pts_0x3f
+ 1425 0004 0B00     		.short	11
+ 1426 0006 1D00     		.short	29
+ 1427 0008 08       		.byte	8
+ 1428 0009 000000   		.space	3
+ 1429              		.section	.rodata.image_data_calibri_24pts_0x3f,"a"
+ 1430              		.align	2
+ 1433              	image_data_calibri_24pts_0x3f:
+ 1434 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1434      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 34
+
+
+ 1434      00000000 
+ 1434      00
+ 1435 000d 003F007F 		.ascii	"\000?\000\177\200A\300\000\300\000\300\000\300\000\300"
+ 1435      8041C000 
+ 1435      C000C000 
+ 1435      C000C0
+ 1436 001c 01800F00 		.ascii	"\001\200\017\000\014\000\014\000\014\000\000\000\014"
+ 1436      0C000C00 
+ 1436      0C000000 
+ 1436      0C
+ 1437 0029 000C000C 		.ascii	"\000\014\000\014\000\000\000\000\000\000\000\000\000"
+ 1437      00000000 
+ 1437      00000000 
+ 1437      00
+ 1438 0036 00000000 		.ascii	"\000\000\000\000"
+ 1439              		.section	.rodata.calibri_24pts_0x3e,"a"
+ 1440              		.align	2
+ 1443              	calibri_24pts_0x3e:
+ 1444 0000 00000000 		.word	image_data_calibri_24pts_0x3e
+ 1445 0004 0C00     		.short	12
+ 1446 0006 1D00     		.short	29
+ 1447 0008 08       		.byte	8
+ 1448 0009 000000   		.space	3
+ 1449              		.section	.rodata.image_data_calibri_24pts_0x3e,"a"
+ 1450              		.align	2
+ 1453              	image_data_calibri_24pts_0x3e:
+ 1454 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1454      00000000 
+ 1454      00000000 
+ 1454      00
+ 1455 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000`\000x\000\036\000"
+ 1455      00000000 
+ 1455      00600078 
+ 1455      001E00
+ 1456 001c 078001E0 		.ascii	"\007\200\001\340\000`\001\340\007\200\036\000x\000`"
+ 1456      006001E0 
+ 1456      07801E00 
+ 1456      780060
+ 1457 002b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1457      00000000 
+ 1457      00000000 
+ 1457      00
+ 1458 0038 0000     		.ascii	"\000\000"
+ 1459              		.section	.rodata.calibri_24pts_0x3d,"a"
+ 1460              		.align	2
+ 1463              	calibri_24pts_0x3d:
+ 1464 0000 00000000 		.word	image_data_calibri_24pts_0x3d
+ 1465 0004 0C00     		.short	12
+ 1466 0006 1D00     		.short	29
+ 1467 0008 08       		.byte	8
+ 1468 0009 000000   		.space	3
+ 1469              		.section	.rodata.image_data_calibri_24pts_0x3d,"a"
+ 1470              		.align	2
+ 1473              	image_data_calibri_24pts_0x3d:
+ 1474 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1474      00000000 
+ 1474      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 35
+
+
+ 1474      00
+ 1475 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1475      00000000 
+ 1475      00000000 
+ 1475      00
+ 1476 001a 7FE07FE0 		.ascii	"\177\340\177\340\000\000\000\000\000\000\177\340\177"
+ 1476      00000000 
+ 1476      00007FE0 
+ 1476      7F
+ 1477 0027 E0000000 		.ascii	"\340\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1477      00000000 
+ 1477      00000000 
+ 1477      00
+ 1478 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 1478      0000
+ 1479              		.section	.rodata.calibri_24pts_0x3c,"a"
+ 1480              		.align	2
+ 1483              	calibri_24pts_0x3c:
+ 1484 0000 00000000 		.word	image_data_calibri_24pts_0x3c
+ 1485 0004 0C00     		.short	12
+ 1486 0006 1D00     		.short	29
+ 1487 0008 08       		.byte	8
+ 1488 0009 000000   		.space	3
+ 1489              		.section	.rodata.image_data_calibri_24pts_0x3c,"a"
+ 1490              		.align	2
+ 1493              	image_data_calibri_24pts_0x3c:
+ 1494 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1494      00000000 
+ 1494      00000000 
+ 1494      00
+ 1495 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000`\001\340\007"
+ 1495      00000000 
+ 1495      00006001 
+ 1495      E007
+ 1496 001b 801E0078 		.ascii	"\200\036\000x\000`\000x\000\036\000\007\200\001\340"
+ 1496      00600078 
+ 1496      001E0007 
+ 1496      8001E0
+ 1497 002a 00600000 		.ascii	"\000`\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1497      00000000 
+ 1497      00000000 
+ 1497      0000
+ 1498 0038 0000     		.ascii	"\000\000"
+ 1499              		.section	.rodata.calibri_24pts_0x3b,"a"
+ 1500              		.align	2
+ 1503              	calibri_24pts_0x3b:
+ 1504 0000 00000000 		.word	image_data_calibri_24pts_0x3b
+ 1505 0004 0600     		.short	6
+ 1506 0006 1D00     		.short	29
+ 1507 0008 08       		.byte	8
+ 1508 0009 000000   		.space	3
+ 1509              		.section	.rodata.image_data_calibri_24pts_0x3b,"a"
+ 1510              		.align	2
+ 1513              	image_data_calibri_24pts_0x3b:
+ 1514 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000888"
+ 1514      00000000 
+ 1514      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 36
+
+
+ 1514      383838
+ 1515 000f 00000000 		.ascii	"\000\000\000\000\000000`@\300\000\000\000"
+ 1515      00303030 
+ 1515      6040C000 
+ 1515      0000
+ 1516              		.section	.rodata.calibri_24pts_0x3a,"a"
+ 1517              		.align	2
+ 1520              	calibri_24pts_0x3a:
+ 1521 0000 00000000 		.word	image_data_calibri_24pts_0x3a
+ 1522 0004 0600     		.short	6
+ 1523 0006 1D00     		.short	29
+ 1524 0008 08       		.byte	8
+ 1525 0009 000000   		.space	3
+ 1526              		.section	.rodata.image_data_calibri_24pts_0x3a,"a"
+ 1527              		.align	2
+ 1530              	image_data_calibri_24pts_0x3a:
+ 1531 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000888"
+ 1531      00000000 
+ 1531      00000000 
+ 1531      383838
+ 1532 000f 00000000 		.ascii	"\000\000\000\000\000888\000\000\000\000\000\000"
+ 1532      00383838 
+ 1532      00000000 
+ 1532      0000
+ 1533              		.section	.rodata.calibri_24pts_0x39,"a"
+ 1534              		.align	2
+ 1537              	calibri_24pts_0x39:
+ 1538 0000 00000000 		.word	image_data_calibri_24pts_0x39
+ 1539 0004 0C00     		.short	12
+ 1540 0006 1D00     		.short	29
+ 1541 0008 08       		.byte	8
+ 1542 0009 000000   		.space	3
+ 1543              		.section	.rodata.image_data_calibri_24pts_0x39,"a"
+ 1544              		.align	2
+ 1547              	image_data_calibri_24pts_0x39:
+ 1548 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1548      00000000 
+ 1548      00000000 
+ 1548      00
+ 1549 000d 0000000F 		.ascii	"\000\000\000\017\000?\300p\300``````p\340?\340\037`"
+ 1549      003FC070 
+ 1549      C0606060 
+ 1549      60606070 
+ 1549      E03FE01F 
+ 1550 0022 00600060 		.ascii	"\000`\000`\000\300A\300\177\200>\000\000\000\000\000"
+ 1550      00C041C0 
+ 1550      7F803E00 
+ 1550      00000000 
+ 1551 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1551      00000000 
+ 1552              		.section	.rodata.calibri_24pts_0x38,"a"
+ 1553              		.align	2
+ 1556              	calibri_24pts_0x38:
+ 1557 0000 00000000 		.word	image_data_calibri_24pts_0x38
+ 1558 0004 0C00     		.short	12
+ 1559 0006 1D00     		.short	29
+ 1560 0008 08       		.byte	8
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 37
+
+
+ 1561 0009 000000   		.space	3
+ 1562              		.section	.rodata.image_data_calibri_24pts_0x38,"a"
+ 1563              		.align	2
+ 1566              	image_data_calibri_24pts_0x38:
+ 1567 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1567      00000000 
+ 1567      00000000 
+ 1567      00
+ 1568 000d 0000000F 		.ascii	"\000\000\000\017\000\037\3009\3000\3000\3009\200\037"
+ 1568      001FC039 
+ 1568      C030C030 
+ 1568      C039801F 
+ 1569 001d 000F0019 		.ascii	"\000\017\000\031\3000\340````p\340?\300\037\200\000"
+ 1569      C030E060 
+ 1569      60606070 
+ 1569      E03FC01F 
+ 1569      8000
+ 1570 002f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 1570      00000000 
+ 1570      000000
+ 1571              		.section	.rodata.calibri_24pts_0x37,"a"
+ 1572              		.align	2
+ 1575              	calibri_24pts_0x37:
+ 1576 0000 00000000 		.word	image_data_calibri_24pts_0x37
+ 1577 0004 0C00     		.short	12
+ 1578 0006 1D00     		.short	29
+ 1579 0008 08       		.byte	8
+ 1580 0009 000000   		.space	3
+ 1581              		.section	.rodata.image_data_calibri_24pts_0x37,"a"
+ 1582              		.align	2
+ 1585              	image_data_calibri_24pts_0x37:
+ 1586 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1586      00000000 
+ 1586      00000000 
+ 1586      00
+ 1587 000d 0000007F 		.ascii	"\000\000\000\177\340\177\340\000`\000\300\000\300\001"
+ 1587      E07FE000 
+ 1587      6000C000 
+ 1587      C001
+ 1588 001b 80018003 		.ascii	"\200\001\200\003\000\003\000\007\000\006\000\016\000"
+ 1588      00030007 
+ 1588      0006000E 
+ 1588      00
+ 1589 0028 0C001C00 		.ascii	"\014\000\034\000\030\000\000\000\000\000\000\000\000"
+ 1589      18000000 
+ 1589      00000000 
+ 1589      00
+ 1590 0035 00000000 		.ascii	"\000\000\000\000\000"
+ 1590      00
+ 1591              		.section	.rodata.calibri_24pts_0x36,"a"
+ 1592              		.align	2
+ 1595              	calibri_24pts_0x36:
+ 1596 0000 00000000 		.word	image_data_calibri_24pts_0x36
+ 1597 0004 0C00     		.short	12
+ 1598 0006 1D00     		.short	29
+ 1599 0008 08       		.byte	8
+ 1600 0009 000000   		.space	3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 38
+
+
+ 1601              		.section	.rodata.image_data_calibri_24pts_0x36,"a"
+ 1602              		.align	2
+ 1605              	image_data_calibri_24pts_0x36:
+ 1606 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1606      00000000 
+ 1606      00000000 
+ 1606      00
+ 1607 000d 00000007 		.ascii	"\000\000\000\007\200\037\3008\0000\000`\000`\000o\200"
+ 1607      801FC038 
+ 1607      00300060 
+ 1607      0060006F 
+ 1607      80
+ 1608 001e 7FC070E0 		.ascii	"\177\300p\340``````0\300?\300\037\000\000\000\000\000"
+ 1608      60606060 
+ 1608      606030C0 
+ 1608      3FC01F00 
+ 1608      00000000 
+ 1609 0032 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 1609      00000000 
+ 1610              		.section	.rodata.calibri_24pts_0x35,"a"
+ 1611              		.align	2
+ 1614              	calibri_24pts_0x35:
+ 1615 0000 00000000 		.word	image_data_calibri_24pts_0x35
+ 1616 0004 0C00     		.short	12
+ 1617 0006 1D00     		.short	29
+ 1618 0008 08       		.byte	8
+ 1619 0009 000000   		.space	3
+ 1620              		.section	.rodata.image_data_calibri_24pts_0x35,"a"
+ 1621              		.align	2
+ 1624              	image_data_calibri_24pts_0x35:
+ 1625 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1625      00000000 
+ 1625      00000000 
+ 1625      00
+ 1626 000d 0000003F 		.ascii	"\000\000\000?\300?\3000\0000\0000\000?\200?\300\000"
+ 1626      C03FC030 
+ 1626      00300030 
+ 1626      003F803F 
+ 1626      C000
+ 1627 001f E0006000 		.ascii	"\340\000`\000`\000`\000``\300\177\200?\000\000\000\000"
+ 1627      60006000 
+ 1627      6060C07F 
+ 1627      803F0000 
+ 1627      0000
+ 1628 0031 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000"
+ 1628      00000000 
+ 1628      00
+ 1629              		.section	.rodata.calibri_24pts_0x34,"a"
+ 1630              		.align	2
+ 1633              	calibri_24pts_0x34:
+ 1634 0000 00000000 		.word	image_data_calibri_24pts_0x34
+ 1635 0004 0C00     		.short	12
+ 1636 0006 1D00     		.short	29
+ 1637 0008 08       		.byte	8
+ 1638 0009 000000   		.space	3
+ 1639              		.section	.rodata.image_data_calibri_24pts_0x34,"a"
+ 1640              		.align	2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 39
+
+
+ 1643              	image_data_calibri_24pts_0x34:
+ 1644 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1644      00000000 
+ 1644      00000000 
+ 1644      00
+ 1645 000d 00000003 		.ascii	"\000\000\000\003\200\007\200\007\200\015\200\031\200"
+ 1645      80078007 
+ 1645      800D8019 
+ 1645      80
+ 1646 001a 19803180 		.ascii	"\031\2001\200!\200a\200\301\200\377\340\377\340\001"
+ 1646      21806180 
+ 1646      C180FFE0 
+ 1646      FFE001
+ 1647 0029 80018001 		.ascii	"\200\001\200\001\200\000\000\000\000\000\000\000\000"
+ 1647      80000000 
+ 1647      00000000 
+ 1647      00
+ 1648 0036 00000000 		.ascii	"\000\000\000\000"
+ 1649              		.section	.rodata.calibri_24pts_0x33,"a"
+ 1650              		.align	2
+ 1653              	calibri_24pts_0x33:
+ 1654 0000 00000000 		.word	image_data_calibri_24pts_0x33
+ 1655 0004 0C00     		.short	12
+ 1656 0006 1D00     		.short	29
+ 1657 0008 08       		.byte	8
+ 1658 0009 000000   		.space	3
+ 1659              		.section	.rodata.image_data_calibri_24pts_0x33,"a"
+ 1660              		.align	2
+ 1663              	image_data_calibri_24pts_0x33:
+ 1664 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1664      00000000 
+ 1664      00000000 
+ 1664      00
+ 1665 000d 0000001F 		.ascii	"\000\000\000\037\000\177\200a\300\000\300\000\300\001"
+ 1665      007F8061 
+ 1665      C000C000 
+ 1665      C001
+ 1666 001b 801F001F 		.ascii	"\200\037\000\037\200\000\300\000`\000`\000``\340\177"
+ 1666      8000C000 
+ 1666      60006000 
+ 1666      6060E07F 
+ 1667 002b C01F0000 		.ascii	"\300\037\000\000\000\000\000\000\000\000\000\000\000"
+ 1667      00000000 
+ 1667      00000000 
+ 1667      00
+ 1668 0038 0000     		.ascii	"\000\000"
+ 1669              		.section	.rodata.calibri_24pts_0x32,"a"
+ 1670              		.align	2
+ 1673              	calibri_24pts_0x32:
+ 1674 0000 00000000 		.word	image_data_calibri_24pts_0x32
+ 1675 0004 0C00     		.short	12
+ 1676 0006 1D00     		.short	29
+ 1677 0008 08       		.byte	8
+ 1678 0009 000000   		.space	3
+ 1679              		.section	.rodata.image_data_calibri_24pts_0x32,"a"
+ 1680              		.align	2
+ 1683              	image_data_calibri_24pts_0x32:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 40
+
+
+ 1684 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1684      00000000 
+ 1684      00000000 
+ 1684      00
+ 1685 000d 0000001F 		.ascii	"\000\000\000\037\000\177\200a\300\000\300\000\300\000"
+ 1685      007F8061 
+ 1685      C000C000 
+ 1685      C000
+ 1686 001b C0018001 		.ascii	"\300\001\200\001\200\003\000\006\000\014\000\030\000"
+ 1686      80030006 
+ 1686      000C0018 
+ 1686      00
+ 1687 0028 30007FE0 		.ascii	"0\000\177\340\177\340\000\000\000\000\000\000\000\000"
+ 1687      7FE00000 
+ 1687      00000000 
+ 1687      0000
+ 1688 0036 00000000 		.ascii	"\000\000\000\000"
+ 1689              		.section	.rodata.calibri_24pts_0x31,"a"
+ 1690              		.align	2
+ 1693              	calibri_24pts_0x31:
+ 1694 0000 00000000 		.word	image_data_calibri_24pts_0x31
+ 1695 0004 0C00     		.short	12
+ 1696 0006 1D00     		.short	29
+ 1697 0008 08       		.byte	8
+ 1698 0009 000000   		.space	3
+ 1699              		.section	.rodata.image_data_calibri_24pts_0x31,"a"
+ 1700              		.align	2
+ 1703              	image_data_calibri_24pts_0x31:
+ 1704 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1704      00000000 
+ 1704      00000000 
+ 1704      00
+ 1705 000d 00000003 		.ascii	"\000\000\000\003\000\017\000;\0003\000\003\000\003\000"
+ 1705      000F003B 
+ 1705      00330003 
+ 1705      000300
+ 1706 001c 03000300 		.ascii	"\003\000\003\000\003\000\003\000\003\000\003\000\003"
+ 1706      03000300 
+ 1706      03000300 
+ 1706      03
+ 1707 0029 003FE03F 		.ascii	"\000?\340?\340\000\000\000\000\000\000\000\000\000\000"
+ 1707      E0000000 
+ 1707      00000000 
+ 1707      000000
+ 1708 0038 0000     		.ascii	"\000\000"
+ 1709              		.section	.rodata.calibri_24pts_0x30,"a"
+ 1710              		.align	2
+ 1713              	calibri_24pts_0x30:
+ 1714 0000 00000000 		.word	image_data_calibri_24pts_0x30
+ 1715 0004 0C00     		.short	12
+ 1716 0006 1D00     		.short	29
+ 1717 0008 08       		.byte	8
+ 1718 0009 000000   		.space	3
+ 1719              		.section	.rodata.image_data_calibri_24pts_0x30,"a"
+ 1720              		.align	2
+ 1723              	image_data_calibri_24pts_0x30:
+ 1724 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 41
+
+
+ 1724      00000000 
+ 1724      00000000 
+ 1724      00
+ 1725 000d 0000000F 		.ascii	"\000\000\000\017\000\037\3000\3000\340`````````````"
+ 1725      001FC030 
+ 1725      C030E060 
+ 1725      60606060 
+ 1725      60606060 
+ 1726 0025 6070C030 		.ascii	"`p\3000\300?\200\017\000\000\000\000\000\000\000\000"
+ 1726      C03F800F 
+ 1726      00000000 
+ 1726      00000000 
+ 1727 0035 00000000 		.ascii	"\000\000\000\000\000"
+ 1727      00
+ 1728              		.section	.rodata.calibri_24pts_0x2f,"a"
+ 1729              		.align	2
+ 1732              	calibri_24pts_0x2f:
+ 1733 0000 00000000 		.word	image_data_calibri_24pts_0x2f
+ 1734 0004 0900     		.short	9
+ 1735 0006 1D00     		.short	29
+ 1736 0008 08       		.byte	8
+ 1737 0009 000000   		.space	3
+ 1738              		.section	.rodata.image_data_calibri_24pts_0x2f,"a"
+ 1739              		.align	2
+ 1742              	image_data_calibri_24pts_0x2f:
+ 1743 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\001"
+ 1743      00000000 
+ 1743      00000000 
+ 1743      01
+ 1744 000d 80018003 		.ascii	"\200\001\200\003\000\003\000\003\000\006\000\006\000"
+ 1744      00030003 
+ 1744      00060006 
+ 1744      00
+ 1745 001a 04000C00 		.ascii	"\004\000\014\000\014\000\030\000\030\000\030\0000\000"
+ 1745      0C001800 
+ 1745      18001800 
+ 1745      3000
+ 1746 0028 30002000 		.ascii	"0\000 \000`\000`\000\300\000\300\000\000\000\000\000"
+ 1746      60006000 
+ 1746      C000C000 
+ 1746      00000000 
+ 1747 0038 0000     		.ascii	"\000\000"
+ 1748              		.section	.rodata.calibri_24pts_0x2e,"a"
+ 1749              		.align	2
+ 1752              	calibri_24pts_0x2e:
+ 1753 0000 00000000 		.word	image_data_calibri_24pts_0x2e
+ 1754 0004 0600     		.short	6
+ 1755 0006 1D00     		.short	29
+ 1756 0008 08       		.byte	8
+ 1757 0009 000000   		.space	3
+ 1758              		.section	.rodata.image_data_calibri_24pts_0x2e,"a"
+ 1759              		.align	2
+ 1762              	image_data_calibri_24pts_0x2e:
+ 1763 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1763      00000000 
+ 1763      00000000 
+ 1763      00
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 42
+
+
+ 1764 000d 00000000 		.ascii	"\000\000\000\000\000\000\000080\000\000\000\000\000"
+ 1764      00000030 
+ 1764      38300000 
+ 1764      000000
+ 1765 001c 00       		.ascii	"\000"
+ 1766              		.section	.rodata.calibri_24pts_0x2d,"a"
+ 1767              		.align	2
+ 1770              	calibri_24pts_0x2d:
+ 1771 0000 00000000 		.word	image_data_calibri_24pts_0x2d
+ 1772 0004 0700     		.short	7
+ 1773 0006 1D00     		.short	29
+ 1774 0008 08       		.byte	8
+ 1775 0009 000000   		.space	3
+ 1776              		.section	.rodata.image_data_calibri_24pts_0x2d,"a"
+ 1777              		.align	2
+ 1780              	image_data_calibri_24pts_0x2d:
+ 1781 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1781      00000000 
+ 1781      00000000 
+ 1781      00
+ 1782 000d 0000007E 		.ascii	"\000\000\000~~\000\000\000\000\000\000\000\000\000\000"
+ 1782      7E000000 
+ 1782      00000000 
+ 1782      000000
+ 1783 001c 00       		.ascii	"\000"
+ 1784              		.section	.rodata.calibri_24pts_0x2c,"a"
+ 1785              		.align	2
+ 1788              	calibri_24pts_0x2c:
+ 1789 0000 00000000 		.word	image_data_calibri_24pts_0x2c
+ 1790 0004 0600     		.short	6
+ 1791 0006 1D00     		.short	29
+ 1792 0008 08       		.byte	8
+ 1793 0009 000000   		.space	3
+ 1794              		.section	.rodata.image_data_calibri_24pts_0x2c,"a"
+ 1795              		.align	2
+ 1798              	image_data_calibri_24pts_0x2c:
+ 1799 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1799      00000000 
+ 1799      00000000 
+ 1799      00
+ 1800 000d 00000000 		.ascii	"\000\000\000\000\000\000\000000 `@\000\000\000"
+ 1800      00000030 
+ 1800      30302060 
+ 1800      40000000 
+ 1801              		.section	.rodata.calibri_24pts_0x2b,"a"
+ 1802              		.align	2
+ 1805              	calibri_24pts_0x2b:
+ 1806 0000 00000000 		.word	image_data_calibri_24pts_0x2b
+ 1807 0004 0C00     		.short	12
+ 1808 0006 1D00     		.short	29
+ 1809 0008 08       		.byte	8
+ 1810 0009 000000   		.space	3
+ 1811              		.section	.rodata.image_data_calibri_24pts_0x2b,"a"
+ 1812              		.align	2
+ 1815              	image_data_calibri_24pts_0x2b:
+ 1816 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1816      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 43
+
+
+ 1816      00000000 
+ 1816      00
+ 1817 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\006\000\006\000\006\000"
+ 1817      00000006 
+ 1817      00060006 
+ 1817      00
+ 1818 001a 06000600 		.ascii	"\006\000\006\000\177\340\177\340\006\000\006\000\006"
+ 1818      7FE07FE0 
+ 1818      06000600 
+ 1818      06
+ 1819 0027 00060006 		.ascii	"\000\006\000\006\000\000\000\000\000\000\000\000\000"
+ 1819      00000000 
+ 1819      00000000 
+ 1819      00
+ 1820 0034 00000000 		.ascii	"\000\000\000\000\000\000"
+ 1820      0000
+ 1821              		.section	.rodata.calibri_24pts_0x2a,"a"
+ 1822              		.align	2
+ 1825              	calibri_24pts_0x2a:
+ 1826 0000 00000000 		.word	image_data_calibri_24pts_0x2a
+ 1827 0004 0C00     		.short	12
+ 1828 0006 1D00     		.short	29
+ 1829 0008 08       		.byte	8
+ 1830 0009 000000   		.space	3
+ 1831              		.section	.rodata.image_data_calibri_24pts_0x2a,"a"
+ 1832              		.align	2
+ 1835              	image_data_calibri_24pts_0x2a:
+ 1836 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\006"
+ 1836      00000000 
+ 1836      00000000 
+ 1836      06
+ 1837 000d 00060036 		.ascii	"\000\006\0006\300\035\200\006\000\035\2006\300\006\000"
+ 1837      C01D8006 
+ 1837      001D8036 
+ 1837      C00600
+ 1838 001c 06000000 		.ascii	"\006\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1838      00000000 
+ 1838      00000000 
+ 1838      00
+ 1839 0029 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1839      00000000 
+ 1839      00000000 
+ 1839      00
+ 1840 0036 00000000 		.ascii	"\000\000\000\000"
+ 1841              		.section	.rodata.calibri_24pts_0x29,"a"
+ 1842              		.align	2
+ 1845              	calibri_24pts_0x29:
+ 1846 0000 00000000 		.word	image_data_calibri_24pts_0x29
+ 1847 0004 0700     		.short	7
+ 1848 0006 1D00     		.short	29
+ 1849 0008 08       		.byte	8
+ 1850 0009 000000   		.space	3
+ 1851              		.section	.rodata.image_data_calibri_24pts_0x29,"a"
+ 1852              		.align	2
+ 1855              	image_data_calibri_24pts_0x29:
+ 1856 0000 00000000 		.ascii	"\000\000\000\000\000\00000\020\030\030\030\014\014\014"
+ 1856      00003030 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 44
+
+
+ 1856      10181818 
+ 1856      0C0C0C
+ 1857 000f 0C0C0C0C 		.ascii	"\014\014\014\014\014\014\030\030\030\02000\000\000"
+ 1857      0C0C1818 
+ 1857      18103030 
+ 1857      0000
+ 1858              		.section	.rodata.calibri_24pts_0x28,"a"
+ 1859              		.align	2
+ 1862              	calibri_24pts_0x28:
+ 1863 0000 00000000 		.word	image_data_calibri_24pts_0x28
+ 1864 0004 0700     		.short	7
+ 1865 0006 1D00     		.short	29
+ 1866 0008 08       		.byte	8
+ 1867 0009 000000   		.space	3
+ 1868              		.section	.rodata.image_data_calibri_24pts_0x28,"a"
+ 1869              		.align	2
+ 1872              	image_data_calibri_24pts_0x28:
+ 1873 0000 00000000 		.ascii	"\000\000\000\000\000\000\014\014\010\030\030\030000"
+ 1873      00000C0C 
+ 1873      08181818 
+ 1873      303030
+ 1874 000f 30303030 		.ascii	"000000\030\030\030\010\014\014\000\000"
+ 1874      30301818 
+ 1874      18080C0C 
+ 1874      0000
+ 1875              		.section	.rodata.calibri_24pts_0x27,"a"
+ 1876              		.align	2
+ 1879              	calibri_24pts_0x27:
+ 1880 0000 00000000 		.word	image_data_calibri_24pts_0x27
+ 1881 0004 0500     		.short	5
+ 1882 0006 1D00     		.short	29
+ 1883 0008 08       		.byte	8
+ 1884 0009 000000   		.space	3
+ 1885              		.section	.rodata.image_data_calibri_24pts_0x27,"a"
+ 1886              		.align	2
+ 1889              	image_data_calibri_24pts_0x27:
+ 1890 0000 00000000 		.ascii	"\000\000\000\000\000\000\0000000  \000\000\000\000\000"
+ 1890      00000030 
+ 1890      30303020 
+ 1890      20000000 
+ 1890      0000
+ 1891 0012 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 1891      00000000 
+ 1891      000000
+ 1892              		.section	.rodata.calibri_24pts_0x26,"a"
+ 1893              		.align	2
+ 1896              	calibri_24pts_0x26:
+ 1897 0000 00000000 		.word	image_data_calibri_24pts_0x26
+ 1898 0004 1000     		.short	16
+ 1899 0006 1D00     		.short	29
+ 1900 0008 08       		.byte	8
+ 1901 0009 000000   		.space	3
+ 1902              		.section	.rodata.image_data_calibri_24pts_0x26,"a"
+ 1903              		.align	2
+ 1906              	image_data_calibri_24pts_0x26:
+ 1907 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1907      00000000 
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 45
+
+
+ 1907      00000000 
+ 1907      00
+ 1908 000d 0007C01F 		.ascii	"\000\007\300\037\340\030`\030`\030`\030\300\017\200"
+ 1908      E0186018 
+ 1908      60186018 
+ 1908      C00F80
+ 1909 001c 0E0C1F0C 		.ascii	"\016\014\037\0143\214q\314`\370px0|?\356\017\206\000"
+ 1909      338C71CC 
+ 1909      60F87078 
+ 1909      307C3FEE 
+ 1909      0F8600
+ 1910 002f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000"
+ 1910      00000000 
+ 1910      000000
+ 1911              		.section	.rodata.calibri_24pts_0x25,"a"
+ 1912              		.align	2
+ 1915              	calibri_24pts_0x25:
+ 1916 0000 00000000 		.word	image_data_calibri_24pts_0x25
+ 1917 0004 1100     		.short	17
+ 1918 0006 1D00     		.short	29
+ 1919 0008 08       		.byte	8
+ 1920 0009 000000   		.space	3
+ 1921              		.section	.rodata.image_data_calibri_24pts_0x25,"a"
+ 1922              		.align	2
+ 1925              	image_data_calibri_24pts_0x25:
+ 1926 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1926      00000000 
+ 1926      00000000 
+ 1926      00
+ 1927 000d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\036\014\000\"\010\000"
+ 1927      00000000 
+ 1927      1E0C0022 
+ 1927      0800
+ 1928 001b 63180063 		.ascii	"c\030\000c0\000c \000c`\000\"\300\000=\200\000\001\217"
+ 1928      30006320 
+ 1928      00636000 
+ 1928      22C0003D 
+ 1928      8000018F 
+ 1929 002f 00031100 		.ascii	"\000\003\021\000\0061\200\0041\200\0141\200\0301\200"
+ 1929      06318004 
+ 1929      31800C31 
+ 1929      80183180 
+ 1930 003f 10110030 		.ascii	"\020\021\0000\036\000\000\000\000\000\000\000\000\000"
+ 1930      1E000000 
+ 1930      00000000 
+ 1930      0000
+ 1931 004d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000"
+ 1931      00000000 
+ 1931      0000
+ 1932              		.section	.rodata.calibri_24pts_0x24,"a"
+ 1933              		.align	2
+ 1936              	calibri_24pts_0x24:
+ 1937 0000 00000000 		.word	image_data_calibri_24pts_0x24
+ 1938 0004 0C00     		.short	12
+ 1939 0006 1D00     		.short	29
+ 1940 0008 08       		.byte	8
+ 1941 0009 000000   		.space	3
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 46
+
+
+ 1942              		.section	.rodata.image_data_calibri_24pts_0x24,"a"
+ 1943              		.align	2
+ 1946              	image_data_calibri_24pts_0x24:
+ 1947 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\003\000\002"
+ 1947      00000000 
+ 1947      00000300 
+ 1947      02
+ 1948 000d 0002000F 		.ascii	"\000\002\000\017\200?\3000@`\000p\0000\000>\000\017"
+ 1948      803FC030 
+ 1948      40600070 
+ 1948      0030003E 
+ 1948      000F
+ 1949 001f 8001C000 		.ascii	"\200\001\300\000\340\000`\000``\300\177\300?\000\014"
+ 1949      E0006000 
+ 1949      6060C07F 
+ 1949      C03F000C 
+ 1950 002f 000C0008 		.ascii	"\000\014\000\010\000\000\000\000\000\000\000"
+ 1950      00000000 
+ 1950      000000
+ 1951              		.section	.rodata.calibri_24pts_0x23,"a"
+ 1952              		.align	2
+ 1955              	calibri_24pts_0x23:
+ 1956 0000 00000000 		.word	image_data_calibri_24pts_0x23
+ 1957 0004 0C00     		.short	12
+ 1958 0006 1D00     		.short	29
+ 1959 0008 08       		.byte	8
+ 1960 0009 000000   		.space	3
+ 1961              		.section	.rodata.image_data_calibri_24pts_0x23,"a"
+ 1962              		.align	2
+ 1965              	image_data_calibri_24pts_0x23:
+ 1966 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1966      00000000 
+ 1966      00000000 
+ 1966      00
+ 1967 000d 00000018 		.ascii	"\000\000\000\030\300\030\300\030\300\177\340\177\340"
+ 1967      C018C018 
+ 1967      C07FE07F 
+ 1967      E0
+ 1968 001a 18C01080 		.ascii	"\030\300\020\200\020\2001\200\377\340\377\3401\2001"
+ 1968      10803180 
+ 1968      FFE0FFE0 
+ 1968      318031
+ 1969 0029 80318021 		.ascii	"\2001\200!\000\000\000\000\000\000\000\000\000\000\000"
+ 1969      00000000 
+ 1969      00000000 
+ 1969      000000
+ 1970 0038 0000     		.ascii	"\000\000"
+ 1971              		.section	.rodata.calibri_24pts_0x22,"a"
+ 1972              		.align	2
+ 1975              	calibri_24pts_0x22:
+ 1976 0000 00000000 		.word	image_data_calibri_24pts_0x22
+ 1977 0004 0A00     		.short	10
+ 1978 0006 1D00     		.short	29
+ 1979 0008 08       		.byte	8
+ 1980 0009 000000   		.space	3
+ 1981              		.section	.rodata.image_data_calibri_24pts_0x22,"a"
+ 1982              		.align	2
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 47
+
+
+ 1985              	image_data_calibri_24pts_0x22:
+ 1986 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1986      00000000 
+ 1986      00000000 
+ 1986      00
+ 1987 000d 00330033 		.ascii	"\0003\0003\0003\000#\000#\000#\000\000\000\000\000\000"
+ 1987      00330023 
+ 1987      00230023 
+ 1987      00000000 
+ 1987      0000
+ 1988 001f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1988      00000000 
+ 1988      00000000 
+ 1988      00
+ 1989 002c 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1989      00000000 
+ 1989      00000000 
+ 1989      00
+ 1990 0039 00       		.ascii	"\000"
+ 1991              		.section	.rodata.calibri_24pts_0x21,"a"
+ 1992              		.align	2
+ 1995              	calibri_24pts_0x21:
+ 1996 0000 00000000 		.word	image_data_calibri_24pts_0x21
+ 1997 0004 0800     		.short	8
+ 1998 0006 1D00     		.short	29
+ 1999 0008 08       		.byte	8
+ 2000 0009 000000   		.space	3
+ 2001              		.section	.rodata.image_data_calibri_24pts_0x21,"a"
+ 2002              		.align	2
+ 2005              	image_data_calibri_24pts_0x21:
+ 2006 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\030\030\030\030\030\030"
+ 2006      00000018 
+ 2006      18181818 
+ 2006      18
+ 2007 000d 18181818 		.ascii	"\030\030\030\030\030\030\000\030\034\030\000\000\000"
+ 2007      18180018 
+ 2007      1C180000 
+ 2007      00
+ 2008 001a 000000   		.ascii	"\000\000\000"
+ 2009              		.section	.rodata.calibri_24pts_0x20,"a"
+ 2010              		.align	2
+ 2013              	calibri_24pts_0x20:
+ 2014 0000 00000000 		.word	image_data_calibri_24pts_0x20
+ 2015 0004 0500     		.short	5
+ 2016 0006 1D00     		.short	29
+ 2017 0008 08       		.byte	8
+ 2018 0009 000000   		.space	3
+ 2019              		.section	.rodata.image_data_calibri_24pts_0x20,"a"
+ 2020              		.align	2
+ 2023              	image_data_calibri_24pts_0x20:
+ 2024 0000 00000000 		.space	29
+ 2024      00000000 
+ 2024      00000000 
+ 2024      00000000 
+ 2024      00000000 
+ 2025              		.text
+ 2026              	.Letext0:
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 48
+
+
+ 2027              		.file 2 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 2028              		.file 3 "C:\\ST\\STM32CubeCLT_1.15.0\\GNU-tools-for-STM32\\bin/../lib/gcc/arm-none-eabi/12.3.1/../
+ 2029              		.file 4 "User/e-Paper/fonts.h"
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 49
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 calibri_24pts.c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:23     .data.calibri_24pts:00000000 calibri_24pts
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:20     .data.calibri_24pts:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:30     .rodata.calibri_24pts_array:00000000 calibri_24pts_array
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:27     .rodata.calibri_24pts_array:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2013   .rodata.calibri_24pts_0x20:00000000 calibri_24pts_0x20
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1995   .rodata.calibri_24pts_0x21:00000000 calibri_24pts_0x21
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1975   .rodata.calibri_24pts_0x22:00000000 calibri_24pts_0x22
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1955   .rodata.calibri_24pts_0x23:00000000 calibri_24pts_0x23
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1936   .rodata.calibri_24pts_0x24:00000000 calibri_24pts_0x24
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1915   .rodata.calibri_24pts_0x25:00000000 calibri_24pts_0x25
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1896   .rodata.calibri_24pts_0x26:00000000 calibri_24pts_0x26
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1879   .rodata.calibri_24pts_0x27:00000000 calibri_24pts_0x27
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1862   .rodata.calibri_24pts_0x28:00000000 calibri_24pts_0x28
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1845   .rodata.calibri_24pts_0x29:00000000 calibri_24pts_0x29
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1825   .rodata.calibri_24pts_0x2a:00000000 calibri_24pts_0x2a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1805   .rodata.calibri_24pts_0x2b:00000000 calibri_24pts_0x2b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1788   .rodata.calibri_24pts_0x2c:00000000 calibri_24pts_0x2c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1770   .rodata.calibri_24pts_0x2d:00000000 calibri_24pts_0x2d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1752   .rodata.calibri_24pts_0x2e:00000000 calibri_24pts_0x2e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1732   .rodata.calibri_24pts_0x2f:00000000 calibri_24pts_0x2f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1713   .rodata.calibri_24pts_0x30:00000000 calibri_24pts_0x30
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1693   .rodata.calibri_24pts_0x31:00000000 calibri_24pts_0x31
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1673   .rodata.calibri_24pts_0x32:00000000 calibri_24pts_0x32
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1653   .rodata.calibri_24pts_0x33:00000000 calibri_24pts_0x33
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1633   .rodata.calibri_24pts_0x34:00000000 calibri_24pts_0x34
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1614   .rodata.calibri_24pts_0x35:00000000 calibri_24pts_0x35
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1595   .rodata.calibri_24pts_0x36:00000000 calibri_24pts_0x36
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1575   .rodata.calibri_24pts_0x37:00000000 calibri_24pts_0x37
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1556   .rodata.calibri_24pts_0x38:00000000 calibri_24pts_0x38
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1537   .rodata.calibri_24pts_0x39:00000000 calibri_24pts_0x39
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1520   .rodata.calibri_24pts_0x3a:00000000 calibri_24pts_0x3a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1503   .rodata.calibri_24pts_0x3b:00000000 calibri_24pts_0x3b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1483   .rodata.calibri_24pts_0x3c:00000000 calibri_24pts_0x3c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1463   .rodata.calibri_24pts_0x3d:00000000 calibri_24pts_0x3d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1443   .rodata.calibri_24pts_0x3e:00000000 calibri_24pts_0x3e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1423   .rodata.calibri_24pts_0x3f:00000000 calibri_24pts_0x3f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1402   .rodata.calibri_24pts_0x40:00000000 calibri_24pts_0x40
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1383   .rodata.calibri_24pts_0x41:00000000 calibri_24pts_0x41
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1364   .rodata.calibri_24pts_0x42:00000000 calibri_24pts_0x42
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1345   .rodata.calibri_24pts_0x43:00000000 calibri_24pts_0x43
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1326   .rodata.calibri_24pts_0x44:00000000 calibri_24pts_0x44
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1307   .rodata.calibri_24pts_0x45:00000000 calibri_24pts_0x45
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1288   .rodata.calibri_24pts_0x46:00000000 calibri_24pts_0x46
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1269   .rodata.calibri_24pts_0x47:00000000 calibri_24pts_0x47
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1250   .rodata.calibri_24pts_0x48:00000000 calibri_24pts_0x48
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1233   .rodata.calibri_24pts_0x49:00000000 calibri_24pts_0x49
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1215   .rodata.calibri_24pts_0x4a:00000000 calibri_24pts_0x4a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1196   .rodata.calibri_24pts_0x4b:00000000 calibri_24pts_0x4b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1177   .rodata.calibri_24pts_0x4c:00000000 calibri_24pts_0x4c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1156   .rodata.calibri_24pts_0x4d:00000000 calibri_24pts_0x4d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1137   .rodata.calibri_24pts_0x4e:00000000 calibri_24pts_0x4e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1118   .rodata.calibri_24pts_0x4f:00000000 calibri_24pts_0x4f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1099   .rodata.calibri_24pts_0x50:00000000 calibri_24pts_0x50
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1078   .rodata.calibri_24pts_0x51:00000000 calibri_24pts_0x51
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1059   .rodata.calibri_24pts_0x52:00000000 calibri_24pts_0x52
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 50
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1040   .rodata.calibri_24pts_0x53:00000000 calibri_24pts_0x53
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1020   .rodata.calibri_24pts_0x54:00000000 calibri_24pts_0x54
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1001   .rodata.calibri_24pts_0x55:00000000 calibri_24pts_0x55
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:982    .rodata.calibri_24pts_0x56:00000000 calibri_24pts_0x56
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:961    .rodata.calibri_24pts_0x57:00000000 calibri_24pts_0x57
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:942    .rodata.calibri_24pts_0x58:00000000 calibri_24pts_0x58
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:922    .rodata.calibri_24pts_0x59:00000000 calibri_24pts_0x59
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:902    .rodata.calibri_24pts_0x5a:00000000 calibri_24pts_0x5a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:885    .rodata.calibri_24pts_0x5b:00000000 calibri_24pts_0x5b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:865    .rodata.calibri_24pts_0x5c:00000000 calibri_24pts_0x5c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:848    .rodata.calibri_24pts_0x5d:00000000 calibri_24pts_0x5d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:828    .rodata.calibri_24pts_0x5e:00000000 calibri_24pts_0x5e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:808    .rodata.calibri_24pts_0x5f:00000000 calibri_24pts_0x5f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:790    .rodata.calibri_24pts_0x60:00000000 calibri_24pts_0x60
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:770    .rodata.calibri_24pts_0x61:00000000 calibri_24pts_0x61
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:751    .rodata.calibri_24pts_0x62:00000000 calibri_24pts_0x62
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:732    .rodata.calibri_24pts_0x63:00000000 calibri_24pts_0x63
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:713    .rodata.calibri_24pts_0x64:00000000 calibri_24pts_0x64
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:694    .rodata.calibri_24pts_0x65:00000000 calibri_24pts_0x65
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:677    .rodata.calibri_24pts_0x66:00000000 calibri_24pts_0x66
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:658    .rodata.calibri_24pts_0x67:00000000 calibri_24pts_0x67
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:639    .rodata.calibri_24pts_0x68:00000000 calibri_24pts_0x68
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:622    .rodata.calibri_24pts_0x69:00000000 calibri_24pts_0x69
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:605    .rodata.calibri_24pts_0x6a:00000000 calibri_24pts_0x6a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:586    .rodata.calibri_24pts_0x6b:00000000 calibri_24pts_0x6b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:569    .rodata.calibri_24pts_0x6c:00000000 calibri_24pts_0x6c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:548    .rodata.calibri_24pts_0x6d:00000000 calibri_24pts_0x6d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:529    .rodata.calibri_24pts_0x6e:00000000 calibri_24pts_0x6e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:510    .rodata.calibri_24pts_0x6f:00000000 calibri_24pts_0x6f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:491    .rodata.calibri_24pts_0x70:00000000 calibri_24pts_0x70
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:472    .rodata.calibri_24pts_0x71:00000000 calibri_24pts_0x71
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:455    .rodata.calibri_24pts_0x72:00000000 calibri_24pts_0x72
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:435    .rodata.calibri_24pts_0x73:00000000 calibri_24pts_0x73
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:418    .rodata.calibri_24pts_0x74:00000000 calibri_24pts_0x74
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:399    .rodata.calibri_24pts_0x75:00000000 calibri_24pts_0x75
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:380    .rodata.calibri_24pts_0x76:00000000 calibri_24pts_0x76
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:358    .rodata.calibri_24pts_0x77:00000000 calibri_24pts_0x77
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:338    .rodata.calibri_24pts_0x78:00000000 calibri_24pts_0x78
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:318    .rodata.calibri_24pts_0x79:00000000 calibri_24pts_0x79
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:298    .rodata.calibri_24pts_0x7a:00000000 calibri_24pts_0x7a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:281    .rodata.calibri_24pts_0x7b:00000000 calibri_24pts_0x7b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:261    .rodata.calibri_24pts_0x7c:00000000 calibri_24pts_0x7c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:244    .rodata.calibri_24pts_0x7d:00000000 calibri_24pts_0x7d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:225    .rodata.calibri_24pts_0x7e:00000000 calibri_24pts_0x7e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:222    .rodata.calibri_24pts_0x7e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:235    .rodata.image_data_calibri_24pts_0x7e:00000000 image_data_calibri_24pts_0x7e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:232    .rodata.image_data_calibri_24pts_0x7e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:241    .rodata.calibri_24pts_0x7d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:254    .rodata.image_data_calibri_24pts_0x7d:00000000 image_data_calibri_24pts_0x7d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:251    .rodata.image_data_calibri_24pts_0x7d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:258    .rodata.calibri_24pts_0x7c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:271    .rodata.image_data_calibri_24pts_0x7c:00000000 image_data_calibri_24pts_0x7c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:268    .rodata.image_data_calibri_24pts_0x7c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:278    .rodata.calibri_24pts_0x7b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:291    .rodata.image_data_calibri_24pts_0x7b:00000000 image_data_calibri_24pts_0x7b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:288    .rodata.image_data_calibri_24pts_0x7b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:295    .rodata.calibri_24pts_0x7a:00000000 $d
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 51
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:308    .rodata.image_data_calibri_24pts_0x7a:00000000 image_data_calibri_24pts_0x7a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:305    .rodata.image_data_calibri_24pts_0x7a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:315    .rodata.calibri_24pts_0x79:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:328    .rodata.image_data_calibri_24pts_0x79:00000000 image_data_calibri_24pts_0x79
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:325    .rodata.image_data_calibri_24pts_0x79:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:335    .rodata.calibri_24pts_0x78:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:348    .rodata.image_data_calibri_24pts_0x78:00000000 image_data_calibri_24pts_0x78
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:345    .rodata.image_data_calibri_24pts_0x78:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:355    .rodata.calibri_24pts_0x77:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:368    .rodata.image_data_calibri_24pts_0x77:00000000 image_data_calibri_24pts_0x77
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:365    .rodata.image_data_calibri_24pts_0x77:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:377    .rodata.calibri_24pts_0x76:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:390    .rodata.image_data_calibri_24pts_0x76:00000000 image_data_calibri_24pts_0x76
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:387    .rodata.image_data_calibri_24pts_0x76:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:396    .rodata.calibri_24pts_0x75:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:409    .rodata.image_data_calibri_24pts_0x75:00000000 image_data_calibri_24pts_0x75
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:406    .rodata.image_data_calibri_24pts_0x75:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:415    .rodata.calibri_24pts_0x74:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:428    .rodata.image_data_calibri_24pts_0x74:00000000 image_data_calibri_24pts_0x74
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:425    .rodata.image_data_calibri_24pts_0x74:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:432    .rodata.calibri_24pts_0x73:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:445    .rodata.image_data_calibri_24pts_0x73:00000000 image_data_calibri_24pts_0x73
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:442    .rodata.image_data_calibri_24pts_0x73:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:452    .rodata.calibri_24pts_0x72:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:465    .rodata.image_data_calibri_24pts_0x72:00000000 image_data_calibri_24pts_0x72
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:462    .rodata.image_data_calibri_24pts_0x72:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:469    .rodata.calibri_24pts_0x71:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:482    .rodata.image_data_calibri_24pts_0x71:00000000 image_data_calibri_24pts_0x71
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:479    .rodata.image_data_calibri_24pts_0x71:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:488    .rodata.calibri_24pts_0x70:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:501    .rodata.image_data_calibri_24pts_0x70:00000000 image_data_calibri_24pts_0x70
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:498    .rodata.image_data_calibri_24pts_0x70:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:507    .rodata.calibri_24pts_0x6f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:520    .rodata.image_data_calibri_24pts_0x6f:00000000 image_data_calibri_24pts_0x6f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:517    .rodata.image_data_calibri_24pts_0x6f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:526    .rodata.calibri_24pts_0x6e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:539    .rodata.image_data_calibri_24pts_0x6e:00000000 image_data_calibri_24pts_0x6e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:536    .rodata.image_data_calibri_24pts_0x6e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:545    .rodata.calibri_24pts_0x6d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:558    .rodata.image_data_calibri_24pts_0x6d:00000000 image_data_calibri_24pts_0x6d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:555    .rodata.image_data_calibri_24pts_0x6d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:566    .rodata.calibri_24pts_0x6c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:579    .rodata.image_data_calibri_24pts_0x6c:00000000 image_data_calibri_24pts_0x6c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:576    .rodata.image_data_calibri_24pts_0x6c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:583    .rodata.calibri_24pts_0x6b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:596    .rodata.image_data_calibri_24pts_0x6b:00000000 image_data_calibri_24pts_0x6b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:593    .rodata.image_data_calibri_24pts_0x6b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:602    .rodata.calibri_24pts_0x6a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:615    .rodata.image_data_calibri_24pts_0x6a:00000000 image_data_calibri_24pts_0x6a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:612    .rodata.image_data_calibri_24pts_0x6a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:619    .rodata.calibri_24pts_0x69:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:632    .rodata.image_data_calibri_24pts_0x69:00000000 image_data_calibri_24pts_0x69
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:629    .rodata.image_data_calibri_24pts_0x69:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:636    .rodata.calibri_24pts_0x68:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:649    .rodata.image_data_calibri_24pts_0x68:00000000 image_data_calibri_24pts_0x68
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:646    .rodata.image_data_calibri_24pts_0x68:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:655    .rodata.calibri_24pts_0x67:00000000 $d
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 52
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:668    .rodata.image_data_calibri_24pts_0x67:00000000 image_data_calibri_24pts_0x67
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:665    .rodata.image_data_calibri_24pts_0x67:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:674    .rodata.calibri_24pts_0x66:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:687    .rodata.image_data_calibri_24pts_0x66:00000000 image_data_calibri_24pts_0x66
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:684    .rodata.image_data_calibri_24pts_0x66:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:691    .rodata.calibri_24pts_0x65:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:704    .rodata.image_data_calibri_24pts_0x65:00000000 image_data_calibri_24pts_0x65
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:701    .rodata.image_data_calibri_24pts_0x65:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:710    .rodata.calibri_24pts_0x64:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:723    .rodata.image_data_calibri_24pts_0x64:00000000 image_data_calibri_24pts_0x64
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:720    .rodata.image_data_calibri_24pts_0x64:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:729    .rodata.calibri_24pts_0x63:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:742    .rodata.image_data_calibri_24pts_0x63:00000000 image_data_calibri_24pts_0x63
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:739    .rodata.image_data_calibri_24pts_0x63:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:748    .rodata.calibri_24pts_0x62:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:761    .rodata.image_data_calibri_24pts_0x62:00000000 image_data_calibri_24pts_0x62
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:758    .rodata.image_data_calibri_24pts_0x62:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:767    .rodata.calibri_24pts_0x61:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:780    .rodata.image_data_calibri_24pts_0x61:00000000 image_data_calibri_24pts_0x61
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:777    .rodata.image_data_calibri_24pts_0x61:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:787    .rodata.calibri_24pts_0x60:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:800    .rodata.image_data_calibri_24pts_0x60:00000000 image_data_calibri_24pts_0x60
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:797    .rodata.image_data_calibri_24pts_0x60:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:805    .rodata.calibri_24pts_0x5f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:818    .rodata.image_data_calibri_24pts_0x5f:00000000 image_data_calibri_24pts_0x5f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:815    .rodata.image_data_calibri_24pts_0x5f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:825    .rodata.calibri_24pts_0x5e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:838    .rodata.image_data_calibri_24pts_0x5e:00000000 image_data_calibri_24pts_0x5e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:835    .rodata.image_data_calibri_24pts_0x5e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:845    .rodata.calibri_24pts_0x5d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:858    .rodata.image_data_calibri_24pts_0x5d:00000000 image_data_calibri_24pts_0x5d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:855    .rodata.image_data_calibri_24pts_0x5d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:862    .rodata.calibri_24pts_0x5c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:875    .rodata.image_data_calibri_24pts_0x5c:00000000 image_data_calibri_24pts_0x5c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:872    .rodata.image_data_calibri_24pts_0x5c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:882    .rodata.calibri_24pts_0x5b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:895    .rodata.image_data_calibri_24pts_0x5b:00000000 image_data_calibri_24pts_0x5b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:892    .rodata.image_data_calibri_24pts_0x5b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:899    .rodata.calibri_24pts_0x5a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:912    .rodata.image_data_calibri_24pts_0x5a:00000000 image_data_calibri_24pts_0x5a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:909    .rodata.image_data_calibri_24pts_0x5a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:919    .rodata.calibri_24pts_0x59:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:932    .rodata.image_data_calibri_24pts_0x59:00000000 image_data_calibri_24pts_0x59
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:929    .rodata.image_data_calibri_24pts_0x59:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:939    .rodata.calibri_24pts_0x58:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:952    .rodata.image_data_calibri_24pts_0x58:00000000 image_data_calibri_24pts_0x58
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:949    .rodata.image_data_calibri_24pts_0x58:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:958    .rodata.calibri_24pts_0x57:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:971    .rodata.image_data_calibri_24pts_0x57:00000000 image_data_calibri_24pts_0x57
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:968    .rodata.image_data_calibri_24pts_0x57:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:979    .rodata.calibri_24pts_0x56:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:992    .rodata.image_data_calibri_24pts_0x56:00000000 image_data_calibri_24pts_0x56
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:989    .rodata.image_data_calibri_24pts_0x56:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:998    .rodata.calibri_24pts_0x55:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1011   .rodata.image_data_calibri_24pts_0x55:00000000 image_data_calibri_24pts_0x55
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1008   .rodata.image_data_calibri_24pts_0x55:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1017   .rodata.calibri_24pts_0x54:00000000 $d
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 53
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1030   .rodata.image_data_calibri_24pts_0x54:00000000 image_data_calibri_24pts_0x54
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1027   .rodata.image_data_calibri_24pts_0x54:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1037   .rodata.calibri_24pts_0x53:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1050   .rodata.image_data_calibri_24pts_0x53:00000000 image_data_calibri_24pts_0x53
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1047   .rodata.image_data_calibri_24pts_0x53:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1056   .rodata.calibri_24pts_0x52:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1069   .rodata.image_data_calibri_24pts_0x52:00000000 image_data_calibri_24pts_0x52
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1066   .rodata.image_data_calibri_24pts_0x52:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1075   .rodata.calibri_24pts_0x51:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1088   .rodata.image_data_calibri_24pts_0x51:00000000 image_data_calibri_24pts_0x51
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1085   .rodata.image_data_calibri_24pts_0x51:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1096   .rodata.calibri_24pts_0x50:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1109   .rodata.image_data_calibri_24pts_0x50:00000000 image_data_calibri_24pts_0x50
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1106   .rodata.image_data_calibri_24pts_0x50:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1115   .rodata.calibri_24pts_0x4f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1128   .rodata.image_data_calibri_24pts_0x4f:00000000 image_data_calibri_24pts_0x4f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1125   .rodata.image_data_calibri_24pts_0x4f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1134   .rodata.calibri_24pts_0x4e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1147   .rodata.image_data_calibri_24pts_0x4e:00000000 image_data_calibri_24pts_0x4e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1144   .rodata.image_data_calibri_24pts_0x4e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1153   .rodata.calibri_24pts_0x4d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1166   .rodata.image_data_calibri_24pts_0x4d:00000000 image_data_calibri_24pts_0x4d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1163   .rodata.image_data_calibri_24pts_0x4d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1174   .rodata.calibri_24pts_0x4c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1187   .rodata.image_data_calibri_24pts_0x4c:00000000 image_data_calibri_24pts_0x4c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1184   .rodata.image_data_calibri_24pts_0x4c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1193   .rodata.calibri_24pts_0x4b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1206   .rodata.image_data_calibri_24pts_0x4b:00000000 image_data_calibri_24pts_0x4b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1203   .rodata.image_data_calibri_24pts_0x4b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1212   .rodata.calibri_24pts_0x4a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1225   .rodata.image_data_calibri_24pts_0x4a:00000000 image_data_calibri_24pts_0x4a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1222   .rodata.image_data_calibri_24pts_0x4a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1230   .rodata.calibri_24pts_0x49:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1243   .rodata.image_data_calibri_24pts_0x49:00000000 image_data_calibri_24pts_0x49
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1240   .rodata.image_data_calibri_24pts_0x49:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1247   .rodata.calibri_24pts_0x48:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1260   .rodata.image_data_calibri_24pts_0x48:00000000 image_data_calibri_24pts_0x48
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1257   .rodata.image_data_calibri_24pts_0x48:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1266   .rodata.calibri_24pts_0x47:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1279   .rodata.image_data_calibri_24pts_0x47:00000000 image_data_calibri_24pts_0x47
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1276   .rodata.image_data_calibri_24pts_0x47:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1285   .rodata.calibri_24pts_0x46:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1298   .rodata.image_data_calibri_24pts_0x46:00000000 image_data_calibri_24pts_0x46
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1295   .rodata.image_data_calibri_24pts_0x46:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1304   .rodata.calibri_24pts_0x45:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1317   .rodata.image_data_calibri_24pts_0x45:00000000 image_data_calibri_24pts_0x45
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1314   .rodata.image_data_calibri_24pts_0x45:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1323   .rodata.calibri_24pts_0x44:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1336   .rodata.image_data_calibri_24pts_0x44:00000000 image_data_calibri_24pts_0x44
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1333   .rodata.image_data_calibri_24pts_0x44:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1342   .rodata.calibri_24pts_0x43:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1355   .rodata.image_data_calibri_24pts_0x43:00000000 image_data_calibri_24pts_0x43
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1352   .rodata.image_data_calibri_24pts_0x43:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1361   .rodata.calibri_24pts_0x42:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1374   .rodata.image_data_calibri_24pts_0x42:00000000 image_data_calibri_24pts_0x42
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1371   .rodata.image_data_calibri_24pts_0x42:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1380   .rodata.calibri_24pts_0x41:00000000 $d
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 54
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1393   .rodata.image_data_calibri_24pts_0x41:00000000 image_data_calibri_24pts_0x41
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1390   .rodata.image_data_calibri_24pts_0x41:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1399   .rodata.calibri_24pts_0x40:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1412   .rodata.image_data_calibri_24pts_0x40:00000000 image_data_calibri_24pts_0x40
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1409   .rodata.image_data_calibri_24pts_0x40:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1420   .rodata.calibri_24pts_0x3f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1433   .rodata.image_data_calibri_24pts_0x3f:00000000 image_data_calibri_24pts_0x3f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1430   .rodata.image_data_calibri_24pts_0x3f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1440   .rodata.calibri_24pts_0x3e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1453   .rodata.image_data_calibri_24pts_0x3e:00000000 image_data_calibri_24pts_0x3e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1450   .rodata.image_data_calibri_24pts_0x3e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1460   .rodata.calibri_24pts_0x3d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1473   .rodata.image_data_calibri_24pts_0x3d:00000000 image_data_calibri_24pts_0x3d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1470   .rodata.image_data_calibri_24pts_0x3d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1480   .rodata.calibri_24pts_0x3c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1493   .rodata.image_data_calibri_24pts_0x3c:00000000 image_data_calibri_24pts_0x3c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1490   .rodata.image_data_calibri_24pts_0x3c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1500   .rodata.calibri_24pts_0x3b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1513   .rodata.image_data_calibri_24pts_0x3b:00000000 image_data_calibri_24pts_0x3b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1510   .rodata.image_data_calibri_24pts_0x3b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1517   .rodata.calibri_24pts_0x3a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1530   .rodata.image_data_calibri_24pts_0x3a:00000000 image_data_calibri_24pts_0x3a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1527   .rodata.image_data_calibri_24pts_0x3a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1534   .rodata.calibri_24pts_0x39:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1547   .rodata.image_data_calibri_24pts_0x39:00000000 image_data_calibri_24pts_0x39
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1544   .rodata.image_data_calibri_24pts_0x39:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1553   .rodata.calibri_24pts_0x38:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1566   .rodata.image_data_calibri_24pts_0x38:00000000 image_data_calibri_24pts_0x38
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1563   .rodata.image_data_calibri_24pts_0x38:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1572   .rodata.calibri_24pts_0x37:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1585   .rodata.image_data_calibri_24pts_0x37:00000000 image_data_calibri_24pts_0x37
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1582   .rodata.image_data_calibri_24pts_0x37:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1592   .rodata.calibri_24pts_0x36:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1605   .rodata.image_data_calibri_24pts_0x36:00000000 image_data_calibri_24pts_0x36
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1602   .rodata.image_data_calibri_24pts_0x36:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1611   .rodata.calibri_24pts_0x35:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1624   .rodata.image_data_calibri_24pts_0x35:00000000 image_data_calibri_24pts_0x35
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1621   .rodata.image_data_calibri_24pts_0x35:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1630   .rodata.calibri_24pts_0x34:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1643   .rodata.image_data_calibri_24pts_0x34:00000000 image_data_calibri_24pts_0x34
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1640   .rodata.image_data_calibri_24pts_0x34:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1650   .rodata.calibri_24pts_0x33:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1663   .rodata.image_data_calibri_24pts_0x33:00000000 image_data_calibri_24pts_0x33
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1660   .rodata.image_data_calibri_24pts_0x33:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1670   .rodata.calibri_24pts_0x32:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1683   .rodata.image_data_calibri_24pts_0x32:00000000 image_data_calibri_24pts_0x32
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1680   .rodata.image_data_calibri_24pts_0x32:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1690   .rodata.calibri_24pts_0x31:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1703   .rodata.image_data_calibri_24pts_0x31:00000000 image_data_calibri_24pts_0x31
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1700   .rodata.image_data_calibri_24pts_0x31:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1710   .rodata.calibri_24pts_0x30:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1723   .rodata.image_data_calibri_24pts_0x30:00000000 image_data_calibri_24pts_0x30
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1720   .rodata.image_data_calibri_24pts_0x30:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1729   .rodata.calibri_24pts_0x2f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1742   .rodata.image_data_calibri_24pts_0x2f:00000000 image_data_calibri_24pts_0x2f
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1739   .rodata.image_data_calibri_24pts_0x2f:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1749   .rodata.calibri_24pts_0x2e:00000000 $d
+ARM GAS  C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s 			page 55
+
+
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1762   .rodata.image_data_calibri_24pts_0x2e:00000000 image_data_calibri_24pts_0x2e
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1759   .rodata.image_data_calibri_24pts_0x2e:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1767   .rodata.calibri_24pts_0x2d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1780   .rodata.image_data_calibri_24pts_0x2d:00000000 image_data_calibri_24pts_0x2d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1777   .rodata.image_data_calibri_24pts_0x2d:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1785   .rodata.calibri_24pts_0x2c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1798   .rodata.image_data_calibri_24pts_0x2c:00000000 image_data_calibri_24pts_0x2c
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1795   .rodata.image_data_calibri_24pts_0x2c:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1802   .rodata.calibri_24pts_0x2b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1815   .rodata.image_data_calibri_24pts_0x2b:00000000 image_data_calibri_24pts_0x2b
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1812   .rodata.image_data_calibri_24pts_0x2b:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1822   .rodata.calibri_24pts_0x2a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1835   .rodata.image_data_calibri_24pts_0x2a:00000000 image_data_calibri_24pts_0x2a
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1832   .rodata.image_data_calibri_24pts_0x2a:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1842   .rodata.calibri_24pts_0x29:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1855   .rodata.image_data_calibri_24pts_0x29:00000000 image_data_calibri_24pts_0x29
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1852   .rodata.image_data_calibri_24pts_0x29:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1859   .rodata.calibri_24pts_0x28:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1872   .rodata.image_data_calibri_24pts_0x28:00000000 image_data_calibri_24pts_0x28
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1869   .rodata.image_data_calibri_24pts_0x28:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1876   .rodata.calibri_24pts_0x27:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1889   .rodata.image_data_calibri_24pts_0x27:00000000 image_data_calibri_24pts_0x27
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1886   .rodata.image_data_calibri_24pts_0x27:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1893   .rodata.calibri_24pts_0x26:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1906   .rodata.image_data_calibri_24pts_0x26:00000000 image_data_calibri_24pts_0x26
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1903   .rodata.image_data_calibri_24pts_0x26:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1912   .rodata.calibri_24pts_0x25:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1925   .rodata.image_data_calibri_24pts_0x25:00000000 image_data_calibri_24pts_0x25
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1922   .rodata.image_data_calibri_24pts_0x25:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1933   .rodata.calibri_24pts_0x24:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1946   .rodata.image_data_calibri_24pts_0x24:00000000 image_data_calibri_24pts_0x24
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1943   .rodata.image_data_calibri_24pts_0x24:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1952   .rodata.calibri_24pts_0x23:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1965   .rodata.image_data_calibri_24pts_0x23:00000000 image_data_calibri_24pts_0x23
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1962   .rodata.image_data_calibri_24pts_0x23:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1972   .rodata.calibri_24pts_0x22:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1985   .rodata.image_data_calibri_24pts_0x22:00000000 image_data_calibri_24pts_0x22
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1982   .rodata.image_data_calibri_24pts_0x22:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:1992   .rodata.calibri_24pts_0x21:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2005   .rodata.image_data_calibri_24pts_0x21:00000000 image_data_calibri_24pts_0x21
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2002   .rodata.image_data_calibri_24pts_0x21:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2010   .rodata.calibri_24pts_0x20:00000000 $d
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2023   .rodata.image_data_calibri_24pts_0x20:00000000 image_data_calibri_24pts_0x20
+C:\Users\upo\AppData\Local\Temp\ccdLNvwd.s:2020   .rodata.image_data_calibri_24pts_0x20:00000000 $d
+
+NO UNDEFINED SYMBOLS
