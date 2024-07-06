@@ -2,8 +2,8 @@
 cmake_minimum_required(VERSION 3.22)
 
 # Setup compiler settings
-set(CMAKE_C_COMPILER "C:/SysGCC/13.2 Rel1/bin/arm-none-eabi-gcc.exe")
-set(CMAKE_CXX_COMPILER "C:/SysGCC/13.2 Rel1/bin/arm-none-eabi-g++.exe")
+#set(CMAKE_C_COMPILER "C:/SysGCC/13.2 Rel1/bin/arm-none-eabi-gcc.exe")
+#set(CMAKE_CXX_COMPILER "C:/SysGCC/13.2 Rel1/bin/arm-none-eabi-g++.exe")
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
@@ -34,7 +34,6 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/main.c
     Core/Src/gpio.c
     Core/Src/adc.c
-    Core/Src/i2c.c
     Core/Src/rtc.c
     Core/Src/spi.c
     Core/Src/usart.c
@@ -55,9 +54,6 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_cortex.c
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal.c
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_exti.c
-    Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c.c
-    Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c_ex.c
-    Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_i2c.c
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc.c
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc_ex.c
     Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_spi.c
@@ -69,6 +65,24 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/system_stm32u0xx.c
     Core/Src/sysmem.c
     Core/Src/syscalls.c
+    Core/Src/printf.c
+    Core/Src/AB1805_RK.c
+    Core/Src/lpm.c
+    User/BME280/bme280.c
+    User/BME280/bme280_utils.c
+    User/e-Paper/calibri_20pts.c
+    User/e-Paper/calibri_24pts.c
+    User/e-Paper/calibri_28pts.c
+    User/e-Paper/calibri_36pts.c
+    User/e-Paper/calibri_72pts.c
+    User/e-Paper/calibri_80pts.c
+    User/e-Paper/calibri_88pts.c
+    User/e-Paper/calibri_104pts.c
+    User/e-Paper/DEV_Config.c
+    User/e-Paper/EPD_1in54_V2.c
+    User/e-Paper/font24.c
+    User/e-Paper/GUI_Paint.c
+    User/e-Paper/paint_sensor.c
     startup_stm32u073xx.s
 )
 
@@ -79,6 +93,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     Drivers/STM32U0xx_HAL_Driver/Inc/Legacy
     Drivers/CMSIS/Device/ST/STM32U0xx/Include
     Drivers/CMSIS/Include
+    User/e-Paper
+    User/BME280
 )
 
 # Link directories setup

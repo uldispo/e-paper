@@ -23,7 +23,8 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -55,25 +56,25 @@ extern "C" {
 #include <stdint.h>
 #include "printf.h"
 
-/* USER CODE END Includes */
+    /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
+    /* Exported types ------------------------------------------------------------*/
+    /* USER CODE BEGIN ET */
 
-/* USER CODE END ET */
+    /* USER CODE END ET */
 
-/* Exported constants --------------------------------------------------------*/
-/* USER CODE BEGIN EC */
+    /* Exported constants --------------------------------------------------------*/
+    /* USER CODE BEGIN EC */
 
-/* USER CODE END EC */
+    /* USER CODE END EC */
 
-/* Exported macro ------------------------------------------------------------*/
-/* USER CODE BEGIN EM */
+    /* Exported macro ------------------------------------------------------------*/
+    /* USER CODE BEGIN EM */
 
-/* USER CODE END EM */
+    /* USER CODE END EM */
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+    /* Exported functions prototypes ---------------------------------------------*/
+    void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -101,7 +102,7 @@ void Error_Handler(void);
 #define CS_Pin GPIO_PIN_12
 #define CS_GPIO_Port GPIOA
 
-/* USER CODE BEGIN Private defines */
+    /* USER CODE BEGIN Private defines */
 
 #define CS_H() GPIOA->BSRR = GPIO_BSRR_BS12 // CS display
 #define CS_L() GPIOA->BSRR = GPIO_BSRR_BR12
@@ -121,30 +122,21 @@ void Error_Handler(void);
 #define RTC_H() GPIOB->BSRR = GPIO_BSRR_BS14 // CS RTC
 #define RTC_L() GPIOB->BSRR = GPIO_BSRR_BR14
 
-#define PAPER_ON_H() GPIOB->BSRR = GPIO_BSRR_BS15 // e-Paper power on/pff
-#define PAPER_ON_L() GPIOB->BSRR = GPIO_BSRR_BR15
+#define PAPER_ON() GPIOB->BSRR = GPIO_BSRR_BS15  // e-Paper power on
+#define PAPER_OFF() GPIOB->BSRR = GPIO_BSRR_BR15 // e-Paper power off
 
-#define PB6_H() GPIOB->BSRR = GPIO_BSRR_BS6 // e-Paper power on/pff
-#define PB6_L() GPIOB->BSRR = GPIO_BSRR_BR6
+#define PB6_H() GPIOB->BSRR = GPIO_BSRR_BS6 // Debug pin HIGH
+#define PB6_L() GPIOB->BSRR = GPIO_BSRR_BR6 // Debug pin LOW
 
-#define PB7_H() GPIOB->BSRR = GPIO_BSRR_BS7 // e-Paper power on/pff
-#define PB7_L() GPIOB->BSRR = GPIO_BSRR_BR7
+#define PB7_H() GPIOB->BSRR = GPIO_BSRR_BS7 // Debug pin HIGH
+#define PB7_L() GPIOB->BSRR = GPIO_BSRR_BR7 // Debug pin LOW
 
 #define timeout_value 3000
-
-#define RTC_WUT_TIME_SEC ((uint32_t)60) /* 60 s */
-
-#define RTC_Clear_WUT()            \
-    do                             \
-    {                              \
-        LL_RTC_ClearFlag_WUT(RTC); \
-        __ISB();                   \
-    } while (LL_RTC_IsActiveFlag_WUT(RTC));
 
     void print_error(const char *func, uint32_t line);
     void timeout_reset(const char *func, uint32_t line);
 
-/* USER CODE END Private defines */
+    /* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }

@@ -49,10 +49,6 @@ void ConversionStartPoll_ADC_GrpRegular(void);
  */
 #define VDDA_APPLI ((uint32_t)3300)
 
-/* Definitions of data related to this example */
-/* Definition of ADCx conversions data table size */
-// #define ADC_CONVERTED_DATA_BUFFER_SIZE   ((uint32_t)   1)
-
 /* Init variable out of expected ADC conversion data range */
 #define VAR_CONVERTED_DATA_INIT_VALUE (__LL_ADC_DIGITAL_SCALE(LL_ADC_RESOLUTION_12B) + 1)
 

@@ -22,7 +22,7 @@
             "windowsSdkVersion": "10.0.18362.0",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "compilerPath": "C:\\SYSGCC\\12.3 REL1\\BIN\\ARM-NONE-EABI-GCC.EXE",
+            "compilerPath": "C:\\SYSGCC\\13.2 REL1\\BIN\\ARM-NONE-EABI-GCC.EXE",
             "intelliSenseMode": "windows-gcc-arm"
         }
     ],

@@ -35,23 +35,6 @@ uint32_t lastWatchdogMillis = 0;
  */
 uint32_t watchdogUpdatePeriod = 0;
 
-/**
- * @brief True if we've set the RTC from the cloud time
- */
-// bool timeSet = false;
-
-static inline void spi_select_slave(bool select)
-{
-    if (select)
-    {
-        RTC_H();
-    }
-    else
-    {
-        RTC_L();
-    }
-}
-
 void setup(bool callBegin)
 {
 
@@ -512,8 +495,6 @@ bool readRam(size_t ramAddr, uint8_t *data, size_t dataLen, bool lock)
 {
     bool bResult = true;
 
-    uint32_t primask_bit = utils_enter_critical_section();
-
     while (dataLen > 0)
     {
         size_t count = dataLen;
@@ -545,8 +526,6 @@ bool readRam(size_t ramAddr, uint8_t *data, size_t dataLen, bool lock)
         dataLen -= count;
         data += count;
     }
-
-    utils_exit_critical_section(primask_bit);
 
     return bResult;
 }
@@ -631,7 +610,7 @@ inline static uint8_t SPI1_SendByte(uint8_t data)
     {
         if ((HAL_GetTick() - start_time) > 1000)
         {
-            print_error(__func__, __LINE__);
+            print_error(__func__, __LINE__); // Timeout
         }
     }
 
@@ -642,7 +621,7 @@ inline static uint8_t SPI1_SendByte(uint8_t data)
     {
         if ((HAL_GetTick() - start_time) > 1000)
         {
-            print_error(__func__, __LINE__);
+            print_error(__func__, __LINE__); // Timeout
         }
     }
 
@@ -652,16 +631,14 @@ inline static uint8_t SPI1_SendByte(uint8_t data)
 inline static uint8_t read_rtc_register(uint8_t reg_addr)
 {
     uint8_t val;
-    uint32_t primask_bit = utils_enter_critical_section();
 
     // #define AB1815_SPI_READ(offset) (127 & offset)		127 - 0x7F
     // #define AB1815_SPI_WRITE(offset) (128 | offset)  	128 - 0x80
     uint8_t addr = AB1815_SPI_READ(reg_addr);
-    RTC_L();
+    RTC_L(); // RTC CS = 0
     SPI1_SendByte(addr);
     val = SPI1_SendByte(0x00); // Send DUMMY to read data
-    RTC_H();
-    utils_exit_critical_section(primask_bit);
+    RTC_H();                   // RTC CS = 1
 
     return val;
 }
@@ -670,35 +647,31 @@ inline static uint8_t write_rtc_register(uint8_t offset, uint8_t buf)
 {
     // uint8_t address = AB1815_SPI_WRITE(offset);
     uint8_t address = offset | 0x80;
-    uint32_t primask_bit = utils_enter_critical_section();
 
     if (!((SPI1)->CR1 & SPI_CR1_SPE))
     {
         SPI1->CR1 |= SPI_CR1_SPE;
     }
-    spi_select_slave(0);
+    RTC_L(); // RTC CS = 0
     SPI1_SendByte(address);
     SPI1_SendByte(buf); // Send Data to write
 
-    spi_select_slave(1);
-    utils_exit_critical_section(primask_bit);
+    RTC_H(); // RTC CS = 1
     return 1;
 };
 
 void hex_dump(void)
 {
-	uint8_t buffer[8] = {0};
-	for(uint8_t pos = 0; pos < 0x7F; pos += 8)
-	{
-		// readRam(size_t ramAddr, uint8_t *data, size_t dataLen, bool lock)
-		//readRam(pos, buffer, 8, 0);
+    uint8_t buffer[8] = {0};
+    for (uint8_t pos = 0; pos < 0x7F; pos += 8)
+    {
         uint8_t ii = 0;
         for (ii = 0; ii < 7; ii++)
         {
             buffer[ii] = read_rtc_register(pos + ii);
         }
-		printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
-	}
+        printf("# 0x%02x: 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\r\n", pos, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6], buffer[7]);
+    }
 }
 
 static inline uint32_t utils_enter_critical_section(void)
@@ -723,10 +696,9 @@ bool isRTCSet()
 bool readRegisters(uint8_t offset, uint8_t *buf, uint8_t length)
 {
     uint8_t address = AB1815_SPI_READ(offset);
-    uint32_t primask_bit = utils_enter_critical_section();
-    spi_select_slave(0);
+    RTC_L(); // RTC CS = 0
 
-    unsigned int i = 0;
+    uint8_t i = 0;
     if (!((SPI1)->CR1 & SPI_CR1_SPE))
     {
         SPI1->CR1 |= SPI_CR1_SPE;
@@ -738,8 +710,7 @@ bool readRegisters(uint8_t offset, uint8_t *buf, uint8_t length)
         buf[i++] = SPI1_SendByte(0x00); // Send DUMMY to read data
     }
 
-    spi_select_slave(1);
-    utils_exit_critical_section(primask_bit);
+    RTC_H(); // RTC CS = 1
     return true;
 };
 
@@ -748,8 +719,7 @@ bool writeRegisters(uint8_t offset, uint8_t *buf, uint8_t length)
 {
     uint8_t address = AB1815_SPI_WRITE(offset);
 
-    uint32_t primask_bit = utils_enter_critical_section();
-    spi_select_slave(0);
+    RTC_L(); // RTC CS = 0
 
     uint8_t i = 0;
     if (!((SPI1)->CR1 & SPI_CR1_SPE))
@@ -763,8 +733,7 @@ bool writeRegisters(uint8_t offset, uint8_t *buf, uint8_t length)
         SPI1_SendByte(buf[i++]); // Send Data to write
     }
 
-    spi_select_slave(1); // set 1
-    utils_exit_critical_section(primask_bit);
+    RTC_H(); // RTC CS = 1
     return true;
 };
 
