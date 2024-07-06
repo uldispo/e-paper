@@ -1,52 +1,86 @@
-#settings
-.settings/
+# .gitignore for STM32CubeIDE C project
 
-#metadata
-.metadata/
+# Ignore build artifacts
+/build/
+/Debug/
+/Release/
+/out/
 
-#Debug
-Debug/
-debug/
-Release/
-release
+# Ignore STM32CubeIDE project files
+/.settings/
+/.project
+.cproject
+.loadpath
 
-# Prerequisites
-*.d
+# Ignore STM32CubeMX generated files
+*.ioc
+*.gpdsc
+*.launch
 
-# Object files
+# Ignore miscellaneous IDE files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled object files, binaries, libraries
 *.o
-*.ko
 *.obj
 *.elf
-
-# Linker output
-*.ilk
+*.bin
+*.hex
+*.d
 *.map
-*.exp
-
-# Libraries
+*.axf
+*.srec
+*.lnk
+*.lst
+*.bak
+*.backup
 *.lib
 *.a
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.temp
+*.pid
+*.seed
+*.old
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-*.bin
+# Ignore dependency resolution files
+.deps/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Ignore coverage reports
+*.gcda
+*.gcno
+*.gcov
+
+# Ignore cache files
+.cache/
+*.stackdump
+*.ctags
+
+# Ignore test binaries and result files
+*.test
+*.tap
+*.log
+
+# Ignore Python virtual environments
+venv/
+.env/
+
+# Ignore other IDE-specific files
+/.metadata/
+/.remote/
+
+# Ignore user-specific files
+*.user
+*.userosscache
+*.swo
