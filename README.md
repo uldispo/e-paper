@@ -18,11 +18,11 @@ Humidity is output once a 15 minutes. Battery voltage is output once a hour.
 
 ## Power Consumption
 
-![Power Consumption Image]([path/to/your/power-consumption-image.png](https://github.com/uldispo/e-paper/blob/main/docs/sleep.PNG))
+![Power Consumption Image](https://github.com/uldispo/e-paper/blob/main/docs/sleep.PNG)
 Sleep mode
 
-![Power Consumption Image]([path/to/your/power-consumption-image.png](https://github.com/uldispo/e-paper/blob/main/docs/no_output_sleep.PNG))
+![Power Consumption Image]((https://github.com/uldispo/e-paper/blob/main/docs/no_output_sleep.PNG))
 Sleep no output
 
-![Power Consumption Image]([path/to/your/power-consumption-image.png](https://github.com/uldispo/e-paper/blob/main/docs/sleep_output_temp.PNG))
+![Power Consumption Image]((https://github.com/uldispo/e-paper/blob/main/docs/sleep_output_temp.PNG))
 Sleep output temperature
