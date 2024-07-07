@@ -1,7 +1,10 @@
 # Mini Indoor Thermometer, Hygrometer with E-Paper Display
 
-![Project Image](path/to/your/image.png)
-
+### Sleep mode only
+<p align="center"> <img 
+src="https://github.com/uldispo/e-paper/blob/main/docs/20240707_142524-min.jpg"
+alt="drawing"  width="80%" height="80%"/></p>
+  
 Features:
 1. STM32U073 controller
 2. BME280 temperature sensor
