@@ -2,7 +2,7 @@
 
 ### Sleep mode only
 <p align="center"> <img 
-src="https://github.com/uldispo/e-paper/blob/main/docs/20240707_142524-min.jpg"
+src="https://github.com/uldispo/e-paper/blob/main/docs/device.jpg"
 alt="drawing"  width="80%" height="80%"/></p>
   
 Features:
