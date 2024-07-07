@@ -23,10 +23,12 @@ src="https://github.com/uldispo/e-paper/blob/main/docs/sleep.PNG"
 alt="drawing"  width="80%" height="80%"/></p>                     
 Sleep mode
 
-
-![Power Consumption Image](https://github.com/uldispo/e-paper/blob/main/docs/no_output_sleep.PNG)
+<p align="center"> <img
+src="https://github.com/uldispo/e-paper/blob/main/docs/no_output_sleep.PNG"
+alt="drawing"  width="80%" height="80%"/></p>                     
 Sleep no output
 
-
-![Power Consumption Image](https://github.com/uldispo/e-paper/blob/main/docs/sleep_output_temp.PNG)
+<p align="center"> <img
+src="https://github.com/uldispo/e-paper/blob/main/docs/sleep_output_temp.PNG"
+alt="drawing"  width="80%" height="80%"/></p>                     
 Sleep output temperature
