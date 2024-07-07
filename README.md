@@ -1,6 +1,6 @@
 # Mini Indoor Thermometer, Hygrometer with E-Paper Display
 
-### Sleep mode only
+### Device
 <p align="center"> <img 
 src="https://github.com/uldispo/e-paper/blob/main/docs/device.jpg"
 alt="drawing"  width="80%" height="80%"/></p>
