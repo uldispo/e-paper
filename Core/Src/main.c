@@ -53,7 +53,7 @@
 #define T_OLD_RAM_ADDRESS 0x42
 #define VBAT_OLD_RAM_ADDRESS 0x44
 #define VBAT_OUTPUT_FLAG_ADDRESS 0x46
-#define INITIALIZED_FLAG_ADDRESS 0x48
+#define EPD_INITIALIZED_FLAG_ADDRESS 0x48
 
 #define UNDERVOLTAGE 220
 #define BAT_OUTPUT_PERIOD 16
@@ -81,7 +81,7 @@ uint32_t req_delay = 0;
 uint16_t H_old = 0;
 uint16_t T_old = 0;
 uint16_t vbat_old = 0;
-uint8_t initialized_flag = 0;
+uint8_t epd_initialized_flag = 0;
 
 extern UBYTE *BlackImage;
 /* USER CODE END PV */
@@ -185,10 +185,10 @@ int main(void)
     read_RTCRam(H_OLD_RAM_ADDRESS, &H_old, 0);
     read_RTCRam(T_OLD_RAM_ADDRESS, &T_old, 0);
     read_RTCRam(VBAT_OLD_RAM_ADDRESS, &vbat_old, 0);
-    initialized_flag = read(INITIALIZED_FLAG_ADDRESS); // uint8_t
+    epd_initialized_flag = read(EPD_INITIALIZED_FLAG_ADDRESS); // uint8_t
   }
 
-  // ##################________measureME280_________#########################
+  // ##################________measureBME280_________#########################
 
   dev.settings.osr_h = BME280_OVERSAMPLING_1X;
   dev.settings.osr_p = BME280_NO_OVERSAMPLING; // UINT8_C(0x00)
@@ -222,7 +222,7 @@ int main(void)
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d\n", h_, H_old, t_, T_old);
 
-  // ========================_____END measure BME280____===========================
+  // #####################_____END measure BME280____###########################
 
   if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
   {
@@ -264,13 +264,13 @@ int main(void)
     }
 
     PAPER_ON();
-    printf("initialized_flag5 = 0x%x\n", initialized_flag);
-    if (initialized_flag == 0)
+    printf("initialized_flag5 = 0x%x\n", epd_initialized_flag);
+    if (epd_initialized_flag == 0)
     {
-      ESP_Init();           // e-paper full initialization
-      initialized_flag = 1; // Flag that ESP is initialized, to do it only once
-      write(INITIALIZED_FLAG_ADDRESS, initialized_flag);
-      printf("initialized_flag = 0x%x\n", read(INITIALIZED_FLAG_ADDRESS));
+      ESP_Init();               // e-paper full initialization
+      epd_initialized_flag = 1; // Flag that ESP is initialized, to do it only once
+      write(EPD_INITIALIZED_FLAG_ADDRESS, epd_initialized_flag);
+      printf("epd_initialized_flag = 0x%x\n", read(EPD_INITIALIZED_FLAG_ADDRESS));
     }
     else
     {

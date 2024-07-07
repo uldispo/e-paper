@@ -1,4 +1,4 @@
-## Mini Indoor Thermometer and Hygrometer with E-Paper Display
+##  Ultra-low-power Mini Indoor Thermometer and Hygrometer with E-Paper Display
 
 ### Device
 <p align="center"> 
