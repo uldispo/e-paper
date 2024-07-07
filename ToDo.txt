@@ -1,0 +1,4 @@
+Firmware:
+1. Hum is not ouputed to displ.
+2. Correct logic for data output on display. Hum. 15 min, Vbat 1 hour(?)
+3. If battery is low - shutdown system. How to power off?
