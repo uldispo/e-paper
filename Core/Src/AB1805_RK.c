@@ -356,7 +356,7 @@ bool deepPowerDown(int seconds)
     while ((HAL_GetTick() - start) < (uint32_t)(seconds * 1000))
     {
         printf("REG_SLEEP_CTRL=0x%2x\n", read_rtc_register(REG_SLEEP_CTRL));
-        HAL_Delay(1000);
+        HAL_Delay(2000);
     }
 
     printf("didn't power down\n");
