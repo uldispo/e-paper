@@ -17,6 +17,7 @@
 4. AB1805 real-time clock
 5. Two SIP32431DR3 switches
 6. Current consumption in sleep mode less than 150nA
+7. Device is powered from battery CR123A or CR17450
 
 The temperature is measured once a minute. During the sleep period, the RTC microcontroller, temperature sensor, and display are disconnected from the power supply using two SIP32431DR3 switches.
 

@@ -52,11 +52,11 @@
 #define H_OLD_RAM_ADDRESS 0x40
 #define T_OLD_RAM_ADDRESS 0x42
 #define VBAT_OLD_RAM_ADDRESS 0x44
-#define VBAT_OUTPUT_FLAG_ADDRESS 0x46
+#define OUTPUT_FLAG_ADDRESS 0x46
 #define EPD_INITIALIZED_FLAG_ADDRESS 0x48
 
 #define UNDERVOLTAGE 220
-#define BAT_OUTPUT_PERIOD 16
+#define OUTPUT_PERIOD 16
 #define BAT_OUTPUT_MAX_PERIOD 30
 #define SLEEP_TIME_SEC 60
 
@@ -128,7 +128,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   uint16_t h_;
   uint16_t t_;
-  uint16_t vbat_output_flag;
+  uint16_t output_flag;
 
   uint8_t temperature_new = 0;
   uint8_t battery_new = 0;
@@ -161,13 +161,13 @@ int main(void)
   // Use 0x0E - Weekday Alarm registry 4 bits to detect first time power on
   // write MAGIC_WORD_1 to REG_WEEKDAY_ALARM general purpuse upper bits
   uint8_t wdalarm = read(REG_WEEKDAY_ALARM); // REG_WEEKDAY_ALARM = 0x0e;
-  if ((wdalarm & 0xf8) != MAGIC_WORD_1)      // ********   Startup from power on **** ((wdalarm & 0xf8) != 0xa0)
+  if ((wdalarm & 0xf8) != 0xa0)      // *** Startup from power on *** ((wdalarm & 0xf8) != 0xa0)
   {
     uint32_t clk = HAL_RCC_GetSysClockFreq();
     printf("\nMAIN. First power ON.   %d\n", clk);
     HAL_Delay(3000); // AB1805 after ~3 sec start communicate with controller
 
-    vbat_output_flag = (BAT_OUTPUT_PERIOD); // For first time output must be bigger 15
+    output_flag = (OUTPUT_PERIOD); // For first time output must be bigger 15
     resetConfig(0);
     write(REG_WEEKDAY_ALARM, MAGIC_WORD_1); // Magic word = 0xa0
     printf("wdalarm = 0x%x\n", read(REG_WEEKDAY_ALARM));
@@ -178,13 +178,13 @@ int main(void)
   }
   else
   {
-    read_RTCRam(VBAT_OUTPUT_FLAG_ADDRESS, &vbat_output_flag, 1); // Read vbat_output_flag from RTC RAM
-    vbat_output_flag++;
+    read_RTCRam(OUTPUT_FLAG_ADDRESS, &output_flag, 1); // Read output_flag from RTC RAM
+    output_flag++;
+    write_ToRTCRam(OUTPUT_FLAG_ADDRESS, output_flag, 1); // save output_flag
     printf("\nMAIN. Startup from RTC\n");
 
     read_RTCRam(H_OLD_RAM_ADDRESS, &H_old, 0);
     read_RTCRam(T_OLD_RAM_ADDRESS, &T_old, 0);
-    read_RTCRam(VBAT_OLD_RAM_ADDRESS, &vbat_old, 0);
     epd_initialized_flag = read(EPD_INITIALIZED_FLAG_ADDRESS); // uint8_t
   }
 
@@ -214,57 +214,55 @@ int main(void)
     fprintf(stderr, "Failed to stream sensor data (code %+d).", rslt);
     Error_Handler();
   }
-  // h_ = comp_data.humidity / 1000.0;
-  h_ = (((uint16_t)comp_data.humidity * 1049 + 500) >> 20); // fast_divide_by_1000
+   h_ = comp_data.humidity / 1000.0;
+  // h_ = (((uint16_t)comp_data.humidity * 1049 + 500) >> 20); // fast_divide_by_1000
 
-  // t_ = comp_data.temperature / 10.0;
-  t_ = (((uint16_t)comp_data.temperature * 6554 + 2) >> 16); // fast_divide_by_10
+  t_ = comp_data.temperature / 10.0;
+  // t_ = (((uint16_t)comp_data.temperature * 6554 + 2) >> 16); // fast_divide_by_10
 
   printf("h_ = %d   h_old = %d   t_ = %d   t_old = %d\n", h_, H_old, t_, T_old);
 
-  // #####################_____END measure BME280____###########################
+  // #####################_____  END measure BME280  ____###########################
 
-  if ((t_ != T_old) | (vbat_output_flag > BAT_OUTPUT_MAX_PERIOD))
+  int32_t vBat;
+  if (t_ != T_old)
   {
-    int32_t vBat;
     // Temperature need output
     write_ToRTCRam(T_OLD_RAM_ADDRESS, t_, 1);
     temperature_new = 1;
-
-    if (vbat_output_flag > 15) // output Vbat and Hum after every 15 min;
+  }
+  printf("output_flag: %d\n", output_flag);
+  if (output_flag > 15)
+  {
+    output_flag = 0;
+    if (h_ != H_old) // output Vbat and Hum after every 15 min;
     {
-      vbat_output_flag = 0;
-      write_ToRTCRam(VBAT_OUTPUT_FLAG_ADDRESS, vbat_output_flag, 1); // save vbat_output_flag
-
-      Activate_ADC();
-      vBat = get_vbat();
-
-      // vBat = vBat / 10.0; // go with 3 digits
-      vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
-      printf("vBat = %d, vbat_old = %d\n", vBat, vbat_old);
-
-      if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
-      {
-        final_message(vBat);
-        go_down(vBat); // shutdown forever  ****  R E W R I T E !!!   *****
-      }
-
-      if (!(vBat == vbat_old)) // it's going to output
-      {
-        write_ToRTCRam(VBAT_OLD_RAM_ADDRESS, vBat, 1); // write vbat_old = vBat
-
-        battery_new = 1;
-      }
-
-      if (h_ != H_old)
-      {
-        write_ToRTCRam(H_OLD_RAM_ADDRESS, h_, 1);
-        humidity_new = 1;
-      }
+      write_ToRTCRam(H_OLD_RAM_ADDRESS, h_, 1); // write h_
+      humidity_new = 1;
     }
 
+    Activate_ADC();
+    vBat = get_vbat();
+    read_RTCRam(VBAT_OLD_RAM_ADDRESS, &vbat_old, 0);
+    // vBat = vBat / 10.0; // go with 3 digits
+    vBat = ((uint32_t)vBat * 6554 + 2) >> 16; // fast_divide_by_10
+    printf("vBat = %d, vbat_old = %d\n", vBat, vbat_old);
+
+    if (vBat < UNDERVOLTAGE) // #define UNDERVOLTAGE 220
+    {
+      final_message(vBat);
+      go_down(vBat); // shutdown forever  ****  R E W R I T E !!!   *****
+    }
+
+    if (vBat != vbat_old) // it's going to output
+    {
+      write_ToRTCRam(VBAT_OLD_RAM_ADDRESS, vBat, 1); // write vbat_old = vBat
+      battery_new = 1;
+    }
+  }
+  if (temperature_new | humidity_new | battery_new)
+  {
     PAPER_ON();
-    printf("initialized_flag5 = 0x%x\n", epd_initialized_flag);
     if (epd_initialized_flag == 0)
     {
       ESP_Init();               // e-paper full initialization
@@ -285,16 +283,18 @@ int main(void)
     if (battery_new)
     {
       battery_out(vBat);
+      output_flag = 0;
     }
     if (humidity_new)
     {
       humidity_out(h_);
+      output_flag = 0;
     }
-
-    EPD_1IN54_V2_DisplayPart(BlackImage);
-    // EPD_1IN54_V2_Sleep(); // No need for Deep sleep mode
-    PAPER_OFF(); // e-Paper power OFF
   }
+
+  EPD_1IN54_V2_DisplayPart(BlackImage);
+  // EPD_1IN54_V2_Sleep(); // No need for Deep sleep mode
+  PAPER_OFF(); // e-Paper power OFF (???)
 
   deepPowerDown(SLEEP_TIME_SEC); // All Power off for SLEEP_TIME_SEC , except RTC which is on
 
