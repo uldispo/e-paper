@@ -290,11 +290,11 @@ int main(void)
       humidity_out(h_);
       output_flag = 0;
     }
-  }
 
-  EPD_1IN54_V2_DisplayPart(BlackImage);
-  // EPD_1IN54_V2_Sleep(); // No need for Deep sleep mode
-  PAPER_OFF(); // e-Paper power OFF (???)
+    EPD_1IN54_V2_DisplayPart(BlackImage);
+    // EPD_1IN54_V2_Sleep(); // No need for Deep sleep mode
+    PAPER_OFF(); // e-Paper power OFF (???)
+  }
 
   deepPowerDown(SLEEP_TIME_SEC); // All Power off for SLEEP_TIME_SEC , except RTC which is on
 
